@@ -5,10 +5,13 @@ subtitle:   " \"animation transform transition\""
 author:     "Fz"
 header-style: "text"
 extra_css: "/css/post-css3-features.css"
+extra_js: "/js/in-post/css-features.js"
 catalog: true
 tags:
     - CSS3
 ---
+
+# 前言  
 
 CSS（Cascading Style Sheet 层叠样式表）主要是负责网站内容添加样式，但是随着现代浏览器的更新，CSS能做到的效果也越来越华丽。其中出现的CSS3是CSS最新的标准。
 
@@ -26,9 +29,12 @@ CSS（Cascading Style Sheet 层叠样式表）主要是负责网站内容添加�
 
 ## transform（转换）
 
-transform能够实现我们对DOM元素的缩放（scale）、平移（translate）、拉伸（skew）和旋转（rotate），一般transform分为**2D转换**和**3D转换**。  
+transform（转换）能够实现我们对DOM元素的缩放（scale）、平移（translate）、拉伸（skew）和旋转（rotate），一般transform分为**2D转换**和**3D转换**。 
+> 两个主要属性用于定义CSS转换：`transform` 和 `transform-origin`  
+> `transform-origin` —— 指定原点的位置。默认情况下，它位于元素的中心，可以移动。它被几个转换使用，如旋转，缩放或倾斜，需要一个特定的点作为参数。  
+> `transform` —— 指定应用于元素的变换。这是由一个空格分隔的变换列表，按照合成操作的要求，一个接一个地应用变换。复合变换按从右到左的顺序进行应用。  
 
-### 2D转换  
+**2D转换**  
 
 2D转换顾名思义，就只在平面上做元素的转换，可以把界面想象成一张纸，元素就是画在纸上的图案，我们用对应的方法，对这个图案进行缩放，旋转等操作。
 2D转换的方法主要有 `translate(x,y)`、`rotate(angle)`、`scale(x-angle,y-angle)`、`skew(x-angle,y-angle)`、`matrix(n,n,n,n,n,n)`。
@@ -115,7 +121,7 @@ div {
 }
 ```
 
-### 3D转换  
+**3D转换**  
 
 对比2D转换，3D转换可以想象成三维空间上的转换，把界面想象成三维空间，元素可以是三维空间中具体的事物，除了X轴、Y轴还拥有Z轴（垂直于界面）的概念。  
 
@@ -195,6 +201,122 @@ div {
 <p id="transition"></p>
 
 ## transition（过渡）
+
+我们可以在不使用 Flash 动画或 JavaScript 的情况下，当元素从一种样式变换为另一种样式时为元素添加效果。  
+
+`transition` 是 `transition-property`，`transition-duration`，`transition-timing-function`和`transition-delay` 的组合（速记）属性。  
+
+- `transition-property` 规定设置过滤效果的CSS属性名称  
+- `transition-duration` 规定完成过渡效果所需要的时间
+- `transition-timing-function` 规定速度效果的速度曲线
+- `transition-delay` 定义过渡效果开始的延迟时间  
+
+其中`transition-property` 和 `transition-duration` 是必须规定的。一般在元素的不同状态之间添加过渡效果，比如 `:hover`、`:active` 等或者JavaScript动态设置。
+
+> Internet Explorer 10、Firefox、Chrome 以及 Opera 支持 transition 属性。Safari 需要前缀 -webkit-。Internet Explorer 9 以及更早的版本，不支持 transition 属性。Chrome 25 以及更早的版本，需要前缀 -webkit-。  
+
+我们将一个div元素添加一个过渡效果。  
+
+<div class="ele-box"><div class="transition_1">hover me</div></div>
+
+```css
+div {
+    width: 150px;
+    height: 150px;
+    background-color: aqua;
+    /*transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 0.5s;*/
+    transition: all 1s ease 0.5s;
+    -moz-transition: all 1s ease 0.5s;      /* Firefox 4 */
+    -webkit-transition: all 1s ease 0.5s;   /* Safari 和 Chrome */
+    -o-transition: all 1s ease 0.5s;        /* Opera */
+}
+div:hover {
+    width: 300px;
+    height: 300px;
+    background-color: gold;
+}
+```
+
+那么，在CSS3之前，是如何实现这种效果的呢？当然是JavaScript以及JQuery啦！接下来我们就对比下CSS3、JavaScript和JQuery三种方式实现过渡效果的例子。  
+
+**CSS3实现**
+
+```css
+    div {
+        height: 0;
+        width: 0;
+        overflow: hidden;
+        border: 1px solid #cfcfcf;
+        transition: all 0.6s ease;
+    }
+    div:hover {
+        height: 200px;
+        width: 150px;
+    }
+```
+
+<p><span id="transition-css-btn">点击看妹子</span></p>
+<div class="ele-box">
+    <div id="transition-css-ele"><img src="https://tuimeizi.cn/pure?w=150&h=150&s=0" alt="加载失败"/></div>
+</div>
+
+**JavaScript实现**  
+
+```js
+    var js_btn = document.getElementById("transition-js-btn");
+    var js_ele = document.getElementById("transition-js-ele");
+    var flag = false, height = 0, timer;
+    function step(){
+        height = flag ? (height+1) : (height-1);
+        if(height < 0){
+            height = 0;
+            clearInterval(timer);
+            return;
+        }else if(height > 310){
+            height = 310;
+            clearInterval(timer);
+            return;
+        }
+        js_ele.style.height = height+"px";
+        setTimeout(step,1);
+    }
+    js_btn.onclick=function(){
+        if(timer){
+            clearInterval(timer);
+        }
+        flag =! flag;
+        step();
+    }
+```
+
+<p><span id="transition-jq-btn">点击看妹子</span></p>
+<div class="ele-box">
+    <div id="transition-jq-ele"><img src="https://tuimeizi.cn/pure?w=150&h=150&s=0" alt="加载失败"/></div>
+</div>
+
+**JQuery实现**  
+
+```js
+    var flag = false;
+    $("#transition-jq-btn").on("click",function(){
+        flag =! flag;
+        if(flag){
+            $("#transition-jq-ele").stop().slideDown();
+        }else{
+            $("#transition-jq-ele").stop().slideUp();
+        }
+        // $("#transition-jq-ele").stop().slideToggle();
+    })
+```
+
+<p><span id="transition-js-btn">点击看妹子</span></p>
+<div class="ele-box">
+    <div id="transition-js-ele"><img src="https://tuimeizi.cn/pure?w=150&h=150&s=0" alt="加载失败"/></div>
+</div>
+
 
 ---  
 <p id="animation"></p>
