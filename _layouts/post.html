@@ -100,6 +100,13 @@ layout: default
     </div>
 </article>
 
+<!-- add extra css -->
+{% if page.extra_css %}
+    <style>
+        @import "{{page.extra_css}}";
+    </style>
+{% endif %}
+
 <!-- add support for mathjax by voleking-->
 {% if page.mathjax %}
   {% include mathjax_support.html %}
