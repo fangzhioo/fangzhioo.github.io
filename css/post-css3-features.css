@@ -1,7 +1,7 @@
 .ele-box{
    display: flex;
    justify-content: center;
-   padding: 20px 0;
+   padding: 20px;
    margin-bottom: 20px;
    border: 1px solid #cfcfcf;
    border-radius: 4px;
@@ -107,15 +107,132 @@
     cursor: pointer;
 }
 #transition-css-ele {
-    transition: all 0.6s ease;
+    transition: height 0.6s ease;
 }
-#transition-js-ele,#transition-jq-ele,#transition-css-ele {
+#transition-js-ele,#transition-css-ele {
     height: 0;
-    width: 0;
+    width: 150px;
+    overflow: hidden;
+    border: 1px solid #cfcfcf;
+    box-sizing: border-box;
+}
+#transition-jq-ele{
+    display: none;
+    height: 150px;
+    width: 150px;
     overflow: hidden;
     border: 1px solid #cfcfcf;
 }
 .ele-box img{
     padding: 0;
     margin: 0;
+}
+
+/* 旋转效果 */ 
+.ele-content{
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+}
+.content-card{
+    width: 200px;
+    height: 380px;
+}
+.content-card img{
+    position: absolute;
+}
+.card-back,.card-front{
+    transition: all 0.4s;
+    backface-visibility: hidden;
+    /*当元素背对我们的时候，隐藏元素*/
+}
+.card-back{
+    transform: rotateY(180deg);
+}
+.card-front{
+    transform: rotateY(0deg);
+}
+.content-card:hover .card-back{
+    transform: rotateY(0deg);
+}
+.content-card:hover .card-front{
+    transform: rotateY(180deg);
+}
+
+/* animation */
+.animation-1 {
+    width: 100%;
+    height: 250px;
+    position: relative;
+}
+.animation-1-ele {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: #E87DA1;
+    animation: myMove 2s ease infinite 1s alternate;
+    -webkit-animation :myMove 2s ease infinite 1s alternate; 
+    -moz-animation :myMove 2s ease infinite 1s alternate;
+    -ms-animation :myMove 2s ease infinite 1s alternate;
+    -o-animation :myMove 2s ease infinite 1s alternate;
+}
+@keyframes myMove{
+    0%{top: 0;left: 0;}
+    50%{top: 150px;left: 150px;border-radius: 50%;}
+    100%{top: 0;left: 0;}
+}
+/* 适配不同浏览器内核 */
+@-webkit-keyframes myMove{
+    0%{top: 0;left: 0;}
+    50%{top: 150px;left: 150px;border-radius: 50%;}
+    100%{top: 0;left: 0;}
+}
+@-moz-keyframes myMove{
+    0%{top: 0;left: 0;}
+    50%{top: 150px;left: 150px;border-radius: 50%;}
+    100%{top: 0;left: 0;}
+}
+@-ms-keyframes myMove{
+    0%{top: 0;left: 0;}
+    50%{top: 150px;left: 150px;border-radius: 50%;}
+    100%{top: 0;left: 0;}
+}
+@-o-keyframes myMove{
+    0%{top: 0;left: 0;}
+    50%{top: 150px;left: 150px;border-radius: 50%;}
+    100%{top: 0;left: 0;}
+}
+
+/* 帧动画 */
+.animation-girl{
+    width: 180px;
+    height: 300px;
+    background: url(/img/in-post/css3-features/charector.png);
+    animation: girl 1s infinite step-end;
+}
+@keyframes girl{
+    0%{
+        background-position: 0 0;
+    }
+    14.3%{
+        background-position: -180px 0;
+    }
+    28.6%{
+        background-position: -360px 0;
+    }
+    42.9%{
+        background-position: -540px 0;
+    }
+    57.2%{
+        background-position: -720px 0;
+    }
+    71.5%{
+        background-position: -900px 0;
+    }
+    85.8%{
+        background-position: -1080px 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
 }
