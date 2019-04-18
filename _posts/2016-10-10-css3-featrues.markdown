@@ -1,14 +1,15 @@
 ---
 layout:     post
 title:      "CSS3新特性"
-subtitle:   " \"animation transform transition\""
+subtitle:   " animation动画、transform转换、transition过渡 "
 author:     "Fz"
 header-style: "text"
 extra_css: "/css/post-css3-features.css"
 extra_js: "/js/in-post/css-features.js"
 catalog: true
 tags:
-    - CSS3
+    - CSS
+    - 前端
 ---
 
 # 前言
@@ -25,6 +26,7 @@ CSS（Cascading Style Sheet 层叠样式表）主要是负责网站内容添加�
 这里主要回顾下CSS3新特性中的[**transform（转换）**](#transform)、[**transition（过渡）**](#transition)和[**animation（动画）**](#animation)。
 
 ---  
+
 <p id="transform"></p>
 
 ## transform（转换）
@@ -200,6 +202,7 @@ div {
 本人表示一脸懵逼，有兴趣的朋友可以去拓展下，告辞！！！  
 
 ---  
+
 <p id="transition"></p>
 
 ## transition（过渡）
@@ -366,6 +369,7 @@ div:hover {
 
 
 ---  
+
 <p id="animation"></p>
 
 ## animation（动画）
@@ -462,7 +466,7 @@ div {
 
 <img class="shadow" src="/img/in-post/css3-features/charector.png" />  
 
-现在我们用张照片实现一个逐帧动画的效果。  
+现在我们用这张照片实现一个逐帧动画的效果。  
 
 ```css
 div {

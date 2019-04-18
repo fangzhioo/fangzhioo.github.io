@@ -13,8 +13,8 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username:     东京不太热Oo
-zhihu_username:     方志
+weibo_username:     fangzhioooo
+zhihu_username:     fang-zhi-4-73
 github_username:    fangzhioo
 # twitter_username:   fangzhioo
 #facebook_username:  fangzhioo
@@ -61,17 +61,13 @@ kramdown:
 # Disqus settings
 disqus_username: fangzhioo
 
-# Netease settings
-netease_comment: false
-
-
 
 # Analytics settings 自己去获取code
 # Baidu Analytics 
 # ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+ga_track_id: 'UA-138588101-1'            # Format: UA-xxxxxx-xx
 ga_domain: fangzhi.ml                 # 这里放 fangzhi.ml
 
 
