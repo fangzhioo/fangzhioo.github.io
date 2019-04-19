@@ -341,6 +341,7 @@ div:hover {
 .back,.front {
     transition: all 0.4s;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     /*当元素背对我们的时候，隐藏元素*/
 }
 .back {
