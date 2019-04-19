@@ -161,6 +161,7 @@ category_map:
   Nginx: nginx
   Etcd: etcd
   Database: database
+  Web: web
 
 tag_map:
 home_posts_tag: true # show posts tags
@@ -215,9 +216,9 @@ markdown:
 # MeingJS support for Aplayer
 # reference: https://github.com/metowolf/MetingJS & https://github.com/MoePlayer/APlayer
 metingjs: false
-data-id: 2423410161
-data-server: netease  
-data-type: playlist
+data-id: 2310314373     # 歌曲/专辑/歌单对应的id。（必须）注意这里需要是歌曲原本的id,不是你自己歌单中点击后显示的。 
+data-server: netease    # 音乐平台 （必须）netease(网易云音乐) tecent(qq音乐) xiami(虾米音乐) kugou(酷狗音乐) 。
+data-type: playlist     # 请求类型 （必须）song(单曲) album(专辑) playlist(歌单) search(搜索)
 data-fixed: true
   # data-mini:
   # data-autoplay:    
