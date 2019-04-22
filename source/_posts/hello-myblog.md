@@ -41,5 +41,3 @@ balala...
 —— Fz 后记与2019.04
 
 [1]: https://www.huweihuang.com/  
-[2]: https://pages.github.com/ 
-[3]: http://jekyllrb.com/

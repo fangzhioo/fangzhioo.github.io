@@ -28,7 +28,7 @@ CSS（Cascading Style Sheet 层叠样式表）主要是负责网站内容添加�
 
 <p id="transform"></p>
 
-## transform（转换）
+# transform
 
 transform（转换）能够实现我们对DOM元素的缩放（scale）、平移（translate）、拉伸（skew）和旋转（rotate），一般transform分为**2D转换**和**3D转换**。 
 > 两个主要属性用于定义CSS转换：`transform` 和 `transform-origin`  
@@ -204,7 +204,7 @@ div {
 
 <p id="transition"></p>
 
-## transition（过渡）
+# transition
 
 我们可以在不使用 Flash 动画或 JavaScript 的情况下，当元素从一种样式变换为另一种样式时为元素添加效果。  
 
@@ -372,7 +372,7 @@ div:hover {
 
 <p id="animation"></p>
 
-## animation（动画）
+# animation
 
 动画是使元素从一种样式逐渐变化为另一种样式的效果。通过`animation`，我们能够创建动画效果，在许多网页中取代 gif 动图、Flash 动画以及 JavaScript动态设置。  
 

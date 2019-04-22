@@ -1,0 +1,54 @@
+.ele-box{
+    padding: 20px 10px;
+    margin-bottom: 20px;
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+}
+.video-ele-box{
+    min-height: 200px;
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+}
+table {
+    width: 100%;
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+}
+table thead {
+    background-color: #efefef;
+}
+
+.bar{
+    position: relative;
+    width: 240px;
+    height: 20px;
+    background: white;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.bar_content{
+    width: 0px;
+    height: 18px;
+    background-color: gray;
+    background-image: repeating-linear-gradient(-45deg,red,gold 30px,yellow 30px,green 60px);
+    background-size: 600px 100%;
+    animation: mymove 12s linear infinite;
+    border-radius: 5px;
+}
+.bar_time{
+    width:85px;
+    height: 20px;
+    line-height: 20px;
+    text-align: right;
+    position: absolute;
+    right: -85px;
+    top: 0;
+}
+@keyframes mymove{
+    from{background-position: 0% 0%;}
+    to{background-position: 600px 0%;}
+}
