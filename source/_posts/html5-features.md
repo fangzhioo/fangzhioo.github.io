@@ -1,7 +1,6 @@
 ---
 title:      "HTML5新特性"
 subtitle:   "canvas画布、video视频、audio音频"
-author:     "Fz"
 date: 2017-09-18 10:51:24
 catalog: true
 tags:
@@ -118,7 +117,7 @@ HTML标签众多，详细的可以去 [W3school][2] 或者 [腾讯云-开发者�
 <button id="stop">停止播放</button>  
 <button id="reset">重置播放</button>  
 <button id="stopvol">静音</button>  
-<input type="range" name="vol" id="vol" value="50" max="100" min="0"/>
+<input type="range" name="vol" id="vol" value="50" max="100" min="0"/><span id="vol">50</span>
 ```
 
 ```js
@@ -261,7 +260,7 @@ bar.onclick = function (e) {
 }
 ```
 
-最后被忘了在前面控件事件的地方加上对进度条的控制。做完这些，一个美（chou）观（lou）的播放器就完成了。当然，你完全可以发挥自己的设计能力，设计出一个更好看更实用的播放器，甚至可以加上歌词的滚动，类似网易云音乐那样黑胶唱片播放的效果。  
+最后别忘了在前面控件事件的地方加上对进度条的控制。做完这些，一个美（chou）观（lou）的播放器就完成了。当然，你完全可以发挥自己的设计能力，设计出一个更好看更实用的播放器，甚至可以加上歌词的滚动或是类似网易云音乐那样黑胶唱片播放的效果。  
 
 在这里，你可以选择播放的本地文件来测试下播放器。
 
@@ -355,13 +354,13 @@ bar.onclick = function (e) {
 </div>
 
 ```html
-<button id="play">播放</button>
-<button id="pause">暂停</button>
-<button id="stop">停止播放</button>
-<button id="reset">重置播放</button>
-<button id="stopvol">静音</button>
-<button id="full">全屏</button>
-<input type="range" name="vol" id="vol" value="50" max="100" min="0"/> 
+<button id="v-play">播放</button>
+<button id="v-pause">暂停</button>
+<button id="v-stop">停止播放</button>
+<button id="v-reset">重置播放</button>
+<button id="v-stopvol">静音</button><span id="v-vol">50</span>
+<button id="v-full">全屏</button>
+<input type="range" id="v-vol" value="50" max="100" min="0"/>
  <!--进度条-->
 <div id="v-bar" class="bar">
     <div id="v-bar_content" class="bar_content"></div>

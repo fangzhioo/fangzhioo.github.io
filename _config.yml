@@ -252,5 +252,5 @@ sitemap:
 deploy:
   type: git
   repository: https://github.com/fangzhioo/fangzhioo.github.io
-  branch: gh-pages
+  branch: master
   message: Create Code
