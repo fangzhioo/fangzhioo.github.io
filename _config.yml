@@ -28,7 +28,7 @@ keyword: "方志, fangzhioo, Fz Blog, 博客, 个人网站, 互联网, Web, Java
 header-img: /img/header_img/home.jpg
 article-img: /img/article_header/article_bg.jpg
 404-img: /img/header_img/404.png
-signature: false #show signature
+signature: false  #show signature
 signature-img: img/signature/BeanTechSign-white.png 
 
 
@@ -64,10 +64,10 @@ github_username:    fangzhioo
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
 
-# Disqus settings
-disqus_username: fangzhioo
+# Disqus settings 碍于需要翻墙 暂时屏蔽了
+# disqus_username: fangzhioo
 
-# 来必力
+# 来必力  国内暂时没有被墙
 livere_uid: MTAyMC80Mzg3OC8yMDQxMw==
 
 # Analytics settings
@@ -101,20 +101,11 @@ show_count: true
 featured-tags: true                     # whether or not using Feature-Tags
 featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
 
-
 ## Friends
 friends: [
     {
         title: "CSDN Blog 胡伟煌",
         href: "http://blog.csdn.net/huwh_"
-    },
-    {
-        title: "DockOne 胡伟煌",
-        href: "http://dockone.io/people/胡伟煌"
-    },
-    {
-        title: "阿里云栖社区 胡伟煌",
-        href: "https://yq.aliyun.com/u/huweihuang"
     }
 ]
 

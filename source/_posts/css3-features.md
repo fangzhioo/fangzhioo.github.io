@@ -21,11 +21,9 @@ CSS（Cascading Style Sheet 层叠样式表）主要是负责网站内容添加�
 - 转换
 - …… 
 
-这里主要回顾下CSS3新特性中的[**transform（转换）**](#transform)、[**transition（过渡）**](#transition)和[**animation（动画）**](#animation)。
+这里主要回顾下CSS3新特性中的**transform（转换）**、**transition（过渡）**和**animation（动画）**。
 
----  
-
-<p id="transform"></p>
+---
 
 # transform
 
@@ -201,8 +199,6 @@ div {
 
 ---  
 
-<p id="transition"></p>
-
 # transition
 
 我们可以在不使用 Flash 动画或 JavaScript 的情况下，当元素从一种样式变换为另一种样式时为元素添加效果。  
@@ -366,10 +362,7 @@ div:hover {
     </div>
 </div>
 
-
 ---  
-
-<p id="animation"></p>
 
 # animation
 
