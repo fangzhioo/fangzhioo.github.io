@@ -1,7 +1,7 @@
 ---
 title:      "数组Array"
 subtitle:   "JavaScript基础知识整理——数组"
-date: 2019-04-26 10:51:24
+date: 2019-03-26 10:51:24
 catalog: true
 tags:
     - JavaScript
@@ -88,7 +88,7 @@ for(var index in arr5){
     console.log(index);
 }
 
-// 方法三   forEach遍历，官方给我们提供的方法，需要传一个函数
+// 方法三   forEach()遍历，官方给我们提供的方法，需要传一个函数
 // 这个函数有一个隐形的参数，代表数组的元素
 // 函数内是遍历数组时对每个数组做什么操作
 // 并不支持 break
@@ -97,9 +97,69 @@ arr5.forEach(function(num){
 });
 ```
 
+## 数组的常用方法
+
+数组`Array`对象本身提供了许多方法，这里列举下常用的一些方法。比如 `push`和`pop`、`shift`和`unshift`、`slice`、`sort`等。
+
+```js
+var arr7 = [1,2];
+// push() 向数组的末尾添加一个或更多元素，并返回新的长度。
+console.log(arr7.push(3,4,5)); // 5
+
+// pop() 删除并返回数组的最后一个元素
+console.log(arr7.pop()); // 5
+
+// shift() 删除并返回数组的第一个元素
+console.log(arr7.shift()); // 1
+
+// unshift() 向数组的开头添加一个或更多元素，并返回新的长度。
+console.log(arr7.unshift(1,2)); // 5
+
+// join() 把数组元素拼接成一个字符串（以某个字符串为连接符）不传参就是直接连接""
+console.log(arr7.join('/')); // "1/2/2/3/4"
+
+var arr8 = ['a','b','c'];
+// reverse() 数组倒序
+console.log(arr8.reverse()); // ["c", "b", "a"]
+
+// concat() 拼接两个或更多的数组,返回值是一个新的数组，不会改变原数组
+console.log(arr8.concat(['d','e'])); // ["c", "b", "a", "d", "e"]
+
+// slice() 截取数组的一部分,返回值是一个新数组，不会改变原数组
+// 第一个参数：起始位置  第二个参数：结束为止的前一个索引
+console.log(arr8.slice(0,3)); // ["c", "b", "a"]
+
+// splice() 删除数组元素并向数组添加数组元素 返回删除的元素的数组
+// 第一个参数：必须，起始位置（起始索引）
+// 第二个参数：必须，如果为0，表示不删除元素，如果为2，删除元素的长度
+// 第三、四..参数可以省略，替换的数组元素
+arr8.splice(1,0,"z"); // []
+console.log(arr8); // ["c", "z", "b", "a"]
+arr8.splice(2,1,'w');// ["b"]
+console.log(arr8);// ["c", "z", "w", "a"]
+
+// toString() 把数组转成字符串
+console.log(arr8.toString()); // "c,z,w,a"
+
+// indexOf() 从头部查找某个元素的索引（第一次出现的位置）
+console.log(arr8.indexOf('a')); // 3
+
+// lastIndexOf()  从尾部开始查找（第一次出现的位置）
+console.log(arr8.lastIndexOf('a')); // 3
+
+var arr9 = [1,6,3,8,5];
+// sort() 排序  参数也是函数function，function有两个隐藏参数，函数内是以何种方式去排序
+arr9.sort(function(num1,num2){
+    // num1和num2是数组里相邻的两个元素
+    // 这个函数必须要有返回值，是 true 或 false
+    return num1 - num2; // true 是从大到小  false从小到大
+})// 原始的排序需要双层for循环
+console.log(arr9); // [1, 3, 5, 6, 8]
+```
+
 ## 数组和字符串转化
 
-实际运用中，会机场涉及数组与字符串之间的互相转换问题。
+实际运用中，会经常涉及数组与字符串之间的互相转换问题。
 
 ```js
 var str = 'hello world welcome to my blog';
@@ -119,65 +179,57 @@ var value = 3; // 下面将十进制的数字3，转化为二进制的字符串1
 console.log(value.toString(2)); // "11"
 ```
 
-## 数组的常用方法
-
-数组`Array`对象本身提供了许多方法，这里列举下常用的一些方法。比如 `push`和`pop`、`shift`和`unshift`、`slice`、`sort`等。
+## 数组的迭代方式
 
 ```js
-var arr7 = [1,2];
-// push 向数组的末尾添加一个或更多元素，并返回新的长度。
-console.log(arr7.push(3,4,5)); // 5
+var arr = [1, 2, 3, 4, 5, 6, 3, 2];
+// every() 参数函数全部返回真值，every()返回真值
+function cb (obj, index, arr) {
+    return obj > 3;
+}
+var re = arr.every(cb);
+console.log(re); // false
 
-// pop 删除并返回数组的最后一个元素
-console.log(arr7.pop()); // 5
+// some() 参数函数只要有一个返回真值，some()返回真值
+var re2 = arr.some(cb);
+console.log(re2);
+var re3 = arr.some(function (obj, index, arr) {
+    return obj > 3;
+});
+console.log(re3); // true
 
-// shift 删除并返回数组的第一个元素
-console.log(arr7.shift()); // 1
+// filter() 过滤掉不符合条件的元素，剩下的元素以新数组的形式返回
+var arr2 = arr.filter(function (obj, index, arr) {
+    return obj >= 3;
+});
+console.log(arr2); // [3, 4, 5, 6, 3]
 
-// unshift 向数组的开头添加一个或更多元素，并返回新的长度。
-console.log(arr7.unshift(1,2)); // 5
-
-// join 把数组元素拼接成一个字符串（以某个字符串为连接符）不传参就是直接连接""
-console.log(arr7.join('/')); // "1/2/2/3/4"
-
-var arr8 = ['a','b','c'];
-// reverse 数组倒序
-console.log(arr8.reverse()); // ["c", "b", "a"]
-
-// concat 拼接两个或更多的数组,返回值是一个新的数组，不会改变原数组
-console.log(arr8.concat(['d','e'])); // ["c", "b", "a", "d", "e"]
-
-// slice 截取数组的一部分,返回值是一个新数组，不会改变原数组
-// 第一个参数：起始位置  第二个参数：结束为止的前一个索引
-console.log(arr8.slice(0,3)); // ["c", "b", "a"]
-
-// splice 删除数组元素并向数组添加数组元素 返回删除的元素的数组
-// 第一个参数：必须，起始位置（起始索引）
-// 第二个参数：必须，如果为0，表示不删除元素，如果为2，删除元素的长度
-// 第三、四..参数可以省略，替换的数组元素
-arr8.splice(1,0,"z"); // []
-console.log(arr8); // ["c", "z", "b", "a"]
-arr8.splice(2,1,'w');// ["b"]
-console.log(arr8);// ["c", "z", "w", "a"]
-
-// toString 把数组转成字符串
-console.log(arr8.toString()); // "c,z,w,a"
-
-// indexOf 从头部查找某个元素的索引（第一次出现的位置）
-console.log(arr8.indexOf('a')); // 3
-
-// lastIndexOf  从尾部开始查找（第一次出现的位置）
-console.log(arr8.lastIndexOf('a')); // 3
-
-var arr9 = [1,6,3,8,5];
-// sort 排序  参数也是函数function，function有两个隐藏参数，函数内是以何种方式去排序
-arr9.sort(function(num1,num2){
-    // num1和num2是数组里相邻的两个元素
-    // 这个函数必须要有返回值，是 true 或 false
-    return num1 - num2; // true 是从大到小  false从小到大
-})// 原始的排序需要双层for循环
-console.log(arr9); // [1, 3, 5, 6, 8]
+// forEach() 对每个元素，执行特定操作
+arr.forEach(function (obj, index, arr) {
+    arr[index] = ++obj
+});
+console.log(arr); // [2, 3, 4, 5, 6, 7, 4, 3]
 ```
+
+## 数组相关拓展
+
+1. 快速排序
+
+```js
+function quickSort(arr){
+    var left=[],right=[];
+    var flag = arr.length/2;
+    if(!flag){
+        return arr;
+    }
+    var mid = arr.splice(flag,1);
+    arr.forEach(function(num){
+        num<=mid ? left.push(num) : right.push(num);
+    })
+    return quickSort(left).concat(mid,quickSort(right));
+}
+```
+
 
 # 后记
 

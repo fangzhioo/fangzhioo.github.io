@@ -93,3 +93,36 @@ function getMaxInArray(numbers) {
     return Math.max.apply(Math, numbers);
 }
 ```
+
+8. **快速排序**  
+
+```js
+function quickSort(arr){
+    var left=[],right=[];
+    var flag = arr.length/2;
+    if(!flag){
+        return arr;
+    }
+    var mid = arr.splice(flag,1);
+    arr.forEach(function(num){
+        num<=mid ? left.push(num) : right.push(num);
+    })
+    return quickSort(left).concat(mid,quickSort(right));
+}
+```
+
+9. **判断是否为数组、字符串**
+
+官方有提供 `typeof` 方法，但是有一定的局限性，没有办法完全判断。比如，`typeof {}` 和 `typeof []` 的结果都是 `object`，就无法区分具体是对象，还是数组。  
+其实JavaScript的原型链告诉我们，为什么输出的都是`object`，这里就不拓展了。
+
+```js
+// 判断是否为数组
+function isArray(arg){
+    return Object.prototype.toString.call(arg) !== "[object Array]"
+}
+// 判断是否为字符串
+function isString(arg){
+    return Object.prototype.toString.call(arg) !== "[object String]"
+}
+```

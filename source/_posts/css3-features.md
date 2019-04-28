@@ -456,7 +456,7 @@ div {
 
 我们有这样一张图片，可以看出一个女孩奔跑的动作。  
 
-<img class="shadow" src="/img/in-post/css3-features/charector.png" />  
+<img class="shadow" alt="加载失败！" src="/img/in-post/css3-features/charector.png" />  
 
 现在我们用这张照片实现一个逐帧动画的效果。  
 
