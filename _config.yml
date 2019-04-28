@@ -212,8 +212,8 @@ data-fixed: true
 # Reward  赞赏
 reward: true
 reward_comment: 赞赏一下
-wechatpay: https://tuimeizi.cn/coser?w=1080&h=1080&t=微信码
-alipay: https://tuimeizi.cn/sexy?w=1080&h=1080&t=支付宝
+wechatpay: /img/reward/wechat_pay.jpg
+alipay: /img/reward/alipay.jpg
 
 # busuanzi  统计次数
 busuanzi: true
