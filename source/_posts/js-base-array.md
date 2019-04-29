@@ -6,7 +6,7 @@ catalog: true
 tags:
     - JavaScript
     - Array
-catagories: 
+categories: 
     - Web
 ---
 

@@ -5,12 +5,11 @@ toc_nav_num: true
 date: 2019-04-16 17:41:22
 subtitle: "\"Hello World, Hello Blog\""
 header-img: "/img/article_header/article_header.png"
-top: 9
+top: 1
 tags:
-- Hexo
-catagories:
-- Hexo
-
+    - Diary
+categories:
+    - Diary
 ---
 
 > “Yeah It's on. ”

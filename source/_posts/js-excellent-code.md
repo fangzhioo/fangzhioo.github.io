@@ -5,8 +5,7 @@ date: 2019-04-26 10:51:24
 catalog: true
 tags:
     - JavaScript
-    - 前端
-catagories: 
+categories: 
     - Web
 ---
 

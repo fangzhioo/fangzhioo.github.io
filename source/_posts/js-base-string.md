@@ -6,7 +6,7 @@ catalog: true
 tags:
     - JavaScript
     - String
-catagories: 
+categories: 
     - Web
 ---
 
@@ -63,30 +63,30 @@ console.log(c); // A
 // indexOf() 从前到后检索子串，返回子串开始位置的索引，无此子串返回-1
 var str = 'hello world hello world hello world';
 var position = str.indexOf('hello');
-console.log(position);
+console.log(position); // 0
 // 如果传入第二个参数（正整数），第二个参数为开始查找的位置，查找方向不变
-var position2 = str.indexOf('hello', 35);
+var position2 = str.indexOf('hello', 35); // -1
 console.log(position2);
 
 // lastIndexOf() 从后到前检索子串，返回子串开始位置的索引，无此子串返回-1
 var position3 = str.lastIndexOf('hello');
-console.log(position3);
+console.log(position3); // 24
 
 // toUpperCase() 原串中所有字母变成大写，新串返回
 var str2 = 'hello WORLD';
 var str3 = str2.toUpperCase();
-console.log(str2);
-console.log(str3);
+console.log(str2); // hello WORLD
+console.log(str3); // HELLO WORLD
 
 // toLowerCase() 原串中所有字母变成小写，新串返回
 var str4 = str2.toLowerCase();
-console.log(str4);
+console.log(str4); // hello world
 
 // concat() 拼接字符串，和 + 一致
 var str5 = 'hello';
 var str6 = ' world';
-var str7 = str5.concat(str6);
-console.log(str7 + '-----' + str5);
+var str7 = str5.concat(str6); // hello world
+console.log(str7 + '-----' + str5); // hello world-----hello
 
 // localeCompare() 用本地特定的顺序(0123456789aAbB.....zZ)来比较两个字符串 小 -1；等 0；大 1
 var str8 = 'A';
@@ -165,12 +165,17 @@ var str = "123";
 console.log(+str); // 123
 
 //  数值 --> 字符串
+// 【方法一】toString() 官方提供的方法
 var num = 123;
 num.toString(); // "123"
 // 数值toString方法 也可以接受一个参数，转换为对应进制的字符串 默认为十进制
 var num1 = 3;
 num.toString(); // "3" 十进制
 num.toString(2); // "11" 二进制
+
+// 【方法二】隐式转换
+var num = 100;
+console.log(""+num); // "100"
 ```
 
 # 后记
