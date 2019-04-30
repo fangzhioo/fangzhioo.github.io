@@ -1,5 +1,5 @@
 ---
-title:      "数组Array"
+title:      "【JS基础整理】数组Array"
 subtitle:   "JavaScript基础知识整理——数组"
 date: 2019-03-26 10:51:24
 catalog: true

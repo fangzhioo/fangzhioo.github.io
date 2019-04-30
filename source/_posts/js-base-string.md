@@ -1,5 +1,5 @@
 ---
-title:      "字符串String"
+title:      "【JS基础整理】字符串String"
 subtitle:   "JavaScript基础知识整理——字符串"
 date: 2019-03-21 10:50:24
 catalog: true
