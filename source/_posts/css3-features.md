@@ -124,7 +124,7 @@ div {
 
 > Internet Explorer 10 和 Firefox 支持 3D 转换。Chrome 和 Safari 需要前缀 -webkit-。Opera 仍然不支持 3D 转换（它只支持2D转换）。  
 
-<img class="shadow" src="/img/in-post/css3-features/post-css3-features-xyz.jpg" />
+<img class="shadow" src="/img/article/css3-features/post-css3-features-xyz.jpg" />
 
 对应的3D转换的方法，则是在2D方法的基础上，加上3D或者加上对应轴的描述。如`translate3d(x,y,z)`、`rotate3d(x,y,z,angle)`、`translateZ(z)`，`rotateX(angle)`等；
 
@@ -455,7 +455,7 @@ div {
 
 我们有这样一张图片，可以看出一个女孩奔跑的动作。  
 
-<img class="shadow" alt="加载失败！" src="/img/in-post/css3-features/charector.png" />  
+<img class="shadow" alt="加载失败！" src="/img/article/css3-features/charector.png" />  
 
 现在我们用这张照片实现一个逐帧动画的效果。  
 
