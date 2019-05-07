@@ -123,8 +123,7 @@ ssserver -c /etc/shadowsocks.json -d start
 
 ## Windows环境使用
 
-主机环境搭建完成之后，我们需要在不同端连接使用VPN，最常用的端就是Windows环境的PC端了。  
-首先，我们需要去[下载Windows环境下的shadowsocks][5]。
+主机环境搭建完成之后，我们需要在不同端连接使用VPN，最常用的端就是Windows环境的PC端了。首先，我们需要去[下载Windows环境下的shadowsocks][5]。
 
 解压后，运行 `Shadowsocks.exe` ，按照之前服务器主机的配置，填入`服务器IP`、`端口号`和`连接密码`，确定即可。  
 
