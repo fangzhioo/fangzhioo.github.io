@@ -1,9 +1,9 @@
 ---
-title: 【VPN】运用搬瓦工服务器搭建自用VPN
-subtitle: Shadowsocks（小飞机）
+title: 【VPN】Shadowsocks搭建自用VPN
+subtitle: 运用搬瓦工VPS和Shadowsocks搭建自用VPN
 date: 2019-05-06 14:10:00
 catalog: true
-header-img:
+keyword: VPN, Shadowsocks, VPS
 tags:
     - VPN
 categories: 
@@ -13,7 +13,7 @@ categories:
 # 前言
 
 作为一个码农，需要不断地学习。难免需要查阅很多的文档和资料，对于这些部分，很多需要翻阅外国的网站。但是因为中国长城防火墙（GFW）的限制，我们并不能访问，就有了翻墙的需求了。  
-这里我们记录下，如何使用搬瓦工服务器搭建一个属于我们自己的VPN服务。  
+这里我们记录下，如何使用搬瓦工服务器搭建属于我们自己的VPN服务。仅供学习，老司机就不必看了！  
 
 > 请合理正确地使用VPN！！！  
 

@@ -4,5 +4,5 @@ title: "Archives"
 header-img: "/img/header_img/archive.jpg"
 comments: false
 date: 2017-09-20 20:49:56
-description: "回首往昔，更进一步。"
+description: "回首往昔，更进一步"
 ---
