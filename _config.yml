@@ -109,7 +109,6 @@ friends: [
     }
 ]
 
-
 #Custom Setting End
 
 
@@ -223,7 +222,7 @@ busuanzi: true
 share: true
 
 ## Themes: https://hexo.io/themes/  对应themes文件夹下的目录
-theme: beantech
+theme: fangzhioo
 
 #sitemap
 sitemap:
@@ -243,3 +242,4 @@ deploy:
 ## Docs: https://github.com/bubkoo/hexo-toc
 toc:
   maxDepth: 3
+  slugify: transliteration

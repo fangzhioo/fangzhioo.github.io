@@ -4,7 +4,6 @@ catalog: true
 toc_nav_num: true
 date: 2022-12-25 22:22:22
 subtitle: "\"Hello World, Hello Blog\""
-header-img: "/img/article_header/article_header.png"
 top: 1
 tags:
     - Diary
@@ -14,7 +13,7 @@ categories:
 
 > “Yeah It's on. ”
 
-## 前言
+# 前言
 
 Fz 的 Blog 就这么开通了！  
 2019 年，Fz 总算有个地方可以好好写点东西了。
@@ -23,9 +22,9 @@ Fz 的 Blog 就这么开通了！
 
 ---  
 
-## 正文
+# 正文
 
-首先，要感谢下 [胡伟煌][1] 大佬提供的Blog模板，详情大家可以去他的主页看看！下面是大佬介绍这个Blob技术细节的部分。  
+首先，要感谢下 [BeanTech][1] 大佬提供的Blog模板，详情大家可以去他的主页看看！下面是大佬介绍这个Blob技术细节的部分。  
 
 balala...
 
@@ -33,10 +32,10 @@ balala...
 
 ---
 
-## 后记
+# 后记
 
 花了一天的时间，找模板、装环境以及整合大佬的项目，Blog大概算是搭建好了！希望可以好好利用，总结自己在平时的所见所得，提高自己吧！  
 
 —— Fz 后记与2019.04
 
-[1]: https://www.huweihuang.com/  
+[1]: http://beantech.org/  
