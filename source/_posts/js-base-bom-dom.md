@@ -109,6 +109,7 @@ window.onscroll = function () {
 **连续定时器** 方法是 `setInterval()` 按照指定的周期（以毫秒为单位）来调用函数或表达式。这种方式会不停地调用函数，直到浏览器窗口被关闭或者使用 `clearInterval()` 方法停止它。  
 **延时定时器** 方法是 `setTimeout()` 按照指定的毫秒数之后调用函数或表达式，只会执行一次。在执行之前，关闭浏览器窗口或者使用`clearTimeout()` 方法停止它。  
 定时器可以用来实现一些动画效果。我们运用定时器方法，来实现一个倒计时。  
+
 <div style="border:1px solid #cfcfcf;padding:20px;text-align:center;color:red;" id="clock" >请开始倒计时！</div>
 <div style="padding:20px 0;">
     <div class="btn-group btn-group-sm" role="group">
@@ -117,7 +118,8 @@ window.onscroll = function () {
         <button type="button" id="reset" class="btn btn-default">重置播放</button>
     </div>
 </div>
-下面也可以尝试自己定义倒计时的时间，单位为**分钟（min）**。点击 **Let's Go!** 开始计时。  
+
+下面也可以尝试自己定义倒计时的时间，单位为 **分钟** 。点击 **Let's Go!** 开始计时。  
 
 <div class="input-group input-group-sm">
     <input type="number" id="input_clock" min="1" max="1440" class="form-control" value="3" placeholder="请输入倒计时">
@@ -182,6 +184,7 @@ reset.onclick = function () {
 ```
 
 # DOM
+
 
 
 ---
