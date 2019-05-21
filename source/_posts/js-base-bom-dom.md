@@ -185,7 +185,9 @@ reset.onclick = function () {
 
 # DOM
 
-DOM（Document Object Model），即文档对象模型，`HTML DOM Document 对象`。每个HTML文档载入浏览器时，都会被浏览器解析成`Document对象`。通过这个对象，我们可以获取到页面上所有的元素对象。同时，`Document对象`也是`Window对象`的一部分。之前提到了，可以通过`window.document`属性访问。相对 BOM 来说，对 DOM 的使用显得更加频繁。以下是 DOM 的节点分类。  
+DOM（Document Object Model），即文档对象模型，`HTML DOM Document 对象`。每个HTML文档载入浏览器时，都会被浏览器解析成`Document对象`。通过这个对象，我们可以获取到页面上所有的元素对象。同时，`Document对象`也是`Window对象`的一部分。之前提到了，可以通过`window.document`属性访问。相对 BOM 来说，对 DOM 的使用显得更加频繁。  
+
+## DOM 的节点分类
 
 1. 整个文档是一个文档节点；
 2. 每个html元素是元素节点；
@@ -193,7 +195,7 @@ DOM（Document Object Model），即文档对象模型，`HTML DOM Document 对�
 4. html元素的属性是属性节点；
 5. 注释是注释节点。
 
-Document对象集合上，提供很多的属性和方法，来获取信息和访问页面上的元素对象。如`document.body`可以获取到整个`body`的结构；`document.cookie` 可以设置或返回与当前文档有关的所有 cookie等。  
+Document对象集合上，提供很多的属性和方法，来获取信息和访问页面上的元素对象。如`document.body`可以获取到整个`body`的结构；`document.cookie` 可以设置或返回与当前文档有关的所有 cookie等。详细的内容可以查看 [W3C的 HTML DOM Document 对象][4]  
 
 ```html
 <h1 id='myh1' class="title">hello world</h1>
@@ -214,7 +216,6 @@ console.log(Text.prototype);
 // 文档入口对象
 console.log(typeof document);
 console.log(document instanceof Document);
-// document.getElementsByTagName('h1')[0].setAttribute('style','Color: red');
 
 // nodeName 节点名
 console.log(document.nodeName);
@@ -228,6 +229,8 @@ console.log(document.getElementById('myh1').childNodes);
 console.log(document.hasChildNodes());
 
 ```
+
+## 属性和方法
 
 利用`document`提供的属性和方法，我们获取具体的一个元素，并操作这个元素。  
 
@@ -267,6 +270,8 @@ h1.innerText = '哈哈哈哈哈。。。';
 h1.setAttribute('style','border: solid thick gold;');
 ```
 
+## 元素节点的操作
+
 也有一些方法`createElement`、`removeChild`、`insertBefore` 和 `repalceChild`，用于增删改替换这些元素。
 
 ```js
@@ -299,6 +304,8 @@ var h3Node =document.getElementsByTagName('h3')[0];
 bodyNode.replaceChild(h6Node,h3Node);
 ```
 
+## 文本节点的操作
+
 除了节点元素，还有一些处理纯文本的增删改方法 `appendData`、`deleteData` 等。  
 
 ```js
@@ -321,6 +328,8 @@ textNode.replaceData(5 ,5 ,'世界');
 textNode.insertData(5 ,' ');
 ```
 
+## 节点的事件
+
 不止可以对元素节点的属性获取修改什么的，还有对节点的事件监听。  
 
 ```js
@@ -330,6 +339,8 @@ div.onclick=function(){
     alert('你点赞了我');
 };
 ```
+
+这里的事件简单介绍下，后续会对事件有详细的整理。
 
 # 后记
 
@@ -342,3 +353,4 @@ div.onclick=function(){
 [1]: http://www.w3school.com.cn/jsref/dom_obj_window.asp
 [2]: http://www.w3school.com.cn/jsref/dom_obj_document.asp
 [3]: http://www.w3school.com.cn/jsref/dom_obj_window.asp
+[4]: http://www.w3school.com.cn/jsref/dom_obj_document.asp
