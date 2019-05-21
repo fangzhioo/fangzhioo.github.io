@@ -185,7 +185,155 @@ reset.onclick = function () {
 
 # DOM
 
+DOM（Document Object Model），即文档对象模型，`HTML DOM Document 对象`。每个HTML文档载入浏览器时，都会被浏览器解析成`Document对象`。通过这个对象，我们可以获取到页面上所有的元素对象。同时，`Document对象`也是`Window对象`的一部分。之前提到了，可以通过`window.document`属性访问。相对 BOM 来说，对 DOM 的使用显得更加频繁。以下是 DOM 的节点分类。  
 
+1. 整个文档是一个文档节点；
+2. 每个html元素是元素节点；
+3. html元素内的文本时文本节点；
+4. html元素的属性是属性节点；
+5. 注释是注释节点。
+
+Document对象集合上，提供很多的属性和方法，来获取信息和访问页面上的元素对象。如`document.body`可以获取到整个`body`的结构；`document.cookie` 可以设置或返回与当前文档有关的所有 cookie等。  
+
+```html
+<h1 id='myh1' class="title">hello world</h1>
+<h3 name="myh3">总有些惊奇的机遇</h3>
+<h4>比方说当我遇见你</h4>
+<img id="myimg" src="http://tuimeizi.cn/coser?w=300&h=250&t=fangzhioo" />
+<button id="mybtn">点赞</button>
+```
+
+```js
+// 节点类
+console.log(Node.prototype);
+// 元素类 Element继承于Node 
+console.log(Document.prototype);
+console.log(Element.prototype);
+// 文本类
+console.log(Text.prototype);
+// 文档入口对象
+console.log(typeof document);
+console.log(document instanceof Document);
+// document.getElementsByTagName('h1')[0].setAttribute('style','Color: red');
+
+// nodeName 节点名
+console.log(document.nodeName);
+console.log(document.getElementById('myh1').nodeName);
+// nodeValue 节点值
+console.log(document.nodeValue);
+// childNodes 子节点
+console.log(document.childNodes);
+console.log(document.getElementById('myh1').childNodes);
+// hasChildNodes() 判断有无节点
+console.log(document.hasChildNodes());
+
+```
+
+利用`document`提供的属性和方法，我们获取具体的一个元素，并操作这个元素。  
+
+```js
+// 通过ID查找
+var h1 = document.getElementById('myh1');
+// 通过类名查找 在IE8以下无法使用
+document.getElementsByClassName('myh1')[0];
+// 通过name来获取元素
+document.getElementsByName("myh3")[0];
+// 通过选择器查找元素
+document.querySelector('#myh1');
+document.querySelector('.title')[0];
+document.querySelector('body>h1');
+// 通过标签查找
+var img = document.getElementsByTagName('myimg')[0];
+
+console.log(h1 instanceof Element);
+console.log(img instanceof HTMLCollection);
+console.log(img instanceof Element);
+
+// 标签名
+console.log(h1.tagName);
+console.log(img.tagName);
+// id值
+console.log(h1.id);
+// class
+console.log(h1.className);
+
+// 获取节点的文本内容  innerHTML  outerHTML innerText
+console.log(h1.innerHTML);
+console.log(h1.outerHTML);
+console.log(h1.innerText);
+
+// 更改h1的文本内容
+h1.innerText = '哈哈哈哈哈。。。';
+h1.setAttribute('style','border: solid thick gold;');
+```
+
+也有一些方法`createElement`、`removeChild`、`insertBefore` 和 `repalceChild`，用于增删改替换这些元素。
+
+```js
+// getElementsByTagName 通过标签名获取元素
+var bodyNode = document.getElementsByTagName('body')[0];
+
+// createElement() 创建h2节点（元素）
+var h2Node =document.createElement('h2');
+h2Node.innerText='一剑，一念。';
+
+// appendChild() 添加子节点 将h2Node节点 加入 bodyNode节点
+bodyNode.appendChild(h2Node);
+
+// removeChild() 删除节点
+var h1Node = document.getElementsByTagName('h1')[0];
+bodyNode.removeChild(h1Node);
+
+// insertBefore() 在某节点前插入节点
+// 带插入的节点
+var h5Node=document.createElement('h5');
+h5Node.innerText='树叶的一生，只是为了归根吗？';
+// 参考位置节点
+var h4Node=document.getElementsByTagName('h4')[0];
+bodyNode.insertBefore(h5Node,h4Node);
+
+// repalceChild() 替换节点
+var h6Node =document.createElement('h6');
+h6Node.innerText='我命由我，不由天。';
+var h3Node =document.getElementsByTagName('h3')[0];
+bodyNode.replaceChild(h6Node,h3Node);
+```
+
+除了节点元素，还有一些处理纯文本的增删改方法 `appendData`、`deleteData` 等。  
+
+```js
+// 新建文本节点
+var textNode=document.createTextNode('hello world');
+// 根据偏移量去分割节点,并获得splitText()返回的文本节点
+var returnValue= textNode.splitText(2);
+// 添加节点到h1节点
+document.querySelector('h1').appendChild(textNode);
+// 添加 splitText()返回的文本节点到body节点
+document.querySelector('body').appendChild(returnValue);
+
+// 追加文本节点
+textNode.appendData('!!!')
+// 删除文本
+textNode.deleteData(11 , 3);
+// 替换文本
+textNode.replaceData(5 ,5 ,'世界');
+// 插入文本
+textNode.insertData(5 ,' ');
+```
+
+不止可以对元素节点的属性获取修改什么的，还有对节点的事件监听。  
+
+```js
+var mybtn = document.getElementById('mybtn');
+//对 mybtn 添加点击事件
+div.onclick=function(){
+    alert('你点赞了我');
+};
+```
+
+# 后记
+
+简单整理下，之前学习关于这方面的基础知识。温故而知新！！！
 
 ---
 

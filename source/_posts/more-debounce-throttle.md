@@ -201,7 +201,7 @@ _.throttle = function (func, wait, options) {
     </div>
 </div>
 
-不难看出，方案有效的实现了放抖和节流的作用。
+不难看出，方案有效的实现了防抖和节流的作用。
 
 ---
 
