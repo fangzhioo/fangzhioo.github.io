@@ -90,9 +90,9 @@ _.debounce = function (func, wait, immediate) {
 };
 ```
 
-他提供的`debounce`还接受第三个参数`immediate`，分析可以看出，这个参数是用来配置回调函数是在一个周期的最开始执行（`immediate`为`true`）还是最后执行（`immediate`为`false`），即，上面提到的**延迟debounce**和**前缘debounce**。如果`immediate`为`true`，意味着是一个同步的回调，可以传递返回值。详细的可以查看[underscorejs的debounce][3]  
+他提供的`debounce`还接受第三个参数`immediate`，分析可以看出，这个参数是用来配置回调函数是在一个周期的最开始执行（`immediate`为`true`）还是最后执行（`immediate`为`false`），即，上面提到的**延迟debounce**和**前缘debounce**。如果`immediate`为`true`，意味着是一个同步的回调，可以传递返回值。详细的可以查看 [underscorejs的debounce][3]  
 
-再有`lodash`的`debounce`，接受更多的配置，有兴趣的可以去查看[lodash的debounce源代码][4]。
+再有`lodash`的`debounce`，接受更多的配置，有兴趣的可以去查看 [lodash的debounce源代码][4]。
 
 ## 节流（Throttle）
 
@@ -186,20 +186,22 @@ _.throttle = function (func, wait, options) {
 };
 ```
 
-这个函数也同样提供第三个参数`options`，但这个参数是一个对象集，`options.previous`相当于我们自己实现的`last`。它还支持传入`options.leading`和`options.trailing`来控制真正回调触发的时机。也即，**延时**和**前缘**。详细的可以查看[underscorejs的throttle][5]。
+这个函数也同样提供第三个参数`options`，但这个参数是一个对象集，`options.previous`相当于我们自己实现的`last`。它还支持传入`options.leading`和`options.trailing`来控制真正回调触发的时机。也即，**延时**和**前缘**。详细的可以查看 [underscorejs的throttle][5]。
 
-再有`lodash`的`throttle`，配置差不多。有兴趣的可以去查看[lodash的throttle源代码][6]。
+再有`lodash`的`throttle`，配置差不多。有兴趣的可以去查看 [lodash的throttle源代码][6]。
 
 # 后记
 
 我在这个 [大佬的Blog][1] 中，看到了一个有趣的可视化Demo。借鉴这个Demo，我们来做一个可视化的Demo，来简单粗暴的展示下效果。  
 
 <div style="box-sizing: border-box;padding:10px">
-    <div style="width: 100%;height: 200px;background: #f5f5f5;border: 1px solid #aaa;box-sizing: border-box;padding: 25px;text-align: center;font-size: 18px;" id="moveonme">move your mouse here</div>
+    <div style="width: 100%;height: 200px;background: #f5f5f5;border: 1px solid #aaa;box-sizing: border-box;padding: 25px;text-align: center;font-size: 18px;" id="moveonme">move your mouse or finger here</div>
     <div id="showbox" style="width: 100%;padding-top:5px;">
         <canvas id="paintonme" height="360" width="320"></canvas>
     </div>
 </div>
+
+不难看出，方案有效的实现了放抖和节流的作用。
 
 ---
 

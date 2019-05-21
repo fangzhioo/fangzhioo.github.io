@@ -2,7 +2,7 @@
  * @Author: fangzhioo 
  * @Date: 2019-05-20 14:51:04 
  * @Last Modified by: fzoo
- * @Last Modified time: 2019-05-20 16:23:48
+ * @Last Modified time: 2019-05-21 09:22:29
  */
 var helpers = {
 
@@ -76,9 +76,17 @@ function NIM_demo() {
     this.init = function () {
         this.canvas.width = this.showbox.clientWidth;
         this.flush();
-        this.movearea.addEventListener("mousemove", this.regularHandler);
-        this.movearea.addEventListener("mousemove", helpers.debounce(self.debounceHandler, 100, this));
-        this.movearea.addEventListener("mousemove", helpers.throttle(self.throttleHander, 100, this));
+        if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+            // PHONE OR IPAD
+            this.movearea.addEventListener("touchmove", this.regularHandler);
+            this.movearea.addEventListener("touchmove", helpers.debounce(self.debounceHandler, 100, this));
+            this.movearea.addEventListener("touchmove", helpers.throttle(self.throttleHander, 100, this));
+        } else {
+            // PC
+            this.movearea.addEventListener("mousemove", this.regularHandler);
+            this.movearea.addEventListener("mousemove", helpers.debounce(self.debounceHandler, 100, this));
+            this.movearea.addEventListener("mousemove", helpers.throttle(self.throttleHander, 100, this));
+        }
     }
 
     /**
