@@ -1,6 +1,7 @@
 ---
-title:      "CSS3新特性"
-subtitle:   " animation动画、transform转换、transition过渡 "
+title:      CSS3新特性
+subtitle:   animation动画、transform转换、transition过渡
+keyword:    animation, transform, transition
 date: 2017-09-18 10:51:24
 catalog: true
 tags:

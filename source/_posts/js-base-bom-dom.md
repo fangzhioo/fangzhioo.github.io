@@ -1,6 +1,7 @@
 ---
-title:      "【JS基础整理】BOM 和 DOM"
-subtitle:   "JavaScript基础知识整理——BOM 和 DOM"
+title:      【JS基础整理】BOM 和 DOM
+subtitle:   JavaScript基础知识整理——BOM 和 DOM
+keyword:    BOM, DOM
 date: 2019-03-16 10:51:24
 catalog: true
 tags:

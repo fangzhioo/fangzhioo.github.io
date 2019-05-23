@@ -1,9 +1,9 @@
 ---
-title: 【VPN】Shadowsocks搭建自用VPN
-subtitle: 运用搬瓦工VPS和Shadowsocks搭建自用VPN
+title:      【VPN】Shadowsocks搭建自用 VPN
+subtitle:   运用搬瓦工VPS 和 Shadowsocks搭建自用 VPN
+keyword:    Shadowsocks, VPN, 搬瓦工, SSR
 date: 2019-05-06 14:10:00
 catalog: true
-keyword: VPN, Shadowsocks, VPS
 tags:
     - VPN
 categories: 

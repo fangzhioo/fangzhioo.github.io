@@ -1,6 +1,7 @@
 ---
-title:      "JavaScript黑科技写法"
-subtitle:   "记录一些看到的js黑科技的，有趣的写法！"
+title:      JavaScript黑科技写法
+subtitle:   记录一些看到的js黑科技的，有趣的写法！
+keyword:    JavaScript, 黑科技
 date: 2019-04-26 10:51:24
 catalog: true
 tags:

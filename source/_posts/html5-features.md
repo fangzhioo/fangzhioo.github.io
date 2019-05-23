@@ -1,6 +1,7 @@
 ---
-title:      "HTML5新特性"
-subtitle:   "canvas画布、video视频、audio音频"
+title:      HTML5新特性
+subtitle:   网页多媒体 —— video 和 audio
+keyword:    HTML5, 网页多媒体, video, audio
 date: 2017-09-18 10:51:24
 catalog: true
 tags:
@@ -58,7 +59,7 @@ HTML标签众多，详细的可以去 [W3school][2] 或者 [腾讯云-开发者�
 虽然标签众多，但是早期的标签有许多并非单纯的表达语义的，比如 `<b></b>`、`<em></em>`等，只是改变了样式，这违背了之前添加语义的初衷，所以HTML5新标准中，许多标签被废弃。  
 除了这些[被废弃的标签][4]，HTML5中也新增了许多更具有语义化的标签，这里我们着重讲一讲这些有趣的[HTML5新标签][1]。  
 
-先说下HTML5中的网页多媒体标签，HTML5 通过HTML标签 `audio` 和 `video` 来支持嵌入式的媒体，使开发者能够方便地将媒体嵌入到HTML文档中。
+这里介绍下HTML5中的网页多媒体标签，HTML5 通过HTML标签 `audio` 和 `video` 来支持嵌入式的媒体，使开发者能够方便地将媒体嵌入到HTML文档中。
 
 ## audio
 
@@ -480,12 +481,7 @@ elem.onclick = function () {
     </div>
 </div>
 
-
 有时候会出现视频无法自动播放。查找资料后发现，添加 `muted` 属性，就可以通过地址栏进入网页时自动播放了。  
-
-
-
-
 
 ---  
 [1]: http://www.w3school.com.cn/html/html5_intro.asp  
