@@ -221,10 +221,11 @@ live2d:
   tagMode: true
   debug: false
   model:
-    use: live2d-widget-model-shizuku
+    # use: live2d-widget-model-shizuku
+    use: kanna
     position: right
-    width: 200
-    height: 400
+    width: 280
+    height: 335
   mobile:
     show: true
   react:
