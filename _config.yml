@@ -208,6 +208,28 @@ data-fixed: true
   # data-mini:
   # data-autoplay:    
 
+# Live2D
+## https://github.com/xiazeyu/live2d-widget.js
+## https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md
+## https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init
+live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: true
+  debug: false
+  model:
+    use: live2d-widget-model-shizuku
+    position: right
+    width: 200
+    height: 400
+  mobile:
+    show: true
+  react:
+    opacity: 0.7
+
 # Reward  赞赏
 reward: true
 reward_comment: 赞赏一下
