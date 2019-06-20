@@ -9,7 +9,7 @@ tags:
     - Debounce
     - Throttle
 categories: 
-    - Horizons
+    - More
 ---
 
 # 前言

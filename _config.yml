@@ -13,8 +13,8 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url:  https://fangzhioo.github.io/   # Note: don't forget to modify the CNAME file to your url
 root: /
-#permalink: :year/:month/:day/:title/
-permalink: :category/:title/
+permalink: :year/:month/:day/:title/
+# permalink: :category/:title/
 permalink_defaults:
   lang: en
 
@@ -142,11 +142,11 @@ highlight:
 # Category & Tag
 default_category: article
 category_map:
-  Docker: docker
-  Golang: golang
-  Nginx: nginx
-  Database: database
+  Diary: diary
   Web: web
+  Tech: technical
+  Reprint: reprint
+  More: more
 
 tag_map:
 home_posts_tag: true # show posts tags
@@ -224,7 +224,7 @@ live2d:
     # use: live2d-widget-model-shizuku
     use: sagiri
     position: right
-    width: 280
+    width: 200
     height: 400
   mobile:
     show: true

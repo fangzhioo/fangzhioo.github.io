@@ -7,7 +7,7 @@ catalog: true
 tags:
     - VPN
 categories: 
-    - Horizons
+    - Tech
 ---
 
 # 前言
