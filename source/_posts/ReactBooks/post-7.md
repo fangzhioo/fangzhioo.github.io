@@ -1,6 +1,6 @@
 ---
 title:      【转载】组件的 render 方法
-subtitle:   React小书by胡子大哈
+subtitle:   一个组件类必须要实现一个 render 方法，这个 render 方法必须要返回一个 JSX 元素，本文介绍如何使用组件的 render 方法。
 keyword:    React.js,React.js 简介,React.js 小书,React.js 教程
 date: 2019-05-10 14:08:52
 catalog: true
@@ -13,8 +13,7 @@ categories:
 
 # 组件的 render 方法
 
-> React.js 小书是一个开源、免费、专业、简单的 React.js 教程。一个组件类必须要实现一个 render 方法，这个 render 方法必须要返回一个 JSX 元素，本文介绍如何使用组件的 render 方法。
-tags: [React.js,React.js 小书,教程,render,组件]
+> React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
 
 React.js 中一切皆组件，用 React.js 写的其实就是 React.js 组件。我们在编写 React.js 组件的时候，一般都需要继承 React.js 的 `Component`（还有别的编写组件的方式我们后续会提到）。一个组件类必须要实现一个 `render` 方法，这个 `render` 方法必须要返回一个 JSX 元素。但这里要注意的是，必须要用一个外层的 JSX 元素把所有内容包裹起来。返回并列多个 JSX 元素是不合法的，下面是错误的做法：
 
@@ -172,7 +171,7 @@ render () {
 ...
 ```
 
-这里给把两个 JSX 元素赋值给了 `goodWord` 和 `badWord` 两个变量，然后把它们作为表达式插入的条件返回值。达到效果和上面的例子一样，随机返回不同的页面效果呈现。 
+这里给把两个 JSX 元素赋值给了 `goodWord` 和 `badWord` 两个变量，然后把它们作为表达式插入的条件返回值。达到效果和上面的例子一样，随机返回不同的页面效果呈现。  
 
 再举一个例子：
 
@@ -266,52 +265,52 @@ render () {
 - Lesson45 - [实战分析：评论功能（八）][45]
 - Lesson46 - [实战分析：评论功能（九）][46]
 
-[1]: https://fangzhioo.github.io/Reprint/ReactBooks/post-1/
-[2]: https://fangzhioo.github.io/Reprint/ReactBooks/post-2/
-[3]: https://fangzhioo.github.io/Reprint/ReactBooks/post-3/
-[4]: https://fangzhioo.github.io/Reprint/ReactBooks/post-4/
-[5]: https://fangzhioo.github.io/Reprint/ReactBooks/post-5/
-[6]: https://fangzhioo.github.io/Reprint/ReactBooks/post-6/
-[7]: https://fangzhioo.github.io/Reprint/ReactBooks/post-7/
-[8]: https://fangzhioo.github.io/Reprint/ReactBooks/post-8/
-[9]: https://fangzhioo.github.io/Reprint/ReactBooks/post-9/
-[10]: https://fangzhioo.github.io/Reprint/ReactBooks/post-10/
-[11]: https://fangzhioo.github.io/Reprint/ReactBooks/post-11/
-[12]: https://fangzhioo.github.io/Reprint/ReactBooks/post-12/
-[13]: https://fangzhioo.github.io/Reprint/ReactBooks/post-13/
-[14]: https://fangzhioo.github.io/Reprint/ReactBooks/post-14/
-[15]: https://fangzhioo.github.io/Reprint/ReactBooks/post-15/
-[16]: https://fangzhioo.github.io/Reprint/ReactBooks/post-16/
-[17]: https://fangzhioo.github.io/Reprint/ReactBooks/post-17/
-[18]: https://fangzhioo.github.io/Reprint/ReactBooks/post-18/
-[19]: https://fangzhioo.github.io/Reprint/ReactBooks/post-19/
-[20]: https://fangzhioo.github.io/Reprint/ReactBooks/post-20/
-[21]: https://fangzhioo.github.io/Reprint/ReactBooks/post-21/
-[22]: https://fangzhioo.github.io/Reprint/ReactBooks/post-22/
-[23]: https://fangzhioo.github.io/Reprint/ReactBooks/post-23/
-[24]: https://fangzhioo.github.io/Reprint/ReactBooks/post-24/
-[25]: https://fangzhioo.github.io/Reprint/ReactBooks/post-25/
-[26]: https://fangzhioo.github.io/Reprint/ReactBooks/post-26/
-[27]: https://fangzhioo.github.io/Reprint/ReactBooks/post-27/
-[28]: https://fangzhioo.github.io/Reprint/ReactBooks/post-28/
-[29]: https://fangzhioo.github.io/Reprint/ReactBooks/post-29/
-[30]: https://fangzhioo.github.io/Reprint/ReactBooks/post-30/
-[31]: https://fangzhioo.github.io/Reprint/ReactBooks/post-31/
-[32]: https://fangzhioo.github.io/Reprint/ReactBooks/post-32/
-[33]: https://fangzhioo.github.io/Reprint/ReactBooks/post-33/
-[34]: https://fangzhioo.github.io/Reprint/ReactBooks/post-34/
-[35]: https://fangzhioo.github.io/Reprint/ReactBooks/post-35/
-[36]: https://fangzhioo.github.io/Reprint/ReactBooks/post-36/
-[37]: https://fangzhioo.github.io/Reprint/ReactBooks/post-37/
-[38]: https://fangzhioo.github.io/Reprint/ReactBooks/post-38/
-[39]: https://fangzhioo.github.io/Reprint/ReactBooks/post-39/
-[40]: https://fangzhioo.github.io/Reprint/ReactBooks/post-40/
-[41]: https://fangzhioo.github.io/Reprint/ReactBooks/post-41/
-[42]: https://fangzhioo.github.io/Reprint/ReactBooks/post-42/
-[43]: https://fangzhioo.github.io/Reprint/ReactBooks/post-43/
-[44]: https://fangzhioo.github.io/Reprint/ReactBooks/post-44/
-[45]: https://fangzhioo.github.io/Reprint/ReactBooks/post-45/
-[46]: https://fangzhioo.github.io/Reprint/ReactBooks/post-46/
+[1]: https://fangzhioo.github.io/reprint/ReactBooks/post-1/
+[2]: https://fangzhioo.github.io/reprint/ReactBooks/post-2/
+[3]: https://fangzhioo.github.io/reprint/ReactBooks/post-3/
+[4]: https://fangzhioo.github.io/reprint/ReactBooks/post-4/
+[5]: https://fangzhioo.github.io/reprint/ReactBooks/post-5/
+[6]: https://fangzhioo.github.io/reprint/ReactBooks/post-6/
+[7]: https://fangzhioo.github.io/reprint/ReactBooks/post-7/
+[8]: https://fangzhioo.github.io/reprint/ReactBooks/post-8/
+[9]: https://fangzhioo.github.io/reprint/ReactBooks/post-9/
+[10]: https://fangzhioo.github.io/reprint/ReactBooks/post-10/
+[11]: https://fangzhioo.github.io/reprint/ReactBooks/post-11/
+[12]: https://fangzhioo.github.io/reprint/ReactBooks/post-12/
+[13]: https://fangzhioo.github.io/reprint/ReactBooks/post-13/
+[14]: https://fangzhioo.github.io/reprint/ReactBooks/post-14/
+[15]: https://fangzhioo.github.io/reprint/ReactBooks/post-15/
+[16]: https://fangzhioo.github.io/reprint/ReactBooks/post-16/
+[17]: https://fangzhioo.github.io/reprint/ReactBooks/post-17/
+[18]: https://fangzhioo.github.io/reprint/ReactBooks/post-18/
+[19]: https://fangzhioo.github.io/reprint/ReactBooks/post-19/
+[20]: https://fangzhioo.github.io/reprint/ReactBooks/post-20/
+[21]: https://fangzhioo.github.io/reprint/ReactBooks/post-21/
+[22]: https://fangzhioo.github.io/reprint/ReactBooks/post-22/
+[23]: https://fangzhioo.github.io/reprint/ReactBooks/post-23/
+[24]: https://fangzhioo.github.io/reprint/ReactBooks/post-24/
+[25]: https://fangzhioo.github.io/reprint/ReactBooks/post-25/
+[26]: https://fangzhioo.github.io/reprint/ReactBooks/post-26/
+[27]: https://fangzhioo.github.io/reprint/ReactBooks/post-27/
+[28]: https://fangzhioo.github.io/reprint/ReactBooks/post-28/
+[29]: https://fangzhioo.github.io/reprint/ReactBooks/post-29/
+[30]: https://fangzhioo.github.io/reprint/ReactBooks/post-30/
+[31]: https://fangzhioo.github.io/reprint/ReactBooks/post-31/
+[32]: https://fangzhioo.github.io/reprint/ReactBooks/post-32/
+[33]: https://fangzhioo.github.io/reprint/ReactBooks/post-33/
+[34]: https://fangzhioo.github.io/reprint/ReactBooks/post-34/
+[35]: https://fangzhioo.github.io/reprint/ReactBooks/post-35/
+[36]: https://fangzhioo.github.io/reprint/ReactBooks/post-36/
+[37]: https://fangzhioo.github.io/reprint/ReactBooks/post-37/
+[38]: https://fangzhioo.github.io/reprint/ReactBooks/post-38/
+[39]: https://fangzhioo.github.io/reprint/ReactBooks/post-39/
+[40]: https://fangzhioo.github.io/reprint/ReactBooks/post-40/
+[41]: https://fangzhioo.github.io/reprint/ReactBooks/post-41/
+[42]: https://fangzhioo.github.io/reprint/ReactBooks/post-42/
+[43]: https://fangzhioo.github.io/reprint/ReactBooks/post-43/
+[44]: https://fangzhioo.github.io/reprint/ReactBooks/post-44/
+[45]: https://fangzhioo.github.io/reprint/ReactBooks/post-45/
+[46]: https://fangzhioo.github.io/reprint/ReactBooks/post-46/
 
 * * *
 
@@ -320,6 +319,6 @@ render () {
     作者：<a href="https://www.zhihu.com/people/hu-zi-da-ha" target="_blank">胡子大哈</a>
   </li>
   <li>
-    原文链接：<a href="http://huziketang.com/books/react{{ page.url }}"> http://huziketang.com/books/react{{ page.url }} </a>
+    原文链接：<a href="http://huziketang.com/books/react"> http://huziketang.com/books/react</a>
   </li>
 </ul>

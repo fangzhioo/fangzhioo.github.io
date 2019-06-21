@@ -1,8 +1,8 @@
 ---
-title:      【转载】React.js 基本环境安装
-subtitle:   React.js 单独使用基本上是不可能的事情，需要配合一些第三方工具，教你如何下载和安装 React.js 的教程。
-keyword:    React.js,React.js 小书,安装,教程,React.js 下载
-date: 2019-05-08 18:08:52
+title:      【转载】state vs props
+subtitle:   state 和 props 有着千丝万缕的关系，它们都可以决定组件的行为和显示形态。本文介绍 React.js 中对 state 和 props 的总结。
+keyword:    React.js,React.js 小书,教程,state,props
+date: 2019-05-15 14:08:52
 catalog: true
 header-img:
 tags:
@@ -11,68 +11,56 @@ categories:
     - Reprint
 ---
 
-# React.js 基本环境安装
+# state vs props
 
 > React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
 
-## 安装 React.js
+我们来一个关于 `state` 和 `props` 的总结。
 
-React.js 单独使用基本上是不可能的事情。不要指望着类似于 jQuery 下载放到 `<head />` 标签就开始使用。使用 React.js 不管在开发阶段生产阶段都需要一堆工具和库辅助，编译阶段你需要借助 Babel；需要 Redux 等第三方的状态管理工具来组织代码；如果你要写单页面应用那么你需要 React-router。这就是所谓的“React.js全家桶”。
+`state` 的主要作用是用于组件保存、控制、修改*自己*的可变状态。`state` 在组件内部初始化，可以被组件自身修改，而外部不能访问也不能修改。你可以认为 `state` 是一个局部的、只能被组件自身控制的数据源。`state` 中状态可以通过 `this.setState` 方法进行更新，`setState` 会导致组件的重新渲染。
 
-本课程不会教大家如何配置这些东西，因为这不是课程的重点，网上有很多的资料，大家可以去参考那些资料。我们这里会直接使用 React.js 官网所推荐使用的工具 `create-react-app` 工具。它可以帮助我们一键生成所需要的工程目录，并帮我们做好各种配置和依赖，也帮我们隐藏了这些配置的细节。也就是所谓的“开箱即用”。
+`props` 的主要作用是让使用该组件的父组件可以传入参数来配置该组件。它是外部传进来的配置参数，组件内部无法控制也无法修改。除非外部组件主动传入新的 `props`，否则组件的 `props` 永远保持不变。
 
-工具地址：[https://github.com/facebookincubator/create-react-app](https://github.com/facebookincubator/create-react-app)
+`state` 和 `props` 有着千丝万缕的关系。它们都可以决定组件的行为和显示形态。一个组件的 `state` 中的数据可以通过 `props` 传给子组件，一个组件可以使用外部传入的 `props` 来初始化自己的 `state`。但是它们的职责其实非常明晰分明：*`state` 是让组件控制自己的状态，`props` 是让外部对组件自己进行配置*。
 
-<a href="http://huzidaha.github.io/static/assets/img/posts/C9754D1A-0989-49B2-AC9F-B8D9717198CB.png" target="_blank">![React.js 安装教程图片](http://huzidaha.github.io/static/assets/img/posts/C9754D1A-0989-49B2-AC9F-B8D9717198CB.png)</a>
+如果你觉得还是搞不清 `state` 和 `props` 的使用场景，那么请记住一个简单的规则：尽量少地用 `state`，尽量多地用 `props`。
 
-在安装之前要确认你的机器上安装了 node.js 环境包括 npm。如果没有安装的同学可以到 node.js 的官网下载自己电脑的对应的安装包来安装好环境。
+没有 `state` 的组件叫无状态组件（stateless component），设置了 state 的叫做有状态组件（stateful component）。因为状态会带来管理的复杂性，我们尽量多地写无状态组件，尽量少地写有状态的组件。这样会降低代码维护的难度，也会在一定程度上增强组件的可复用性。前端应用状态管理是一个复杂的问题，我们后续会继续讨论。
 
-<a href="http://huzidaha.github.io/static/assets/img/posts/70B2D77C-1656-4D9E-B57E-671BE1D568AD.png" target="_blank">![React.js 安装教程图片](http://huzidaha.github.io/static/assets/img/posts/70B2D77C-1656-4D9E-B57E-671BE1D568AD.png)</a>
+React.js 非常鼓励无状态组件，在 0.14 版本引入了函数式组件——一种定义不能使用 `state` 组件，例如一个原来这样写的组件：
 
-安装好环境以后，只需要按照官网的指引安装 `create-react-app` 即可。
+```javascript
+class HelloWorld extends Component {
+  constructor() {
+    super()
+  }
 
-```shell
-npm install -g create-react-app
+  sayHi () {
+    alert('Hello World')
+  }
+
+  render () {
+    return (
+      <div onClick={this.sayHi.bind(this)}>Hello World</div>
+    )
+  }
+}
 ```
 
-这条命令会往我们的机器上安装一条叫 `create-react-app` 的命令，安装好以后就可以直接使用它来构建一个 react 的前端工程：
+用函数式组件的编写方式就是：
 
-```shell
-create-react-app hello-react
+```javascript
+const HelloWorld = (props) => {
+  const sayHi = (event) => alert('Hello World')
+  return (
+    <div onClick={sayHi}>Hello World</div>
+  )
+}
 ```
 
-这条命令会帮我们构建一个叫 `hello-react` 的工程，并且会自动地帮助我们安装所需要的依赖，现在只需要安静地等待它安装完。
+以前一个组件是通过继承 `Component` 来构建，一个子类就是一个组件。而用函数式的组件编写方式是一个函数就是一个组件，你可以和以前一样通过 `<HellWorld />` 使用该组件。不同的是，函数式组件只能接受 `props` 而无法像跟类组件一样可以在 `constructor` 里面初始化 `state`。你可以理解函数式组件就是一种只能接受 `props` 和提供 `render` 方法的类组件。
 
-> 额外的小贴士：
-> 如果有些同学安装过程比较慢，那是很有可能是因为 npm 下载的时候是从国外的源下载的缘故。所以可以把 npm 的源改成国内的 taobao 的源，这样会加速下载过程。在执行上面的命令之前可以先修改一下 npm 的源：
-> `npm config set registry https://registry.npm.taobao.org`
-
-下载完以后我们就可以启动工程了，进入工程目录然后通过 npm 启动工程：
-
-```shell
-cd hello-react
-npm start
-```
-
-终端提示成功：
-
-<a href="http://huzidaha.github.io/static/assets/img/posts/A25CB842-11DE-4DC7-A805-85AEF2A64163.png" target="_blank">![React.js 安装教程图片](http://huzidaha.github.io/static/assets/img/posts/A25CB842-11DE-4DC7-A805-85AEF2A64163.png)</a>
-
-并且会自动打开浏览器，就可以看到 React 的工程顺利运行的效果：
-
-<a href="http://huzidaha.github.io/static/assets/img/posts/React_App.png" target="_blank">![React.js 安装教程图片](http://huzidaha.github.io/static/assets/img/posts/React_App.png)</a>
-
-这时候我们把 `src/App.js` 文件中的 `<h2>` 标签的内容修改为 `Hello React`，
-
-```html
-<h2>Hello React</h2>
-```
-
-保存一下，然后户就会发现浏览器自动刷新，并且我们的修改也生效了：
-
-<a href="http://huzidaha.github.io/static/assets/img/posts/3FDC1B75-AACD-40A4-9101-1AF8C57EFBF4.png" target="_blank">![React.js 安装教程图片](http://huzidaha.github.io/static/assets/img/posts/3FDC1B75-AACD-40A4-9101-1AF8C57EFBF4.png)</a>
-
-到这里我们的环境已经安装好了，并且顺利地运行了我们第一个例子。接下来我们会探讨 [React.js 的组件][6]的基本写法。
+但本书全书不采用这种函数式的方式来编写组件，统一通过继承 `Component` 来构建组件。
 
 # 目录
 
@@ -92,8 +80,8 @@ npm start
 - Lesson12 - [state vs props][12]
 - Lesson13 - [渲染列表数据][13]
 - Lesson14 - [实战分析：评论功能（一）][14]
-- Lesson15 - [实战分析：评论功能（一）][15]
-- Lesson16 - [实战分析：评论功能（一）][16]
+- Lesson15 - [实战分析：评论功能（二）][15]
+- Lesson16 - [实战分析：评论功能（三）][16]
 
 第二个阶段
 
@@ -188,6 +176,6 @@ npm start
     作者：<a href="https://www.zhihu.com/people/hu-zi-da-ha" target="_blank">胡子大哈</a>
   </li>
   <li>
-    原文链接：<a href="http://huziketang.com/books/react"> http://huziketang.com/books/react</a>
+    原文链接：<a href="http://huziketang.com/books/react{{ page.url }}"> http://huziketang.com/books/react{{ page.url }} </a>
   </li>
 </ul>

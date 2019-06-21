@@ -1,6 +1,6 @@
 ---
 title:      【转载】前端组件化（二）：优化 DOM 操作
-subtitle:   React小书by胡子大哈
+subtitle:   一个关于如何使用 React.js 实现前端组件化的教程的第二部分，介绍了如何优化虚拟 DOM。
 keyword:    React.js,React.js 小书,教程,组件,虚拟 DOM
 date: 2019-05-06 16:08:52
 catalog: true
@@ -13,9 +13,7 @@ categories:
 
 # 前端组件化（二）：优化 DOM 操作
 
-> React.js 小书是一个开源、免费、专业、简单的 React.js 教程。本文是一个关于如何使用 React.js 实现前端组件化的教程的第二部分，介绍了如何优化虚拟 DOM。
-tags: [React.js,React.js 小书,教程,组件,虚拟 DOM]
-
+> React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
 
 看看上一节我们的代码，仔细留意一下 `changeLikeText` 函数，这个函数包含了 DOM 操作，现在看起来比较简单，那是因为现在只有 `isLiked` 一个状态。由于数据状态改变会导致需要我们去更新页面的内容，所以假想一下，如果你的组件依赖了很多状态，那么你的组件基本全部都是 DOM 操作。
 
@@ -97,7 +95,7 @@ likeButton.onStateChange = (oldEl, newEl) => {
 
 非一般的暴力，因为每次 `setState` 都重新构造、新增、删除 DOM 元素，会导致浏览器进行大量的重排，严重影响性能。不过没有关系，这种暴力行为可以被一种叫 Virtual-DOM 的策略规避掉，但这不是本文所讨论的范围。
 
-这个版本的点赞功能很不错，我可以继续往上面加功能，而且还不需要手动操作DOM。但是有一个不好的地方，如果我要重新另外做一个新组件，譬如说评论组件，那么里面的这些 `setState` 方法要重新写一遍，其实这些东西都可以抽出来，变成一个通用的模式。[下一节](http://react.huziketang.com/blog/lesson4)我们把这个通用模式抽离到一个类当中。
+这个版本的点赞功能很不错，我可以继续往上面加功能，而且还不需要手动操作DOM。但是有一个不好的地方，如果我要重新另外做一个新组件，譬如说评论组件，那么里面的这些 `setState` 方法要重新写一遍，其实这些东西都可以抽出来，变成一个通用的模式。[下一节][4]我们把这个通用模式抽离到一个类当中。
 
 # 目录
 
@@ -159,52 +157,52 @@ likeButton.onStateChange = (oldEl, newEl) => {
 - Lesson45 - [实战分析：评论功能（八）][45]
 - Lesson46 - [实战分析：评论功能（九）][46]
 
-[1]: https://fangzhioo.github.io/Reprint/ReactBooks/post-1/
-[2]: https://fangzhioo.github.io/Reprint/ReactBooks/post-2/
-[3]: https://fangzhioo.github.io/Reprint/ReactBooks/post-3/
-[4]: https://fangzhioo.github.io/Reprint/ReactBooks/post-4/
-[5]: https://fangzhioo.github.io/Reprint/ReactBooks/post-5/
-[6]: https://fangzhioo.github.io/Reprint/ReactBooks/post-6/
-[7]: https://fangzhioo.github.io/Reprint/ReactBooks/post-7/
-[8]: https://fangzhioo.github.io/Reprint/ReactBooks/post-8/
-[9]: https://fangzhioo.github.io/Reprint/ReactBooks/post-9/
-[10]: https://fangzhioo.github.io/Reprint/ReactBooks/post-10/
-[11]: https://fangzhioo.github.io/Reprint/ReactBooks/post-11/
-[12]: https://fangzhioo.github.io/Reprint/ReactBooks/post-12/
-[13]: https://fangzhioo.github.io/Reprint/ReactBooks/post-13/
-[14]: https://fangzhioo.github.io/Reprint/ReactBooks/post-14/
-[15]: https://fangzhioo.github.io/Reprint/ReactBooks/post-15/
-[16]: https://fangzhioo.github.io/Reprint/ReactBooks/post-16/
-[17]: https://fangzhioo.github.io/Reprint/ReactBooks/post-17/
-[18]: https://fangzhioo.github.io/Reprint/ReactBooks/post-18/
-[19]: https://fangzhioo.github.io/Reprint/ReactBooks/post-19/
-[20]: https://fangzhioo.github.io/Reprint/ReactBooks/post-20/
-[21]: https://fangzhioo.github.io/Reprint/ReactBooks/post-21/
-[22]: https://fangzhioo.github.io/Reprint/ReactBooks/post-22/
-[23]: https://fangzhioo.github.io/Reprint/ReactBooks/post-23/
-[24]: https://fangzhioo.github.io/Reprint/ReactBooks/post-24/
-[25]: https://fangzhioo.github.io/Reprint/ReactBooks/post-25/
-[26]: https://fangzhioo.github.io/Reprint/ReactBooks/post-26/
-[27]: https://fangzhioo.github.io/Reprint/ReactBooks/post-27/
-[28]: https://fangzhioo.github.io/Reprint/ReactBooks/post-28/
-[29]: https://fangzhioo.github.io/Reprint/ReactBooks/post-29/
-[30]: https://fangzhioo.github.io/Reprint/ReactBooks/post-30/
-[31]: https://fangzhioo.github.io/Reprint/ReactBooks/post-31/
-[32]: https://fangzhioo.github.io/Reprint/ReactBooks/post-32/
-[33]: https://fangzhioo.github.io/Reprint/ReactBooks/post-33/
-[34]: https://fangzhioo.github.io/Reprint/ReactBooks/post-34/
-[35]: https://fangzhioo.github.io/Reprint/ReactBooks/post-35/
-[36]: https://fangzhioo.github.io/Reprint/ReactBooks/post-36/
-[37]: https://fangzhioo.github.io/Reprint/ReactBooks/post-37/
-[38]: https://fangzhioo.github.io/Reprint/ReactBooks/post-38/
-[39]: https://fangzhioo.github.io/Reprint/ReactBooks/post-39/
-[40]: https://fangzhioo.github.io/Reprint/ReactBooks/post-40/
-[41]: https://fangzhioo.github.io/Reprint/ReactBooks/post-41/
-[42]: https://fangzhioo.github.io/Reprint/ReactBooks/post-42/
-[43]: https://fangzhioo.github.io/Reprint/ReactBooks/post-43/
-[44]: https://fangzhioo.github.io/Reprint/ReactBooks/post-44/
-[45]: https://fangzhioo.github.io/Reprint/ReactBooks/post-45/
-[46]: https://fangzhioo.github.io/Reprint/ReactBooks/post-46/
+[1]: https://fangzhioo.github.io/reprint/ReactBooks/post-1/
+[2]: https://fangzhioo.github.io/reprint/ReactBooks/post-2/
+[3]: https://fangzhioo.github.io/reprint/ReactBooks/post-3/
+[4]: https://fangzhioo.github.io/reprint/ReactBooks/post-4/
+[5]: https://fangzhioo.github.io/reprint/ReactBooks/post-5/
+[6]: https://fangzhioo.github.io/reprint/ReactBooks/post-6/
+[7]: https://fangzhioo.github.io/reprint/ReactBooks/post-7/
+[8]: https://fangzhioo.github.io/reprint/ReactBooks/post-8/
+[9]: https://fangzhioo.github.io/reprint/ReactBooks/post-9/
+[10]: https://fangzhioo.github.io/reprint/ReactBooks/post-10/
+[11]: https://fangzhioo.github.io/reprint/ReactBooks/post-11/
+[12]: https://fangzhioo.github.io/reprint/ReactBooks/post-12/
+[13]: https://fangzhioo.github.io/reprint/ReactBooks/post-13/
+[14]: https://fangzhioo.github.io/reprint/ReactBooks/post-14/
+[15]: https://fangzhioo.github.io/reprint/ReactBooks/post-15/
+[16]: https://fangzhioo.github.io/reprint/ReactBooks/post-16/
+[17]: https://fangzhioo.github.io/reprint/ReactBooks/post-17/
+[18]: https://fangzhioo.github.io/reprint/ReactBooks/post-18/
+[19]: https://fangzhioo.github.io/reprint/ReactBooks/post-19/
+[20]: https://fangzhioo.github.io/reprint/ReactBooks/post-20/
+[21]: https://fangzhioo.github.io/reprint/ReactBooks/post-21/
+[22]: https://fangzhioo.github.io/reprint/ReactBooks/post-22/
+[23]: https://fangzhioo.github.io/reprint/ReactBooks/post-23/
+[24]: https://fangzhioo.github.io/reprint/ReactBooks/post-24/
+[25]: https://fangzhioo.github.io/reprint/ReactBooks/post-25/
+[26]: https://fangzhioo.github.io/reprint/ReactBooks/post-26/
+[27]: https://fangzhioo.github.io/reprint/ReactBooks/post-27/
+[28]: https://fangzhioo.github.io/reprint/ReactBooks/post-28/
+[29]: https://fangzhioo.github.io/reprint/ReactBooks/post-29/
+[30]: https://fangzhioo.github.io/reprint/ReactBooks/post-30/
+[31]: https://fangzhioo.github.io/reprint/ReactBooks/post-31/
+[32]: https://fangzhioo.github.io/reprint/ReactBooks/post-32/
+[33]: https://fangzhioo.github.io/reprint/ReactBooks/post-33/
+[34]: https://fangzhioo.github.io/reprint/ReactBooks/post-34/
+[35]: https://fangzhioo.github.io/reprint/ReactBooks/post-35/
+[36]: https://fangzhioo.github.io/reprint/ReactBooks/post-36/
+[37]: https://fangzhioo.github.io/reprint/ReactBooks/post-37/
+[38]: https://fangzhioo.github.io/reprint/ReactBooks/post-38/
+[39]: https://fangzhioo.github.io/reprint/ReactBooks/post-39/
+[40]: https://fangzhioo.github.io/reprint/ReactBooks/post-40/
+[41]: https://fangzhioo.github.io/reprint/ReactBooks/post-41/
+[42]: https://fangzhioo.github.io/reprint/ReactBooks/post-42/
+[43]: https://fangzhioo.github.io/reprint/ReactBooks/post-43/
+[44]: https://fangzhioo.github.io/reprint/ReactBooks/post-44/
+[45]: https://fangzhioo.github.io/reprint/ReactBooks/post-45/
+[46]: https://fangzhioo.github.io/reprint/ReactBooks/post-46/
 
 * * *
 
@@ -213,6 +211,6 @@ likeButton.onStateChange = (oldEl, newEl) => {
     作者：<a href="https://www.zhihu.com/people/hu-zi-da-ha" target="_blank">胡子大哈</a>
   </li>
   <li>
-    原文链接：<a href="http://huziketang.com/books/react{{ page.url }}"> http://huziketang.com/books/react{{ page.url }} </a>
+    原文链接：<a href="http://huziketang.com/books/react"> http://huziketang.com/books/react</a>
   </li>
 </ul>

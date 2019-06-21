@@ -1,7 +1,7 @@
 ---
 title:      【转载】事件监听
-subtitle:   React小书by胡子大哈
-keyword:    React.js,React.js 简介,React.js 小书,React.js 教程
+subtitle:   在 React.js 里面监听事件听起来很玄，但其实使用起来是很简单的，本文介绍如何使用 React.js 监听事件。
+keyword:    React.js,React.js 小书,教程,事件监听
 date: 2019-05-12 14:08:52
 catalog: true
 header-img:
@@ -13,8 +13,7 @@ categories:
 
 # 事件监听
 
-> React.js 小书是一个开源、免费、专业、简单的 React.js 教程。在 React.js 里面监听事件听起来很玄，但其实使用起来是很简单的，本文介绍如何使用 React.js 监听事件。
-tags: [React.js,React.js 小书,教程,事件监听]
+> React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
 
 在 React.js 里面监听事件是很容易的事情，你只需要给需要监听事件的元素加上属性类似于 `onClick`、`onKeyDown` 这样的属性，例如我们现在要给 `Title` 加上点击的事件监听：
 
@@ -114,7 +113,7 @@ class Title extends Component {
 
 这种 `bind` 模式在 React.js 的事件监听当中非常常见，`bind` 不仅可以帮我们把事件监听方法中的 `this` 绑定到当前组件实例上；还可以帮助我们在在渲染列表元素的时候，把列表元素传入事件监听函数当中——这个将在以后的章节提及。
 
-如果有些同学对 JavaScript 的 `this` 模式或者 `bind` 函数的使用方式不是特别了解到话，可能会对这部分内容会有些迷惑，可以补充对 JavaScript 的  [this](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this) 和 [bind](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind) 相关的知识再来回顾这部分内容。 
+如果有些同学对 JavaScript 的 `this` 模式或者 `bind` 函数的使用方式不是特别了解到话，可能会对这部分内容会有些迷惑，可以补充对 JavaScript 的  [this](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this) 和 [bind](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind) 相关的知识再来回顾这部分内容。  
 
 ## 总结
 
@@ -188,52 +187,52 @@ React.js 的事件监听方法需要手动 `bind` 到当前实例，这种模式
 - Lesson45 - [实战分析：评论功能（八）][45]
 - Lesson46 - [实战分析：评论功能（九）][46]
 
-[1]: https://fangzhioo.github.io/Reprint/ReactBooks/post-1/
-[2]: https://fangzhioo.github.io/Reprint/ReactBooks/post-2/
-[3]: https://fangzhioo.github.io/Reprint/ReactBooks/post-3/
-[4]: https://fangzhioo.github.io/Reprint/ReactBooks/post-4/
-[5]: https://fangzhioo.github.io/Reprint/ReactBooks/post-5/
-[6]: https://fangzhioo.github.io/Reprint/ReactBooks/post-6/
-[7]: https://fangzhioo.github.io/Reprint/ReactBooks/post-7/
-[8]: https://fangzhioo.github.io/Reprint/ReactBooks/post-8/
-[9]: https://fangzhioo.github.io/Reprint/ReactBooks/post-9/
-[10]: https://fangzhioo.github.io/Reprint/ReactBooks/post-10/
-[11]: https://fangzhioo.github.io/Reprint/ReactBooks/post-11/
-[12]: https://fangzhioo.github.io/Reprint/ReactBooks/post-12/
-[13]: https://fangzhioo.github.io/Reprint/ReactBooks/post-13/
-[14]: https://fangzhioo.github.io/Reprint/ReactBooks/post-14/
-[15]: https://fangzhioo.github.io/Reprint/ReactBooks/post-15/
-[16]: https://fangzhioo.github.io/Reprint/ReactBooks/post-16/
-[17]: https://fangzhioo.github.io/Reprint/ReactBooks/post-17/
-[18]: https://fangzhioo.github.io/Reprint/ReactBooks/post-18/
-[19]: https://fangzhioo.github.io/Reprint/ReactBooks/post-19/
-[20]: https://fangzhioo.github.io/Reprint/ReactBooks/post-20/
-[21]: https://fangzhioo.github.io/Reprint/ReactBooks/post-21/
-[22]: https://fangzhioo.github.io/Reprint/ReactBooks/post-22/
-[23]: https://fangzhioo.github.io/Reprint/ReactBooks/post-23/
-[24]: https://fangzhioo.github.io/Reprint/ReactBooks/post-24/
-[25]: https://fangzhioo.github.io/Reprint/ReactBooks/post-25/
-[26]: https://fangzhioo.github.io/Reprint/ReactBooks/post-26/
-[27]: https://fangzhioo.github.io/Reprint/ReactBooks/post-27/
-[28]: https://fangzhioo.github.io/Reprint/ReactBooks/post-28/
-[29]: https://fangzhioo.github.io/Reprint/ReactBooks/post-29/
-[30]: https://fangzhioo.github.io/Reprint/ReactBooks/post-30/
-[31]: https://fangzhioo.github.io/Reprint/ReactBooks/post-31/
-[32]: https://fangzhioo.github.io/Reprint/ReactBooks/post-32/
-[33]: https://fangzhioo.github.io/Reprint/ReactBooks/post-33/
-[34]: https://fangzhioo.github.io/Reprint/ReactBooks/post-34/
-[35]: https://fangzhioo.github.io/Reprint/ReactBooks/post-35/
-[36]: https://fangzhioo.github.io/Reprint/ReactBooks/post-36/
-[37]: https://fangzhioo.github.io/Reprint/ReactBooks/post-37/
-[38]: https://fangzhioo.github.io/Reprint/ReactBooks/post-38/
-[39]: https://fangzhioo.github.io/Reprint/ReactBooks/post-39/
-[40]: https://fangzhioo.github.io/Reprint/ReactBooks/post-40/
-[41]: https://fangzhioo.github.io/Reprint/ReactBooks/post-41/
-[42]: https://fangzhioo.github.io/Reprint/ReactBooks/post-42/
-[43]: https://fangzhioo.github.io/Reprint/ReactBooks/post-43/
-[44]: https://fangzhioo.github.io/Reprint/ReactBooks/post-44/
-[45]: https://fangzhioo.github.io/Reprint/ReactBooks/post-45/
-[46]: https://fangzhioo.github.io/Reprint/ReactBooks/post-46/
+[1]: https://fangzhioo.github.io/reprint/ReactBooks/post-1/
+[2]: https://fangzhioo.github.io/reprint/ReactBooks/post-2/
+[3]: https://fangzhioo.github.io/reprint/ReactBooks/post-3/
+[4]: https://fangzhioo.github.io/reprint/ReactBooks/post-4/
+[5]: https://fangzhioo.github.io/reprint/ReactBooks/post-5/
+[6]: https://fangzhioo.github.io/reprint/ReactBooks/post-6/
+[7]: https://fangzhioo.github.io/reprint/ReactBooks/post-7/
+[8]: https://fangzhioo.github.io/reprint/ReactBooks/post-8/
+[9]: https://fangzhioo.github.io/reprint/ReactBooks/post-9/
+[10]: https://fangzhioo.github.io/reprint/ReactBooks/post-10/
+[11]: https://fangzhioo.github.io/reprint/ReactBooks/post-11/
+[12]: https://fangzhioo.github.io/reprint/ReactBooks/post-12/
+[13]: https://fangzhioo.github.io/reprint/ReactBooks/post-13/
+[14]: https://fangzhioo.github.io/reprint/ReactBooks/post-14/
+[15]: https://fangzhioo.github.io/reprint/ReactBooks/post-15/
+[16]: https://fangzhioo.github.io/reprint/ReactBooks/post-16/
+[17]: https://fangzhioo.github.io/reprint/ReactBooks/post-17/
+[18]: https://fangzhioo.github.io/reprint/ReactBooks/post-18/
+[19]: https://fangzhioo.github.io/reprint/ReactBooks/post-19/
+[20]: https://fangzhioo.github.io/reprint/ReactBooks/post-20/
+[21]: https://fangzhioo.github.io/reprint/ReactBooks/post-21/
+[22]: https://fangzhioo.github.io/reprint/ReactBooks/post-22/
+[23]: https://fangzhioo.github.io/reprint/ReactBooks/post-23/
+[24]: https://fangzhioo.github.io/reprint/ReactBooks/post-24/
+[25]: https://fangzhioo.github.io/reprint/ReactBooks/post-25/
+[26]: https://fangzhioo.github.io/reprint/ReactBooks/post-26/
+[27]: https://fangzhioo.github.io/reprint/ReactBooks/post-27/
+[28]: https://fangzhioo.github.io/reprint/ReactBooks/post-28/
+[29]: https://fangzhioo.github.io/reprint/ReactBooks/post-29/
+[30]: https://fangzhioo.github.io/reprint/ReactBooks/post-30/
+[31]: https://fangzhioo.github.io/reprint/ReactBooks/post-31/
+[32]: https://fangzhioo.github.io/reprint/ReactBooks/post-32/
+[33]: https://fangzhioo.github.io/reprint/ReactBooks/post-33/
+[34]: https://fangzhioo.github.io/reprint/ReactBooks/post-34/
+[35]: https://fangzhioo.github.io/reprint/ReactBooks/post-35/
+[36]: https://fangzhioo.github.io/reprint/ReactBooks/post-36/
+[37]: https://fangzhioo.github.io/reprint/ReactBooks/post-37/
+[38]: https://fangzhioo.github.io/reprint/ReactBooks/post-38/
+[39]: https://fangzhioo.github.io/reprint/ReactBooks/post-39/
+[40]: https://fangzhioo.github.io/reprint/ReactBooks/post-40/
+[41]: https://fangzhioo.github.io/reprint/ReactBooks/post-41/
+[42]: https://fangzhioo.github.io/reprint/ReactBooks/post-42/
+[43]: https://fangzhioo.github.io/reprint/ReactBooks/post-43/
+[44]: https://fangzhioo.github.io/reprint/ReactBooks/post-44/
+[45]: https://fangzhioo.github.io/reprint/ReactBooks/post-45/
+[46]: https://fangzhioo.github.io/reprint/ReactBooks/post-46/
 
 * * *
 
@@ -242,6 +241,6 @@ React.js 的事件监听方法需要手动 `bind` 到当前实例，这种模式
     作者：<a href="https://www.zhihu.com/people/hu-zi-da-ha" target="_blank">胡子大哈</a>
   </li>
   <li>
-    原文链接：<a href="http://huziketang.com/books/react{{ page.url }}"> http://huziketang.com/books/react{{ page.url }} </a>
+    原文链接：<a href="http://huziketang.com/books/react"> http://huziketang.com/books/react</a>
   </li>
 </ul>
