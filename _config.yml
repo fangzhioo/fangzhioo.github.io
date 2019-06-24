@@ -21,10 +21,10 @@ permalink_defaults:
 #Custom Setting Start
 
 # Site settings
-SEOTitle: 方志 | Blog
+SEOTitle: 方志 | fangzhioo
 email: fangzhioooo@gmail.com
-description: "死亡如风，常伴吾身~"
-keyword: "方志, fangzhioo, Fz Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端, 设计"
+description: 方志的个人博客,fangzhioo,blog
+keyword: 方志, fangzhioo, Fz Blog, 博客, 互联网, Web, JavaScript, Html, Css, Vue.js, React.js, 前端, 设计
 header-img: /img/header_img/home.jpg
 article-img: /img/article_header/article_bg.jpg
 404-img: /img/header_img/404.png
@@ -72,10 +72,10 @@ livere_uid: MTAyMC80Mzg3OC8yMDQxMw==
 
 # Analytics settings
 #Baidu Analytics
-# ba_track_id: xxx
+ba_track_id: dce5d892b228cc0a253520da429e7f11
 # Google Analytics
 ga_track_id: 'UA-138588101-1'          # Format: UA-xxxxxx-xx
-ga_domain: fangzhi.ml
+ga_domain: fangzhioo.coding.me
 
 
 # Sidebar settings
