@@ -1,5 +1,5 @@
 ---
-title:      【转载】挂载阶段的组件生命周期（二）
+title:      【React.js小书】挂载阶段的组件生命周期（二）
 subtitle:   React.js 将组件渲染，构造 DOM 元素后塞入页面的过程称为组件的挂载。本文介绍了挂载阶段的组件生命周期。
 keyword:    React.js,React.js 小书,挂载,组件,生命周期
 date: 2019-05-22 14:08:52

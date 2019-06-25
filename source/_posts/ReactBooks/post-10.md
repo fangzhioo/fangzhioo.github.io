@@ -1,5 +1,5 @@
 ---
-title:      【转载】组件的 state 和 setState
+title:      【React.js小书】组件的 state 和 setState
 subtitle:   一个组件可以拥有自己的状态，state 就是用来存储这种可变化的状态的。本文介绍 state 和 setState 的用法。 
 keyword:    React.js,React.js 小书,教程,state,setState
 date: 2019-05-13 14:08:52

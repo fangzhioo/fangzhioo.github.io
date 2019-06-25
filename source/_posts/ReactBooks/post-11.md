@@ -1,5 +1,5 @@
 ---
-title:      【转载】配置组件的 props
+title:      【React.js小书】配置组件的 props
 subtitle:   不同的场景下对组件的需求可能会有所不同，props 可以帮助我们达到这个效果。本文介绍配置组件 props 的用法。
 keyword:    React.js,React.js 小书,教程,props,组件
 date: 2019-05-14 14:08:52

@@ -1,5 +1,5 @@
 ---
-title:      【转载】props.children 和容器类组件
+title:      【React.js小书】props.children 和容器类组件
 subtitle:   嵌套的 JSX 结构在组件内部可以通过 props.children 获取到，这种组件编写方式在编写容器类型组件时非常有用。
 keyword:    React.js,React.js 小书,容器,props,教程
 date: 2019-05-25 14:08:52

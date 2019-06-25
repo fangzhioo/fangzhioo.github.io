@@ -1,5 +1,5 @@
 ---
-title:      【转载】state vs props
+title:      【React.js小书】state vs props
 subtitle:   state 和 props 有着千丝万缕的关系，它们都可以决定组件的行为和显示形态。本文介绍 React.js 中对 state 和 props 的总结。
 keyword:    React.js,React.js 小书,教程,state,props
 date: 2019-05-15 14:08:52

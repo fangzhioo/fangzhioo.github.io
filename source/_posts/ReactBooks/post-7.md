@@ -1,5 +1,5 @@
 ---
-title:      【转载】组件的 render 方法
+title:      【React.js小书】组件的 render 方法
 subtitle:   一个组件类必须要实现一个 render 方法，这个 render 方法必须要返回一个 JSX 元素，本文介绍如何使用组件的 render 方法。
 keyword:    React.js,React.js 简介,React.js 小书,React.js 教程
 date: 2019-05-10 14:08:52

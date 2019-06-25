@@ -1,5 +1,5 @@
 ---
-title:      【转载】dangerouslySetHTML 和 style 属性
+title:      【React.js小书】dangerouslySetHTML 和 style 属性
 subtitle:   介绍两个之前没有提到的属性：dangerouslySetHTML 和 style，在 React.js 组件开发中非常常用，也很简单。
 keyword:    React.js,React.js 小书,dangerouslySetHTML,style 属性,教程
 date: 2019-05-26 14:08:52

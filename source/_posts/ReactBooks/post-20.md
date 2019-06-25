@@ -1,5 +1,5 @@
 ---
-title:      【转载】更新阶段的组件生命周期
+title:      【React.js小书】更新阶段的组件生命周期
 subtitle:   本文介绍组件的更新，本质上是 setState 导致 React.js 重新渲染组件并把组件的变化应用到 DOM 元素上的过程。
 keyword:    React.js,React.js 小书,组件,生命周期，组件更新
 date: 2019-05-23 14:08:52

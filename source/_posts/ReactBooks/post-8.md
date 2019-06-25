@@ -1,5 +1,5 @@
 ---
-title:      【转载】组件的组合、嵌套和组件树
+title:      【React.js小书】组件的组合、嵌套和组件树
 subtitle:   React.js 中一切皆组件，用 React.js 其实就是在写组件。本文介绍 React.js 组件的组合和组件树。
 keyword:    React.js,React.js 小书,教程,组件
 date: 2019-05-11 14:08:52

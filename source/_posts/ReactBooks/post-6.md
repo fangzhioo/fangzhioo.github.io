@@ -1,5 +1,5 @@
 ---
-title:      【转载】使用 JSX 描述 UI 信息
+title:      【React.js小书】使用 JSX 描述 UI 信息
 subtitle:   通过一个简单的例子讲解 React.js 描述页面 UI 的方式，介绍 JSX 原理，并且使用 JSX 来描述 React.js 组件。
 keyword:    React.js,React.js 简介,React.js 小书,React.js 教程
 date: 2019-05-09 14:08:52

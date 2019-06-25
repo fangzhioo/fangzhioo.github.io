@@ -1,5 +1,5 @@
 ---
-title:      【转载】ref 和 React.js 中的 DOM 操作
+title:      【React.js小书】ref 和 React.js 中的 DOM 操作
 subtitle:   React.js 中可以直接通过 setState 的方式重新渲染组件，本文介绍了 ref 和 React.js 中的 DOM 操作。
 keyword:    React.js,React.js 小书,ref,DOM
 date: 2019-05-24 14:08:52

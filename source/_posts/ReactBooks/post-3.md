@@ -1,5 +1,5 @@
 ---
-title:      【转载】前端组件化（二）：优化 DOM 操作
+title:      【React.js小书】前端组件化（二）：优化 DOM 操作
 subtitle:   一个关于如何使用 React.js 实现前端组件化的教程的第二部分，介绍了如何优化虚拟 DOM。
 keyword:    React.js,React.js 小书,教程,组件,虚拟 DOM
 date: 2019-05-06 16:08:52

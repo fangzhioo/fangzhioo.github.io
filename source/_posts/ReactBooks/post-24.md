@@ -1,5 +1,5 @@
 ---
-title:      【转载】PropTypes 和组件参数验证
+title:      【React.js小书】PropTypes 和组件参数验证
 subtitle:   通过 PropTypes 给组件参数做类型限制，帮助我们迅速定位错误。给组件加上 propTypes，也让组件的开发、使用更加规范清晰。
 keyword:    React.js,React.js 小书,PropTypes,组件,参数验证
 date: 2019-05-27 14:08:52

@@ -1,5 +1,5 @@
 ---
-title:      【转载】React.js 基本环境安装
+title:      【React.js小书】React.js 基本环境安装
 subtitle:   React.js 单独使用基本上是不可能的事情，需要配合一些第三方工具，教你如何下载和安装 React.js 的教程。
 keyword:    React.js,React.js 小书,安装,教程,React.js 下载
 date: 2019-05-08 18:08:52

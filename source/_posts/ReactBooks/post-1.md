@@ -1,5 +1,5 @@
 ---
-title:      【转载】React.js简介
+title:      【React.js小书】React.js简介
 subtitle:   对于 React.js 小书的简介，是本教程提纲挈领的部分。让你用最少的精力深入了解实战中最需要的 React.js 知识。
 keyword:    React.js,React.js 简介,React.js 小书,React.js 教程
 date: 2019-05-04 14:08:52
