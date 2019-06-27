@@ -1,5 +1,5 @@
 ---
-title:      防抖（Debounce）和节流（Throttle）
+title:      【拓展】防抖（Debounce）和节流（Throttle）
 subtitle:   事件持续或频繁触发优化解决方案
 keyword:    Debounce, Throttle
 date: 2019-05-17 14:08:52
