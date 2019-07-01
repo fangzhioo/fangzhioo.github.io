@@ -1,8 +1,8 @@
 ---
-title:      【React.js小书】动手实现 Redux（二）：抽离 store 和监控数据变化
+title:      【React.js小书】动手实现 Redux（五）：不要问为什么的 reducer
 subtitle:   提炼实战经验中基础的、重要的、频繁的知识进行重点讲解，让你能用最少的精力深入了解实战中最需要的 React.js 知识。
 keyword:    react.js,web,props,state,javascript
-date: 2019-06-03 14:08:52
+date: 2019-06-06 14:08:52
 catalog: true
 header-img:
 tags:
@@ -11,58 +11,24 @@ categories:
     - Reprint
 ---
 
-# 动手实现 Redux（二）：抽离 store 和监控数据变化
+# 动手实现 Redux（五）：不要问为什么的 reducer
 
-> React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
-
-
-## 抽离出 store
-
-[上一节](http://react.huziketang.com/blog/lesson30) 的我们有了 `appState`  和 `dispatch`：
-
-```javascript
-let appState = {
-  title: {
-    text: 'React.js 小书',
-    color: 'red',
-  },
-  content: {
-    text: 'React.js 小书内容',
-    color: 'blue'
-  }
-}
-
-function dispatch (action) {
-  switch (action.type) {
-    case 'UPDATE_TITLE_TEXT':
-      appState.title.text = action.text
-      break
-    case 'UPDATE_TITLE_COLOR':
-      appState.title.color = action.color
-      break
-    default:
-      break
-  }
-}
-```
-
-现在我们把它们集中到一个地方，给这个地方起个名字叫做 `store`，然后构建一个函数 `createStore`，用来专门生产这种 `state` 和 `dispatch` 的集合，这样别的 App 也可以用这种模式了：
+经过了这么多节的优化，我们有了一个很通用的 `createStore`：
 
 ```javascript
 function createStore (state, stateChanger) {
+  const listeners = []
+  const subscribe = (listener) => listeners.push(listener)
   const getState = () => state
-  const dispatch = (action) => stateChanger(state, action)
-  return { getState, dispatch }
+  const dispatch = (action) => {
+    state = stateChanger(state, action) // 覆盖原对象
+    listeners.forEach((listener) => listener())
+  }
+  return { getState, dispatch, subscribe }
 }
 ```
 
-`createStore` 接受两个参数，一个是表示应用程序状态的 `state`；另外一个是 `stateChanger`，它来描述应用程序状态会根据 action 发生什么变化，其实就是相当于本节开头的 `dispatch` 代码里面的内容。
-
-`createStore` 会返回一个对象，这个对象包含两个方法 `getState` 和 `dispatch`。`getState` 用于获取 `state` 数据，其实就是简单地把 `state` 参数返回。
-
-`dispatch` 用于修改数据，和以前一样会接受 `action`，然后它会把 `state` 和 `action` 一并传给 `stateChanger`，那么 `stateChanger` 就可以根据 `action` 来修改 `state` 了。
-
-现在有了 `createStore`，我们可以这么修改原来的代码，保留原来所有的渲染函数不变，修改数据生成的方式：
+它的使用方式是：
 
 ```javascript
 let appState = {
@@ -79,136 +45,135 @@ let appState = {
 function stateChanger (state, action) {
   switch (action.type) {
     case 'UPDATE_TITLE_TEXT':
-      state.title.text = action.text
-      break
+      return {
+        ...state,
+        title: {
+          ...state.title,
+          text: action.text
+        }
+      }
     case 'UPDATE_TITLE_COLOR':
-      state.title.color = action.color
-      break
+      return {
+        ...state,
+        title: {
+          ...state.title,
+          color: action.color
+        }
+      }
     default:
-      break
+      return state
   }
 }
 
 const store = createStore(appState, stateChanger)
-
-renderApp(store.getState()) // 首次渲染页面
-store.dispatch({ type: 'UPDATE_TITLE_TEXT', text: '《React.js 小书》' }) // 修改标题文本
-store.dispatch({ type: 'UPDATE_TITLE_COLOR', color: 'blue' }) // 修改标题颜色
-renderApp(store.getState()) // 把新的数据渲染到页面上
-```
-
-针对每个不同的 App，我们可以给 `createStore` 传入初始的数据 `appState`，和一个描述数据变化的函数 `stateChanger`，然后生成一个 `store`。需要修改数据的时候通过 `store.dispatch`，需要获取数据的时候通过 `store.getState`。
-
-## 监控数据变化
-上面的代码有一个问题，我们每次通过 `dispatch` 修改数据的时候，其实只是数据发生了变化，如果我们不手动调用 `renderApp`，页面上的内容是不会发生变化的。但是我们总不能每次 `dispatch` 的时候都手动调用一下 `renderApp`，我们肯定希望数据变化的时候程序能够智能一点地自动重新渲染数据，而不是手动调用。
-
-你说这好办，往 `dispatch`里面加 `renderApp` 就好了，但是这样 `createStore` 就不够通用了。我们希望用一种通用的方式“监听”数据变化，然后重新渲染页面，这里要用到观察者模式。修改  `createStore`：
-
-```javascript
-function createStore (state, stateChanger) {
-  const listeners = []
-  const subscribe = (listener) => listeners.push(listener)
-  const getState = () => state
-  const dispatch = (action) => {
-    stateChanger(state, action)
-    listeners.forEach((listener) => listener())
-  }
-  return { getState, dispatch, subscribe }
-}
-```
-
-我们在 `createStore` 里面定义了一个数组 `listeners`，还有一个新的方法 `subscribe`，可以通过 `store.subscribe(listener)` 的方式给 `subscribe` 传入一个监听函数，这个函数会被 `push` 到数组当中。
-
-我们修改了 `dispatch`，每次当它被调用的时候，除了会调用 `stateChanger` 进行数据的修改，还会遍历 `listeners` 数组里面的函数，然后一个个地去调用。相当于我们可以通过 `subscribe` 传入数据变化的监听函数，每当 `dispatch` 的时候，监听函数就会被调用，这样我们就可以在每当数据变化时候进行重新渲染：
-
-```javascript
-const store = createStore(appState, stateChanger)
-store.subscribe(() => renderApp(store.getState()))
-
-renderApp(store.getState()) // 首次渲染页面
-store.dispatch({ type: 'UPDATE_TITLE_TEXT', text: '《React.js 小书》' }) // 修改标题文本
-store.dispatch({ type: 'UPDATE_TITLE_COLOR', color: 'blue' }) // 修改标题颜色
-// ...后面不管如何 store.dispatch，都不需要重新调用 renderApp
-```
-
-> 对观察者模式不熟悉的朋友可能会在这里晕头转向，建议了解一下这个设计模式的相关资料，然后进行练习： [实现一个 EventEmitter](https://scriptoj.com/problems/36) 再进行阅读。
-
-我们只需要 `subscribe` 一次，后面不管如何 `dispatch` 进行修改数据，`renderApp` 函数都会被重新调用，页面就会被重新渲染。这样的订阅模式还有好处就是，以后我们还可以拿同一块数据来渲染别的页面，这时 `dispatch` 导致的变化也会让每个页面都重新渲染：
-
-```javascript
-const store = createStore(appState, stateChanger)
-store.subscribe(() => renderApp(store.getState()))
-store.subscribe(() => renderApp2(store.getState()))
-store.subscribe(() => renderApp3(store.getState()))
 ...
 ```
 
-本节的完整代码：
+我们再优化一下，其实 `appState` 和 `stateChanger` 可以合并到一起去：
 
 ```javascript
-function createStore (state, stateChanger) {
+function stateChanger (state, action) {
+  if (!state) {
+    return {
+      title: {
+        text: 'React.js 小书',
+        color: 'red',
+      },
+      content: {
+        text: 'React.js 小书内容',
+        color: 'blue'
+      }
+    }
+  }
+  switch (action.type) {
+    case 'UPDATE_TITLE_TEXT':
+      return {
+        ...state,
+        title: {
+          ...state.title,
+          text: action.text
+        }
+      }
+    case 'UPDATE_TITLE_COLOR':
+      return {
+        ...state,
+        title: {
+          ...state.title,
+          color: action.color
+        }
+      }
+    default:
+      return state
+  }
+}
+```
+
+`stateChanger` 现在既充当了获取初始化数据的功能，也充当了生成更新数据的功能。如果有传入 `state` 就生成更新数据，否则就是初始化数据。这样我们可以优化 `createStore` 成一个参数，因为 `state` 和 `stateChanger` 合并到一起了：
+
+```javascript
+function createStore (stateChanger) {
+  let state = null
   const listeners = []
   const subscribe = (listener) => listeners.push(listener)
   const getState = () => state
   const dispatch = (action) => {
-    stateChanger(state, action)
+    state = stateChanger(state, action)
     listeners.forEach((listener) => listener())
   }
+  dispatch({}) // 初始化 state
   return { getState, dispatch, subscribe }
 }
-
-function renderApp (appState) {
-  renderTitle(appState.title)
-  renderContent(appState.content)
-}
-
-function renderTitle (title) {
-  const titleDOM = document.getElementById('title')
-  titleDOM.innerHTML = title.text
-  titleDOM.style.color = title.color
-}
-
-function renderContent (content) {
-  const contentDOM = document.getElementById('content')
-  contentDOM.innerHTML = content.text
-  contentDOM.style.color = content.color
-}
-
-let appState = {
-  title: {
-    text: 'React.js 小书',
-    color: 'red',
-  },
-  content: {
-    text: 'React.js 小书内容',
-    color: 'blue'
-  }
-}
-
-function stateChanger (state, action) {
-  switch (action.type) {
-    case 'UPDATE_TITLE_TEXT':
-      state.title.text = action.text
-      break
-    case 'UPDATE_TITLE_COLOR':
-      state.title.color = action.color
-      break
-    default:
-      break
-  }
-}
-
-const store = createStore(appState, stateChanger)
-store.subscribe(() => renderApp(store.getState())) // 监听数据变化
-
-renderApp(store.getState()) // 首次渲染页面
-store.dispatch({ type: 'UPDATE_TITLE_TEXT', text: '《React.js 小书》' }) // 修改标题文本
-store.dispatch({ type: 'UPDATE_TITLE_COLOR', color: 'blue' }) // 修改标题颜色
 ```
 
-## 总结
+`createStore` 内部的 `state` 不再通过参数传入，而是一个局部变量 `let state = null`。`createStore` 的最后会手动调用一次 `dispatch({})`，`dispatch` 内部会调用 `stateChanger`，这时候的 `state` 是 `null`，所以这次的 `dispatch` 其实就是初始化数据了。`createStore` 内部第一次的 `dispatch` 导致 `state` 初始化完成，后续外部的 `dispatch` 就是修改数据的行为了。
 
-现在我们有了一个比较通用的 `createStore`，它可以产生一种我们新定义的数据类型 `store`，通过 `store.getState` 我们获取共享状态，而且我们约定只能通过 `store.dispatch` 修改共享状态。`store` 也允许我们通过 `store.subscribe` 监听数据数据状态被修改了，并且进行后续的例如重新渲染页面的操作。
+我们给 `stateChanger` 这个玩意起一个通用的名字：reducer，不要问为什么，它就是个名字而已，修改 `createStore` 的参数名字：
+
+```javascript
+function createStore (reducer) {
+  let state = null
+  const listeners = []
+  const subscribe = (listener) => listeners.push(listener)
+  const getState = () => state
+  const dispatch = (action) => {
+    state = reducer(state, action)
+    listeners.forEach((listener) => listener())
+  }
+  dispatch({}) // 初始化 state
+  return { getState, dispatch, subscribe }
+}
+```
+
+这是一个最终形态的 `createStore`，它接受的参数叫 `reducer`，`reducer` 是一个函数，细心的朋友会发现，它其实是一个纯函数（Pure Function）。
+
+## reducer
+`createStore` 接受一个叫 reducer 的函数作为参数，*这个函数规定是一个纯函数*，它接受两个参数，一个是 `state`，一个是 `action`。
+
+如果没有传入 `state` 或者 `state` 是 `null`，那么它就会返回一个初始化的数据。如果有传入 `state` 的话，就会根据 `action` 来“修改“数据，但其实它没有、也规定不能修改 `state`，而是要通过上节所说的把修改路径的对象都复制一遍，然后产生一个新的对象返回。如果它不能识别你的 `action`，它就不会产生新的数据，而是（在 `default` 内部）把 `state` 原封不动地返回。
+
+reducer 是不允许有副作用的。你不能在里面操作 DOM，也不能发 Ajax 请求，更不能直接修改 `state`，它要做的仅仅是 —— *初始化和计算新的 `state`*。
+
+现在我们可以用这个 `createStore` 来构建不同的 `store` 了，只要给它传入符合上述的定义的 `reducer` 即可：
+
+```javascript
+function themeReducer (state, action) {
+  if (!state) return {
+    themeName: 'Red Theme',
+    themeColor: 'red'
+  }
+  switch (action.type) {
+    case 'UPATE_THEME_NAME':
+      return { ...state, themeName: action.themeName }
+    case 'UPATE_THEME_COLOR':
+      return { ...state, themeColor: action.themeColor }
+    default:
+      return state
+  }
+}
+
+const store = createStore(themeReducer)
+...
+```
 
 # 目录
 
