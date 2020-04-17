@@ -1,0 +1,28 @@
+---
+layout: blank
+---
+
+<!-- Chinese Version -->
+<div class="love-container">
+    <%- page.content %>
+
+    <!-- require APlayer -->
+    <% if(config['metingjs']) { %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+
+    <div class="aplayer"
+        data-id="<%= config['love-data-id'] %>"
+        data-server="<%= config['love-data-server'] %>"
+        data-type="<%= config['love-data-type'] %>"
+        data-fixed="<%= config['love-data-fixed'] %>" 
+        data-autoplay="<%= config['love-data-autoplay'] %>" 
+    >
+    </div>
+    <% } %>
+
+    <script type="text/javascript" src="/js/love-genarator.js?v=1.0.0" async=""></script>
+</div>
+
+

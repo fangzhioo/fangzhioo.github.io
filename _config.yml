@@ -211,6 +211,13 @@ data-fixed: true
   # data-mini:
   # data-autoplay:    
 
+# love 模块单曲配置
+love-data-id: 2001320
+love-data-server: netease
+love-data-type: song
+love-data-fixed: true
+love-data-autoplay: true
+
 # Live2D
 ## https://github.com/xiazeyu/live2d-widget.js
 ## https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md
