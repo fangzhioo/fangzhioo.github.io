@@ -42,11 +42,14 @@ nav_menu: [
     {
         title: "Archives",
         href: "/archive/"
-    }
-    ,
+    },
     {
         title: "Tags",
         href: "/tags/"
+    },
+    {
+        title: "Love",
+        href: "/love/"
     }
 ]
 
