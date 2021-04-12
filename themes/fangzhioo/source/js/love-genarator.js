@@ -347,7 +347,8 @@ Garden.randomrgba = function (rmin, rmax, gmin, gmax, bmin, bmax, a) {
 var offsetX = $("#loveHeart").width() / 2;
 var offsetY = $("#loveHeart").height() / 2 - 55;
 var together = new Date();
-together.setFullYear(2020, 1, 19);
+// 2020-01-19 09:34:00 月份从0开始
+together.setFullYear(2020, 0, 19);
 together.setHours(9);
 together.setMinutes(34);
 together.setSeconds(0);
