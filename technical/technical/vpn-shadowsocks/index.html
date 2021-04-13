@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="方志的个人博客,fangzhioo,blog">
+    <meta name="keyword"  content="方志,fangzhioo,Fz&#39;s Blog,Kirito,桐人,博客,互联网,Web,JavaScript,Html,Css,Vue.js,React.js,前端,设计,Shadowsocks, VPN, 搬瓦工, SSR">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          【VPN】Shadowsocks搭建自用 VPN - 方志 | fangzhioo
+        
+    </title>
+
+    <link rel="canonical" href="https://fangzhioo.github.io/technical/technical/vpn-shadowsocks/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+<link rel="stylesheet" href="/css/beantech.min.css">
+
+
+    
+<link rel="stylesheet" href="/css/donate.css">
+
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/toc.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    <!--不蒜子-->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- jQuery -->
+    <!-- 
+<script src="/js/jquery.min.js"></script>
+ -->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <!-- 
+<script src="/js/bootstrap.min.js"></script>
+ -->
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/article_header/article_bg.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#VPN" title="VPN">VPN</a>
+                            
+                        </div>
+                        <h1>【VPN】Shadowsocks搭建自用 VPN</h1>
+                        <h2 class="subheading">运用搬瓦工VPS 和 Shadowsocks搭建自用 VPN</h2>
+
+                        <!--文章访问量统计-->
+                        
+                            <span id="busuanzi_container_page_pv">本文已被阅读过<span id="busuanzi_value_page_pv"></span>次</span>
+                        
+                        <!--文章访问量统计-->
+
+                        <span class="meta">
+                            Posted by 方志 on
+                            2019-05-01
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Fz Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                        <li>
+                            <a href="/archive/" >Archives</a>
+                        </li>
+                    
+                        <li>
+                            <a href="/tags/" >Tags</a>
+                        </li>
+                    
+                        <li>
+                            <a href="/about/" >About</a>
+                        </li>
+                    
+                        <li>
+                            <a href="/love/" >Love</a>
+                        </li>
+                    
+
+                    <!-- 
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                     -->
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1><span id="qian-yan">前言</span></h1><p>作为一个码农，需要不断地学习。难免需要查阅很多的文档和资料，对于这些部分，很多需要翻阅外国的网站。但是因为中国长城防火墙（GFW）的限制，我们并不能访问，就有了翻墙的需求了。<br>这里我们记录下，如何使用搬瓦工服务器搭建属于我们自己的VPN服务。仅供学习，老司机就不必看了！  </p>
+<blockquote>
+<p>请合理正确地使用VPN！！！  </p>
+</blockquote>
+<h1><span id="zheng-wen">正文</span></h1><p>VPN的获取有很多，可以去买现有的VPN服务或者自己购买服务器搭建。<br>这里，记录下我使用的<a target="_blank" rel="noopener" href="https://bwh88.net/">搬瓦工服务器</a>和<a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks/wiki/Shadowsocks-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E">Shadowsocks（小飞机）</a>搭建VPN的方式。  </p>
+<h2><span id="gou-mai-vps">购买VPS</span></h2><p>首先，我们需要有一个服务器，可以访问外网，这里运用的搬瓦工的VPS主机。可以 <a target="_blank" rel="noopener" href="https://bwh88.net/">去这里</a> 选择购买。对于搭建VPN而言，要求的配置不高，所以我们选择最便宜的那款VPS，之前会有 <em>$19.99/年</em> 的套餐，目前都涨价了。最便宜的套餐大概 <em>$49.99/年</em>，购买时，会有优惠码提供一定的优惠。可以自行百度下搬瓦工优惠码，最高优惠力度大概6.25%，优惠码为：<strong>BWH26FXH3HIQ</strong> （截止2018-09有效）。  </p>
+<img class="shadow" alt="加载失败！" src="/img/article/vpn-shadowsocks/vpn-shadowsocks-1.png">
+
+<p>购买完毕后，我们在控制台可以查看<strong>主机IP</strong>。然后需要去安装系统镜像，这里推荐选择<strong>centos-7-x86_64-bbr</strong>。安装完毕后，会有提供<strong>root密码</strong>和<strong>服务器SSH端口</strong>。</p>
+<img class="shadow" alt="加载失败！" src="/img/article/vpn-shadowsocks/vpn-shadowsocks-2.png">
+
+<img class="shadow" alt="加载失败！" src="/img/article/vpn-shadowsocks/vpn-shadowsocks-3.png">
+
+<h2><span id="da-jian-huan-jing">搭建环境</span></h2><p>购买完成后，我们就可以通过 Xshell 这样的工具远程连接我们的服务器了。这里用 <a target="_blank" rel="noopener" href="https://putty.en.softonic.com/">PuTTY</a>，一个简单的连接工具。<br>输入我们购买的VPS的账户名密码之后，便连接成功了。  </p>
+<img class="shadow" alt="加载失败！" src="/img/article/vpn-shadowsocks/vpn-shadowsocks-4.png">
+
+<img class="shadow" alt="加载失败！" src="/img/article/vpn-shadowsocks/vpn-shadowsocks-5.png">
+
+<p>接下来，我们需要安装 pip 和 shadowsocks 到我们的服务器上。依次执行下面几行命令，如果没有报错，那便是成功了。在出现提示确认的时候，输入<code>y</code>后，回车即可。可是直接复制后，右键粘贴，直接执行。  </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install python-setuptools</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">easy_install pip</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure>
+
+<p>到这里，便安装好了shadowsocks到我们的主机上了，接下来需要配置shadowsocks。我们用vim编辑配置文件shadowsocks.json。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/shadowsocks.json</span><br></pre></td></tr></table></figure>
+
+<p>之后编辑我们的配置文件，按 <code>i</code> 键，进入编辑模式，Putty黑框的左下角会出现 <code>-- INSERT --</code> 字样。然后复制以下内容，右键粘贴，修改相应的地方为自己的配置。<br><strong>server</strong> 中的 <code>服务器IP</code> 就是上面在控制台查看的主机IP地址。<br><strong>port_password</strong> 里面的 <code>2333</code> 是连接时需要的端口。<code>我是密码</code>是连接时需要的密码。<br>你需要修改这两处，其他属性就不要修改了，注意格式正确。<br>修改完成后，按 <code>ESC</code> 键，退出编辑模式，黑框左下角的 <code>-- INSERT --</code> 字样消失，输入 <code>:wq</code> ,回车执行，文件修改保存并返回。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;server&quot;:&quot;服务器IP&quot;,</span><br><span class="line">    &quot;local_address&quot;:&quot;127.0.0.1&quot;,  </span><br><span class="line">    &quot;local_port&quot;:1080,</span><br><span class="line">    &quot;port_password&quot;: &#123;</span><br><span class="line">        &quot;2333&quot;:&quot;我是密码&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;timeout&quot;:300,</span><br><span class="line">    &quot;method&quot;:&quot;aes-256-cfb&quot;,</span><br><span class="line">    &quot;fast_open&quot;: false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img class="shadow" alt="加载失败！" src="/img/article/vpn-shadowsocks/vpn-shadowsocks-6.png"> 
+
+<p>到这里，我们的shadowsocks就配置完成了，接下来我们需要知道如何启动、关闭shadowsocks服务。</p>
+<p>启动shadowsocks服务：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c /etc/shadowsocks.json -d start</span><br></pre></td></tr></table></figure>
+
+<p>关闭shadowsocks服务：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c /etc/shadowsocks.json -d stop</span><br></pre></td></tr></table></figure>
+
+<p>重启shadowsocks服务：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c /etc/shadowsocks.json -d restart</span><br></pre></td></tr></table></figure>
+
+<img class="shadow" alt="加载失败！" src="/img/article/vpn-shadowsocks/vpn-shadowsocks-7.png"> 
+
+<p>最后，我们希望在主机启动后，便开启shadowsocks服务。  </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/rc.local</span><br></pre></td></tr></table></figure>
+
+<p>打开文件后，在文件中添加以下命令，保存修改即可。（操作参考上面的shadowsocks配置）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c /etc/shadowsocks.json -d start</span><br></pre></td></tr></table></figure>
+
+<p>到这里，shadowsocks的环境搭建就基本完成了。下面我们就可以在不同的端（Windows、OS X、Linux、IOS、Android等）连接使用了。对于不同端的使用，详细的可以<a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks/wiki/Ports-and-Clients">查看这里</a>。  </p>
+<h2><span id="windows-huan-jing-shi-yong">Windows环境使用</span></h2><p>主机环境搭建完成之后，我们需要在不同端连接使用VPN，最常用的端就是Windows环境的PC端了。首先，我们需要去<a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.1.3/Shadowsocks-4.1.3.zip">下载Windows环境下的shadowsocks</a>。</p>
+<p>解压后，运行 <code>Shadowsocks.exe</code> ，按照之前服务器主机的配置，填入<code>服务器IP</code>、<code>端口号</code>和<code>连接密码</code>，确定即可。  </p>
+<img class="shadow" alt="加载失败！" src="/img/article/vpn-shadowsocks/vpn-shadowsocks-8.png"> 
+
+<p>启动后，可以在任务栏右下角看到一个小飞机的图标，右键，可以勾选<code>启动系统代理</code>，也可以选择代理的模式：<code>PAC代理</code> 和 <code>全局代理</code>。使用的话，请选择<code>PAC代理</code>，毕竟正常使用时，访问国内的网站比较多，这样更节省流量且不影响访问国内网络。  </p>
+<blockquote>
+<p><strong>PAC代理</strong> 会在你连接网站的时候读取PAC文件里的规则，来确定你访问的网站有没有被墙，如果符合，那就会使用代理服务器连接网站，而PAC列表一般都是从GFWList更新的。GFWList定期会更新被墙的网站。<br><strong>全局模式</strong> 是设置你的系统代理的代理服务器，使你的所有http/socks数据经过代理服务器的转发送出。而只有支持socks5或者使用系统代理的软件才能使用Shadowsocks。</p>
+</blockquote>
+<h2><span id="ios-huan-jing-shi-yong">IOS环境使用</span></h2><p>苹果手机使用的话，因为政策上的一些限制（你懂的），我们无法直接下载到Shadowsocks相关的IOS软件。之前还能在PP助手或者爱思助手等平台上下载安装到类似 <code>Shadowrocket</code> 的软件，最近好像就不行了。<br>但是，如果之前有下载过这些软件的IPA包，依旧可以通过PP助手安装本地安装包。这里就不多说了，需要安装包的可以联系下。<br>安装完成之后，点击右上角的加号，就可以添加我们的节点。和之前Windows的设置一样，填写完成下面的参数之后，开启代理就可以了。  </p>
+<img class="shadow" alt="加载失败！" src="/img/article/vpn-shadowsocks/vpn-shadowsocks-9.jpg">
+
+<h2><span id="an-zhuo-huan-jing">安卓环境</span></h2><p>对比苹果，安卓版就简单多了，这里用的是<code>shadowsock</code>，同样是在网上找到对应的APK包，比如这个 <a target="_blank" rel="noopener" href="https://apkbe.com/zh/apk/3418-com.github.shadowsocks">shadowsock</a> ，安装上，点击右上角的加号，添加配置。  </p>
+<img class="shadow" alt="加载失败！" src="/img/article/vpn-shadowsocks/vpn-shadowsocks-10.png">
+
+<p>我没有安卓手机，只用用模式器看看了。</p>
+<h1><span id="hou-ji">后记</span></h1><p>简单记录下，小飞机的搭建。<br>最后，如果你也需要搭建，请合理合法地使用VPN，不然会被请去喝茶！  </p>
+<hr>
+
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/reprint/ReactBooks/post-1/" data-toggle="tooltip" data-placement="top" title="【React.js小书】React.js简介">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/web/more/js-excellent-code/" data-toggle="tooltip" data-placement="top" title="【拓展】JavaScript黑科技写法">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                    <div class="reward">
+                        <div class="reward-button">赏 <span class="reward-code"> 
+                            <span class="alipay-code"> <img class="alipay-img" src="/img/reward/alipay.jpg"><b>支付宝打赏</b></span> 
+                            <span class="wechat-code"> <img class="wechat-img" src="/img/reward/wechat_pay.jpg"><b>微信打赏</b> </span>
+                            </span></div>
+                        <p class="reward-notice">赞赏一下</p>
+                    </div>
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+                <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+
+                <div class="aplayer"
+                    data-id="2225960762"
+                    data-server="netease"
+                    data-type="playlist"
+                    data-fixed="true" >
+                </div>
+                
+
+                
+        
+                    
+                        <!-- 来必力City版安装代码 --> 
+                        <div id="lv-container" data-id="city" data-uid="MTAyMC80Mzg3OC8yMDQxMw==">
+                            <script type="text/javascript">
+                                (function (d, s) {
+                                    var j, e = d.getElementsByTagName(s)[0];
+        
+                                    if (typeof LivereTower === 'function') { return; }
+        
+                                    j = d.createElement(s);
+                                    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                                    j.async = true;
+        
+                                    e.parentNode.insertBefore(j, e);
+                                })(document, 'script');
+                            </script>
+                            <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                        </div>
+                        <!-- City版安装代码已完成 -->
+                    
+            </div>
+            
+            <!-- Table of Contents -->
+            
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        <!-- toc -->
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">购买VPS</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">搭建环境</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">Windows环境使用</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">IOS环境使用</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">安卓环境</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">后记</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <div><a href="/tags/">FEATURED TAGS</a></div>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#VPN" title="VPN">VPN</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://huangxuan.me/" target="_blank">Hux Blog</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- 复制添加版权申明-->
+<script>
+    /**/
+    function setClipboardText(event){
+        event.preventDefault();//阻止元素发生默认的行为（例如，当点击提交按钮时阻止对表单的提交）。
+        var node = document.createElement('div');
+        //对documentfragment不熟，不知道怎么获取里面的内容，用了一个比较笨的方式
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        //getRangeAt(0)返回对基于零的数字索引与传递参数匹配的选择对象中的范围的引用。对于连续选择，参数应为零。
+        var htmlData = '<div>'
+            + node.innerHTML
+            + '<br /><br />著作权归作者所有。<br />'
+            + '商业转载请联系作者获得授权，非商业转载请注明出处。<br />'
+            + '作者：fangzhioo <br />链接：'
+            + location.href
+            + '<br />来源：fangzhioo.github.io<br /><br />'
+            + '</div>';
+        var textData = window.getSelection().getRangeAt(0)
+            + '\n\n著作权归作者所有。\n'
+            + '商业转载请联系作者获得授权，非商业转载请注明出处。\n'
+            + '作者：fangzhioo\n'
+            + '链接：'
+            + location.href
+            + '来源：fangzhioo.github.io\n\n';
+        if(event.clipboardData){
+            event.clipboardData.setData("text/html", htmlData);
+            //setData(剪贴板格式, 数据) 给剪贴板赋予指定格式的数据。返回 true 表示操作成功。
+            event.clipboardData.setData("text/plain",textData);
+        }
+        else if(window.clipboardData){ //window.clipboardData的作用是在页面上将需要的东西复制到剪贴板上，提供了对于预定义的剪贴板格式的访问，以便在编辑操作中使用。
+            return window.clipboardData.setData("text", textData);
+        }
+    };
+ 
+    document.addEventListener('copy',function(e){
+        setClipboardText(e);
+    });
+</script>
+
+<!-- smooth scroll behavior polyfill  -->
+<script type="text/javascript" src="/js/smoothscroll.js"></script>
+<script>
+        $('#toc').on('click','a',function(a){
+            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
+            // console.log(window.navigator.userAgent,isChrome)
+            // if(isChrome) {
+                // console.log(a.currentTarget.outerHTML);
+                // console.log($(a.currentTarget).attr("href"));
+                //跳转到指定锚点
+                // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
+                console.log('toc',a)
+                var target = document.getElementById($(a.currentTarget).attr("href").replace("#",""));
+                target && target.scrollIntoView({behavior: 'smooth' });
+            // }
+        })  
+</script>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/fang-zhi-4-73">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/fangzhioooo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/fangzhioo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 方志 2021 
+                    <br>
+                    Theme by <a target="_blank" rel="noopener" href="https://huangxuan.me/">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="https://fangzhioo.github.io">Fz</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=fangzhioo&repo=fangzhioo.github.io&type=star&count=true" >
+                    </iframe>
+                    <br />
+                    <!--总访问量统计-->
+                    
+                        <span id="busuanzi_container_site_pv" style="margin-left: 3px;">
+                            总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    
+                    <!--总访问量统计-->
+
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/my-blog.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://fangzhioo.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-138588101-1';
+    var _gaDomain = 'fangzhioo.github.io';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'dce5d892b228cc0a253520da429e7f11';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://fangzhioo.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+<!-- live2d -->
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"position":"right","width":200,"height":400,"jsonPath":"/live2dw/assets/sagiri.model.json"},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script>
+
+</body>
+
+</html>

@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="方志的个人博客,fangzhioo,blog">
+    <meta name="keyword"  content="方志,fangzhioo,Fz&#39;s Blog,Kirito,桐人,博客,互联网,Web,JavaScript,Html,Css,Vue.js,React.js,前端,设计,fz">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          方志 | fangzhioo
+        
+    </title>
+
+    <link rel="canonical" href="https://fangzhioo.github.io/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+<link rel="stylesheet" href="/css/beantech.min.css">
+
+
+    
+<link rel="stylesheet" href="/css/donate.css">
+
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/toc.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    <!--不蒜子-->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- jQuery -->
+    <!-- 
+<script src="/js/jquery.min.js"></script>
+ -->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <!-- 
+<script src="/js/bootstrap.min.js"></script>
+ -->
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/header_img/home.jpg') 
+            /*config*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="site-heading">
+                        <h1>Fz Blog</h1>
+                        <!--<hr class="small">-->
+                        <span class="subheading">长路漫漫，唯剑作伴</span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Fz Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                        <li>
+                            <a href="/archive/" >Archives</a>
+                        </li>
+                    
+                        <li>
+                            <a href="/tags/" >Tags</a>
+                        </li>
+                    
+                        <li>
+                            <a href="/about/" >About</a>
+                        </li>
+                    
+                        <li>
+                            <a href="/love/" >Love</a>
+                        </li>
+                    
+
+                    <!-- 
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                     -->
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Main Content -->
+<div class="container">
+    <div class="row">
+        
+
+        <!-- USE SIDEBAR -->
+        <!-- Post Container -->
+        <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+
+            <!-- Main Content -->
+
+
+<div class="post-preview">
+
+    <a href="/diary/hello-myblog/">
+        <h2 class="post-title">
+            
+                <i class="fa fa-thumb-tack" style="color:#F4711F" ></i>
+                <!-- <i class="fa fa-thumb-tack" style="color:#F89E8C" ></i> -->
+                <!-- <i class="fa fa-thumb-tack" style="color:#1CB7ED" ></i> -->
+                <font color=#F4711F>置顶</font>
+                <!-- <font color=#F89E8C>置顶</font>  -->
+                <!-- <font color=#1CB7ED>置顶</font>  -->
+            
+            Hello 2019
+        </h2>
+        <h3 class="post-subtitle">
+            "Hello World, Hello Blog"
+        </h3>
+        <div class="post-content-preview">
+            
+“Yeah It’s on. ”
+
+前言Fz 的 Blog 就这么开通了！2019 年，Fz 总算有个地方可以好好写点东西了。
+作为一名程序员，总该有个地方来记录自己的工作、学习甚至生活的地方。在仔细考量下，觉得还是托管在github上更方便省事（其实还是技术不到家，毕竟在下只是个小小的前端开发），于是，这个Blog就诞生了！
+
+正文首先，要感谢下 BeanTech 大佬提供的Blog模板......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2022-12-25
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Diary" title="Diary">Diary</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/more/more/web-interview/">
+        <h2 class="post-title">
+            
+            【分享】关于最近在面试中，遇到的一些问题的汇总～
+        </h2>
+        <h3 class="post-subtitle">
+            主要是分享这段时间，面试遇到的一些比较典型的问题吧，比较懒，回答也没整理，基本百度就能知道结果。
+        </h3>
+        <div class="post-content-preview">
+            前端面试的一些汇总（2020-06-16）前端基础相关浏览器从输入URL到页面的展示发生了什么？（问的比较多）关于跨域问题，怎么解决？浏览器（nodejs）的垃圾回收机制？使用过nodejs吗？开发服务器（Express）？开发桌面端（Electron）？了解SSR（服务器渲染）吗？写过后端吗？对后端服务了解多少？Long-Polling, Websockets, Server-Sent E......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2020-06-16
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Share" title="Share">Share</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/more/more/web-share/">
+        <h2 class="post-title">
+            
+            【分享】在DT完成一系列产品后，分享下团队前端部分的技术选型～
+        </h2>
+        <h3 class="post-subtitle">
+            主要是分享这段时间，开发所运用的技术栈，个人觉得比较实用，分享给大家参考下～
+        </h3>
+        <div class="post-content-preview">
+            开发环境准备node安装 node.js / npm尽量安装 10.x 以上版本。如果已经安装好了 node.js，那么其中已经自带npm（包管理工具）。
+
+vscode 代码编辑器前端代码推荐使用 vscode 开发，因为需要配合后面用到的pont接口层生成工具，还有就是对 typescript 比较友好。
+可以去官网自行下载安装 官方站点。
+在插件拓展里，可以搜索安装需要的插件。来对 R......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2020-05-17
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Share" title="Share">Share</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/more/more/debounce-throttle/">
+        <h2 class="post-title">
+            
+            【拓展】防抖（Debounce）和节流（Throttle）
+        </h2>
+        <h3 class="post-subtitle">
+            事件持续或频繁触发优化解决方案
+        </h3>
+        <div class="post-content-preview">
+            前言在前端开发时，我们经常会需要绑定一些持续触发的事件，如mousemove、resize、scroll等。瞬间的操作都会导致这些事件会被高频触发。 如果事件的回调函数较为复杂，就会导致响应跟不上触发，出现页面卡顿，假死现象。还有，比如输入框实时检查时，通常使用的 oninput 的事件，这样用户输入过程中，都会触发请求服务器的操作。这些都不是我们想要的结果。在这种需求下，防抖（Deboun......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2019-07-17
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Debounce" title="Debounce">Debounce</a>
+            
+              <a href="/tags/#Throttle" title="Throttle">Throttle</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/reprint/ReactBooks/post-46/">
+        <h2 class="post-title">
+            
+            【React.js小书】实战分析：评论功能（九）
+        </h2>
+        <h3 class="post-subtitle">
+            提炼实战经验中基础的、重要的、频繁的知识进行重点讲解，让你能用最少的精力深入了解实战中最需要的 React.js 知识。
+        </h3>
+        <div class="post-content-preview">
+            实战分析：评论功能（九）现在我们有三个 Dumb 组件，一个控制评论的 reducer。我们还缺什么？需要有人去 LocalStorage 加载数据，去控制新增、删除评论，去把数据保存到 LocalStorage 里面。之前这些逻辑我们都是零散地放在各个组件里面的（主要是 CommentApp 组件），那是因为当时我们还没对 Dumb 和 Smart 组件类型划分的认知，状态和视图之间也没有......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2019-06-18
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#React" title="React">React</a>
+            
+              <a href="/tags/#转载" title="转载">转载</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/reprint/ReactBooks/post-45/">
+        <h2 class="post-title">
+            
+            【React.js小书】实战分析：评论功能（八）
+        </h2>
+        <h3 class="post-subtitle">
+            提炼实战经验中基础的、重要的、频繁的知识进行重点讲解，让你能用最少的精力深入了解实战中最需要的 React.js 知识。
+        </h3>
+        <div class="post-content-preview">
+            实战分析：评论功能（八）接下可以重构组件部分的内容了。先回顾一下之前我们是怎么划分组件的：
+
+组件树：
+
+这样划分方式当然是没错的。但是在组件的实现上有些问题，我们之前并没有太多地考虑复用性问题。所以现在可以看看 comment-app2 的 CommentInput 组件，你会发现它里面有一些 LocalStorage 操作：
+1234567891011121314151617181920......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2019-06-17
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#React" title="React">React</a>
+            
+              <a href="/tags/#转载" title="转载">转载</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/reprint/ReactBooks/post-44/">
+        <h2 class="post-title">
+            
+            【React.js小书】实战分析：评论功能（七）
+        </h2>
+        <h3 class="post-subtitle">
+            提炼实战经验中基础的、重要的、频繁的知识进行重点讲解，让你能用最少的精力深入了解实战中最需要的 React.js 知识。
+        </h3>
+        <div class="post-content-preview">
+            实战分析：评论功能（七）从本节开始，我们开始用 Redux、React-redux 来重构第二阶段的评论功能。产品需求跟之前一样，但是会用 Redux、React-redux 来帮助管理应用状态，而不是“状态提升”。让整个应用更加接近真实的工程。
+大家可以在第二阶段的代码上进行修改 comment-app2（非高阶组件版本）。如果已经忘了第二阶段评论功能的同学可以先简单回顾一下它的功能需求，......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2019-06-16
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#React" title="React">React</a>
+            
+              <a href="/tags/#转载" title="转载">转载</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/reprint/ReactBooks/post-43/">
+        <h2 class="post-title">
+            
+            【React.js小书】Smart 组件 vs Dumb 组件
+        </h2>
+        <h3 class="post-subtitle">
+            提炼实战经验中基础的、重要的、频繁的知识进行重点讲解，让你能用最少的精力深入了解实战中最需要的 React.js 知识。
+        </h3>
+        <div class="post-content-preview">
+            Smart 组件 vs Dumb 组件大家已经知道，只会接受 props 并且渲染确定结果的组件我们把它叫做 Dumb 组件，这种组件只关心一件事情 —— 根据 props 进行渲染。
+Dumb 组件最好不要依赖除了 React.js 和 Dumb 组件以外的内容。它们不要依赖 Redux 不要依赖 React-redux。这样的组件的可复用性是最好的，其他人可以安心地使用而不用怕会引入什么......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2019-06-15
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#React" title="React">React</a>
+            
+              <a href="/tags/#转载" title="转载">转载</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/reprint/ReactBooks/post-42/">
+        <h2 class="post-title">
+            
+            【React.js小书】使用真正的 Redux 和 React-redux
+        </h2>
+        <h3 class="post-subtitle">
+            提炼实战经验中基础的、重要的、频繁的知识进行重点讲解，让你能用最少的精力深入了解实战中最需要的 React.js 知识。
+        </h3>
+        <div class="post-content-preview">
+            使用真正的 Redux 和 React-redux现在 make-react-redux 工程代码中的 Redux 和 React-redux 都是我们自己写的，现在让我们来使用真正的官方版本的 Redux 和 React-redux。
+在工程目录下使用 npm 安装 Redux 和 React-redux 模块：
+1npm install redux react-redux --save
+......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2019-06-14
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#React" title="React">React</a>
+            
+              <a href="/tags/#转载" title="转载">转载</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/reprint/ReactBooks/post-41/">
+        <h2 class="post-title">
+            
+            【React.js小书】动手实现 React-redux（六）：React-redux 总结
+        </h2>
+        <h3 class="post-subtitle">
+            提炼实战经验中基础的、重要的、频繁的知识进行重点讲解，让你能用最少的精力深入了解实战中最需要的 React.js 知识。
+        </h3>
+        <div class="post-content-preview">
+            动手实现 React-redux（六）：React-redux 总结到这里大家已经掌握了 React-redux 的基本用法和概念，并且自己动手实现了一个 React-redux，我们回顾一下这几节都干了什么事情。
+React.js 除了状态提升以外并没有更好的办法帮我们解决组件之间共享状态的问题，而使用 context 全局变量让程序不可预测。通过 Redux 的章节，我们知道 store......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2019-06-13
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#React" title="React">React</a>
+            
+              <a href="/tags/#转载" title="转载">转载</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+
+
+<!-- Pager -->
+
+<ul class="pager">
+    
+    
+        <li class="next">
+            <a href="/archives/2/">Older Posts &rarr;</a>
+        </li>
+    
+</ul>
+
+
+
+            <br>
+
+            <!-- require APlayer -->
+            
+
+            <!-- 如果开启评论功能 -->
+            
+        </div>
+
+        <!-- Sidebar Container -->
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+        <!-- Featured Tags -->
+
+<section>
+    <!-- no hr -->
+    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
+            
+        
+            
+            <a href="/tags/#React" title="React" rel="46">React</a>
+            
+        
+            
+            <a href="/tags/#转载" title="转载" rel="46">转载</a>
+            
+        
+            
+            <a href="/tags/#JavaScript" title="JavaScript" rel="5">JavaScript</a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+            <a href="/tags/#Share" title="Share" rel="2">Share</a>
+            
+        
+            
+        
+            
+        
+    </div>
+</section>
+
+        <hr>
+    
+        <!-- Short About -->
+<section class="visible-md visible-lg">
+    <h5><a href="/about/">ABOUT ME</a></h5>
+    <div class="short-about">
+
+        
+            <img id = "avatar_pic" src="/img/avatar/yasuo.jpg" />
+        
+
+        
+            <p>且随疾风前行，身后亦须留心。</p>
+        
+
+        <!-- SNS Link -->
+        <ul class="list-inline">
+            
+            
+            
+                <li>
+                    <a target="_blank" href="https://www.zhihu.com/people/fang-zhi-4-73">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa  fa-stack-1x fa-inverse">知</i>
+                        </span>
+                    </a>
+                </li>
+            
+
+            
+                <li>
+                    <a target="_blank" href="http://weibo.com/fangzhioooo">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+            
+
+            
+
+            
+                <li>
+                    <a target="_blank"  href="https://github.com/fangzhioo">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+            
+            
+            
+            
+        </ul>
+    </div>
+</section>
+
+        <hr>
+    
+        
+  <h5>RECENT POSTS</h3>
+  <div class="widget">
+    <ul>
+      
+        <li>
+          <a href="/diary/hello-myblog/">Hello 2019</a>
+        </li>
+      
+        <li>
+          <a href="/more/more/web-interview/">【分享】关于最近在面试中，遇到的一些问题的汇总～</a>
+        </li>
+      
+        <li>
+          <a href="/more/more/web-share/">【分享】在DT完成一系列产品后，分享下团队前端部分的技术选型～</a>
+        </li>
+      
+        <li>
+          <a href="/more/more/debounce-throttle/">【拓展】防抖（Debounce）和节流（Throttle）</a>
+        </li>
+      
+        <li>
+          <a href="/reprint/ReactBooks/post-46/">【React.js小书】实战分析：评论功能（九）</a>
+        </li>
+      
+    </ul>
+  </div>
+
+        <hr>
+    
+        <!-- Friends Blog -->
+
+<h5>FRIENDS</h5>
+<ul class="list-inline">
+
+    
+        <li><a href="https://huangxuan.me/" target="_blank">Hux Blog</a></li>
+    
+</ul>
+
+        <hr>
+    
+        
+    <h5>ARCHIVES</h5>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+
+        <hr>
+    
+        <!-- Categories -->
+
+    <h5>categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/more/">More</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/reprint/">Reprint</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/technical/">Tech</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">Web</a></li></ul>
+    </div>
+
+        <hr>
+    
+</div>
+
+        
+    </div>
+</div>
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/fang-zhi-4-73">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/fangzhioooo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/fangzhioo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 方志 2021 
+                    <br>
+                    Theme by <a target="_blank" rel="noopener" href="https://huangxuan.me/">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="https://fangzhioo.github.io">Fz</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=fangzhioo&repo=fangzhioo.github.io&type=star&count=true" >
+                    </iframe>
+                    <br />
+                    <!--总访问量统计-->
+                    
+                        <span id="busuanzi_container_site_pv" style="margin-left: 3px;">
+                            总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    
+                    <!--总访问量统计-->
+
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/my-blog.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://fangzhioo.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-138588101-1';
+    var _gaDomain = 'fangzhioo.github.io';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'dce5d892b228cc0a253520da429e7f11';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://fangzhioo.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+<!-- live2d -->
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"position":"right","width":200,"height":400,"jsonPath":"/live2dw/assets/sagiri.model.json"},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script>
+
+</body>
+
+</html>

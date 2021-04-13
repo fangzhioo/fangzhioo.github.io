@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="方志的个人博客,fangzhioo,blog">
+    <meta name="keyword"  content="方志,fangzhioo,Fz&#39;s Blog,Kirito,桐人,博客,互联网,Web,JavaScript,Html,Css,Vue.js,React.js,前端,设计,Array, 数组">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          【JS基础整理】数组Array - 方志 | fangzhioo
+        
+    </title>
+
+    <link rel="canonical" href="https://fangzhioo.github.io/web/js-base/array/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+<link rel="stylesheet" href="/css/beantech.min.css">
+
+
+    
+<link rel="stylesheet" href="/css/donate.css">
+
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/toc.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    <!--不蒜子-->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- jQuery -->
+    <!-- 
+<script src="/js/jquery.min.js"></script>
+ -->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <!-- 
+<script src="/js/bootstrap.min.js"></script>
+ -->
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/article_header/article_bg.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+                            
+                              <a class="tag" href="/tags/#Array" title="Array">Array</a>
+                            
+                        </div>
+                        <h1>【JS基础整理】数组Array</h1>
+                        <h2 class="subheading">JavaScript基础知识整理——数组</h2>
+
+                        <!--文章访问量统计-->
+                        
+                            <span id="busuanzi_container_page_pv">本文已被阅读过<span id="busuanzi_value_page_pv"></span>次</span>
+                        
+                        <!--文章访问量统计-->
+
+                        <span class="meta">
+                            Posted by 方志 on
+                            2019-03-26
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Fz Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                        <li>
+                            <a href="/archive/" >Archives</a>
+                        </li>
+                    
+                        <li>
+                            <a href="/tags/" >Tags</a>
+                        </li>
+                    
+                        <li>
+                            <a href="/about/" >About</a>
+                        </li>
+                    
+                        <li>
+                            <a href="/love/" >Love</a>
+                        </li>
+                    
+
+                    <!-- 
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                     -->
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1><span id="qian-yan">前言</span></h1><p>数组 <code>Array</code> 官方定义的一个类型，存若干数据（有序），数组相关的基础知识整理。详细的可以查看<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/jsref_obj_array.asp">W3C的相关介绍</a>。  </p>
+<blockquote>
+<p>Array 对象用于在单个的变量中存储多个值。  </p>
+</blockquote>
+<h2><span id="chu-shi-hua">初始化</span></h2><p>初始化一个数组的方式有两种，字面量和构造函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 字面量创建  </span></span><br><span class="line"><span class="keyword">var</span> arr = []; <span class="comment">// 创建了一个空数组</span></span><br><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>,,<span class="string">&quot;abc&quot;</span>,<span class="literal">true</span>,<span class="number">3.14</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr1); <span class="comment">// 第二个元素是 undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 构造函数创建</span></span><br><span class="line"><span class="keyword">var</span> arr2 = <span class="keyword">new</span> <span class="built_in">Array</span>(); <span class="comment">// [] 创建了一个空数组</span></span><br><span class="line">arr2 = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>); <span class="comment">// [1,2,3]</span></span><br><span class="line"><span class="comment">//看一下变量的类型</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(arr1)); <span class="comment">// object</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(arr2)); <span class="comment">// object</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//当只传一个参数的时候，若果是一个数字，创建一个长度为这个数字的数组</span></span><br><span class="line"><span class="keyword">var</span> arr3 = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">20</span>); <span class="comment">// 不是[20]，是创建一个长度为20的数组</span></span><br><span class="line"><span class="built_in">console</span>.log(arr3.length,arr3); <span class="comment">// 20  []</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果是负值，会报错</span></span><br><span class="line"><span class="comment">// arr3 = new Array(-2);</span></span><br><span class="line"><span class="comment">// Array.html:30 Uncaught RangeError: Invalid array length</span></span><br><span class="line"><span class="built_in">console</span>.log(arr3);</span><br></pre></td></tr></table></figure>
+
+<h2><span id="length">length</span></h2><p><code>length</code> 是数组的可读可写的属性。  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr4 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="comment">// js中数组不存在数组越界</span></span><br><span class="line"><span class="comment">// 可以通过小标添加新的元素</span></span><br><span class="line">arr4[<span class="number">4</span>] = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(arr4,arr4.length); <span class="comment">// [1,2,3,4,5] 5</span></span><br><span class="line"><span class="comment">// length可读可写的属性</span></span><br><span class="line">arr4.length = <span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(arr4,arr4.length); <span class="comment">// [1,2,3,4,5,empty × 5] 10</span></span><br><span class="line"><span class="comment">// 如果把长度设置成比原有数组长度小，会删除超出长度的元素</span></span><br><span class="line">arr4.length = <span class="number">3</span>;</span><br><span class="line"><span class="built_in">console</span>.log(arr4,arr4.length); <span class="comment">// [1,2,3] 3</span></span><br></pre></td></tr></table></figure>
+
+<h2><span id="fang-wen-he-bian-li-shu-zu-yuan-su">访问和遍历数组元素</span></h2><p>访问数组中的元素，通过索引（下标）获取元素。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr5 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="comment">// 通过索引获取元素</span></span><br><span class="line"><span class="built_in">console</span>.log(arr5[<span class="number">0</span>],arr5[<span class="number">5</span>]); <span class="comment">// 1 undefined</span></span><br><span class="line">arr5[<span class="number">2</span>] = <span class="string">&#x27;abc&#x27;</span>; <span class="comment">// 直接修改某个元素</span></span><br><span class="line"><span class="built_in">console</span>.log(arr5);</span><br></pre></td></tr></table></figure>
+
+<p>遍历一个数组的方式有很多，有官方提供的，自己实现的等。  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr5 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="comment">// 方法一   for循环遍历 数组得到遍历  </span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr5.length; i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(arr5[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法二   快速遍历for in遍历  据说性能上要比其他的便利快</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> index <span class="keyword">in</span> arr5)&#123;</span><br><span class="line">    <span class="comment">// 这里的变量index是数组的索引</span></span><br><span class="line">    <span class="built_in">console</span>.log(index);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法三   forEach()遍历，官方给我们提供的方法，需要传一个函数</span></span><br><span class="line"><span class="comment">// 这个函数有一个隐形的参数，代表数组的元素</span></span><br><span class="line"><span class="comment">// 函数内是遍历数组时对每个数组做什么操作</span></span><br><span class="line"><span class="comment">// 并不支持 break</span></span><br><span class="line">arr5.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(num);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2><span id="shu-zu-de-chang-yong-fang-fa">数组的常用方法</span></h2><p>数组<code>Array</code>对象本身提供了许多方法，这里列举下常用的一些方法。比如 <code>push</code>和<code>pop</code>、<code>shift</code>和<code>unshift</code>、<code>slice</code>、<code>sort</code>等。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr7 = [<span class="number">1</span>,<span class="number">2</span>];</span><br><span class="line"><span class="comment">// push() 向数组的末尾添加一个或更多元素，并返回新的长度。</span></span><br><span class="line"><span class="built_in">console</span>.log(arr7.push(<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)); <span class="comment">// 5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// pop() 删除并返回数组的最后一个元素</span></span><br><span class="line"><span class="built_in">console</span>.log(arr7.pop()); <span class="comment">// 5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// shift() 删除并返回数组的第一个元素</span></span><br><span class="line"><span class="built_in">console</span>.log(arr7.shift()); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// unshift() 向数组的开头添加一个或更多元素，并返回新的长度。</span></span><br><span class="line"><span class="built_in">console</span>.log(arr7.unshift(<span class="number">1</span>,<span class="number">2</span>)); <span class="comment">// 5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// join() 把数组元素拼接成一个字符串（以某个字符串为连接符）不传参就是直接连接&quot;&quot;</span></span><br><span class="line"><span class="built_in">console</span>.log(arr7.join(<span class="string">&#x27;/&#x27;</span>)); <span class="comment">// &quot;1/2/2/3/4&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr8 = [<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>];</span><br><span class="line"><span class="comment">// reverse() 数组倒序</span></span><br><span class="line"><span class="built_in">console</span>.log(arr8.reverse()); <span class="comment">// [&quot;c&quot;, &quot;b&quot;, &quot;a&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// concat() 拼接两个或更多的数组,返回值是一个新的数组，不会改变原数组</span></span><br><span class="line"><span class="built_in">console</span>.log(arr8.concat([<span class="string">&#x27;d&#x27;</span>,<span class="string">&#x27;e&#x27;</span>])); <span class="comment">// [&quot;c&quot;, &quot;b&quot;, &quot;a&quot;, &quot;d&quot;, &quot;e&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// slice() 截取数组的一部分,返回值是一个新数组，不会改变原数组</span></span><br><span class="line"><span class="comment">// 第一个参数：起始位置  第二个参数：结束为止的前一个索引</span></span><br><span class="line"><span class="built_in">console</span>.log(arr8.slice(<span class="number">0</span>,<span class="number">3</span>)); <span class="comment">// [&quot;c&quot;, &quot;b&quot;, &quot;a&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// splice() 删除数组元素并向数组添加数组元素 返回删除的元素的数组</span></span><br><span class="line"><span class="comment">// 第一个参数：必须，起始位置（起始索引）</span></span><br><span class="line"><span class="comment">// 第二个参数：必须，如果为0，表示不删除元素，如果为2，删除元素的长度</span></span><br><span class="line"><span class="comment">// 第三、四..参数可以省略，替换的数组元素</span></span><br><span class="line">arr8.splice(<span class="number">1</span>,<span class="number">0</span>,<span class="string">&quot;z&quot;</span>); <span class="comment">// []</span></span><br><span class="line"><span class="built_in">console</span>.log(arr8); <span class="comment">// [&quot;c&quot;, &quot;z&quot;, &quot;b&quot;, &quot;a&quot;]</span></span><br><span class="line">arr8.splice(<span class="number">2</span>,<span class="number">1</span>,<span class="string">&#x27;w&#x27;</span>);<span class="comment">// [&quot;b&quot;]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr8);<span class="comment">// [&quot;c&quot;, &quot;z&quot;, &quot;w&quot;, &quot;a&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// toString() 把数组转成字符串</span></span><br><span class="line"><span class="built_in">console</span>.log(arr8.toString()); <span class="comment">// &quot;c,z,w,a&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// indexOf() 从头部查找某个元素的索引（第一次出现的位置）</span></span><br><span class="line"><span class="built_in">console</span>.log(arr8.indexOf(<span class="string">&#x27;a&#x27;</span>)); <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// lastIndexOf()  从尾部开始查找（第一次出现的位置）</span></span><br><span class="line"><span class="built_in">console</span>.log(arr8.lastIndexOf(<span class="string">&#x27;a&#x27;</span>)); <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr9 = [<span class="number">1</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">5</span>];</span><br><span class="line"><span class="comment">// sort() 排序  参数也是函数function，function有两个隐藏参数，函数内是以何种方式去排序</span></span><br><span class="line">arr9.sort(<span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// num1和num2是数组里相邻的两个元素</span></span><br><span class="line">    <span class="comment">// 这个函数必须要有返回值，是 true 或 false</span></span><br><span class="line">    <span class="keyword">return</span> num1 - num2; <span class="comment">// true 是从大到小  false从小到大</span></span><br><span class="line">&#125;)<span class="comment">// 原始的排序需要双层for循环</span></span><br><span class="line"><span class="built_in">console</span>.log(arr9); <span class="comment">// [1, 3, 5, 6, 8]</span></span><br></pre></td></tr></table></figure>
+
+<h2><span id="shu-zu-he-zi-fu-chuan-zhuan-hua">数组和字符串转化</span></h2><p>实际运用中，会经常涉及数组与字符串之间的互相转换问题。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;hello world welcome to my blog&#x27;</span>;</span><br><span class="line"><span class="comment">// 字符串--&gt;数组</span></span><br><span class="line"><span class="comment">// 参数1 分隔符 参数2 个数限制</span></span><br><span class="line"><span class="keyword">var</span> arr6 = str.split(<span class="string">&#x27; &#x27;</span>, <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr6); <span class="comment">// [&quot;hello&quot;, &quot;world&quot;]</span></span><br><span class="line"><span class="comment">// 数组--&gt;字符串</span></span><br><span class="line"><span class="comment">// 参数1 连接符</span></span><br><span class="line"><span class="keyword">var</span> str2 = arr6.join(<span class="string">&#x27;*&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(str2); <span class="comment">// &quot;hello*world&quot;</span></span><br><span class="line"><span class="keyword">var</span> str3 = arr6.toString();</span><br><span class="line"><span class="built_in">console</span>.log(str3);<span class="comment">// &quot;hello,world&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 对于toString方法，Number变量调用，传入Number（整数），返回对应的进制形式</span></span><br><span class="line"><span class="keyword">var</span> value = <span class="number">3</span>; <span class="comment">// 下面将十进制的数字3，转化为二进制的字符串11</span></span><br><span class="line"><span class="built_in">console</span>.log(value.toString(<span class="number">2</span>)); <span class="comment">// &quot;11&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2><span id="shu-zu-de-die-dai-fang-shi">数组的迭代方式</span></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">3</span>, <span class="number">2</span>];</span><br><span class="line"><span class="comment">// every() 参数函数全部返回真值，every()返回真值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cb</span> (<span class="params">obj, index, arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> obj &gt; <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> re = arr.every(cb);</span><br><span class="line"><span class="built_in">console</span>.log(re); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// some() 参数函数只要有一个返回真值，some()返回真值</span></span><br><span class="line"><span class="keyword">var</span> re2 = arr.some(cb);</span><br><span class="line"><span class="built_in">console</span>.log(re2);</span><br><span class="line"><span class="keyword">var</span> re3 = arr.some(<span class="function"><span class="keyword">function</span> (<span class="params">obj, index, arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> obj &gt; <span class="number">3</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(re3); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// filter() 过滤掉不符合条件的元素，剩下的元素以新数组的形式返回</span></span><br><span class="line"><span class="keyword">var</span> arr2 = arr.filter(<span class="function"><span class="keyword">function</span> (<span class="params">obj, index, arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> obj &gt;= <span class="number">3</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(arr2); <span class="comment">// [3, 4, 5, 6, 3]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// forEach() 对每个元素，执行特定操作</span></span><br><span class="line">arr.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">obj, index, arr</span>) </span>&#123;</span><br><span class="line">    arr[index] = ++obj</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [2, 3, 4, 5, 6, 7, 4, 3]</span></span><br></pre></td></tr></table></figure>
+
+<h2><span id="shu-zu-xiang-guan-tuo-zhan">数组相关拓展</span></h2><ol>
+<li>快速排序</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> left=[],right=[];</span><br><span class="line">    <span class="keyword">var</span> flag = arr.length/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(!flag)&#123;</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> mid = arr.splice(flag,<span class="number">1</span>);</span><br><span class="line">    arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">        num&lt;=mid ? left.push(num) : right.push(num);</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> quickSort(left).concat(mid,quickSort(right));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1><span id="hou-ji">后记</span></h1><p>数组的运用在JavaScript中的运用十分普遍广泛，这部分的基础尤为重要。在实际的工作中，可能运用到第三方的类库，比如<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jquery/traversing_map.asp">JQuery</a>、<a target="_blank" rel="noopener" href="https://www.html.cn/doc/lodash/">Lodash</a>等，但是掌握最基础的，才能明白其中的原理。</p>
+<hr>
+
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/web/more/js-excellent-code/" data-toggle="tooltip" data-placement="top" title="【拓展】JavaScript黑科技写法">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/web/js-base/string/" data-toggle="tooltip" data-placement="top" title="【JS基础整理】字符串String">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                    <div class="reward">
+                        <div class="reward-button">赏 <span class="reward-code"> 
+                            <span class="alipay-code"> <img class="alipay-img" src="/img/reward/alipay.jpg"><b>支付宝打赏</b></span> 
+                            <span class="wechat-code"> <img class="wechat-img" src="/img/reward/wechat_pay.jpg"><b>微信打赏</b> </span>
+                            </span></div>
+                        <p class="reward-notice">赞赏一下</p>
+                    </div>
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+                <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+
+                <div class="aplayer"
+                    data-id="2225960762"
+                    data-server="netease"
+                    data-type="playlist"
+                    data-fixed="true" >
+                </div>
+                
+
+                
+        
+                    
+                        <!-- 来必力City版安装代码 --> 
+                        <div id="lv-container" data-id="city" data-uid="MTAyMC80Mzg3OC8yMDQxMw==">
+                            <script type="text/javascript">
+                                (function (d, s) {
+                                    var j, e = d.getElementsByTagName(s)[0];
+        
+                                    if (typeof LivereTower === 'function') { return; }
+        
+                                    j = d.createElement(s);
+                                    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                                    j.async = true;
+        
+                                    e.parentNode.insertBefore(j, e);
+                                })(document, 'script');
+                            </script>
+                            <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                        </div>
+                        <!-- City版安装代码已完成 -->
+                    
+            </div>
+            
+            <!-- Table of Contents -->
+            
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        <!-- toc -->
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">初始化</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">length</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">访问和遍历数组元素</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">数组的常用方法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">数组和字符串转化</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">数组的迭代方式</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">数组相关拓展</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">后记</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <div><a href="/tags/">FEATURED TAGS</a></div>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+                        
+                          <a class="tag" href="/tags/#Array" title="Array">Array</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://huangxuan.me/" target="_blank">Hux Blog</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- 复制添加版权申明-->
+<script>
+    /**/
+    function setClipboardText(event){
+        event.preventDefault();//阻止元素发生默认的行为（例如，当点击提交按钮时阻止对表单的提交）。
+        var node = document.createElement('div');
+        //对documentfragment不熟，不知道怎么获取里面的内容，用了一个比较笨的方式
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        //getRangeAt(0)返回对基于零的数字索引与传递参数匹配的选择对象中的范围的引用。对于连续选择，参数应为零。
+        var htmlData = '<div>'
+            + node.innerHTML
+            + '<br /><br />著作权归作者所有。<br />'
+            + '商业转载请联系作者获得授权，非商业转载请注明出处。<br />'
+            + '作者：fangzhioo <br />链接：'
+            + location.href
+            + '<br />来源：fangzhioo.github.io<br /><br />'
+            + '</div>';
+        var textData = window.getSelection().getRangeAt(0)
+            + '\n\n著作权归作者所有。\n'
+            + '商业转载请联系作者获得授权，非商业转载请注明出处。\n'
+            + '作者：fangzhioo\n'
+            + '链接：'
+            + location.href
+            + '来源：fangzhioo.github.io\n\n';
+        if(event.clipboardData){
+            event.clipboardData.setData("text/html", htmlData);
+            //setData(剪贴板格式, 数据) 给剪贴板赋予指定格式的数据。返回 true 表示操作成功。
+            event.clipboardData.setData("text/plain",textData);
+        }
+        else if(window.clipboardData){ //window.clipboardData的作用是在页面上将需要的东西复制到剪贴板上，提供了对于预定义的剪贴板格式的访问，以便在编辑操作中使用。
+            return window.clipboardData.setData("text", textData);
+        }
+    };
+ 
+    document.addEventListener('copy',function(e){
+        setClipboardText(e);
+    });
+</script>
+
+<!-- smooth scroll behavior polyfill  -->
+<script type="text/javascript" src="/js/smoothscroll.js"></script>
+<script>
+        $('#toc').on('click','a',function(a){
+            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
+            // console.log(window.navigator.userAgent,isChrome)
+            // if(isChrome) {
+                // console.log(a.currentTarget.outerHTML);
+                // console.log($(a.currentTarget).attr("href"));
+                //跳转到指定锚点
+                // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
+                console.log('toc',a)
+                var target = document.getElementById($(a.currentTarget).attr("href").replace("#",""));
+                target && target.scrollIntoView({behavior: 'smooth' });
+            // }
+        })  
+</script>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/fang-zhi-4-73">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/fangzhioooo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/fangzhioo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 方志 2021 
+                    <br>
+                    Theme by <a target="_blank" rel="noopener" href="https://huangxuan.me/">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="https://fangzhioo.github.io">Fz</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=fangzhioo&repo=fangzhioo.github.io&type=star&count=true" >
+                    </iframe>
+                    <br />
+                    <!--总访问量统计-->
+                    
+                        <span id="busuanzi_container_site_pv" style="margin-left: 3px;">
+                            总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    
+                    <!--总访问量统计-->
+
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/my-blog.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://fangzhioo.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-138588101-1';
+    var _gaDomain = 'fangzhioo.github.io';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'dce5d892b228cc0a253520da429e7f11';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://fangzhioo.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+<!-- live2d -->
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"position":"right","width":200,"height":400,"jsonPath":"/live2dw/assets/sagiri.model.json"},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script>
+
+</body>
+
+</html>

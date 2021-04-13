@@ -1,0 +1,239 @@
+.ele-box{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+ }
+ .ele{
+     display: block;
+     width: 150px;
+     height: 150px;
+     margin-right: 20px;
+     text-align: center;
+     line-height: 150px;
+     color: #ffffff;
+     background-color:#E87DA1; 
+     background-image: url(https://tuimeizi.cn/random?w=150&h=150&t=hover);
+     background-repeat: no-repeat;
+ }
+ 
+ /* 2D */
+ .transform_2d_translate:hover{
+     transform: translate(50px,20px);
+     -ms-transform: translate(50px,20px);		/* IE 9 */
+     -webkit-transform: translate(50px,20px);	/* Safari and Chrome */
+     -o-transform: translate(50px,20px);		/* Opera */
+     -moz-transform: translate(50px,20px);		/* Firefox */
+ }
+ .transform_2d_rotate:hover{
+     transform: rotate(30deg);
+     -ms-transform: rotate(30deg);		/* IE 9 */
+     -webkit-transform: rotate(30deg);	/* Safari and Chrome */
+     -o-transform: rotate(30deg);		/* Opera */
+     -moz-transform: rotate(30deg);		/* Firefox */
+ }
+ .transform_2d_scale:hover{
+     transform: scale(2,0.5);
+     -ms-transform: scale(2,0.5);	/* IE 9 */
+     -webkit-transform: scale(2,0.5);	/* Safari 和 Chrome */
+     -o-transform: scale(2,0.5);	/* Opera */
+     -moz-transform: scale(2,0.5);	/* Firefox */
+ }
+ .transform_2d_skew:hover{
+     transform: skew(30deg,20deg);
+     -ms-transform: skew(30deg,20deg);	/* IE 9 */
+     -webkit-transform: skew(30deg,20deg);	/* Safari and Chrome */
+     -o-transform: skew(30deg,20deg);	/* Opera */
+     -moz-transform: skew(30deg,20deg);	/* Firefox */
+ }
+ .transform_2d_matrix:hover{
+     transform:matrix(0.866,0.5,-0.5,0.866,0,0);
+     -ms-transform:matrix(0.866,0.5,-0.5,0.866,0,0);		/* IE 9 */
+     -moz-transform:matrix(0.866,0.5,-0.5,0.866,0,0);	/* Firefox */
+     -webkit-transform:matrix(0.866,0.5,-0.5,0.866,0,0);	/* Safari and Chrome */
+     -o-transform:matrix(0.866,0.5,-0.5,0.866,0,0);		/* Opera */
+ }
+ 
+ /* 3D */
+ .transform_3d_translate3d:hover{
+     transform: translate3d(50px,20px,40px);
+     -webkit-transform:  translate3d(50px,20px,40px);	/* Safari 和 Chrome */
+     -moz-transform:  translate3d(50px,20px,40px);	    /* Firefox */
+ }
+ .transform_3d_rotate3d:hover{
+     transform: rotate3d(1,1,1,60deg);
+     -webkit-transform: rotate3d(1,1,1,60deg);	/* Safari 和 Chrome */
+     -moz-transform: rotate3d(1,1,1,60deg);	    /* Firefox */
+ }
+ .transform_3d_rotateX:hover{
+     transform: rotateX(60deg);          /* 相当于rotate3d(1, 0, 0, 60deg)  */
+     -webkit-transform: rotateX(60deg);	/* Safari 和 Chrome */
+     -moz-transform: rotateX(60deg);	    /* Firefox */
+ }
+ .transform_3d_scale3d:hover{
+     transform: scale3d(2, 0.8, 0.2);
+     -webkit-transform:  scale3d(2, 0.8, 0.2);	/* Safari 和 Chrome */
+     -moz-transform:  scale3d(2, 0.8, 0.2);	    /* Firefox */
+ }
+ 
+ /* transition */
+ .transition_1 {
+     width: 150px;
+     height: 150px;
+     text-align: center;
+     line-height: 150px;
+     color: #ffffff;
+     background-color: #E87DA1;
+     /*transition-property: all;
+     transition-duration: 1s;
+     transition-timing-function: ease;
+     transition-delay: 0.5s;*/
+     transition: all 1s ease 0.5s;
+     -moz-transition: all 1s ease 0.5s;      /* Firefox 4 */
+     -webkit-transition: all 1s ease 0.5s;   /* Safari 和 Chrome */
+     -o-transition: all 1s ease 0.5s;        /* Opera */
+ }
+ .transition_1:hover {
+     width: 300px;
+     height: 300px;
+     line-height: 300px;
+     background-color: gold;
+ }
+ 
+ #transition-css-btn,#transition-js-btn,#transition-jq-btn{
+     text-decoration: underline;
+     cursor: pointer;
+ }
+ #transition-css-ele {
+     transition: height 0.6s ease;
+ }
+ #transition-js-ele,#transition-css-ele {
+     height: 0;
+     width: 150px;
+     overflow: hidden;
+     border: 1px solid #cfcfcf;
+     box-sizing: border-box;
+ }
+ #transition-jq-ele{
+     display: none;
+     height: 150px;
+     width: 150px;
+     overflow: hidden;
+     border: 1px solid #cfcfcf;
+ }
+ .ele-box img{
+     padding: 0;
+     margin: 0;
+ }
+ 
+ /* 旋转效果 */ 
+ .ele-content{
+     position: relative;
+     width: 200px;
+     margin: 0 auto;
+ }
+ .content-card{
+     width: 200px;
+     height: 380px;
+ }
+ .content-card img{
+     position: absolute;
+ }
+ .card-back,.card-front{
+     transition: all 0.4s;
+     backface-visibility: hidden;
+     -webkit-backface-visibility: hidden;
+     /*当元素背对我们的时候，隐藏元素*/
+ }
+ .card-back{
+     transform: rotateY(180deg);
+ }
+ .card-front{
+     transform: rotateY(0deg);
+ }
+ .content-card:hover .card-back{
+     transform: rotateY(0deg);
+ }
+ .content-card:hover .card-front{
+     transform: rotateY(180deg);
+ }
+ 
+ /* animation */
+ .animation-1 {
+     width: 100%;
+     height: 250px;
+     position: relative;
+ }
+ .animation-1-ele {
+     position: relative;
+     width: 60px;
+     height: 60px;
+     background-color: #E87DA1;
+     animation: myMove 2s ease infinite 1s alternate;
+     -webkit-animation :myMove 2s ease infinite 1s alternate; 
+     -moz-animation :myMove 2s ease infinite 1s alternate;
+     -ms-animation :myMove 2s ease infinite 1s alternate;
+     -o-animation :myMove 2s ease infinite 1s alternate;
+ }
+ @keyframes myMove{
+     0%{top: 0;left: 0;}
+     50%{top: 150px;left: 150px;border-radius: 50%;}
+     100%{top: 0;left: 0;}
+ }
+ /* 适配不同浏览器内核 */
+ @-webkit-keyframes myMove{
+     0%{top: 0;left: 0;}
+     50%{top: 150px;left: 150px;border-radius: 50%;}
+     100%{top: 0;left: 0;}
+ }
+ @-moz-keyframes myMove{
+     0%{top: 0;left: 0;}
+     50%{top: 150px;left: 150px;border-radius: 50%;}
+     100%{top: 0;left: 0;}
+ }
+ @-ms-keyframes myMove{
+     0%{top: 0;left: 0;}
+     50%{top: 150px;left: 150px;border-radius: 50%;}
+     100%{top: 0;left: 0;}
+ }
+ @-o-keyframes myMove{
+     0%{top: 0;left: 0;}
+     50%{top: 150px;left: 150px;border-radius: 50%;}
+     100%{top: 0;left: 0;}
+ }
+ 
+ /* 帧动画 */
+ .animation-girl{
+     width: 180px;
+     height: 300px;
+     background: url(/img/article/css3-features/charector.png);
+     animation: girl 1s infinite step-end;
+ }
+ @keyframes girl{
+     0%{
+         background-position: 0 0;
+     }
+     14.3%{
+         background-position: -180px 0;
+     }
+     28.6%{
+         background-position: -360px 0;
+     }
+     42.9%{
+         background-position: -540px 0;
+     }
+     57.2%{
+         background-position: -720px 0;
+     }
+     71.5%{
+         background-position: -900px 0;
+     }
+     85.8%{
+         background-position: -1080px 0;
+     }
+     100%{
+         background-position: 0 0;
+     }
+ }

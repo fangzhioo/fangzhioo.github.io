@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="方志的个人博客,fangzhioo,blog">
+    <meta name="keyword"  content="方志,fangzhioo,Fz&#39;s Blog,Kirito,桐人,博客,互联网,Web,JavaScript,Html,Css,Vue.js,React.js,前端,设计,react.js,web,props,state,javascript">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          【React.js小书】Smart 组件 vs Dumb 组件 - 方志 | fangzhioo
+        
+    </title>
+
+    <link rel="canonical" href="https://fangzhioo.github.io/reprint/ReactBooks/post-43/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+<link rel="stylesheet" href="/css/beantech.min.css">
+
+
+    
+<link rel="stylesheet" href="/css/donate.css">
+
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/toc.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    <!--不蒜子-->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- jQuery -->
+    <!-- 
+<script src="/js/jquery.min.js"></script>
+ -->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <!-- 
+<script src="/js/bootstrap.min.js"></script>
+ -->
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/article_header/article_bg.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#React" title="React">React</a>
+                            
+                              <a class="tag" href="/tags/#转载" title="转载">转载</a>
+                            
+                        </div>
+                        <h1>【React.js小书】Smart 组件 vs Dumb 组件</h1>
+                        <h2 class="subheading">提炼实战经验中基础的、重要的、频繁的知识进行重点讲解，让你能用最少的精力深入了解实战中最需要的 React.js 知识。</h2>
+
+                        <!--文章访问量统计-->
+                        
+                            <span id="busuanzi_container_page_pv">本文已被阅读过<span id="busuanzi_value_page_pv"></span>次</span>
+                        
+                        <!--文章访问量统计-->
+
+                        <span class="meta">
+                            Posted by 方志 on
+                            2019-06-15
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Fz Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                        <li>
+                            <a href="/archive/" >Archives</a>
+                        </li>
+                    
+                        <li>
+                            <a href="/tags/" >Tags</a>
+                        </li>
+                    
+                        <li>
+                            <a href="/about/" >About</a>
+                        </li>
+                    
+                        <li>
+                            <a href="/love/" >Love</a>
+                        </li>
+                    
+
+                    <!-- 
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                     -->
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1><span id="smart-zu-jian-vs-dumb-zu-jian">Smart 组件 vs Dumb 组件</span></h1><p>大家已经知道，只会接受 <code>props</code> 并且渲染确定结果的组件我们把它叫做 Dumb 组件，这种组件只关心一件事情 —— 根据 <code>props</code> 进行渲染。</p>
+<p>Dumb 组件最好不要依赖除了 React.js 和 Dumb 组件以外的内容。它们不要依赖 Redux 不要依赖 React-redux。这样的组件的可复用性是最好的，其他人可以安心地使用而不用怕会引入什么奇奇怪怪的东西。</p>
+<p>当我们拿到一个需求开始划分组件的时候，要认真考虑每个被划分成组件的单元到底会不会被复用。如果这个组件可能会在多处被使用到，那么我们就把它做成 Dumb 组件。</p>
+<p>我们可能拆分了一堆 Dumb 组件出来。但是单纯靠 Dumb 是没有办法构建应用程序的，因为它们实在太“笨”了，对数据的力量一无所知。所以还有一种组件，它们非常聪明（smart），城府很深精通算计，我们叫它们 Smart 组件。它们专门做数据相关的应用逻辑，和各种数据打交道、和 Ajax 打交道，然后把数据通过 <code>props</code> 传递给 Dumb，它们带领着 Dumb 组件完成了复杂的应用程序逻辑。</p>
+<p><a href="http://huzidaha.github.io/static/assets/img/posts/25608378-BE07-4050-88B1-72025085875A.png" target="_blank"><img src="http://huzidaha.github.io/static/assets/img/posts/25608378-BE07-4050-88B1-72025085875A.png" alt="实例图片"></a></p>
+<p>Smart 组件不用考虑太多复用性问题，它们就是用来执行特定应用逻辑的。Smart 组件可能组合了 Smart 组件和 Dumb 组件；但是 Dumb 组件尽量不要依赖 Smart 组件。因为 Dumb 组件目的之一是为了复用，一旦它引用了 Smart 组件就相当于带入了一堆应用逻辑，导致它无法无用，所以尽量不要干这种事情。一旦一个可复用的 Dumb 组件之下引用了一个 Smart 组件，就相当于污染了这个 Dumb 组件树。如果一个组件是 Dumb 的，那么它的子组件们都应该是 Dumb 的才对。</p>
+<h2><span id="hua-fen-smart-he-dumb-zu-jian">划分 Smart 和 Dumb  组件</span></h2><p>知道了组件有这两种分类以后，我们来重新审视一下之前的 <code>make-react-redux</code> 工程里面的组件，例如 <code>src/Header.js</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> PropTypes <span class="keyword">from</span> <span class="string">&#x27;prop-types&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">&#x27;react-redux&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Header</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> propTypes = &#123;</span><br><span class="line">    themeColor: PropTypes.string</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render () &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;h1 style=&#123;&#123; <span class="attr">color</span>: <span class="built_in">this</span>.props.themeColor &#125;&#125;&gt;React.js 小书&lt;/h1&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mapStateToProps = <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    themeColor: state.themeColor</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">Header = connect(mapStateToProps)(Header)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Header</span><br></pre></td></tr></table></figure>
+
+<p>这个组件到底是 Smart 还是 Dumb 组件？这个文件其实依赖了 <code>react-redux</code>，别人使用的时候其实会带上这个依赖，所以这个组件不能叫 Dumb 组件。但是你观察一下，这个组件在 <code>connect</code> 之前它却是 Dumb 的，就是因为 <code>connect</code> 了导致它和 context 扯上了关系，导致它变 Smart 了，也使得这个组件没有了很好的复用性。</p>
+<p>为了解决这个问题，我们把 Smart 和 Dumb 组件分开到两个不同的目录，不再在 Dumb 组件内部进行 <code>connect</code>，在 <code>src/</code> 目录下新建两个文件夹 <code>components/</code> 和 <code>containers/</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">src&#x2F;</span><br><span class="line">  components&#x2F;</span><br><span class="line">  containers&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>我们规定：<em>所有的 Dumb 组件都放在 <code>components/</code> 目录下，所有的 Smart 的组件都放在 <code>containers/</code> 目录下</em>，这是一种约定俗成的规则。</p>
+<p>删除 <code>src/Header.js</code>，新增 <code>src/components/Header.js</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> PropTypes <span class="keyword">from</span> <span class="string">&#x27;prop-types&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Header</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> propTypes = &#123;</span><br><span class="line">    themeColor: PropTypes.string</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render () &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;h1 style=&#123;&#123; <span class="attr">color</span>: <span class="built_in">this</span>.props.themeColor &#125;&#125;&gt;React.js 小书&lt;/h1&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>现在 <code>src/components/Header.js</code> 毫无疑问是一个 Dumb 组件，它除了依赖 React.js 什么都不依赖。我们新建 <code>src/container/Header.js</code>，这是一个与之对应的 Smart 组件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">&#x27;react-redux&#x27;</span></span><br><span class="line"><span class="keyword">import</span> Header <span class="keyword">from</span> <span class="string">&#x27;../components/Header&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mapStateToProps = <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    themeColor: state.themeColor</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(mapStateToProps)(Header)</span><br></pre></td></tr></table></figure>
+
+<p>它会从导入 Dumb 的 <code>Header.js</code> 组件，进行 <code>connect</code> 一番变成 Smart 组件，然后把它导出模块。</p>
+<p>这样我们就把 Dumb 组件抽离出来了，现在 <code>src/components/Header.js</code> 可复用性非常强，别的同事可以随意用它。而 <code>src/containers/Header.js</code> 则是跟业务相关的，我们只用在特定的应用场景下。我们可以继续用这种方式来重构其他组件。</p>
+<h2><span id="zu-jian-hua-fen-yuan-ze">组件划分原则</span></h2><p>接下来的情况就有点意思了，可以趁机给大家讲解一下组件划分的一些原则。我们看看这个应用原来的组件树：</p>
+<p><a href="http://huzidaha.github.io/static/assets/img/posts/9271BF94-6599-4F73-A814-0DDA20B634D9.png" target="_blank"><img src="http://huzidaha.github.io/static/assets/img/posts/9271BF94-6599-4F73-A814-0DDA20B634D9.png" alt="实例图片"></a></p>
+<p>对于 <code>Content</code> 这个组件，可以看到它是依赖 <code>ThemeSwitch</code> 组件的，这就需要好好思考一下了。我们分两种情况来讨论：<code>Content</code> <em>不复用</em>和<em>可复用</em>。</p>
+<h3><span id="content-bu-fu-yong">Content 不复用</span></h3><p>如果产品场景并没有要求说 <code>Content</code> 需要复用，它只是在特定业务需要而已。那么没有必要把 <code>Content</code> 做成 Dumb 组件了，就让它成为一个 Smart 组件。因为 Smart 组件是可以使用 Smart 组件的，所以 <code>Content</code> 可以使用 Dumb 的 <code>ThemeSwitch</code> 组件 <code>connect</code> 的结果。</p>
+<p>新建一个 <code>src/components/ThemeSwitch.js</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> PropTypes <span class="keyword">from</span> <span class="string">&#x27;prop-types&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">ThemeSwitch</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> propTypes = &#123;</span><br><span class="line">    themeColor: PropTypes.string,</span><br><span class="line">    onSwitchColor: PropTypes.func</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleSwitchColor (color) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.props.onSwitchColor) &#123;</span><br><span class="line">      <span class="built_in">this</span>.props.onSwitchColor(color)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render () &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;button</span><br><span class="line">          style=&#123;&#123; <span class="attr">color</span>: <span class="built_in">this</span>.props.themeColor &#125;&#125;</span><br><span class="line">          onClick=&#123;<span class="built_in">this</span>.handleSwitchColor.bind(<span class="built_in">this</span>, <span class="string">&#x27;red&#x27;</span>)&#125;&gt;Red&lt;/button&gt;</span><br><span class="line">        &lt;button</span><br><span class="line">          style=&#123;&#123; <span class="attr">color</span>: <span class="built_in">this</span>.props.themeColor &#125;&#125;</span><br><span class="line">          onClick=&#123;<span class="built_in">this</span>.handleSwitchColor.bind(<span class="built_in">this</span>, <span class="string">&#x27;blue&#x27;</span>)&#125;&gt;Blue&lt;/button&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这是一个 Dumb 的 <code>ThemeSwitch</code>。新建一个 <code>src/containers/ThemeSwitch.js</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">&#x27;react-redux&#x27;</span></span><br><span class="line"><span class="keyword">import</span> ThemeSwitch <span class="keyword">from</span> <span class="string">&#x27;../components/ThemeSwitch&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mapStateToProps = <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    themeColor: state.themeColor</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> mapDispatchToProps = <span class="function">(<span class="params">dispatch</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    onSwitchColor: <span class="function">(<span class="params">color</span>) =&gt;</span> &#123;</span><br><span class="line">      dispatch(&#123; <span class="attr">type</span>: <span class="string">&#x27;CHANGE_COLOR&#x27;</span>, <span class="attr">themeColor</span>: color &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(mapStateToProps, mapDispatchToProps)(ThemeSwitch)</span><br></pre></td></tr></table></figure>
+
+<p>这是一个 Smart 的 <code>ThemeSwitch</code>。然后用一个 Smart 的 <code>Content</code> 去使用它，新建 <code>src/containers/Content.js</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> PropTypes <span class="keyword">from</span> <span class="string">&#x27;prop-types&#x27;</span></span><br><span class="line"><span class="keyword">import</span> ThemeSwitch <span class="keyword">from</span> <span class="string">&#x27;./ThemeSwitch&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">&#x27;react-redux&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Content</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> propTypes = &#123;</span><br><span class="line">    themeColor: PropTypes.string</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render () &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;p style=&#123;&#123; <span class="attr">color</span>: <span class="built_in">this</span>.props.themeColor &#125;&#125;&gt;React.js 小书内容&lt;/p&gt;</span><br><span class="line">        &lt;ThemeSwitch /&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mapStateToProps = <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    themeColor: state.themeColor</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(mapStateToProps)(Content)</span><br></pre></td></tr></table></figure>
+
+<p>删除 <code>src/ThemeSwitch.js</code> 和 <code>src/Content.js</code>，在 <code>src/index.js</code> 中直接使用 Smart 组件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="keyword">import</span> Header <span class="keyword">from</span> <span class="string">&#x27;./containers/Header&#x27;</span></span><br><span class="line"><span class="keyword">import</span> Content <span class="keyword">from</span> <span class="string">&#x27;./containers/Content&#x27;</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>这样就把这种业务场景下的 Smart 和 Dumb 组件分离开来了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">src</span><br><span class="line">├── components</span><br><span class="line">│   ├── Header.js</span><br><span class="line">│   └── ThemeSwitch.js</span><br><span class="line">├── containers</span><br><span class="line">│   ├── Content.js</span><br><span class="line">│   ├── Header.js</span><br><span class="line">│   └── ThemeSwitch.js</span><br><span class="line">└── index.js</span><br></pre></td></tr></table></figure>
+
+<h3><span id="content-ke-fu-yong">Content 可复用</span></h3><p>如果产品场景要求 <code>Content</code> 可能会被复用，那么 <code>Content</code> 就要是 Dumb 的。那么 <code>Content</code> 的之下的子组件 <code>ThemeSwitch</code> 就一定要是 Dumb，否则 <code>Content</code> 就没法复用了。这就意味着 <code>ThemeSwitch</code> 不能 <code>connect</code>，即使你 <code>connect</code> 了，<code>Content</code> 也不能使用你 <code>connect</code> 的结果，因为 <code>connect</code> 的结果是个 Smart 组件。</p>
+<p>这时候 <code>ThemeSwitch</code> 的数据、<code>onSwitchColor</code> 函数只能通过它的父组件传进来，而不是通过 <code>connect</code> 获得。所以只能让 <code>Content</code> 组件去 <code>connect</code>，然后让它把数据、函数传给 <code>ThemeSwitch</code>。</p>
+<p>这种场景下的改造留给大家做练习，最后的结果应该是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">src</span><br><span class="line">├── components</span><br><span class="line">│   ├── Header.js</span><br><span class="line">│   ├── Content.js</span><br><span class="line">│   └── ThemeSwitch.js</span><br><span class="line">├── containers</span><br><span class="line">│   ├── Header.js</span><br><span class="line">│   └── Content.js</span><br><span class="line">└── index.js</span><br></pre></td></tr></table></figure>
+
+<p>可以看到对复用性的需求不同，会导致我们划分组件的方式不同。</p>
+<h2><span id="zong-jie">总结</span></h2><p>根据是否需要高度的复用性，把组件划分为 Dumb 和 Smart 组件，约定俗成地把它们分别放到 <code>components</code> 和 <code>containers</code> 目录下。</p>
+<p>Dumb 基本只做一件事情 —— 根据 <code>props</code> 进行渲染。而 Smart 则是负责应用的逻辑、数据，把所有相关的 Dumb（Smart）组件组合起来，通过 <code>props</code> 控制它们。</p>
+<p>Smart 组件可以使用 Smart、Dumb 组件；而 Dumb 组件最好只使用 Dumb 组件，否则它的复用性就会丧失。</p>
+<p>要根据应用场景不同划分组件，如果一个组件并不需要太强的复用性，直接让它成为 Smart 即可；否则就让它成为 Dumb 组件。</p>
+<p>还有一点要注意，Smart 组件并不意味着完全不能复用，Smart 组件的复用性是依赖场景的，在特定的应用场景下是当然是可以复用 Smart 的。而 Dumb 则是可以跨应用场景复用，Smart 和 Dumb 都可以复用，只是程度、场景不一样。</p>
+<hr>
+<ul style="font-size: 14px; margin-top: -10px;">
+  <li>
+    作者：<a href="https://www.zhihu.com/people/hu-zi-da-ha" target="_blank">胡子大哈</a>
+  </li>
+  <li>
+    原文链接：<a target="_blank" rel="noopener" href="http://huziketang.com/books/react"> http://huziketang.com/books/react</a>
+  </li>
+</ul>
+
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/reprint/ReactBooks/post-44/" data-toggle="tooltip" data-placement="top" title="【React.js小书】实战分析：评论功能（七）">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/reprint/ReactBooks/post-42/" data-toggle="tooltip" data-placement="top" title="【React.js小书】使用真正的 Redux 和 React-redux">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                    <div class="reward">
+                        <div class="reward-button">赏 <span class="reward-code"> 
+                            <span class="alipay-code"> <img class="alipay-img" src="/img/reward/alipay.jpg"><b>支付宝打赏</b></span> 
+                            <span class="wechat-code"> <img class="wechat-img" src="/img/reward/wechat_pay.jpg"><b>微信打赏</b> </span>
+                            </span></div>
+                        <p class="reward-notice">赞赏一下</p>
+                    </div>
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+                <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+
+                <div class="aplayer"
+                    data-id="2225960762"
+                    data-server="netease"
+                    data-type="playlist"
+                    data-fixed="true" >
+                </div>
+                
+
+                
+        
+                    
+                        <!-- 来必力City版安装代码 --> 
+                        <div id="lv-container" data-id="city" data-uid="MTAyMC80Mzg3OC8yMDQxMw==">
+                            <script type="text/javascript">
+                                (function (d, s) {
+                                    var j, e = d.getElementsByTagName(s)[0];
+        
+                                    if (typeof LivereTower === 'function') { return; }
+        
+                                    j = d.createElement(s);
+                                    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                                    j.async = true;
+        
+                                    e.parentNode.insertBefore(j, e);
+                                })(document, 'script');
+                            </script>
+                            <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                        </div>
+                        <!-- City版安装代码已完成 -->
+                    
+            </div>
+            
+            <!-- Table of Contents -->
+            
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        <!-- toc -->
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Smart 组件 vs Dumb 组件</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">划分 Smart 和 Dumb  组件</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">组件划分原则</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">Content 不复用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">Content 可复用</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">总结</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <div><a href="/tags/">FEATURED TAGS</a></div>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#React" title="React">React</a>
+                        
+                          <a class="tag" href="/tags/#转载" title="转载">转载</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://huangxuan.me/" target="_blank">Hux Blog</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- 复制添加版权申明-->
+<script>
+    /**/
+    function setClipboardText(event){
+        event.preventDefault();//阻止元素发生默认的行为（例如，当点击提交按钮时阻止对表单的提交）。
+        var node = document.createElement('div');
+        //对documentfragment不熟，不知道怎么获取里面的内容，用了一个比较笨的方式
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        //getRangeAt(0)返回对基于零的数字索引与传递参数匹配的选择对象中的范围的引用。对于连续选择，参数应为零。
+        var htmlData = '<div>'
+            + node.innerHTML
+            + '<br /><br />著作权归作者所有。<br />'
+            + '商业转载请联系作者获得授权，非商业转载请注明出处。<br />'
+            + '作者：fangzhioo <br />链接：'
+            + location.href
+            + '<br />来源：fangzhioo.github.io<br /><br />'
+            + '</div>';
+        var textData = window.getSelection().getRangeAt(0)
+            + '\n\n著作权归作者所有。\n'
+            + '商业转载请联系作者获得授权，非商业转载请注明出处。\n'
+            + '作者：fangzhioo\n'
+            + '链接：'
+            + location.href
+            + '来源：fangzhioo.github.io\n\n';
+        if(event.clipboardData){
+            event.clipboardData.setData("text/html", htmlData);
+            //setData(剪贴板格式, 数据) 给剪贴板赋予指定格式的数据。返回 true 表示操作成功。
+            event.clipboardData.setData("text/plain",textData);
+        }
+        else if(window.clipboardData){ //window.clipboardData的作用是在页面上将需要的东西复制到剪贴板上，提供了对于预定义的剪贴板格式的访问，以便在编辑操作中使用。
+            return window.clipboardData.setData("text", textData);
+        }
+    };
+ 
+    document.addEventListener('copy',function(e){
+        setClipboardText(e);
+    });
+</script>
+
+<!-- smooth scroll behavior polyfill  -->
+<script type="text/javascript" src="/js/smoothscroll.js"></script>
+<script>
+        $('#toc').on('click','a',function(a){
+            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
+            // console.log(window.navigator.userAgent,isChrome)
+            // if(isChrome) {
+                // console.log(a.currentTarget.outerHTML);
+                // console.log($(a.currentTarget).attr("href"));
+                //跳转到指定锚点
+                // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
+                console.log('toc',a)
+                var target = document.getElementById($(a.currentTarget).attr("href").replace("#",""));
+                target && target.scrollIntoView({behavior: 'smooth' });
+            // }
+        })  
+</script>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/fang-zhi-4-73">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/fangzhioooo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/fangzhioo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 方志 2021 
+                    <br>
+                    Theme by <a target="_blank" rel="noopener" href="https://huangxuan.me/">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="https://fangzhioo.github.io">Fz</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=fangzhioo&repo=fangzhioo.github.io&type=star&count=true" >
+                    </iframe>
+                    <br />
+                    <!--总访问量统计-->
+                    
+                        <span id="busuanzi_container_site_pv" style="margin-left: 3px;">
+                            总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    
+                    <!--总访问量统计-->
+
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/my-blog.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://fangzhioo.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-138588101-1';
+    var _gaDomain = 'fangzhioo.github.io';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'dce5d892b228cc0a253520da429e7f11';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://fangzhioo.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+<!-- live2d -->
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"position":"right","width":200,"height":400,"jsonPath":"/live2dw/assets/sagiri.model.json"},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script>
+
+</body>
+
+</html>
