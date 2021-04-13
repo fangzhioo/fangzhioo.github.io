@@ -425,7 +425,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/web/js-base/bom-dom/</loc>
+        <loc>https://fangzhioo.github.io/web/js-base/event/</loc>
         <lastmod>2021-04-12T10:00:24.311Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -433,7 +433,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/web/js-base/event/</loc>
+        <loc>https://fangzhioo.github.io/web/js-base/bom-dom/</loc>
         <lastmod>2021-04-12T10:00:24.311Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
