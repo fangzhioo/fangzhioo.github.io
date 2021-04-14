@@ -5,8 +5,6 @@
 # Site
 title: Fz Blog 
 subtitle: 长路漫漫，唯剑作伴
-description: 方志的个人博客,fangzhioo,blog
-keyword: 方志,fangzhioo,Fz's Blog,Kirito,桐人,博客,互联网,Web,JavaScript,Html,Css,Vue.js,React.js,前端,设计
 author: 方志
 language: zh-CN
 timezone: Asia/Shanghai
@@ -18,189 +16,15 @@ root: /
 # permalink: :year/:month/:day/:title/
 permalink: :category/:title/
 permalink_defaults:
+  lang: en
 
-# Directory
-source_dir: source
-public_dir: public
-tag_dir: tags
-archive_dir: archives
-category_dir: categories
-code_dir: downloads/code
-i18n_dir: :lang
-skip_render:
-
-# Writing
-new_post_name: :title.md # File name of new posts
-default_layout: post
-titlecase: false # Transform title into titlecase
-external_link:
-  enable: true # Open external links in new tab
-  field: site # Apply to the whole site
-  exclude: ''
-filename_case: 0
-render_drafts: false
-post_asset_folder: true
-relative_link: false
-future: true
-highlight:
-  enable: true
-  line_number: true
-  auto_detect: false
-  tab_replace: ''
-  wrap: true
-  hljs: false
-prismjs:
-  enable: false
-  preprocess: true
-  line_number: true
-  tab_replace: ''
-# Home page setting
-# path: Root path for your blogs index page. (default = '')
-# per_page: Posts displayed per page. (0 = disable pagination)
-# order_by: Posts order. (Order by date descending by default)
-index_generator:
-  path: ''
-  per_page: 10
-  order_by: -date
-
-# Category & Tag
-default_category: article
-category_map:
-  Diary: diary
-  Web: web
-  Tech: technical
-  Reprint: reprint
-  More: more
-
-tag_map:
-home_posts_tag: true # show posts tags
-
-# Metadata elements
-## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
-meta_generator: true
-
-# Date / Time format
-## Hexo uses Moment.js to parse and display date
-## You can customize the date format as defined in
-## http://momentjs.com/docs/#/displaying/format/
-date_format: YYYY-MM-DD
-time_format: HH:mm:ss
-
-# Pagination
-## Set per_page to 0 to disable pagination
-per_page: 10
-pagination_dir: archives
-  
-# Markdown-it config
-## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
-markdown:
-  render:
-    html: true
-    xhtmlOut: false
-    breaks: true
-    linkify: true
-    typographer: true
-    quotes: '“”‘’'
-  
-# Extensions
-## Plugins: https://hexo.io/plugins/
-
-# recommended-posts
-# reference: https://github.com/huiwang/hexo-recommended-posts
-# recommended_posts:
-#   server: https://api.truelaurel.com #后端推荐服务器地址
-#   timeoutInMillis: 10000 #服务时长，超过此时长，则使用离线推荐模式
-#   internalLinks: 3 #内部文章数量
-#   externalLinks: 0 #外部文章数量
-#   autoDisplay: true, #自动在文章底部显示推荐文章
-#   titleHtml: <h2>推荐文章<span style="font-size:0.45em; color:gray"></span></h2> #自定义标题
-
-# hexo-tag-aplayer
-# reference: https://github.com/MoePlayer/hexo-tag-aplayer
-# aplayer:
-#   meting: true
-
-# MeingJS support for Aplayer 音乐播放器
-# reference: https://github.com/metowolf/MetingJS & https://github.com/MoePlayer/APlayer
-metingjs: true
-data-id: 2297428102     # 歌曲/专辑/歌单对应的id。（必须）注意这里需要是歌曲原本的id,不是你自己歌单中点击后显示的。 
-data-server: netease    # 音乐平台 （必须）netease(网易云音乐) tecent(qq音乐) xiami(虾米音乐) kugou(酷狗音乐) 。
-data-type: playlist     # 请求类型 （必须）song(单曲) album(专辑) playlist(歌单) search(搜索)
-data-fixed: true
-  # data-mini:
-  # data-autoplay:    
-
-# love 模块单曲配置
-love-data-id: 2001320
-love-data-server: netease
-love-data-type: song
-love-data-fixed: true
-love-data-autoplay: true
-
-# Live2D
-## https://github.com/xiazeyu/live2d-widget.js
-## https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md
-## https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init
-live2d:
-  enable: true
-  scriptFrom: local
-  pluginRootPath: live2dw/
-  pluginJsPath: lib/
-  pluginModelPath: assets/
-  tagMode: true
-  debug: false
-  model:
-    # use: live2d-widget-model-shizuku
-    use: sagiri
-    position: right
-    width: 200
-    height: 400
-  mobile:
-    show: true
-  react:
-    opacity: 0.6
-
-# Reward  赞赏
-reward: true
-reward_comment: 赞赏一下
-wechatpay: /img/reward/wechat_pay.jpg
-alipay: /img/reward/alipay.jpg
-
-# busuanzi  统计次数
-busuanzi: true
-
-# Share 分享
-# Reference: https://github.com/overtrue/share.js
-share: true
-
-## Themes: https://hexo.io/themes/  对应themes文件夹下的目录
-theme: fangzhioo
-
-#sitemap
-sitemap:
-  path: sitemap.xml
-
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-# repository: https://github.com/fangzhioo/fangzhioo.github.io.git
-# branch: master
-deploy:
-  type: git
-  repository: https://github.com/fangzhioo/fangzhioo.github.io
-  branch: gh-pages
-  message: Create Code
-
-# toc 
-## Docs: https://github.com/bubkoo/hexo-toc
-toc:
-  maxDepth: 3
-  slugify: transliteration
-
-# ====================== Custom Setting Start =========================
+#Custom Setting Start
 
 # Site settings
 SEOTitle: 方志 | fangzhioo
 email: fangzhioooo@gmail.com
+description: 方志的个人博客,fangzhioo,blog
+keyword: 方志,fangzhioo,Fz's Blog,Kirito,桐人,博客,互联网,Web,JavaScript,Html,Css,Vue.js,React.js,前端,设计
 header-img: /img/header_img/home.jpg
 article-img: /img/article_header/article_bg.jpg
 404-img: /img/header_img/404.png
@@ -221,6 +45,10 @@ nav_menu: [
         title: "About",
         href: "/about/"
     },
+    {
+        title: "Love",
+        href: "/love/"
+    }
 ]
 
 
@@ -232,6 +60,9 @@ github_username:    fangzhioo
 # twitter_username:   Demonbane_x
 # facebook_username:  xxx
 # linkedin_username:  xxx
+
+# Build settings
+anchorjs: true          # if you want to customize anchor. check out line:181 of `post.html`
 
 # Disqus settings 碍于需要翻墙 暂时屏蔽了
 # disqus_username: fangzhioo
@@ -273,9 +104,172 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 ## Friends
 friends: [
     {
-        title: "Hux Blog",
-        href: "https://huangxuan.me/"
+        title: "Bean Tech",
+        href: "http://beantech.org/"
     }
 ]
 
-# ====================== Custom Setting End =========================
+#Custom Setting End
+
+
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: true
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+
+# Category & Tag
+default_category: article
+category_map:
+  Diary: diary
+  Web: web
+  Tech: technical
+  Reprint: reprint
+  More: more
+
+tag_map:
+home_posts_tag: true # show posts tags
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: archives
+
+archive_generator:
+  per_page: 10
+  yearly: true
+  monthly: true
+  daily: false
+  
+# Markdown-it config
+## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+  
+# Extensions
+## Plugins: https://hexo.io/plugins/
+
+# recommended-posts
+# reference: https://github.com/huiwang/hexo-recommended-posts
+# recommended_posts:
+#   server: https://api.truelaurel.com #后端推荐服务器地址
+#   timeoutInMillis: 10000 #服务时长，超过此时长，则使用离线推荐模式
+#   internalLinks: 3 #内部文章数量
+#   externalLinks: 0 #外部文章数量
+#   autoDisplay: true, #自动在文章底部显示推荐文章
+#   titleHtml: <h2>推荐文章<span style="font-size:0.45em; color:gray"></span></h2> #自定义标题
+
+# hexo-tag-aplayer
+# reference: https://github.com/MoePlayer/hexo-tag-aplayer
+# aplayer:
+#   meting: true
+
+# MeingJS support for Aplayer 音乐播放器
+# reference: https://github.com/metowolf/MetingJS & https://github.com/MoePlayer/APlayer
+metingjs: true
+data-id: 2225960762     # 歌曲/专辑/歌单对应的id。（必须）注意这里需要是歌曲原本的id,不是你自己歌单中点击后显示的。 
+data-server: netease    # 音乐平台 （必须）netease(网易云音乐) tecent(qq音乐) xiami(虾米音乐) kugou(酷狗音乐) 。
+data-type: playlist     # 请求类型 （必须）song(单曲) album(专辑) playlist(歌单) search(搜索)
+data-fixed: true
+  # data-mini:
+  # data-autoplay:    
+
+# love 模块单曲配置
+love-data-id: 2001320
+love-data-server: netease
+love-data-type: song
+love-data-fixed: true
+love-data-autoplay: true
+
+# Live2D
+## https://github.com/xiazeyu/live2d-widget.js
+## https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md
+## https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init
+live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: true
+  debug: false
+  model:
+    # use: live2d-widget-model-shizuku
+    use: sagiri
+    position: right
+    width: 200
+    height: 400
+  mobile:
+    show: true
+  react:
+    opacity: 0.7
+
+# Reward  赞赏
+reward: true
+reward_comment: 赞赏一下
+wechatpay: /img/reward/wechat_pay.jpg
+alipay: /img/reward/alipay.jpg
+
+# busuanzi  统计次数
+busuanzi: true
+
+# Share 分享
+# Reference: https://github.com/overtrue/share.js
+share: true
+
+## Themes: https://hexo.io/themes/  对应themes文件夹下的目录
+theme: fangzhioo
+
+#sitemap
+sitemap:
+  path: sitemap.xml
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+# repository: https://github.com/fangzhioo/fangzhioo.github.io.git
+# branch: master
+deploy:
+  type: git
+  repository: https://github.com/fangzhioo/fangzhioo.github.io
+  branch: master
+  message: Create Code
+
+# toc 
+## Docs: https://github.com/bubkoo/hexo-toc
+toc:
+  maxDepth: 3
+  slugify: transliteration
