@@ -9,6 +9,22 @@
 
 
     <url>
+        <loc>https://fangzhioo.github.io/technical/technical/vpn-v2ray/</loc>
+        <lastmod>2021-04-15T07:19:10.680Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/diary/hello-myblog/</loc>
+        <lastmod>2021-04-15T03:14:00.325Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://fangzhioo.github.io/reprint/react-books/post-24/</loc>
         <lastmod>2021-04-14T02:59:21.639Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -345,7 +361,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/reprint/react-books/post-39/</loc>
+        <loc>https://fangzhioo.github.io/reprint/react-books/post-40/</loc>
         <lastmod>2021-04-14T02:59:21.333Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -353,7 +369,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/reprint/react-books/post-40/</loc>
+        <loc>https://fangzhioo.github.io/reprint/react-books/post-39/</loc>
         <lastmod>2021-04-14T02:59:21.333Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -377,7 +393,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/more/more/debounce-throttle/</loc>
+        <loc>https://fangzhioo.github.io/more/web-more/debounce-throttle/</loc>
         <lastmod>2021-04-13T06:25:42.003Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -393,7 +409,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/web/more/js-excellent-code/</loc>
+        <loc>https://fangzhioo.github.io/web/web-more/js-excellent-code/</loc>
         <lastmod>2021-04-12T10:00:24.313Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -401,7 +417,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/more/more/web-interview/</loc>
+        <loc>https://fangzhioo.github.io/more/web-more/web-interview/</loc>
         <lastmod>2021-04-12T10:00:24.313Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -409,7 +425,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/more/more/web-share/</loc>
+        <loc>https://fangzhioo.github.io/more/web-more/web-share/</loc>
         <lastmod>2021-04-12T10:00:24.313Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -451,14 +467,6 @@
     <url>
         <loc>https://fangzhioo.github.io/web/html-base/html5-features/</loc>
         <lastmod>2021-04-12T10:00:24.310Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://fangzhioo.github.io/diary/hello-myblog/</loc>
-        <lastmod>2021-04-12T10:00:24.309Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

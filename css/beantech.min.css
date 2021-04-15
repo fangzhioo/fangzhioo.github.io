@@ -115,6 +115,13 @@ br + small.img-hint {
 img.shadow {
   box-shadow: rgba(0, 0, 0, 0.258824) 0 2px 5px 0;
 }
+p.image-tips{
+  margin: 0 auto;
+  padding: 0 10px;
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+}
 @media screen and (max-width: 768px) {
   select {
     -webkit-appearance: none;
