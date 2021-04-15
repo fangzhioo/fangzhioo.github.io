@@ -3,15 +3,36 @@
 
 
     <url>
-        <loc>https://fangzhioo.github.io/tags/VPN/</loc>
-        <lastmod>2021-04-15T07:19:10.680Z</lastmod>
+        <loc>https://fangzhioo.github.io/tags/Docker/</loc>
+        <lastmod>2021-04-15T08:05:20.029Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/tags/CSS3/</loc>
+        <lastmod>2021-04-15T07:56:41.197Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/tags/HTML5/</loc>
+        <lastmod>2021-04-15T07:56:36.017Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://fangzhioo.github.io/tags/Diary/</loc>
-        <lastmod>2021-04-15T03:14:00.325Z</lastmod>
+        <lastmod>2021-04-15T07:51:29.314Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/tags/VPN/</loc>
+        <lastmod>2021-04-15T07:19:10.680Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -66,13 +87,6 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/tags/Event/</loc>
-        <lastmod>2021-04-12T10:00:24.311Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://fangzhioo.github.io/tags/BOM-DOM/</loc>
         <lastmod>2021-04-12T10:00:24.311Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -80,8 +94,8 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/tags/HTML5/</loc>
-        <lastmod>2021-04-12T10:00:24.310Z</lastmod>
+        <loc>https://fangzhioo.github.io/tags/Event/</loc>
+        <lastmod>2021-04-12T10:00:24.311Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -89,13 +103,6 @@
     <url>
         <loc>https://fangzhioo.github.io/tags/Array/</loc>
         <lastmod>2021-04-12T10:00:24.310Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://fangzhioo.github.io/tags/CSS3/</loc>
-        <lastmod>2021-04-12T10:00:24.309Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

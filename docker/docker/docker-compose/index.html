@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="方志的个人博客,fangzhioo,blog">
+    <meta name="keyword"  content="方志,fangzhioo,Fz&#39;s Blog,Kirito,桐人,博客,互联网,Web,JavaScript,Html,Css,Vue.js,React.js,前端,设计,Docker, Docker-Compose, 常用参数">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          【Docker】Docker-Compose安装和常用参数 - 方志 | fangzhioo
+        
+    </title>
+
+    <link rel="canonical" href="https://fangzhioo.github.io/docker/docker/docker-compose/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+<link rel="stylesheet" href="/css/beantech.min.css">
+
+
+    
+<link rel="stylesheet" href="/css/donate.css">
+
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/toc.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    <!--不蒜子-->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- jQuery -->
+    <!-- 
+<script src="/js/jquery.min.js"></script>
+ -->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <!-- 
+<script src="/js/bootstrap.min.js"></script>
+ -->
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <!-- google ad -->
+    <script data-ad-client="ca-pub-3409699730406381" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('//www.talklee.com/api/bing?rand=true')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Docker" title="Docker">Docker</a>
+                            
+                        </div>
+                        <h1>【Docker】Docker-Compose安装和常用参数</h1>
+                        <h2 class="subheading">Docker-Compose安装和常用参数</h2>
+
+                        <!--文章访问量统计-->
+                        
+                            <span id="busuanzi_container_page_pv">本文已被阅读过<span id="busuanzi_value_page_pv"></span>次</span>
+                        
+                        <!--文章访问量统计-->
+
+                        <span class="meta">
+                            Posted by 方志 on
+                            2020-09-08
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Fz Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                        <li>
+                            <a href="/archive/" >Archives</a>
+                        </li>
+                    
+                        <li>
+                            <a href="/tags/" >Tags</a>
+                        </li>
+                    
+                        <li>
+                            <a href="/about/" >About</a>
+                        </li>
+                    
+
+                    <!-- 
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                     -->
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1><span id="qian-yan">前言</span></h1><p>Docker-Compose</p>
+<h1><span id="zheng-wen">正文</span></h1><h2><span id="docker-compose-xia-zai-an-zhuang">Docker-Compose下载安装</span></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://get.daocloud.io/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` &gt; /usr/<span class="built_in">local</span>/bin/docker-compose</span><br></pre></td></tr></table></figure>
+
+<p>修改该文件的权限为可执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /usr/<span class="built_in">local</span>/bin/docker-compose</span><br></pre></td></tr></table></figure>
+
+<p>查看是否安装成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
+
+<h2><span id="chang-yong-can-shu">常用参数</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br></pre></td><td class="code"><pre><span class="line">Compose和Docker兼容性：</span><br><span class="line">    Compose 文件格式有3个版本,分别为1, 2.x 和 3.x</span><br><span class="line">    目前主流的为 3.x 其支持 docker 1.13.0 及其以上的版本</span><br><span class="line">常用参数：</span><br><span class="line">    version           # 指定 compose 文件的版本</span><br><span class="line">    services          # 定义所有的 service 信息, services 下面的第一级别的 key 既是一个 service 的名称</span><br><span class="line">        build                 # 指定包含构建上下文的路径, 或作为一个对象，该对象具有 context 和指定的 dockerfile 文件以及 args 参数值</span><br><span class="line">            context               # context: 指定 Dockerfile 文件所在的路径</span><br><span class="line">            dockerfile            # dockerfile: 指定 context 指定的目录下面的 Dockerfile 的名称(默认为 Dockerfile)</span><br><span class="line">            args                  # args: Dockerfile 在 build 过程中需要的参数 (等同于 docker container build --build-arg 的作用)</span><br><span class="line">            cache_from            # v3.2中新增的参数, 指定缓存的镜像列表 (等同于 docker container build --cache_from 的作用)</span><br><span class="line">            labels                # v3.3中新增的参数, 设置镜像的元数据 (等同于 docker container build --labels 的作用)</span><br><span class="line">            shm_size              # v3.5中新增的参数, 设置容器 &#x2F;dev&#x2F;shm 分区的大小 (等同于 docker container build --shm-size 的作用)</span><br><span class="line">        command               # 覆盖容器启动后默认执行的命令, 支持 shell 格式和 [] 格式</span><br><span class="line">        configs               # 不知道怎么用</span><br><span class="line">        cgroup_parent         # 不知道怎么用</span><br><span class="line">        container_name        # 指定容器的名称 (等同于 docker run --name 的作用)</span><br><span class="line">        credential_spec       # 不知道怎么用</span><br><span class="line">        deploy                # v3 版本以上, 指定与部署和运行服务相关的配置, deploy 部分是 docker stack 使用的, docker stack 依赖 docker swarm</span><br><span class="line">            endpoint_mode         # v3.3 版本中新增的功能, 指定服务暴露的方式</span><br><span class="line">                vip                   # Docker 为该服务分配了一个虚拟 IP(VIP), 作为客户端的访问服务的地址</span><br><span class="line">                dnsrr                 # DNS轮询, Docker 为该服务设置 DNS 条目, 使得服务名称的 DNS 查询返回一个 IP 地址列表, 客户端直接访问其中的一个地址</span><br><span class="line">            labels                # 指定服务的标签，这些标签仅在服务上设置</span><br><span class="line">            mode                  # 指定 deploy 的模式</span><br><span class="line">                global                # 每个集群节点都只有一个容器</span><br><span class="line">                replicated            # 用户可以指定集群中容器的数量(默认)</span><br><span class="line">            placement             # 不知道怎么用</span><br><span class="line">            replicas              # deploy 的 mode 为 replicated 时, 指定容器副本的数量</span><br><span class="line">            resources             # 资源限制</span><br><span class="line">                limits                # 设置容器的资源限制</span><br><span class="line">                    cpus: &quot;0.5&quot;           # 设置该容器最多只能使用 50% 的 CPU </span><br><span class="line">                    memory: 50M           # 设置该容器最多只能使用 50M 的内存空间 </span><br><span class="line">                reservations          # 设置为容器预留的系统资源(随时可用)</span><br><span class="line">                    cpus: &quot;0.2&quot;           # 为该容器保留 20% 的 CPU</span><br><span class="line">                    memory: 20M           # 为该容器保留 20M 的内存空间</span><br><span class="line">            restart_policy        # 定义容器重启策略, 用于代替 restart 参数</span><br><span class="line">                condition             # 定义容器重启策略(接受三个参数)</span><br><span class="line">                    none                  # 不尝试重启</span><br><span class="line">                    on-failure            # 只有当容器内部应用程序出现问题才会重启</span><br><span class="line">                    any                   # 无论如何都会尝试重启(默认)</span><br><span class="line">                delay                 # 尝试重启的间隔时间(默认为 0s)</span><br><span class="line">                max_attempts          # 尝试重启次数(默认一直尝试重启)</span><br><span class="line">                window                # 检查重启是否成功之前的等待时间(即如果容器启动了, 隔多少秒之后去检测容器是否正常, 默认 0s)</span><br><span class="line">            update_config         # 用于配置滚动更新配置</span><br><span class="line">                parallelism           # 一次性更新的容器数量</span><br><span class="line">                delay                 # 更新一组容器之间的间隔时间</span><br><span class="line">                failure_action        # 定义更新失败的策略</span><br><span class="line">                    continue              # 继续更新</span><br><span class="line">                    rollback              # 回滚更新</span><br><span class="line">                    pause                 # 暂停更新(默认)</span><br><span class="line">                monitor               # 每次更新后的持续时间以监视更新是否失败(单位: ns|us|ms|s|m|h) (默认为0)</span><br><span class="line">                max_failure_ratio     # 回滚期间容忍的失败率(默认值为0)</span><br><span class="line">                order                 # v3.4 版本中新增的参数, 回滚期间的操作顺序</span><br><span class="line">                    stop-first            #旧任务在启动新任务之前停止(默认)</span><br><span class="line">                    start-first           #首先启动新任务, 并且正在运行的任务暂时重叠</span><br><span class="line">            rollback_config       # v3.7 版本中新增的参数, 用于定义在 update_config 更新失败的回滚策略</span><br><span class="line">                parallelism           # 一次回滚的容器数, 如果设置为0, 则所有容器同时回滚</span><br><span class="line">                delay                 # 每个组回滚之间的时间间隔(默认为0)</span><br><span class="line">                failure_action        # 定义回滚失败的策略</span><br><span class="line">                    continue              # 继续回滚</span><br><span class="line">                    pause                 # 暂停回滚</span><br><span class="line">                monitor               # 每次回滚任务后的持续时间以监视失败(单位: ns|us|ms|s|m|h) (默认为0)</span><br><span class="line">                max_failure_ratio     # 回滚期间容忍的失败率(默认值0)</span><br><span class="line">                order                 # 回滚期间的操作顺序</span><br><span class="line">                    stop-first            # 旧任务在启动新任务之前停止(默认)</span><br><span class="line">                    start-first           # 首先启动新任务, 并且正在运行的任务暂时重叠</span><br><span class="line">            注意：</span><br><span class="line">                支持 docker-compose up 和 docker-compose run 但不支持 docker stack deploy 的子选项</span><br><span class="line">                security_opt  container_name  devices  tmpfs  stop_signal  links    cgroup_parent</span><br><span class="line">                network_mode  external_links  restart  build  userns_mode  sysctls</span><br><span class="line">        devices               # 指定设备映射列表 (等同于 docker run --device 的作用)</span><br><span class="line">        depends_on            # 定义容器启动顺序 (此选项解决了容器之间的依赖关系， 此选项在 v3 版本中 使用 swarm 部署时将忽略该选项)</span><br><span class="line">            示例：</span><br><span class="line">                docker-compose up 以依赖顺序启动服务，下面例子中 redis 和 db 服务在 web 启动前启动</span><br><span class="line">                默认情况下使用 docker-compose up web 这样的方式启动 web 服务时，也会启动 redis 和 db 两个服务，因为在配置文件中定义了依赖关系</span><br><span class="line">                version: &#39;3&#39;</span><br><span class="line">                services:</span><br><span class="line">                    web:</span><br><span class="line">                        build: .</span><br><span class="line">                        depends_on:</span><br><span class="line">                            - db      </span><br><span class="line">                            - redis  </span><br><span class="line">                    redis:</span><br><span class="line">                        image: redis</span><br><span class="line">                    db:</span><br><span class="line">                        image: postgres                             </span><br><span class="line">        dns                   # 设置 DNS 地址(等同于 docker run --dns 的作用)</span><br><span class="line">        dns_search            # 设置 DNS 搜索域(等同于 docker run --dns-search 的作用)</span><br><span class="line">        tmpfs                 # v2 版本以上, 挂载目录到容器中, 作为容器的临时文件系统(等同于 docker run --tmpfs 的作用, 在使用 swarm 部署时将忽略该选项)</span><br><span class="line">        entrypoint            # 覆盖容器的默认 entrypoint 指令 (等同于 docker run --entrypoint 的作用)</span><br><span class="line">        env_file              # 从指定文件中读取变量设置为容器中的环境变量, 可以是单个值或者一个文件列表, 如果多个文件中的变量重名则后面的变量覆盖前面的变量, environment 的值覆盖 env_file 的值</span><br><span class="line">            文件格式：</span><br><span class="line">                RACK_ENV&#x3D;development </span><br><span class="line">        environment           # 设置环境变量， environment 的值可以覆盖 env_file 的值 (等同于 docker run --env 的作用)</span><br><span class="line">        expose                # 暴露端口, 但是不能和宿主机建立映射关系, 类似于 Dockerfile 的 EXPOSE 指令</span><br><span class="line">        external_links        # 连接不在 docker-compose.yml 中定义的容器或者不在 compose 管理的容器(docker run 启动的容器, 在 v3 版本中使用 swarm 部署时将忽略该选项)</span><br><span class="line">        extra_hosts           # 添加 host 记录到容器中的 &#x2F;etc&#x2F;hosts 中 (等同于 docker run --add-host 的作用)</span><br><span class="line">        healthcheck           # v2.1 以上版本, 定义容器健康状态检查, 类似于 Dockerfile 的 HEALTHCHECK 指令</span><br><span class="line">            test                  # 检查容器检查状态的命令, 该选项必须是一个字符串或者列表, 第一项必须是 NONE, CMD 或 CMD-SHELL, 如果其是一个字符串则相当于 CMD-SHELL 加该字符串</span><br><span class="line">                NONE                  # 禁用容器的健康状态检测</span><br><span class="line">                CMD                   # test: [&quot;CMD&quot;, &quot;curl&quot;, &quot;-f&quot;, &quot;http:&#x2F;&#x2F;localhost&quot;]</span><br><span class="line">                CMD-SHELL             # test: [&quot;CMD-SHELL&quot;, &quot;curl -f http:&#x2F;&#x2F;localhost || exit 1&quot;] 或者　test: curl -f https:&#x2F;&#x2F;localhost || exit 1</span><br><span class="line">            interval: 1m30s       # 每次检查之间的间隔时间</span><br><span class="line">            timeout: 10s          # 运行命令的超时时间</span><br><span class="line">            retries: 3            # 重试次数</span><br><span class="line">            start_period: 40s     # v3.4 以上新增的选项, 定义容器启动时间间隔</span><br><span class="line">            disable: true         # true 或 false, 表示是否禁用健康状态检测和　test: NONE 相同</span><br><span class="line">        image                 # 指定 docker 镜像, 可以是远程仓库镜像、本地镜像</span><br><span class="line">        init                  # v3.7 中新增的参数, true 或 false 表示是否在容器中运行一个 init, 它接收信号并传递给进程</span><br><span class="line">        isolation             # 隔离容器技术, 在 Linux 中仅支持 default 值</span><br><span class="line">        labels                # 使用 Docker 标签将元数据添加到容器, 与 Dockerfile 中的 LABELS 类似</span><br><span class="line">        links                 # 链接到其它服务中的容器, 该选项是 docker 历史遗留的选项, 目前已被用户自定义网络名称空间取代, 最终有可能被废弃 (在使用 swarm 部署时将忽略该选项)</span><br><span class="line">        logging               # 设置容器日志服务</span><br><span class="line">            driver                # 指定日志记录驱动程序, 默认 json-file (等同于 docker run --log-driver 的作用)</span><br><span class="line">            options               # 指定日志的相关参数 (等同于 docker run --log-opt 的作用)</span><br><span class="line">                max-size              # 设置单个日志文件的大小, 当到达这个值后会进行日志滚动操作</span><br><span class="line">                max-file              # 日志文件保留的数量</span><br><span class="line">        network_mode          # 指定网络模式 (等同于 docker run --net 的作用, 在使用 swarm 部署时将忽略该选项)         </span><br><span class="line">        networks              # 将容器加入指定网络 (等同于 docker network connect 的作用), networks 可以位于 compose 文件顶级键和 services 键的二级键</span><br><span class="line">            aliases               # 同一网络上的容器可以使用服务名称或别名连接到其中一个服务的容器</span><br><span class="line">            ipv4_address      # IP V4 格式</span><br><span class="line">            ipv6_address      # IP V6 格式</span><br><span class="line">            示例:</span><br><span class="line">                version: &#39;3.7&#39;</span><br><span class="line">                services: </span><br><span class="line">                    test: </span><br><span class="line">                        image: nginx:1.14-alpine</span><br><span class="line">                        container_name: mynginx</span><br><span class="line">                        command: ifconfig</span><br><span class="line">                        networks: </span><br><span class="line">                            app_net:                                # 调用下面 networks 定义的 app_net 网络</span><br><span class="line">                            ipv4_address: 172.16.238.10</span><br><span class="line">                networks:</span><br><span class="line">                    app_net:</span><br><span class="line">                        driver: bridge</span><br><span class="line">                        ipam:</span><br><span class="line">                            driver: default</span><br><span class="line">                            config:</span><br><span class="line">                                - subnet: 172.16.238.0&#x2F;24</span><br><span class="line">        pid: &#39;host&#39;           # 共享宿主机的 进程空间(PID)</span><br><span class="line">        ports                 # 建立宿主机和容器之间的端口映射关系, ports 支持两种语法格式</span><br><span class="line">            SHORT 语法格式示例:</span><br><span class="line">                - &quot;3000&quot;                            # 暴露容器的 3000 端口, 宿主机的端口由 docker 随机映射一个没有被占用的端口</span><br><span class="line">                - &quot;3000-3005&quot;                       # 暴露容器的 3000 到 3005 端口, 宿主机的端口由 docker 随机映射没有被占用的端口</span><br><span class="line">                - &quot;8000:8000&quot;                       # 容器的 8000 端口和宿主机的 8000 端口建立映射关系</span><br><span class="line">                - &quot;9090-9091:8080-8081&quot;</span><br><span class="line">                - &quot;127.0.0.1:8001:8001&quot;             # 指定映射宿主机的指定地址的</span><br><span class="line">                - &quot;127.0.0.1:5000-5010:5000-5010&quot;   </span><br><span class="line">                - &quot;6060:6060&#x2F;udp&quot;                   # 指定协议</span><br><span class="line">            LONG 语法格式示例:(v3.2 新增的语法格式)</span><br><span class="line">                ports:</span><br><span class="line">                    - target: 80                    # 容器端口</span><br><span class="line">                      published: 8080               # 宿主机端口</span><br><span class="line">                      protocol: tcp                 # 协议类型</span><br><span class="line">                      mode: host                    # host 在每个节点上发布主机端口,  ingress 对于群模式端口进行负载均衡</span><br><span class="line">        secrets               # 不知道怎么用</span><br><span class="line">        security_opt          # 为每个容器覆盖默认的标签 (在使用 swarm 部署时将忽略该选项)</span><br><span class="line">        stop_grace_period     # 指定在发送了 SIGTERM 信号之后, 容器等待多少秒之后退出(默认 10s)</span><br><span class="line">        stop_signal           # 指定停止容器发送的信号 (默认为 SIGTERM 相当于 kill PID; SIGKILL 相当于 kill -9 PID; 在使用 swarm 部署时将忽略该选项)</span><br><span class="line">        sysctls               # 设置容器中的内核参数 (在使用 swarm 部署时将忽略该选项)</span><br><span class="line">        ulimits               # 设置容器的 limit</span><br><span class="line">        userns_mode           # 如果Docker守护程序配置了用户名称空间, 则禁用此服务的用户名称空间 (在使用 swarm 部署时将忽略该选项)</span><br><span class="line">        volumes               # 定义容器和宿主机的卷映射关系, 其和 networks 一样可以位于 services 键的二级键和 compose 顶级键, 如果需要跨服务间使用则在顶级键定义, 在 services 中引用</span><br><span class="line">            SHORT 语法格式示例:</span><br><span class="line">                volumes:</span><br><span class="line">                    - &#x2F;var&#x2F;lib&#x2F;mysql                # 映射容器内的 &#x2F;var&#x2F;lib&#x2F;mysql 到宿主机的一个随机目录中</span><br><span class="line">                    - &#x2F;opt&#x2F;data:&#x2F;var&#x2F;lib&#x2F;mysql      # 映射容器内的 &#x2F;var&#x2F;lib&#x2F;mysql 到宿主机的 &#x2F;opt&#x2F;data</span><br><span class="line">                    - .&#x2F;cache:&#x2F;tmp&#x2F;cache            # 映射容器内的 &#x2F;var&#x2F;lib&#x2F;mysql 到宿主机 compose 文件所在的位置</span><br><span class="line">                    - ~&#x2F;configs:&#x2F;etc&#x2F;configs&#x2F;:ro    # 映射容器宿主机的目录到容器中去, 权限只读</span><br><span class="line">                    - datavolume:&#x2F;var&#x2F;lib&#x2F;mysql     # datavolume 为 volumes 顶级键定义的目录, 在此处直接调用</span><br><span class="line">            LONG 语法格式示例:(v3.2 新增的语法格式)</span><br><span class="line">                version: &quot;3.2&quot;</span><br><span class="line">                services:</span><br><span class="line">                    web:</span><br><span class="line">                        image: nginx:alpine</span><br><span class="line">                        ports:</span><br><span class="line">                            - &quot;80:80&quot;</span><br><span class="line">                        volumes:</span><br><span class="line">                            - type: volume                  # mount 的类型, 必须是 bind、volume 或 tmpfs</span><br><span class="line">                                source: mydata              # 宿主机目录</span><br><span class="line">                                target: &#x2F;data               # 容器目录</span><br><span class="line">                                volume:                     # 配置额外的选项, 其 key 必须和 type 的值相同</span><br><span class="line">                                    nocopy: true                # volume 额外的选项, 在创建卷时禁用从容器复制数据</span><br><span class="line">                            - type: bind                    # volume 模式只指定容器路径即可, 宿主机路径随机生成; bind 需要指定容器和数据机的映射路径</span><br><span class="line">                                source: .&#x2F;static</span><br><span class="line">                                target: &#x2F;opt&#x2F;app&#x2F;static</span><br><span class="line">                                read_only: true             # 设置文件系统为只读文件系统</span><br><span class="line">                volumes:</span><br><span class="line">                    mydata:                                 # 定义在 volume, 可在所有服务中调用</span><br><span class="line">        restart               # 定义容器重启策略(在使用 swarm 部署时将忽略该选项, 在 swarm 使用 restart_policy 代替 restart)</span><br><span class="line">            no                    # 禁止自动重启容器(默认)</span><br><span class="line">            always                # 无论如何容器都会重启</span><br><span class="line">            on-failure            # 当出现 on-failure 报错时, 容器重新启动</span><br><span class="line">        其他选项：</span><br><span class="line">            domainname, hostname, ipc, mac_address, privileged, read_only, shm_size, stdin_open, tty, user, working_dir</span><br><span class="line">            上面这些选项都只接受单个值和 docker run 的对应参数类似</span><br><span class="line">        对于值为时间的可接受的值：</span><br><span class="line">            2.5s</span><br><span class="line">            10s</span><br><span class="line">            1m30s</span><br><span class="line">            2h32m</span><br><span class="line">            5h34m56s</span><br><span class="line">            时间单位: us, ms, s, m， h</span><br><span class="line">        对于值为大小的可接受的值：</span><br><span class="line">            2b</span><br><span class="line">            1024kb</span><br><span class="line">            2048k</span><br><span class="line">            300m</span><br><span class="line">            1gb</span><br><span class="line">            单位: b, k, m, g 或者 kb, mb, gb</span><br><span class="line">    networks          # 定义 networks 信息</span><br><span class="line">        driver                # 指定网络模式, 大多数情况下, 它 bridge 于单个主机和 overlay Swarm 上</span><br><span class="line">            bridge                # Docker 默认使用 bridge 连接单个主机上的网络</span><br><span class="line">            overlay               # overlay 驱动程序创建一个跨多个节点命名的网络</span><br><span class="line">            host                  # 共享主机网络名称空间(等同于 docker run --net&#x3D;host)</span><br><span class="line">            none                  # 等同于 docker run --net&#x3D;none</span><br><span class="line">        driver_opts           # v3.2以上版本, 传递给驱动程序的参数, 这些参数取决于驱动程序</span><br><span class="line">        attachable            # driver 为 overlay 时使用, 如果设置为 true 则除了服务之外，独立容器也可以附加到该网络; 如果独立容器连接到该网络，则它可以与其他 Docker 守护进程连接到的该网络的服务和独立容器进行通信</span><br><span class="line">        ipam                  # 自定义 IPAM 配置. 这是一个具有多个属性的对象, 每个属性都是可选的</span><br><span class="line">            driver                # IPAM 驱动程序, bridge 或者 default</span><br><span class="line">            config                # 配置项</span><br><span class="line">                subnet                # CIDR格式的子网，表示该网络的网段</span><br><span class="line">        external              # 外部网络, 如果设置为 true 则 docker-compose up 不会尝试创建它, 如果它不存在则引发错误</span><br><span class="line">        name                  # v3.5 以上版本, 为此网络设置名称</span><br><span class="line">文件格式示例：</span><br><span class="line">    version: &quot;3&quot;</span><br><span class="line">    services:</span><br><span class="line">      redis:</span><br><span class="line">        image: redis:alpine</span><br><span class="line">        ports:</span><br><span class="line">          - &quot;6379&quot;</span><br><span class="line">        networks:</span><br><span class="line">          - frontend</span><br><span class="line">        deploy:</span><br><span class="line">          replicas: 2</span><br><span class="line">          update_config:</span><br><span class="line">            parallelism: 2</span><br><span class="line">            delay: 10s</span><br><span class="line">          restart_policy:</span><br><span class="line">            condition: on-failure</span><br><span class="line">      db:</span><br><span class="line">        image: postgres:9.4</span><br><span class="line">        volumes:</span><br><span class="line">          - db-data:&#x2F;var&#x2F;lib&#x2F;postgresql&#x2F;data</span><br><span class="line">        networks:</span><br><span class="line">          - backend</span><br><span class="line">        deploy:</span><br><span class="line">          placement:</span><br><span class="line">            constraints: [node.role &#x3D;&#x3D; manager]</span><br></pre></td></tr></table></figure>
+
+<h1><span id="hou-ji">后记</span></h1><p>任重而道远～</p>
+
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/more/web-more/web-interview/" data-toggle="tooltip" data-placement="top" title="【分享】关于最近在面试中，遇到的一些问题的汇总～">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                    <div class="reward">
+                        <div class="reward-button">赏 <span class="reward-code"> 
+                            <span class="alipay-code"> <img class="alipay-img" src="/img/reward/alipay.jpg"><b>支付宝打赏</b></span> 
+                            <span class="wechat-code"> <img class="wechat-img" src="/img/reward/wechat_pay.jpg"><b>微信打赏</b> </span>
+                            </span></div>
+                        <p class="reward-notice">赞赏一下</p>
+                    </div>
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+                <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+
+                <div class="aplayer"
+                    data-id="2297428102"
+                    data-server="netease"
+                    data-type="playlist"
+                    data-fixed="true" >
+                </div>
+                
+
+                
+        
+                    
+                        <!-- 来必力City版安装代码 --> 
+                        <div id="lv-container" data-id="city" data-uid="MTAyMC80Mzg3OC8yMDQxMw==">
+                            <script type="text/javascript">
+                                (function (d, s) {
+                                    var j, e = d.getElementsByTagName(s)[0];
+        
+                                    if (typeof LivereTower === 'function') { return; }
+        
+                                    j = d.createElement(s);
+                                    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                                    j.async = true;
+        
+                                    e.parentNode.insertBefore(j, e);
+                                })(document, 'script');
+                            </script>
+                            <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                        </div>
+                        <!-- City版安装代码已完成 -->
+                    
+            </div>
+            
+            <!-- Table of Contents -->
+            
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        <!-- toc -->
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">Docker-Compose下载安装</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">常用参数</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">后记</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <div><a href="/tags/">FEATURED TAGS</a></div>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Docker" title="Docker">Docker</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://huangxuan.me/" target="_blank">Hux Blog</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- 复制添加版权申明-->
+<script>
+    /**/
+    function setClipboardText(event){
+        event.preventDefault();//阻止元素发生默认的行为（例如，当点击提交按钮时阻止对表单的提交）。
+        var node = document.createElement('div');
+        //对documentfragment不熟，不知道怎么获取里面的内容，用了一个比较笨的方式
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        //getRangeAt(0)返回对基于零的数字索引与传递参数匹配的选择对象中的范围的引用。对于连续选择，参数应为零。
+        var htmlData = '<div>'
+            + node.innerHTML
+            + '<br /><br />著作权归作者所有。<br />'
+            + '商业转载请联系作者获得授权，非商业转载请注明出处。<br />'
+            + '作者：fangzhioo <br />链接：'
+            + location.href
+            + '<br />来源：fangzhioo.github.io<br /><br />'
+            + '</div>';
+        var textData = window.getSelection().getRangeAt(0)
+            + '\n\n著作权归作者所有。\n'
+            + '商业转载请联系作者获得授权，非商业转载请注明出处。\n'
+            + '作者：fangzhioo\n'
+            + '链接：'
+            + location.href
+            + '来源：fangzhioo.github.io\n\n';
+        if(event.clipboardData){
+            event.clipboardData.setData("text/html", htmlData);
+            //setData(剪贴板格式, 数据) 给剪贴板赋予指定格式的数据。返回 true 表示操作成功。
+            event.clipboardData.setData("text/plain",textData);
+        }
+        else if(window.clipboardData){ //window.clipboardData的作用是在页面上将需要的东西复制到剪贴板上，提供了对于预定义的剪贴板格式的访问，以便在编辑操作中使用。
+            return window.clipboardData.setData("text", textData);
+        }
+    };
+ 
+    document.addEventListener('copy',function(e){
+        setClipboardText(e);
+    });
+</script>
+
+<!-- smooth scroll behavior polyfill  -->
+<script type="text/javascript" src="/js/smoothscroll.js"></script>
+<script>
+        $('#toc').on('click','a',function(a){
+            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
+            // console.log(window.navigator.userAgent,isChrome)
+            // if(isChrome) {
+                // console.log(a.currentTarget.outerHTML);
+                // console.log($(a.currentTarget).attr("href"));
+                //跳转到指定锚点
+                // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
+                console.log('toc',a)
+                var target = document.getElementById($(a.currentTarget).attr("href").replace("#",""));
+                target && target.scrollIntoView({behavior: 'smooth' });
+            // }
+        })  
+</script>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/fang-zhi-4-73">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/fangzhioooo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/fangzhioo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 方志 2021 
+                    <br>
+                    Theme by <a target="_blank" rel="noopener" href="https://huangxuan.me/">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="https://fangzhioo.github.io">Fz</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=fangzhioo&repo=fangzhioo.github.io&type=star&count=true" >
+                    </iframe>
+                    <br />
+                    <!--总访问量统计-->
+                    
+                        <span id="busuanzi_container_site_pv" style="margin-left: 3px;">
+                            总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    
+                    <!--总访问量统计-->
+
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/my-blog.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://fangzhioo.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-138588101-1';
+    var _gaDomain = 'fangzhioo.github.io';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'dce5d892b228cc0a253520da429e7f11';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://fangzhioo.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+<!-- live2d -->
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"position":"right","width":200,"height":400,"jsonPath":"/live2dw/assets/sagiri.model.json"},"mobile":{"show":true},"react":{"opacity":0.6},"log":false});</script>
+
+</body>
+
+</html>

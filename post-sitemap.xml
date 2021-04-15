@@ -9,8 +9,24 @@
 
 
     <url>
-        <loc>https://fangzhioo.github.io/technical/technical/vpn-v2ray/</loc>
-        <lastmod>2021-04-15T07:19:10.680Z</lastmod>
+        <loc>https://fangzhioo.github.io/docker/docker/docker-compose/</loc>
+        <lastmod>2021-04-15T08:05:20.029Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/web/css-base/css3-features/</loc>
+        <lastmod>2021-04-15T07:56:41.197Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/web/html-base/html5-features/</loc>
+        <lastmod>2021-04-15T07:56:36.017Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -18,7 +34,15 @@
 
     <url>
         <loc>https://fangzhioo.github.io/diary/hello-myblog/</loc>
-        <lastmod>2021-04-15T03:14:00.325Z</lastmod>
+        <lastmod>2021-04-15T07:51:29.314Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/technical/technical/vpn-v2ray/</loc>
+        <lastmod>2021-04-15T07:19:10.680Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -89,7 +113,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/reprint/react-books/post-30/</loc>
+        <loc>https://fangzhioo.github.io/reprint/react-books/post-33/</loc>
         <lastmod>2021-04-14T02:59:21.638Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -97,7 +121,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/reprint/react-books/post-33/</loc>
+        <loc>https://fangzhioo.github.io/reprint/react-books/post-30/</loc>
         <lastmod>2021-04-14T02:59:21.638Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -361,7 +385,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/reprint/react-books/post-40/</loc>
+        <loc>https://fangzhioo.github.io/reprint/react-books/post-39/</loc>
         <lastmod>2021-04-14T02:59:21.333Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -369,7 +393,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/reprint/react-books/post-39/</loc>
+        <loc>https://fangzhioo.github.io/reprint/react-books/post-40/</loc>
         <lastmod>2021-04-14T02:59:21.333Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -441,7 +465,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/web/js-base/bom-dom/</loc>
+        <loc>https://fangzhioo.github.io/web/js-base/event/</loc>
         <lastmod>2021-04-12T10:00:24.311Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -449,7 +473,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/web/js-base/event/</loc>
+        <loc>https://fangzhioo.github.io/web/js-base/bom-dom/</loc>
         <lastmod>2021-04-12T10:00:24.311Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -459,22 +483,6 @@
     <url>
         <loc>https://fangzhioo.github.io/web/js-base/array/</loc>
         <lastmod>2021-04-12T10:00:24.310Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://fangzhioo.github.io/web/html-base/html5-features/</loc>
-        <lastmod>2021-04-12T10:00:24.310Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://fangzhioo.github.io/web/css-base/css3-features/</loc>
-        <lastmod>2021-04-12T10:00:24.309Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
