@@ -2,7 +2,7 @@
 title: "Hello 2019"
 catalog: true
 toc_nav_num: true
-date: 2022-12-25 22:22:22
+date: 2019-04-25 22:22:22
 subtitle: "\"Hello World, Hello Blog\""
 top: 1
 tags:
@@ -29,6 +29,8 @@ Fz 的 Blog 就这么开通了！
 balala...
 
 主要的优势方面大佬已经说的很清楚了，在github上面托管Blog，对于熟悉github的程序员来说，也是相当容易上手操作的！
+
+- 2021-04-15 重新捡起这个blog，准备积累一点东西，顺便将hexo升级到5.0.0
 
 ---
 

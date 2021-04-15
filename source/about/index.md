@@ -2,7 +2,7 @@
 layout: "about"
 title: "About"
 description: "吾之初心，永世不忘"
-header-img: "/img/header_img/about.jpg"
+header-img: "//www.talklee.com/api/bing?rand=true"
 aplayer: true
 fixed: false
 ---
@@ -13,14 +13,14 @@ fixed: false
 
 ### 关于我
 
-> Hey，我是Fz，一个平凡无奇的码农
+Hey，I‘m Kirito. 没错，就是刀剑里的“桐姥爷”。毕竟是游戏中设定为最快的男人😂 。  
+base 杭州市  
 
 ### 兴趣方向
 
-> Web前端
-> Java
-
-<!-- ### 参与社区 -->
+> 开发编程
+> 游戏
+> 二次元动漫、漫画
 
 ### 联系我
 
