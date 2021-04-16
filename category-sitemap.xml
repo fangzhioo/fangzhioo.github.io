@@ -9,6 +9,13 @@
 
 
     <url>
+        <loc>https://fangzhioo.github.io/categories/more/</loc>
+        <lastmod>2021-04-16T03:59:39.190Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://fangzhioo.github.io/categories/docker/</loc>
         <lastmod>2021-04-15T08:05:20.029Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -39,13 +46,6 @@
     <url>
         <loc>https://fangzhioo.github.io/categories/reprint/</loc>
         <lastmod>2021-04-14T02:59:21.639Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://fangzhioo.github.io/categories/more/</loc>
-        <lastmod>2021-04-13T06:25:42.003Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

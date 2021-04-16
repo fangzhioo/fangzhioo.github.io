@@ -198,12 +198,6 @@
                     
 
                         
-                    
-
-                        
-                    
-
-                        
                         <li>
                             <a href="/archive/">Archives</a>
                         </li>
@@ -211,15 +205,21 @@
                     
 
                         
-                    
-
-                        
-                    
-
-                        
                         <li>
                             <a href="/about/">About</a>
                         </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
                         
                     
 
@@ -319,15 +319,35 @@
 
 <p>这个函数也同样提供第三个参数<code>options</code>，但这个参数是一个对象集，<code>options.previous</code>相当于我们自己实现的<code>last</code>。它还支持传入<code>options.leading</code>和<code>options.trailing</code>来控制真正回调触发的时机。也即，<strong>延时</strong>和<strong>前缘</strong>。详细的可以查看 <a target="_blank" rel="noopener" href="https://underscorejs.org/#throttle">underscorejs的throttle</a>。</p>
 <p>再有<code>lodash</code>的<code>throttle</code>，配置差不多。有兴趣的可以去查看 <a target="_blank" rel="noopener" href="https://github.com/lodash/lodash/blob/3.10.1/lodash.src.js#L8401">lodash的throttle源代码</a>。</p>
-<h1><span id="hou-ji">后记</span></h1><p>我在这个 <a target="_blank" rel="noopener" href="http://blog.nimius.net/2014/04/javascript-debounce-throttle/">大佬的Blog</a> 中，看到了一个有趣的可视化Demo。借鉴这个Demo，我们来做一个可视化的Demo，来简单粗暴的展示下效果。  </p>
+<p>我在这个 <a target="_blank" rel="noopener" href="http://blog.nimius.net/2014/04/javascript-debounce-throttle/">大佬的Blog</a> 中，看到了一个有趣的可视化Demo。借鉴这个Demo，我们来做一个可视化的Demo，来简单粗暴的展示下效果。  </p>
 <div style="box-sizing: border-box;padding:10px">
-    <div style="width: 100%;height: 200px;background: #f5f5f5;border: 1px solid #aaa;box-sizing: border-box;padding: 25px;text-align: center;font-size: 18px;" id="moveonme">move your mouse or finger here</div>
+    <div style="width: 100%;height: 200px;background: #f5f5f5;border: 1px solid #aaa;box-sizing: border-box;padding: 25px;text-align: center;font-size: 18px;" id="moveonme">请在这里移动你的鼠标（手机端在此滑动手指）</div>
     <div id="showbox" style="width: 100%;padding-top:5px;">
         <canvas id="paintonme" height="360" width="320"></canvas>
     </div>
 </div>
 
-<p>不难看出，方案有效的实现了防抖和节流的作用。</p>
+<p><strong>Regular</strong> 代表正常事件触发。<br><strong>Debounce</strong> 代表防抖方案事件触发。<br><strong>Throttle</strong> 代表节流方案事件触发。  </p>
+<p>从图中可以清晰的看出，防抖方案（Debounce）有效的阻止了短期内相同事件重复触发。使得连续触发事件可以在合适的时间点得到处理。而 节流方案（Throttle）有效的使得短期内相同高频的事件重复触发变得低频。 </p>
+<h2><span id="chang-yong-chang-jing">常用场景</span></h2><ul>
+<li><p>防抖方案（Debounce）</p>
+<ul>
+<li>搜索框搜索输入。只需用户最后一次输入完，再发送请求</li>
+<li>手机号、邮箱验证输入检测</li>
+<li>窗口大小Resize。只需窗口调整完成后，计算窗口大小。防止重复渲染。</li>
+</ul>
+</li>
+<li><p>节流方案（Throttle）</p>
+<ul>
+<li>滚动加载，加载更多或滚到底部监听</li>
+<li>谷歌搜索框，搜索联想功能</li>
+<li>高频点击提交，表单重复提交（抢购、秒杀等）</li>
+</ul>
+</li>
+</ul>
+<h1><span id="hou-ji">后记</span></h1><blockquote>
+<p>就以 throttle 为例，某日，老师给你布置了一个作业，让你深入理解一下 throttle，第二天上课来聊聊。张三心里非常高兴，这个概念在经典书籍《JavaScript高级程序设计》中见过，打开一看，就两页，而且解释地非常清晰，看完就高兴地干别的事情去了。而李四，觉得高程三讲的有点少，而去谷歌了下其他关于 throttle 的知识点，兴奋地看到 throttle 函数的好几种写法，发现高程三只是用了最简单的方式，还有更优雅运用场景更多的写法，或许此时他已经发现和 throttle 同时出现的还有个 debounce，这是什么鬼？反正老师没说，以后再看吧，于是心满意足地玩游戏去了。而王五，和李四一样发现了 debounce，这是什么？一起了解了吧，继而发现 debounce 的用法居然和高程三中的 throttle 一样！继续挖下去，发现高程三中的 throttle 函数其实应该叫 debounce，看到最后，王五已经把 throttle 和 debounce 彻底理解了。</p>
+</blockquote>
 <hr>
 <script async defer src="/js/more-debounce-throttle.js"></script>
 
@@ -337,7 +357,7 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/more/web-more/web-share/" data-toggle="tooltip" data-placement="top" title="【分享】在DT完成一系列产品后，分享下团队前端部分的技术选型～">&larr; Previous Post</a>
+                            <a href="/more/web-more/web-share/" data-toggle="tooltip" data-placement="top" title="【分享】在阿里DT完成一系列产品后，分享下团队前端部分的技术选型～">&larr; Previous Post</a>
                         </li>
                     
                     
@@ -425,7 +445,7 @@
         <strong class="toc-title">Contents</strong>
         <!-- toc -->
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">防抖（Debounce）</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">节流（Throttle）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">后记</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">防抖（Debounce）</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">节流（Throttle）</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">常用场景</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">后记</span></a></li></ol>
         
         </div>
       </aside>

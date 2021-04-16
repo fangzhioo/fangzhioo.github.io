@@ -9,6 +9,22 @@
 
 
     <url>
+        <loc>https://fangzhioo.github.io/more/web-more/debounce-throttle/</loc>
+        <lastmod>2021-04-16T03:59:39.190Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/more/web-more/web-share/</loc>
+        <lastmod>2021-04-16T03:29:25.833Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://fangzhioo.github.io/docker/docker/docker-compose/</loc>
         <lastmod>2021-04-15T08:05:20.029Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -113,7 +129,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/reprint/react-books/post-33/</loc>
+        <loc>https://fangzhioo.github.io/reprint/react-books/post-30/</loc>
         <lastmod>2021-04-14T02:59:21.638Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -121,7 +137,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/reprint/react-books/post-30/</loc>
+        <loc>https://fangzhioo.github.io/reprint/react-books/post-33/</loc>
         <lastmod>2021-04-14T02:59:21.638Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -417,14 +433,6 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/more/web-more/debounce-throttle/</loc>
-        <lastmod>2021-04-13T06:25:42.003Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://fangzhioo.github.io/technical/technical/vpn-shadowsocks/</loc>
         <lastmod>2021-04-12T10:00:24.314Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -449,14 +457,6 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/more/web-more/web-share/</loc>
-        <lastmod>2021-04-12T10:00:24.313Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://fangzhioo.github.io/web/js-base/string/</loc>
         <lastmod>2021-04-12T10:00:24.312Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -465,7 +465,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/web/js-base/event/</loc>
+        <loc>https://fangzhioo.github.io/web/js-base/bom-dom/</loc>
         <lastmod>2021-04-12T10:00:24.311Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -473,7 +473,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/web/js-base/bom-dom/</loc>
+        <loc>https://fangzhioo.github.io/web/js-base/event/</loc>
         <lastmod>2021-04-12T10:00:24.311Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
