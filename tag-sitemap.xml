@@ -3,6 +3,41 @@
 
 
     <url>
+        <loc>https://fangzhioo.github.io/tags/CompositionAPI/</loc>
+        <lastmod>2021-04-20T12:59:47.578Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/tags/Vue3/</loc>
+        <lastmod>2021-04-20T12:59:47.578Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/tags/Config/</loc>
+        <lastmod>2021-04-19T08:31:11.319Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/tags/API/</loc>
+        <lastmod>2021-04-19T08:31:03.665Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/tags/Vite2/</loc>
+        <lastmod>2021-04-19T02:20:08.444Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://fangzhioo.github.io/tags/Throttle/</loc>
         <lastmod>2021-04-16T03:59:39.190Z</lastmod>
         <changefreq>weekly</changefreq>

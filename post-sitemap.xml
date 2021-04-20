@@ -9,6 +9,70 @@
 
 
     <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3/composition-setup/</loc>
+        <lastmod>2021-04-20T12:59:47.578Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3-admin/1-vue3/</loc>
+        <lastmod>2021-04-20T12:58:17.691Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3/composition-reactivity-apis/</loc>
+        <lastmod>2021-04-20T12:36:06.779Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3/application-config/</loc>
+        <lastmod>2021-04-19T08:31:11.319Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3/application-api/</loc>
+        <lastmod>2021-04-19T08:31:03.665Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3/composition-provide-inject/</loc>
+        <lastmod>2021-04-19T08:28:11.539Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3/composition-lifecycle/</loc>
+        <lastmod>2021-04-19T08:26:41.054Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3-admin/2-vite2/</loc>
+        <lastmod>2021-04-19T02:20:08.444Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://fangzhioo.github.io/more/web-more/debounce-throttle/</loc>
         <lastmod>2021-04-16T03:59:39.190Z</lastmod>
         <changefreq>weekly</changefreq>

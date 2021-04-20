@@ -2,6 +2,12 @@ $(function () {
   $("[data-toggle='tooltip']").tooltip();
 });
 
+// responsive tables
+$(document).ready(function() {
+	$("table").wrap("<div class='table-responsive'></div>");
+	$("table").addClass("table");
+});
+
 // 头部下拉隐藏
 jQuery(document).ready(function (a) {
   var b = 1170;

@@ -182,14 +182,14 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -284,6 +284,292 @@
 
 <div class="post-preview">
 
+    <a href="/reprint/react-books/post-19/">
+        <h2 class="post-title">
+            
+            【React.js小书】挂载阶段的组件生命周期（二）
+        </h2>
+        <h3 class="post-subtitle">
+            React.js 将组件渲染，构造 DOM 元素后塞入页面的过程称为组件的挂载。本文介绍了挂载阶段的组件生命周期。
+        </h3>
+        <div class="post-content-preview">
+            挂载阶段的组件生命周期（二）
+React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
+
+这一节我们来讨论一下对于一个组件来说，constructor 、componentWillMount、componentDidMount、componentWillUnmount 这几个方法在一个组件的出生到死亡的过程里面起了什么样的作用。
+一般来说，所有关于组件自身的状态的初始化......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2019-05-22
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#React" title="React">React</a>
+            
+              <a href="/tags/#转载" title="转载">转载</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/reprint/react-books/post-18/">
+        <h2 class="post-title">
+            
+            【React.js小书】挂载阶段的组件生命周期（一）
+        </h2>
+        <h3 class="post-subtitle">
+            React.js 将组件渲染，构造 DOM 元素后塞入页面的过程称为组件的挂载。本文介绍了 React.js 控制组件在页面上挂载和删除的几个方法。
+        </h3>
+        <div class="post-content-preview">
+            挂载阶段的组件生命周期（一）
+React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
+
+我们在讲解 JSX 的章节中提到，下面的代码：
+1234ReactDOM.render( &lt;Header /&gt;,   document.getElementById(&#x27;root&#x27;))
+
+会编译成：
+1234ReactDOM.render(  Reac......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2019-05-21
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#React" title="React">React</a>
+            
+              <a href="/tags/#转载" title="转载">转载</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/reprint/react-books/post-17/">
+        <h2 class="post-title">
+            
+            【React.js小书】前端应用状态管理 —— 状态提升
+        </h2>
+        <h3 class="post-subtitle">
+            React.js 并没有提供好的解决方案来管理组件之间的共享状态，本文介绍状态管理，状态提升的方法。
+        </h3>
+        <div class="post-content-preview">
+            前端应用状态管理 —— 状态提升
+React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
+
+上一个评论功能的案例中，可能会有些同学会对一个地方感到疑惑： CommentList 中显示的评论列表数据为什么要通过父组件 CommentApp 用 props 传进来？为什么不直接存放在 CommentList 的 state 当中？例如这样做也是可以的：
+12345678......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2019-05-20
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#React" title="React">React</a>
+            
+              <a href="/tags/#转载" title="转载">转载</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/reprint/react-books/post-16/">
+        <h2 class="post-title">
+            
+            【React.js小书】实战分析：评论功能（三）
+        </h2>
+        <h3 class="post-subtitle">
+            本文带大家一起来学习如何分析、编写评论功能，用 React.js 实现了一个真正意义上的评论组件，本文是评论功能的第三部分。
+        </h3>
+        <div class="post-content-preview">
+            实战分析：评论功能（三）
+React.js 小书是一个开源、免费、专业、简单的 React.js 教程。tags: [React.js,React.js 小书,组件,实战,评论功能]
+
+接下来的代码比较顺理成章了。修改 CommentList 可以让它可以显示评论列表：
+123456789101112131415161718192021222324// CommentList.jsimpor......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2019-05-19
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#React" title="React">React</a>
+            
+              <a href="/tags/#转载" title="转载">转载</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/reprint/react-books/post-15/">
+        <h2 class="post-title">
+            
+            【React.js小书】实战分析：评论功能（二）
+        </h2>
+        <h3 class="post-subtitle">
+            本文带大家一起来学习如何分析、编写评论功能，包含了：处理用户输入、向父组件传递数据等部分。本文是评论功能的第二部分。
+        </h3>
+        <div class="post-content-preview">
+            实战分析：评论功能（二）
+React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
+
+[上一节][14]我们构建了基本的代码框架，现在开始完善其他的内容。
+处理用户输入我们从 ComponentInput 组件开始，学习 React.js 是如何处理用户输入的。首先修改 ComponentInput.js，完善 ComponentInput 的 render 函数中的 ......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2019-05-18
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#React" title="React">React</a>
+            
+              <a href="/tags/#转载" title="转载">转载</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/reprint/react-books/post-14/">
+        <h2 class="post-title">
+            
+            【React.js小书】实战分析：评论功能（一）
+        </h2>
+        <h3 class="post-subtitle">
+            本文带大家一起来学习如何分析、编写评论功能，包含了：组件划分、组件实现和添加样式等部分。本文是评论功能的第一部分。
+        </h3>
+        <div class="post-content-preview">
+            实战分析：评论功能（一）
+React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
+
+课程到这里大家已经掌握了 React.js 的基础知识和组件的基本写法了。现在可以把我们所学到的内容应用于实战当中。这里给大家提供一个实战的案例：一个评论功能。效果如下：
+
+在线演示地址 
+接下来会带大家一起来学习如何分析、编写这个功能。在这个过程中会补充一些之前没有提及的知识点，虽然......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2019-05-17
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#React" title="React">React</a>
+            
+              <a href="/tags/#转载" title="转载">转载</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/reprint/react-books/post-13/">
+        <h2 class="post-title">
+            
+            【React.js小书】渲染列表数据
+        </h2>
+        <h3 class="post-subtitle">
+            列表数据在前端开发中非常常见，一个前端工程师几乎每天都需要跟列表数据打交道。本文介绍如何渲染列表数据。
+        </h3>
+        <div class="post-content-preview">
+            渲染列表数据
+React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
+
+列表数据在前端非常常见，我们经常要处理这种类型的数据，例如文章列表、评论列表、用户列表…一个前端工程师几乎每天都需要跟列表数据打交道。
+React.js 当然也允许我们处理列表数据，但在使用 React.js 处理列表数据的时候，需要掌握一些规则。我们这一节会专门讨论这方面的知识。
+渲染存放 JS......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2019-05-16
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#React" title="React">React</a>
+            
+              <a href="/tags/#转载" title="转载">转载</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/reprint/react-books/post-12/">
+        <h2 class="post-title">
+            
+            【React.js小书】state vs props
+        </h2>
+        <h3 class="post-subtitle">
+            state 和 props 有着千丝万缕的关系，它们都可以决定组件的行为和显示形态。本文介绍 React.js 中对 state 和 props 的总结。
+        </h3>
+        <div class="post-content-preview">
+            state vs props
+React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
+
+我们来一个关于 state 和 props 的总结。
+state 的主要作用是用于组件保存、控制、修改自己的可变状态。state 在组件内部初始化，可以被组件自身修改，而外部不能访问也不能修改。你可以认为 state 是一个局部的、只能被组件自身控制的数据源。state 中状态可以......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2019-05-15
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#React" title="React">React</a>
+            
+              <a href="/tags/#转载" title="转载">转载</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/reprint/react-books/post-11/">
         <h2 class="post-title">
             
@@ -339,282 +625,6 @@ state我们前面提到过，一个组件的显示形态是可以由它数据状
         <p class="post-meta" style="margin: 10px 0;">
             Posted by 方志 on
             2019-05-13
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#React" title="React">React</a>
-            
-              <a href="/tags/#转载" title="转载">转载</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/reprint/react-books/post-9/">
-        <h2 class="post-title">
-            
-            【React.js小书】事件监听
-        </h2>
-        <h3 class="post-subtitle">
-            在 React.js 里面监听事件听起来很玄，但其实使用起来是很简单的，本文介绍如何使用 React.js 监听事件。
-        </h3>
-        <div class="post-content-preview">
-            事件监听
-React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
-
-在 React.js 里面监听事件是很容易的事情，你只需要给需要监听事件的元素加上属性类似于 onClick、onKeyDown 这样的属性，例如我们现在要给 Title 加上点击的事件监听：
-1234567891011class Title extends Component &#123;  han......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 方志 on
-            2019-05-12
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#React" title="React">React</a>
-            
-              <a href="/tags/#转载" title="转载">转载</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/reprint/react-books/post-8/">
-        <h2 class="post-title">
-            
-            【React.js小书】组件的组合、嵌套和组件树
-        </h2>
-        <h3 class="post-subtitle">
-            React.js 中一切皆组件，用 React.js 其实就是在写组件。本文介绍 React.js 组件的组合和组件树。
-        </h3>
-        <div class="post-content-preview">
-            组件的组合、嵌套和组件树
-React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
-
-继续拓展前面的例子，现在我们已经有了 Header 组件了。假设我们现在构建一个新的组件叫 Title，它专门负责显示标题。你可以在 Header 里面使用 Title组件：
-1234567891011121314151617class Title extends Component ......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 方志 on
-            2019-05-11
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#React" title="React">React</a>
-            
-              <a href="/tags/#转载" title="转载">转载</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/reprint/react-books/post-7/">
-        <h2 class="post-title">
-            
-            【React.js小书】组件的 render 方法
-        </h2>
-        <h3 class="post-subtitle">
-            一个组件类必须要实现一个 render 方法，这个 render 方法必须要返回一个 JSX 元素，本文介绍如何使用组件的 render 方法。
-        </h3>
-        <div class="post-content-preview">
-            组件的 render 方法
-React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
-
-React.js 中一切皆组件，用 React.js 写的其实就是 React.js 组件。我们在编写 React.js 组件的时候，一般都需要继承 React.js 的 Component（还有别的编写组件的方式我们后续会提到）。一个组件类必须要实现一个 render 方法，这个 ......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 方志 on
-            2019-05-10
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#React" title="React">React</a>
-            
-              <a href="/tags/#转载" title="转载">转载</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/reprint/react-books/post-6/">
-        <h2 class="post-title">
-            
-            【React.js小书】使用 JSX 描述 UI 信息
-        </h2>
-        <h3 class="post-subtitle">
-            通过一个简单的例子讲解 React.js 描述页面 UI 的方式，介绍 JSX 原理，并且使用 JSX 来描述 React.js 组件。
-        </h3>
-        <div class="post-content-preview">
-            使用 JSX 描述 UI 信息
-React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
-
-这一节我们通过一个简单的例子讲解 React.js 描述页面 UI 的方式。把 src/index.js 中的代码改成：
-123456789101112131415161718import React, &#123; Component &#125; from &#x27;rea......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 方志 on
-            2019-05-09
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#React" title="React">React</a>
-            
-              <a href="/tags/#转载" title="转载">转载</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/reprint/react-books/post-5/">
-        <h2 class="post-title">
-            
-            【React.js小书】React.js 基本环境安装
-        </h2>
-        <h3 class="post-subtitle">
-            React.js 单独使用基本上是不可能的事情，需要配合一些第三方工具，教你如何下载和安装 React.js 的教程。
-        </h3>
-        <div class="post-content-preview">
-            React.js 基本环境安装
-React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
-
-安装 React.jsReact.js 单独使用基本上是不可能的事情。不要指望着类似于 jQuery 下载放到 &lt;head /&gt; 标签就开始使用。使用 React.js 不管在开发阶段生产阶段都需要一堆工具和库辅助，编译阶段你需要借助 Babel；需要 Redux 等......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 方志 on
-            2019-05-08
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#React" title="React">React</a>
-            
-              <a href="/tags/#转载" title="转载">转载</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/reprint/react-books/post-4/">
-        <h2 class="post-title">
-            
-            【React.js小书】前端组件化（三）：抽象出公共组件类
-        </h2>
-        <h3 class="post-subtitle">
-            一个关于如何使用 React.js 实现前端组件化的教程的第三部分，介绍了如何抽象出公共组件类。
-        </h3>
-        <div class="post-content-preview">
-            前端组件化（三）：抽象出公共组件类
-React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
-
-为了让代码更灵活，可以写更多的组件，我们把这种模式抽象出来，放到一个 Component 类当中：
-12345678910111213141516class Component &#123;  setState (state) &#123;    const oldEl = ......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 方志 on
-            2019-05-07
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#React" title="React">React</a>
-            
-              <a href="/tags/#转载" title="转载">转载</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/reprint/react-books/post-3/">
-        <h2 class="post-title">
-            
-            【React.js小书】前端组件化（二）：优化 DOM 操作
-        </h2>
-        <h3 class="post-subtitle">
-            一个关于如何使用 React.js 实现前端组件化的教程的第二部分，介绍了如何优化虚拟 DOM。
-        </h3>
-        <div class="post-content-preview">
-            前端组件化（二）：优化 DOM 操作
-React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
-
-看看上一节我们的代码，仔细留意一下 changeLikeText 函数，这个函数包含了 DOM 操作，现在看起来比较简单，那是因为现在只有 isLiked 一个状态。由于数据状态改变会导致需要我们去更新页面的内容，所以假想一下，如果你的组件依赖了很多状态，那么你的组件基本全......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 方志 on
-            2019-05-06
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#React" title="React">React</a>
-            
-              <a href="/tags/#转载" title="转载">转载</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/reprint/react-books/post-2/">
-        <h2 class="post-title">
-            
-            【React.js小书】前端组件化（一）：从一个简单的例子讲起
-        </h2>
-        <h3 class="post-subtitle">
-            一个关于如何使用 React.js 实现前端组件化的教程。通过一个简单的点赞功能，讲述了如何通过 React.js 实现一个简单的组件化。
-        </h3>
-        <div class="post-content-preview">
-            前端组件化（一）：从一个简单的例子讲起
-React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
-
-很多课程一上来就给大家如何配置环境、怎么写 React.js 组件。但是本课程还是希望大家对问题的根源有一个更加深入的了解，其实很多的库、框架都是解决类似的问题。只有我们对这些库、框架解决的问题有深入的了解和思考以后，我们才能得心应手地使用它们，并且有新的框架出来也不会太......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 方志 on
-            2019-05-05
         </p>
         <div class="tags">
             
@@ -691,6 +701,24 @@ React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
             
         
             
+            <a href="/tags/#React" title="React" rel="46">React</a>
+            
+        
+            
+            <a href="/tags/#转载" title="转载" rel="46">转载</a>
+            
+        
+            
+            <a href="/tags/#Vue3" title="Vue3" rel="8">Vue3</a>
+            
+        
+            
+        
+            
+            <a href="/tags/#CompositionAPI" title="CompositionAPI" rel="4">CompositionAPI</a>
+            
+        
+            
         
             
         
@@ -699,11 +727,7 @@ React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
             
         
             
-            <a href="/tags/#React" title="React" rel="46">React</a>
-            
         
-            
-            <a href="/tags/#转载" title="转载" rel="46">转载</a>
             
         
             
@@ -783,23 +807,23 @@ React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
     <ul>
       
         <li>
-          <a href="/docker/docker/docker-compose/">【Docker】Docker-Compose安装和常用参数</a>
+          <a href="/Vue/vue3-admin/2-vite2/">【Vue3-Admin】使用vite2构建vue3项目</a>
         </li>
       
         <li>
-          <a href="/more/web-more/web-interview/">【分享】关于最近在面试中，遇到的一些问题的汇总～</a>
+          <a href="/Vue/vue3-admin/1-vue3/">【Vue3-Admin】初识Vue3</a>
         </li>
       
         <li>
-          <a href="/more/web-more/web-share/">【分享】在阿里DT完成一系列产品后，分享下团队前端部分的技术选型～</a>
+          <a href="/Vue/vue3/application-config/">【Vue3】Vue3中的应用配置</a>
         </li>
       
         <li>
-          <a href="/more/web-more/debounce-throttle/">【拓展】防抖（Debounce）和节流（Throttle）</a>
+          <a href="/Vue/vue3/composition-lifecycle/">【Vue3】Composition API 之 setup</a>
         </li>
       
         <li>
-          <a href="/technical/technical/vpn-v2ray/">【VPN】V2Ray搭建自用 VPN</a>
+          <a href="/Vue/vue3/composition-reactivity-apis/">【Vue3】Composition API 之 Reactivity APIs</a>
         </li>
       
     </ul>
@@ -822,7 +846,7 @@ React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li></ul>
     </div>
 
         <hr>
@@ -831,7 +855,7 @@ React.js 小书是一个开源、免费、专业、简单的 React.js 教程。
 
     <h5>categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">Docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/more/">More</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/reprint/">Reprint</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/technical/">Tech</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">Web</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">Docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/more/">More</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/reprint/">Reprint</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/technical/">Tech</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">Web</a></li></ul>
     </div>
 
         <hr>
