@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3/composition-lifecycle/</loc>
+        <lastmod>2021-04-20T13:01:17.416Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://fangzhioo.github.io/Vue/vue3/composition-setup/</loc>
         <lastmod>2021-04-20T12:59:47.578Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -51,14 +59,6 @@
     <url>
         <loc>https://fangzhioo.github.io/Vue/vue3/composition-provide-inject/</loc>
         <lastmod>2021-04-19T08:28:11.539Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://fangzhioo.github.io/Vue/vue3/composition-lifecycle/</loc>
-        <lastmod>2021-04-19T08:26:41.054Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -313,14 +313,6 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/reprint/react-books/post-28/</loc>
-        <lastmod>2021-04-14T02:59:21.337Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://fangzhioo.github.io/reprint/react-books/post-37/</loc>
         <lastmod>2021-04-14T02:59:21.337Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -338,6 +330,14 @@
 
     <url>
         <loc>https://fangzhioo.github.io/reprint/react-books/post-42/</loc>
+        <lastmod>2021-04-14T02:59:21.337Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/reprint/react-books/post-28/</loc>
         <lastmod>2021-04-14T02:59:21.337Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -505,7 +505,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/web/web-more/js-excellent-code/</loc>
+        <loc>https://fangzhioo.github.io/more/web-more/web-interview/</loc>
         <lastmod>2021-04-12T10:00:24.313Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -513,7 +513,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/more/web-more/web-interview/</loc>
+        <loc>https://fangzhioo.github.io/web/web-more/js-excellent-code/</loc>
         <lastmod>2021-04-12T10:00:24.313Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
