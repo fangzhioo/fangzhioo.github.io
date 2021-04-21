@@ -191,18 +191,37 @@ _.throttle = function (func, wait, options) {
 
 再有`lodash`的`throttle`，配置差不多。有兴趣的可以去查看 [lodash的throttle源代码][6]。
 
-# 后记
-
 我在这个 [大佬的Blog][1] 中，看到了一个有趣的可视化Demo。借鉴这个Demo，我们来做一个可视化的Demo，来简单粗暴的展示下效果。  
 
 <div style="box-sizing: border-box;padding:10px">
-    <div style="width: 100%;height: 200px;background: #f5f5f5;border: 1px solid #aaa;box-sizing: border-box;padding: 25px;text-align: center;font-size: 18px;" id="moveonme">move your mouse or finger here</div>
+    <div style="width: 100%;height: 200px;background: #f5f5f5;border: 1px solid #aaa;box-sizing: border-box;padding: 25px;text-align: center;font-size: 18px;" id="moveonme">请在这里移动你的鼠标（手机端在此滑动手指）</div>
     <div id="showbox" style="width: 100%;padding-top:5px;">
         <canvas id="paintonme" height="360" width="320"></canvas>
     </div>
 </div>
 
-不难看出，方案有效的实现了防抖和节流的作用。
+**Regular** 代表正常事件触发。  
+**Debounce** 代表防抖方案事件触发。  
+**Throttle** 代表节流方案事件触发。  
+
+从图中可以清晰的看出，防抖方案（Debounce）有效的阻止了短期内相同事件重复触发。使得连续触发事件可以在合适的时间点得到处理。而 节流方案（Throttle）有效的使得短期内相同高频的事件重复触发变得低频。 
+
+## 常用场景
+
+- 防抖方案（Debounce）
+    - 搜索框搜索输入。只需用户最后一次输入完，再发送请求
+    - 手机号、邮箱验证输入检测
+    - 窗口大小Resize。只需窗口调整完成后，计算窗口大小。防止重复渲染。
+
+- 节流方案（Throttle）
+    - 滚动加载，加载更多或滚到底部监听
+    - 谷歌搜索框，搜索联想功能
+    - 高频点击提交，表单重复提交（抢购、秒杀等）
+
+# 后记
+
+> 就以 throttle 为例，某日，老师给你布置了一个作业，让你深入理解一下 throttle，第二天上课来聊聊。张三心里非常高兴，这个概念在经典书籍《JavaScript高级程序设计》中见过，打开一看，就两页，而且解释地非常清晰，看完就高兴地干别的事情去了。而李四，觉得高程三讲的有点少，而去谷歌了下其他关于 throttle 的知识点，兴奋地看到 throttle 函数的好几种写法，发现高程三只是用了最简单的方式，还有更优雅运用场景更多的写法，或许此时他已经发现和 throttle 同时出现的还有个 debounce，这是什么鬼？反正老师没说，以后再看吧，于是心满意足地玩游戏去了。而王五，和李四一样发现了 debounce，这是什么？一起了解了吧，继而发现 debounce 的用法居然和高程三中的 throttle 一样！继续挖下去，发现高程三中的 throttle 函数其实应该叫 debounce，看到最后，王五已经把 throttle 和 debounce 彻底理解了。
+
 
 ---
 

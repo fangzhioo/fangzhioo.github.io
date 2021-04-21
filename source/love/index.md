@@ -24,7 +24,7 @@ title: "✨致我的小可爱💕～"
 	#errorMsg{width:100%;text-align:center;font-size:24px;position:absolute;top:100px;left:0}
 	#copyright a{color:#666}
 </style>
-<img id="markImg" alt="" src="/img/love/bg.jpg?v=1" />
+<img id="markImg" alt="" src="//www.talklee.com/api/bing/" />
 <div id="mainDiv">
 	<div id="content">
 		<div id="code">

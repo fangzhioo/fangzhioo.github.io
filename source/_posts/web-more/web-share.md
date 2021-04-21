@@ -1,5 +1,5 @@
 ---
-title:      【分享】在DT完成一系列产品后，分享下团队前端部分的技术选型～
+title:      【分享】在阿里DT完成一系列产品后，分享下团队前端部分的技术选型～
 subtitle:   主要是分享这段时间，开发所运用的技术栈，个人觉得比较实用，分享给大家参考下～
 keyword:    React.js, TypeScript, Antd, Umi.js, Pont
 date: 2020-05-17 14:08:52
@@ -775,11 +775,11 @@ class Child extends React.Component {
 
 umi 架构图
 
-![umi架构图](https://images.gitee.com/uploads/images/2020/0525/162104_2e7f58cb_2106937.png)
+![umi架构图](https://gw.alipayobjects.com/zos/rmsportal/zvfEXesXdgTzWYZCuHLe.png)
 
 构建流程图
 
-![umi生命周期](https://images.gitee.com/uploads/images/2020/0525/162104_3ade4825_2106937.png)
+![umi生命周期](https://gw.alipayobjects.com/zos/rmsportal/NKsqmTAttwTzYVMJMcnB.png)
 
 在下面，我们会详细讲到从零搭建一个 umi 的应用。
 
@@ -795,15 +795,25 @@ dva 就是一种 react 状态管理的解决方案，关于 redux，你可以查
 
 • [官方文档](https://www.redux.org.cn/)
 
+最常见的 Web 类示例之一: TodoList = Todo list + Add todo button
+
+react 正常写法：
+
+![react](https://cdn.yuque.com/yuque/0/2018/png/103904/1528436560812-2586a0b5-7a6a-4a07-895c-f822fa85d5de.png)
+
 redux 的工作流程：
 
-![redux.gif](https://intranetproxy.alipay.com/skylark/lark/0/2020/gif/230467/1587026376535-d2289729-eb1b-4e89-9428-d2cab4278a6c.gif)
+![redux.gif](https://cdn.yuque.com/yuque/0/2018/png/103904/1528436134375-4c15f63d-72f1-4c73-94a6-55b220d2547c.png)
+
+redux-saga 的结构：
+
+![redux-saga](https://cdn.yuque.com/yuque/0/2018/png/103904/1528436167824-7fa834ea-aa6c-4f9f-bab5-b8c5312bcf7e.png)
 
 dva 流程：
 
-![dva流程图.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/230467/1587464638140-a0d96fe2-ce4c-4beb-900f-fc94ce695891.png)
+![dva流程图.png](https://cdn.yuque.com/yuque/0/2018/png/103904/1528436195004-cd3800f2-f13d-40ba-bb1f-4efba99cfe0d.png)
 
-图源来自 DT 前端关于 redux 的介绍。
+原作者关于这块的介绍，[请查看](https://www.yuque.com/flying.ni/the-tower/tvzasn)。
 
 ## Ant Design
 
@@ -830,7 +840,7 @@ dva 流程：
 
 关于 pont 更多的信息，可以查看[官方文档](https://github.com/alibaba/pont)
 
-![pont.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/230467/1587031222725-71bac55a-5ae0-47ba-beef-79ee131fbed0.png)
+![pont.png](https://camo.githubusercontent.com/bbb2dc0083048244d9ab8bf651a31082630f99c4dd2134d20c6c08fd8414009b/68747470733a2f2f696d672e616c6963646e2e636f6d2f7466732f54423135705a47493654704b31526a535a4b5058586133557058612d313538342d313039302e706e67)
 
 # 开发和发布
 
