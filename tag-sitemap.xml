@@ -4,14 +4,21 @@
 
     <url>
         <loc>https://fangzhioo.github.io/tags/CompositionAPI/</loc>
-        <lastmod>2021-04-20T13:01:17.416Z</lastmod>
+        <lastmod>2021-04-21T02:03:19.890Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://fangzhioo.github.io/tags/Vue3/</loc>
-        <lastmod>2021-04-20T13:01:17.416Z</lastmod>
+        <lastmod>2021-04-21T02:03:19.890Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/tags/Vite2/</loc>
+        <lastmod>2021-04-21T02:02:59.355Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -26,13 +33,6 @@
     <url>
         <loc>https://fangzhioo.github.io/tags/API/</loc>
         <lastmod>2021-04-19T08:31:03.665Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://fangzhioo.github.io/tags/Vite2/</loc>
-        <lastmod>2021-04-19T02:20:08.444Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -89,20 +89,6 @@
     <url>
         <loc>https://fangzhioo.github.io/tags/VPN/</loc>
         <lastmod>2021-04-15T07:19:10.680Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://fangzhioo.github.io/tags/%E8%BD%AC%E8%BD%BD/</loc>
-        <lastmod>2021-04-14T02:59:21.639Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://fangzhioo.github.io/tags/React/</loc>
-        <lastmod>2021-04-14T02:59:21.639Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

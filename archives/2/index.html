@@ -188,12 +188,12 @@
                     
 
                         
+                    
+
+                        
                         <li>
                             <a href="/archive/">Archives</a>
                         </li>
-                        
-                    
-
                         
                     
 
@@ -379,28 +379,30 @@ V2Ray（也简称V2），是Victoria Raymond开发的Project V下的一个工具
 
 <div class="post-preview">
 
-    <a href="/reprint/react-books/post-46/">
+    <a href="/technical/technical/vpn-shadowsocks/">
         <h2 class="post-title">
             
-            【React.js小书】实战分析：评论功能（九）
+            【VPN】Shadowsocks搭建自用 VPN
         </h2>
         <h3 class="post-subtitle">
-            提炼实战经验中基础的、重要的、频繁的知识进行重点讲解，让你能用最少的精力深入了解实战中最需要的 React.js 知识。
+            运用搬瓦工VPS 和 Shadowsocks搭建自用 VPN
         </h3>
         <div class="post-content-preview">
-            实战分析：评论功能（九）现在我们有三个 Dumb 组件，一个控制评论的 reducer。我们还缺什么？需要有人去 LocalStorage 加载数据，去控制新增、删除评论，去把数据保存到 LocalStorage 里面。之前这些逻辑我们都是零散地放在各个组件里面的（主要是 CommentApp 组件），那是因为当时我们还没对 Dumb 和 Smart 组件类型划分的认知，状态和视图之间也没有......
+            前言作为一个码农，需要不断地学习。难免需要查阅很多的文档和资料，对于这些部分，很多需要翻阅外国的网站。但是因为中国长城防火墙（GFW）的限制，我们并不能访问，就有了翻墙的需求了。这里我们记录下，如何使用搬瓦工服务器搭建属于我们自己的VPN服务。仅供学习，老司机就不必看了！  
+
+请合理正确地使用VPN！！！  
+
+正文VPN的获取有很多，可以去买现有的VPN服务或者自己购买服务器搭建。这里，......
         </div>
     </a>
     
         <p class="post-meta" style="margin: 10px 0;">
             Posted by 方志 on
-            2019-06-18
+            2019-05-01
         </p>
         <div class="tags">
             
-              <a href="/tags/#React" title="React">React</a>
-            
-              <a href="/tags/#转载" title="转载">转载</a>
+              <a href="/tags/#VPN" title="VPN">VPN</a>
             
         </div>
     
@@ -410,33 +412,30 @@ V2Ray（也简称V2），是Victoria Raymond开发的Project V下的一个工具
 
 <div class="post-preview">
 
-    <a href="/reprint/react-books/post-45/">
+    <a href="/web/web-more/js-excellent-code/">
         <h2 class="post-title">
             
-            【React.js小书】实战分析：评论功能（八）
+            【拓展】JavaScript黑科技写法
         </h2>
         <h3 class="post-subtitle">
-            提炼实战经验中基础的、重要的、频繁的知识进行重点讲解，让你能用最少的精力深入了解实战中最需要的 React.js 知识。
+            记录一些看到的js黑科技的，有趣的写法！
         </h3>
         <div class="post-content-preview">
-            实战分析：评论功能（八）接下可以重构组件部分的内容了。先回顾一下之前我们是怎么划分组件的：
+            前言有时候，在网上查阅一些资料或者看一些demo时，发现的一些有趣的JavaScript的黑科技写法，就像记录下这些。  
+主体
+一行代码取一个随机色
 
-组件树：
-
-这样划分方式当然是没错的。但是在组件的实现上有些问题，我们之前并没有太多地考虑复用性问题。所以现在可以看看 comment-app2 的 CommentInput 组件，你会发现它里面有一些 LocalStorage 操作：
-1234567891011121314151617181920......
+123function getRandomColor()&#123;    return &quot;#&quot; + Math.floor((Math.random()*(1&lt;&lt;24))).toString(16);&#12......
         </div>
     </a>
     
         <p class="post-meta" style="margin: 10px 0;">
             Posted by 方志 on
-            2019-06-17
+            2019-04-26
         </p>
         <div class="tags">
             
-              <a href="/tags/#React" title="React">React</a>
-            
-              <a href="/tags/#转载" title="转载">转载</a>
+              <a href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
             
         </div>
     
@@ -446,29 +445,39 @@ V2Ray（也简称V2），是Victoria Raymond开发的Project V下的一个工具
 
 <div class="post-preview">
 
-    <a href="/reprint/react-books/post-44/">
+    <a href="/diary/hello-myblog/">
         <h2 class="post-title">
             
-            【React.js小书】实战分析：评论功能（七）
+                <i class="fa fa-thumb-tack" style="color:#F4711F" ></i>
+                <!-- <i class="fa fa-thumb-tack" style="color:#F89E8C" ></i> -->
+                <!-- <i class="fa fa-thumb-tack" style="color:#1CB7ED" ></i> -->
+                <font color=#F4711F>置顶</font>
+                <!-- <font color=#F89E8C>置顶</font>  -->
+                <!-- <font color=#1CB7ED>置顶</font>  -->
+            
+            Hello 2019
         </h2>
         <h3 class="post-subtitle">
-            提炼实战经验中基础的、重要的、频繁的知识进行重点讲解，让你能用最少的精力深入了解实战中最需要的 React.js 知识。
+            "Hello World, Hello Blog"
         </h3>
         <div class="post-content-preview">
-            实战分析：评论功能（七）从本节开始，我们开始用 Redux、React-redux 来重构第二阶段的评论功能。产品需求跟之前一样，但是会用 Redux、React-redux 来帮助管理应用状态，而不是“状态提升”。让整个应用更加接近真实的工程。
-大家可以在第二阶段的代码上进行修改 comment-app2（非高阶组件版本）。如果已经忘了第二阶段评论功能的同学可以先简单回顾一下它的功能需求，......
+            
+“Yeah It’s on. ”
+
+前言Fz 的 Blog 就这么开通了！2019 年，Fz 总算有个地方可以好好写点东西了。
+作为一名程序员，总该有个地方来记录自己的工作、学习甚至生活的地方。在仔细考量下，觉得还是托管在github上更方便省事（其实还是技术不到家，毕竟在下只是个小小的前端开发），于是，这个Blog就诞生了！
+
+正文首先，要感谢下 BeanTech 大佬提供的Blog模板......
         </div>
     </a>
     
         <p class="post-meta" style="margin: 10px 0;">
             Posted by 方志 on
-            2019-06-16
+            2019-04-25
         </p>
         <div class="tags">
             
-              <a href="/tags/#React" title="React">React</a>
-            
-              <a href="/tags/#转载" title="转载">转载</a>
+              <a href="/tags/#Diary" title="Diary">Diary</a>
             
         </div>
     
@@ -478,29 +487,33 @@ V2Ray（也简称V2），是Victoria Raymond开发的Project V下的一个工具
 
 <div class="post-preview">
 
-    <a href="/reprint/react-books/post-43/">
+    <a href="/web/js-base/array/">
         <h2 class="post-title">
             
-            【React.js小书】Smart 组件 vs Dumb 组件
+            【JS基础整理】数组Array
         </h2>
         <h3 class="post-subtitle">
-            提炼实战经验中基础的、重要的、频繁的知识进行重点讲解，让你能用最少的精力深入了解实战中最需要的 React.js 知识。
+            JavaScript基础知识整理——数组
         </h3>
         <div class="post-content-preview">
-            Smart 组件 vs Dumb 组件大家已经知道，只会接受 props 并且渲染确定结果的组件我们把它叫做 Dumb 组件，这种组件只关心一件事情 —— 根据 props 进行渲染。
-Dumb 组件最好不要依赖除了 React.js 和 Dumb 组件以外的内容。它们不要依赖 Redux 不要依赖 React-redux。这样的组件的可复用性是最好的，其他人可以安心地使用而不用怕会引入什么......
+            前言数组 Array 官方定义的一个类型，存若干数据（有序），数组相关的基础知识整理。详细的可以查看W3C的相关介绍。  
+
+Array 对象用于在单个的变量中存储多个值。  
+
+初始化初始化一个数组的方式有两种，字面量和构造函数。
+1234567891011121314151617181920// 1. 字面量创建  var arr = []; // 创建了一个空数组var arr1 = ......
         </div>
     </a>
     
         <p class="post-meta" style="margin: 10px 0;">
             Posted by 方志 on
-            2019-06-15
+            2019-03-26
         </p>
         <div class="tags">
             
-              <a href="/tags/#React" title="React">React</a>
+              <a href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
             
-              <a href="/tags/#转载" title="转载">转载</a>
+              <a href="/tags/#Array" title="Array">Array</a>
             
         </div>
     
@@ -510,31 +523,33 @@ Dumb 组件最好不要依赖除了 React.js 和 Dumb 组件以外的内容。�
 
 <div class="post-preview">
 
-    <a href="/reprint/react-books/post-42/">
+    <a href="/web/js-base/string/">
         <h2 class="post-title">
             
-            【React.js小书】使用真正的 Redux 和 React-redux
+            【JS基础整理】字符串String
         </h2>
         <h3 class="post-subtitle">
-            提炼实战经验中基础的、重要的、频繁的知识进行重点讲解，让你能用最少的精力深入了解实战中最需要的 React.js 知识。
+            JavaScript基础知识整理——字符串
         </h3>
         <div class="post-content-preview">
-            使用真正的 Redux 和 React-redux现在 make-react-redux 工程代码中的 Redux 和 React-redux 都是我们自己写的，现在让我们来使用真正的官方版本的 Redux 和 React-redux。
-在工程目录下使用 npm 安装 Redux 和 React-redux 模块：
-1npm install redux react-redux --save
-......
+            前言字符串是JavaScript中，最基本的值类型之一。详细的介绍请参考W3C的String对象。
+
+String 对象用于处理文本（字符串）。
+
+初始化初始化字符串，可以分为两种，字面量和构造函数。  
+12345678// 1. 字面量方式 双引号或单引号都代表的是字符串var str = &quot;hello world !&quot;;var str1 = &#x27;welcom......
         </div>
     </a>
     
         <p class="post-meta" style="margin: 10px 0;">
             Posted by 方志 on
-            2019-06-14
+            2019-03-21
         </p>
         <div class="tags">
             
-              <a href="/tags/#React" title="React">React</a>
+              <a href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
             
-              <a href="/tags/#转载" title="转载">转载</a>
+              <a href="/tags/#String" title="String">String</a>
             
         </div>
     
@@ -544,29 +559,32 @@ Dumb 组件最好不要依赖除了 React.js 和 Dumb 组件以外的内容。�
 
 <div class="post-preview">
 
-    <a href="/reprint/react-books/post-41/">
+    <a href="/web/js-base/event/">
         <h2 class="post-title">
             
-            【React.js小书】动手实现 React-redux（六）：React-redux 总结
+            【JS基础整理】事件Event
         </h2>
         <h3 class="post-subtitle">
-            提炼实战经验中基础的、重要的、频繁的知识进行重点讲解，让你能用最少的精力深入了解实战中最需要的 React.js 知识。
+            JavaScript基础知识整理——事件的应用
         </h3>
         <div class="post-content-preview">
-            动手实现 React-redux（六）：React-redux 总结到这里大家已经掌握了 React-redux 的基本用法和概念，并且自己动手实现了一个 React-redux，我们回顾一下这几节都干了什么事情。
-React.js 除了状态提升以外并没有更好的办法帮我们解决组件之间共享状态的问题，而使用 context 全局变量让程序不可预测。通过 Redux 的章节，我们知道 store......
+            前言事件
+正文事件
+后记事件
+
+...
         </div>
     </a>
     
         <p class="post-meta" style="margin: 10px 0;">
             Posted by 方志 on
-            2019-06-13
+            2019-03-17
         </p>
         <div class="tags">
             
-              <a href="/tags/#React" title="React">React</a>
+              <a href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
             
-              <a href="/tags/#转载" title="转载">转载</a>
+              <a href="/tags/#Event" title="Event">Event</a>
             
         </div>
     
@@ -576,29 +594,28 @@ React.js 除了状态提升以外并没有更好的办法帮我们解决组件�
 
 <div class="post-preview">
 
-    <a href="/reprint/react-books/post-40/">
+    <a href="/web/js-base/bom-dom/">
         <h2 class="post-title">
             
-            【React.js小书】动手实现 React-redux（五）：Provider
+            【JS基础整理】BOM 和 DOM
         </h2>
         <h3 class="post-subtitle">
-            提炼实战经验中基础的、重要的、频繁的知识进行重点讲解，让你能用最少的精力深入了解实战中最需要的 React.js 知识。
+            JavaScript基础知识整理——BOM 和 DOM
         </h3>
         <div class="post-content-preview">
-            动手实现 React-redux（五）：Provider我们要把 context 相关的代码从所有业务组件中清除出去，现在的代码里面还有一个地方是被污染的。那就是 src/index.js  里面的 Index：
-1234567891011121314151617181920...class Index extends Component &#123;  static childContex......
+            前言BOM（Browser Object Model）指的是浏览器对象模型，在我们使用浏览器时，会和浏览器有一定的交互，比如移动、调整浏览器大小；返回上一级或者下一级页面等。这些事件和方法就属于BOM。详细的说明可以查看W3C的Browser对象。DOM（Document Object Model）指的是文档对象模型，在浏览器载入HTML文档时，就会成为Document对象，这个对象可以让我......
         </div>
     </a>
     
         <p class="post-meta" style="margin: 10px 0;">
             Posted by 方志 on
-            2019-06-12
+            2019-03-16
         </p>
         <div class="tags">
             
-              <a href="/tags/#React" title="React">React</a>
+              <a href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
             
-              <a href="/tags/#转载" title="转载">转载</a>
+              <a href="/tags/#BOM&amp;DOM" title="BOM&amp;DOM">BOM&amp;DOM</a>
             
         </div>
     
@@ -663,6 +680,12 @@ React.js 除了状态提升以外并没有更好的办法帮我们解决组件�
             
         
             
+        
+            
+            <a href="/tags/#VPN" title="VPN" rel="2">VPN</a>
+            
+        
+            
             <a href="/tags/#Vue3" title="Vue3" rel="8">Vue3</a>
             
         
@@ -671,31 +694,17 @@ React.js 除了状态提升以外并没有更好的办法帮我们解决组件�
             
         
             
-            <a href="/tags/#CompositionAPI" title="CompositionAPI" rel="4">CompositionAPI</a>
-            
-        
-            
-        
-            
-        
-            
-            <a href="/tags/#VPN" title="VPN" rel="2">VPN</a>
-            
-        
-            
-            <a href="/tags/#React" title="React" rel="46">React</a>
-            
-        
-            
-            <a href="/tags/#转载" title="转载" rel="46">转载</a>
-            
-        
-            
-        
-            
         
             
             <a href="/tags/#Share" title="Share" rel="2">Share</a>
+            
+        
+            
+        
+            
+        
+            
+            <a href="/tags/#CompositionAPI" title="CompositionAPI" rel="4">CompositionAPI</a>
             
         
             
@@ -814,7 +823,7 @@ React.js 除了状态提升以外并没有更好的办法帮我们解决组件�
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li></ul>
     </div>
 
         <hr>
@@ -823,7 +832,7 @@ React.js 除了状态提升以外并没有更好的办法帮我们解决组件�
 
     <h5>categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">Docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/more/">More</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/reprint/">Reprint</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/technical/">Tech</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">Web</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">Docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/more/">More</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/technical/">Tech</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">Web</a></li></ul>
     </div>
 
         <hr>
