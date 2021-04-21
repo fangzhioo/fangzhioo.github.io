@@ -145,14 +145,6 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/reprint/react-books/post-10/</loc>
-        <lastmod>2021-04-14T02:59:21.638Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://fangzhioo.github.io/reprint/react-books/post-11/</loc>
         <lastmod>2021-04-14T02:59:21.638Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -170,6 +162,14 @@
 
     <url>
         <loc>https://fangzhioo.github.io/reprint/react-books/post-16/</loc>
+        <lastmod>2021-04-14T02:59:21.638Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/reprint/react-books/post-10/</loc>
         <lastmod>2021-04-14T02:59:21.638Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -265,14 +265,6 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/reprint/react-books/post-1/</loc>
-        <lastmod>2021-04-14T02:59:21.337Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://fangzhioo.github.io/reprint/react-books/post-12/</loc>
         <lastmod>2021-04-14T02:59:21.337Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -313,6 +305,14 @@
     </url>
 
     <url>
+        <loc>https://fangzhioo.github.io/reprint/react-books/post-28/</loc>
+        <lastmod>2021-04-14T02:59:21.337Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://fangzhioo.github.io/reprint/react-books/post-37/</loc>
         <lastmod>2021-04-14T02:59:21.337Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -337,22 +337,6 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/reprint/react-books/post-28/</loc>
-        <lastmod>2021-04-14T02:59:21.337Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://fangzhioo.github.io/reprint/react-books/post-6/</loc>
-        <lastmod>2021-04-14T02:59:21.337Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://fangzhioo.github.io/reprint/react-books/post-7/</loc>
         <lastmod>2021-04-14T02:59:21.337Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -362,6 +346,22 @@
 
     <url>
         <loc>https://fangzhioo.github.io/reprint/react-books/post-9/</loc>
+        <lastmod>2021-04-14T02:59:21.337Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/reprint/react-books/post-1/</loc>
+        <lastmod>2021-04-14T02:59:21.337Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/reprint/react-books/post-6/</loc>
         <lastmod>2021-04-14T02:59:21.337Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -401,7 +401,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/reprint/react-books/post-18/</loc>
+        <loc>https://fangzhioo.github.io/reprint/react-books/post-19/</loc>
         <lastmod>2021-04-14T02:59:21.333Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -409,7 +409,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/reprint/react-books/post-19/</loc>
+        <loc>https://fangzhioo.github.io/reprint/react-books/post-18/</loc>
         <lastmod>2021-04-14T02:59:21.333Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -505,7 +505,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/more/web-more/web-interview/</loc>
+        <loc>https://fangzhioo.github.io/web/web-more/js-excellent-code/</loc>
         <lastmod>2021-04-12T10:00:24.313Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -513,7 +513,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/web/web-more/js-excellent-code/</loc>
+        <loc>https://fangzhioo.github.io/more/web-more/web-interview/</loc>
         <lastmod>2021-04-12T10:00:24.313Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -529,7 +529,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/web/js-base/bom-dom/</loc>
+        <loc>https://fangzhioo.github.io/web/js-base/event/</loc>
         <lastmod>2021-04-12T10:00:24.311Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -537,7 +537,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/web/js-base/event/</loc>
+        <loc>https://fangzhioo.github.io/web/js-base/bom-dom/</loc>
         <lastmod>2021-04-12T10:00:24.311Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
