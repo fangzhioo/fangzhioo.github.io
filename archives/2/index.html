@@ -36,7 +36,7 @@
     
     <!-- Pygments Highlight CSS -->
     
-<link rel="stylesheet" href="/css/highlight.css">
+<link rel="stylesheet" href="/css/prism.css">
 
 
     
@@ -59,14 +59,6 @@
     <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
     <!-- Hux change font-awesome CDN to qiniu -->
     <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-
-    <!-- Hux Delete, sad but pending in China
-    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
-    css'>
-    -->
-
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -182,13 +174,6 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/archive/">Archives</a>
                         </li>
                         
@@ -198,12 +183,12 @@
                     
 
                         
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
                     
 
-                        
-                        <li>
-                            <a href="/love/">✨致我的小可爱💕～</a>
-                        </li>
                         
                     
 
@@ -222,6 +207,13 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
                         </li>
                         
                      -->
@@ -425,7 +417,12 @@ V2Ray（也简称V2），是Victoria Raymond开发的Project V下的一个工具
 主体
 一行代码取一个随机色
 
-123function getRandomColor()&#123;    return &quot;#&quot; + Math.floor((Math.random()*(1&lt;&lt;24))).toString(16);&#12......
+function getRandomColor()&#123;
+    return "#" + Math.floor((Math.random()*(1&lt;&lt;24))).toString(16);
+&#125;
+
+
+一行代码完成......
         </div>
     </a>
     
@@ -501,7 +498,10 @@ V2Ray（也简称V2），是Victoria Raymond开发的Project V下的一个工具
 Array 对象用于在单个的变量中存储多个值。  
 
 初始化初始化一个数组的方式有两种，字面量和构造函数。
-1234567891011121314151617181920// 1. 字面量创建  var arr = []; // 创建了一个空数组var arr1 = ......
+// 1. 字面量创建  
+var arr = []; // 创建了一个空数组
+var arr1 = [1,,"abc",true,3.14];
+console......
         </div>
     </a>
     
@@ -537,7 +537,10 @@ Array 对象用于在单个的变量中存储多个值。
 String 对象用于处理文本（字符串）。
 
 初始化初始化字符串，可以分为两种，字面量和构造函数。  
-12345678// 1. 字面量方式 双引号或单引号都代表的是字符串var str = &quot;hello world !&quot;;var str1 = &#x27;welcom......
+// 1. 字面量方式 双引号或单引号都代表的是字符串
+var str = "hello world !";
+var str1 = 'welcome to my blog !';
+type......
         </div>
     </a>
     
@@ -730,6 +733,10 @@ String 对象用于处理文本（字符串）。
             
         
             
+            <a href="/tags/#VPN" title="VPN" rel="2">VPN</a>
+            
+        
+            
             <a href="/tags/#JavaScript" title="JavaScript" rel="5">JavaScript</a>
             
         
@@ -739,10 +746,6 @@ String 对象用于处理文本（字符串）。
         
             
         
-            
-        
-            
-            <a href="/tags/#VPN" title="VPN" rel="2">VPN</a>
             
         
             
@@ -792,15 +795,15 @@ String 对象用于处理文本（字符串）。
         </li>
       
         <li>
-          <a href="/Vue/vue3/application-config/">【Vue3】Vue3中的应用配置</a>
-        </li>
-      
-        <li>
           <a href="/Vue/vue3/application-api/">【Vue3】Vue3中的API</a>
         </li>
       
         <li>
-          <a href="/Vue/vue3/composition-provide-inject/">【Vue3】Composition API 之 provide、inject</a>
+          <a href="/Vue/vue3/application-config/">【Vue3】Vue3中的应用配置</a>
+        </li>
+      
+        <li>
+          <a href="/Vue/vue3/composition-lifecycle/">【Vue3】Composition API 之 生命周期钩子函数</a>
         </li>
       
     </ul>

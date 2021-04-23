@@ -36,7 +36,7 @@
     
     <!-- Pygments Highlight CSS -->
     
-<link rel="stylesheet" href="/css/highlight.css">
+<link rel="stylesheet" href="/css/prism.css">
 
 
     
@@ -59,14 +59,6 @@
     <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
     <!-- Hux change font-awesome CDN to qiniu -->
     <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-
-    <!-- Hux Delete, sad but pending in China
-    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
-    css'>
-    -->
-
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -197,13 +189,6 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/archive/">Archives</a>
                         </li>
                         
@@ -213,12 +198,12 @@
                     
 
                         
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
                     
 
-                        
-                        <li>
-                            <a href="/love/">✨致我的小可爱💕～</a>
-                        </li>
                         
                     
 
@@ -237,6 +222,13 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
                         </li>
                         
                      -->
@@ -310,37 +302,47 @@
 <img class="shadow" alt="加载失败！" src="/img/article/vpn-shadowsocks/vpn-shadowsocks-5.png">
 
 <p>接下来，我们需要安装 pip 和 shadowsocks 到我们的服务器上。依次执行下面几行命令，如果没有报错，那便是成功了。在出现提示确认的时候，输入<code>y</code>后，回车即可。可是直接复制后，右键粘贴，直接执行。  </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install python-setuptools</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum install python-setuptools<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">easy_install pip</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">easy_install pip<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pip install shadowsocks<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>到这里，便安装好了shadowsocks到我们的主机上了，接下来需要配置shadowsocks。我们用vim编辑配置文件shadowsocks.json。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/shadowsocks.json</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vi &#x2F;etc&#x2F;shadowsocks.json<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>之后编辑我们的配置文件，按 <code>i</code> 键，进入编辑模式，Putty黑框的左下角会出现 <code>-- INSERT --</code> 字样。然后复制以下内容，右键粘贴，修改相应的地方为自己的配置。<br><strong>server</strong> 中的 <code>服务器IP</code> 就是上面在控制台查看的主机IP地址。<br><strong>port_password</strong> 里面的 <code>2333</code> 是连接时需要的端口。<code>我是密码</code>是连接时需要的密码。<br>你需要修改这两处，其他属性就不要修改了，注意格式正确。<br>修改完成后，按 <code>ESC</code> 键，退出编辑模式，黑框左下角的 <code>-- INSERT --</code> 字样消失，输入 <code>:wq</code> ,回车执行，文件修改保存并返回。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;server&quot;:&quot;服务器IP&quot;,</span><br><span class="line">    &quot;local_address&quot;:&quot;127.0.0.1&quot;,  </span><br><span class="line">    &quot;local_port&quot;:1080,</span><br><span class="line">    &quot;port_password&quot;: &#123;</span><br><span class="line">        &quot;2333&quot;:&quot;我是密码&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;timeout&quot;:300,</span><br><span class="line">    &quot;method&quot;:&quot;aes-256-cfb&quot;,</span><br><span class="line">    &quot;fast_open&quot;: false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">&#123;
+    &quot;server&quot;:&quot;服务器IP&quot;,
+    &quot;local_address&quot;:&quot;127.0.0.1&quot;,  
+    &quot;local_port&quot;:1080,
+    &quot;port_password&quot;: &#123;
+        &quot;2333&quot;:&quot;我是密码&quot;
+    &#125;,
+    &quot;timeout&quot;:300,
+    &quot;method&quot;:&quot;aes-256-cfb&quot;,
+    &quot;fast_open&quot;: false
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <img class="shadow" alt="加载失败！" src="/img/article/vpn-shadowsocks/vpn-shadowsocks-6.png"> 
 
 <p>到这里，我们的shadowsocks就配置完成了，接下来我们需要知道如何启动、关闭shadowsocks服务。</p>
 <p>启动shadowsocks服务：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c /etc/shadowsocks.json -d start</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ssserver -c &#x2F;etc&#x2F;shadowsocks.json -d start<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>关闭shadowsocks服务：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c /etc/shadowsocks.json -d stop</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ssserver -c &#x2F;etc&#x2F;shadowsocks.json -d stop<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>重启shadowsocks服务：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c /etc/shadowsocks.json -d restart</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ssserver -c &#x2F;etc&#x2F;shadowsocks.json -d restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <img class="shadow" alt="加载失败！" src="/img/article/vpn-shadowsocks/vpn-shadowsocks-7.png"> 
 
 <p>最后，我们希望在主机启动后，便开启shadowsocks服务。  </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/rc.local</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vi &#x2F;etc&#x2F;rc.local<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>打开文件后，在文件中添加以下命令，保存修改即可。（操作参考上面的shadowsocks配置）</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c /etc/shadowsocks.json -d start</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ssserver -c &#x2F;etc&#x2F;shadowsocks.json -d start<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>到这里，shadowsocks的环境搭建就基本完成了。下面我们就可以在不同的端（Windows、OS X、Linux、IOS、Android等）连接使用了。对于不同端的使用，详细的可以<a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks/wiki/Ports-and-Clients">查看这里</a>。  </p>
 <h2><span id="windows-huan-jing-shi-yong">Windows环境使用</span></h2><p>主机环境搭建完成之后，我们需要在不同端连接使用VPN，最常用的端就是Windows环境的PC端了。首先，我们需要去<a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.1.3/Shadowsocks-4.1.3.zip">下载Windows环境下的shadowsocks</a>。</p>

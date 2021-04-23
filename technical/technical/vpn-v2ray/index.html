@@ -36,7 +36,7 @@
     
     <!-- Pygments Highlight CSS -->
     
-<link rel="stylesheet" href="/css/highlight.css">
+<link rel="stylesheet" href="/css/prism.css">
 
 
     
@@ -59,14 +59,6 @@
     <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
     <!-- Hux change font-awesome CDN to qiniu -->
     <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-
-    <!-- Hux Delete, sad but pending in China
-    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
-    css'>
-    -->
-
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -197,13 +189,6 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/archive/">Archives</a>
                         </li>
                         
@@ -213,12 +198,12 @@
                     
 
                         
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
                     
 
-                        
-                        <li>
-                            <a href="/love/">✨致我的小可爱💕～</a>
-                        </li>
                         
                     
 
@@ -237,6 +222,13 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
                         </li>
                         
                      -->
@@ -324,7 +316,7 @@
 
 <h2><span id="an-zhuang-v2ray">安装V2Ray</span></h2><p>虽然官方有详细的安装教程，这里并不使用<a target="_blank" rel="noopener" href="https://www.v2ray.com/chapter_00/install.html">官方的教程</a>，毕竟是菜鸟。所以直接使用<a target="_blank" rel="noopener" href="https://github.com/233boy/v2ray/wiki/V2Ray%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC">大佬提供的一键安装脚本</a>。此脚本是开源的，感兴趣的可以看下，<a target="_blank" rel="noopener" href="https://github.com/233boy/v2ray/blob/master/v2ray.sh">代码在此</a>，所以并不会隐藏挖矿脚本。关于被当肉机挖矿，就很难受了😣。</p>
 <p>使用 root 用户输入下面命令安装或卸载</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -s -L https://git.io/v2ray.sh)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">bash</span> <span class="token operator">&lt;</span><span class="token punctuation">(</span><span class="token function">curl</span> -s -L https://git.io/v2ray.sh<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
 <p>如果提示 curl: command not found ，那是因为你的 VPS 没装 Curl<br>ubuntu/debian 系统安装 Curl 方法: apt-get update -y &amp;&amp; apt-get install curl -y<br>centos 系统安装 Curl 方法: yum update -y &amp;&amp; yum install curl -y<br>安装好 curl 之后就能安装脚本了</p>
