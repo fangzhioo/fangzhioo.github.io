@@ -9,8 +9,8 @@
 
 
     <url>
-        <loc>https://fangzhioo.github.io/Vue/vue3/composition-setup/</loc>
-        <lastmod>2021-04-21T02:03:19.890Z</lastmod>
+        <loc>https://fangzhioo.github.io/Vue/vue3/composition-reactivity-apis/</loc>
+        <lastmod>2021-04-23T02:27:14.048Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -18,7 +18,15 @@
 
     <url>
         <loc>https://fangzhioo.github.io/Vue/vue3-admin/2-vite2/</loc>
-        <lastmod>2021-04-21T02:02:59.355Z</lastmod>
+        <lastmod>2021-04-21T07:52:05.319Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3/composition-setup/</loc>
+        <lastmod>2021-04-21T02:03:19.890Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -35,14 +43,6 @@
     <url>
         <loc>https://fangzhioo.github.io/Vue/vue3-admin/1-vue3/</loc>
         <lastmod>2021-04-20T12:58:17.691Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://fangzhioo.github.io/Vue/vue3/composition-reactivity-apis/</loc>
-        <lastmod>2021-04-20T12:36:06.779Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
