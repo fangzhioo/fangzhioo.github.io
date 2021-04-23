@@ -15,6 +15,24 @@ layout: layout
 
                 <%- page.content %>
                 
+                <% if(config['google-adsense']) { %>
+                    <br />
+                    <!-- google adsence -->
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409699730406381"
+                    crossorigin="anonymous"></script>
+                    <!-- post-content-ad -->
+                    <ins class="adsbygoogle"
+                            style="display:block"
+                            data-ad-client="ca-pub-3409699730406381"
+                            data-ad-slot="9289016056"
+                            data-ad-format="auto"
+                            data-full-width-responsive="true"></ins>
+                    <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                <% }%>
+
+                <br>
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
@@ -29,8 +47,6 @@ layout: layout
                         </li>
                     <% } %>
                 </ul>
-
-                <br>
 
                 <!--打赏-->
                 <% if(config['reward']) { %>
@@ -122,29 +138,22 @@ layout: layout
                 col-md-10 col-md-offset-1
                 sidebar-container">
 
+                <!-- Recommended Posts  -->
+                <% if (config.recommended_posts.enabled) { %>
+                    <hr>
+                    <h5>推荐文章</h5>
+                    <%- partial('_partial/recommended_posts', {page, site}) %>
+                <% } %>
+
                 <!-- Featured Tags -->
                 <% if(config['featured-tags']) { %>
                 <section>
-                    <!-- no hr -->
-                    <div><a href="<%= config.root %>tags/">FEATURED TAGS</a></div>
                     <div class="tags">
-                       <% page.tags.forEach(function(tag){ %>
-                          <a class="tag" href="<%= config.root %>tags/#<%= tag.name %>" title="<%= tag.name %>"><%= tag.name %></a>
+                        <% page.tags.forEach(function(tag){ %>
+                            <a class="tag" href="<%= config.root %>tags/#<%= tag.name %>" title="<%= tag.name %>"><%= tag.name %></a>
                         <% }) %>
                     </div>
                 </section>
-                <% }%>
-
-                <!-- Friends Blog -->
-                <% if(config.friends) { %>
-                <hr>
-                <h5>FRIENDS</h5>
-                <ul class="list-inline">
-
-                    <% config.friends.forEach(function(friend){ %>
-                        <li><a href="<%= friend.href %>" target="_blank"><%= friend.title %></a></li>
-                    <% }); %>
-                </ul>
                 <% }%>
             </div>
         </div>
