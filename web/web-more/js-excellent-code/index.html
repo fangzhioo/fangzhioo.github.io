@@ -193,6 +193,9 @@
                     <!-- 
 
                         
+                    
+
+                        
                         <li>
                             <a href="/about/">About</a>
                         </li>
@@ -206,16 +209,6 @@
                         
                     
 
-                        
-                    
-
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/love/">✨致我的小可爱💕～</a>
-                        </li>
                         
                     
 
@@ -237,6 +230,13 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
                         </li>
                         
                      -->
@@ -337,23 +337,9 @@
 <li><strong>判断是否为数组、字符串</strong></li>
 </ol>
 <p>官方有提供 <code>typeof</code> 方法，但是有一定的局限性，没有办法完全判断。比如，<code>typeof &#123;&#125;</code> 和 <code>typeof []</code> 的结果都是 <code>object</code>，就无法区分具体是对象，还是数组。<br>其实JavaScript的原型链告诉我们，为什么输出的都是<code>object</code>，这里就不拓展了。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 判断是否为数组</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isArray</span>(<span class="params">arg</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(arg) !== <span class="string">&quot;[object Array]&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 判断是否为字符串</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isString</span>(<span class="params">arg</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(arg) !== <span class="string">&quot;[object String]&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 判断是否为数组</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isArray</span>(<span class="params">arg</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(arg) !== <span class="string">&quot;[object Array]&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 判断是否为字符串</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isString</span>(<span class="params">arg</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(arg) !== <span class="string">&quot;[object String]&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><div><h1><span id="tui-jian-wen-zhang-you-hexo-wen-zhang-tui-jian-cha-jian-qu-dong">推荐文章<span style="font-size:0.45em; color:gray">（由<a target="_blank" rel="noopener" href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></span></h1><ul><li><a href="https://fangzhioo.github.io/web/js-base/array/">【JS基础整理】数组Array</a></li><li><a href="https://fangzhioo.github.io/web/js-base/string/">【JS基础整理】字符串String</a></li><li><a href="https://fangzhioo.github.io/web/js-base/event/">【JS基础整理】事件Event</a></li><li><a target="_blank" rel="noopener" href="https://blogs.kainy.cn/2010/10/MooTools_1.3中的屏幕触摸事件/">MooTools 1.3中的屏幕触摸事件</a></li></ul></div>
                 
-                <hr>
-                <!-- Pager -->
-                <ul class="pager">
-                    
-                        <li class="previous">
-                            <a href="/technical/technical/vpn-shadowsocks/" data-toggle="tooltip" data-placement="top" title="【VPN】Shadowsocks搭建自用 VPN">&larr; Previous Post</a>
-                        </li>
-                    
-                    
-                        <li class="next">
-                            <a href="/diary/hello-myblog/" data-toggle="tooltip" data-placement="top" title="Hello 2019">Next Post &rarr;</a>
-                        </li>
-                    
-                </ul>
-                
+                <br />
                 <!-- google adsence -->
                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409699730406381"
                 crossorigin="anonymous"></script>
@@ -369,6 +355,20 @@
                 </script>
 
                 <br>
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/technical/technical/vpn-shadowsocks/" data-toggle="tooltip" data-placement="top" title="【VPN】Shadowsocks搭建自用 VPN">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/diary/hello-myblog/" data-toggle="tooltip" data-placement="top" title="Hello 2019">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
 
                 <!--打赏-->
                 
@@ -446,7 +446,7 @@
         <strong class="toc-title">Contents</strong>
         <!-- toc -->
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">主体</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">主体</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">推荐文章（由hexo文章推荐插件驱动）</span></a></li></ol>
         
         </div>
       </aside>
@@ -459,29 +459,37 @@
                 col-md-10 col-md-offset-1
                 sidebar-container">
 
+                <!-- Recommended Posts  -->
+                
+                    <hr>
+                    <h5>推荐文章</h5>
+                    
+
+    <div class="recommended_posts">
+        <ul>
+            
+                <li><a href="https://fangzhioo.github.io/web/js-base/array/">【JS基础整理】数组Array</a></li>
+            
+                <li><a href="https://fangzhioo.github.io/web/js-base/string/">【JS基础整理】字符串String</a></li>
+            
+                <li><a href="https://fangzhioo.github.io/web/js-base/event/">【JS基础整理】事件Event</a></li>
+            
+                <li><a target="_blank" rel="noopener" href="https://blogs.kainy.cn/2010/10/MooTools_1.3中的屏幕触摸事件/">MooTools 1.3中的屏幕触摸事件</a></li>
+            
+        </ul>
+    </div>
+ 
+                
+
                 <!-- Featured Tags -->
                 
                 <section>
-                    <!-- no hr -->
-                    <div><a href="/tags/">FEATURED TAGS</a></div>
                     <div class="tags">
-                       
-                          <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+                        
+                            <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
                         
                     </div>
                 </section>
-                
-
-                <!-- Friends Blog -->
-                
-                <hr>
-                <h5>FRIENDS</h5>
-                <ul class="list-inline">
-
-                    
-                        <li><a href="https://huangxuan.me/" target="_blank">Hux Blog</a></li>
-                    
-                </ul>
                 
             </div>
         </div>
