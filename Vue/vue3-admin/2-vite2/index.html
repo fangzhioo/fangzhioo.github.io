@@ -210,20 +210,6 @@
 
                         
                         <li>
-                            <a href="/love/">✨致我的小可爱💕～</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/tags/">Tags</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/archive/">Archives</a>
                         </li>
                         
@@ -244,6 +230,20 @@
                         
                     
 
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
+                        </li>
                         
                      -->
                     
@@ -422,52 +422,52 @@ Pre-bundling dependencies:
 
 <p>也可以看出，官方vite2选择的 vue版本已经默认是 vue3.x 了。</p>
 <h2><span id="vite-pei-zhi">vite配置</span></h2><p>我们再来看一眼 <code>vite.config.ts</code></p>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">import &#123; defineConfig &#125; from &#39;vite&#39;
-import vue from &#39;@vitejs&#x2F;plugin-vue&#39;
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> defineConfig <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token keyword">import</span> vue <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-vue'</span>
 
-&#x2F;&#x2F; https:&#x2F;&#x2F;vitejs.dev&#x2F;config&#x2F;
-export default defineConfig(&#123;
-  plugins: [vue()]
-&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">// https://vitejs.dev/config/</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>可以看出，对比 vite1.x中只能构建vue3工程来说，vite2 通过插件 <code>@vitejs/plugin-vue</code> 的方式来支持vue。对于其他框架“一视同仁”。这意味着，vite 已经不再是仅仅构建vue工程的工具了。你同样可以用vite2 来构建 <code>react</code> 工程。<br>现在按照项目中常用的配置，我们来配置一下 vite。</p>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">import &#123; defineConfig &#125; from &#39;vite&#39;
-import &#123; resolve &#125; from &#39;path&#39;;
-import vue from &#39;@vitejs&#x2F;plugin-vue&#39;
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> defineConfig <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> resolve <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'path'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> vue <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-vue'</span>
 
-&#x2F;&#x2F; https:&#x2F;&#x2F;vitejs.dev&#x2F;config&#x2F;
-export default defineConfig(&#123;
-  &#x2F;&#x2F; 公共基础路径
-  base: &#39;&#x2F;&#39;,
-  plugins: [vue()],
-  css: &#123;
-    preprocessorOptions: &#123;
-      &#x2F;&#x2F; scss，全局变量引入
-      scss: &#123;
-        &#x2F;&#x2F; additionalData: &#96;@import &quot;src&#x2F;assets&#x2F;styles&#x2F;init.scss&quot;;&#96;
-      &#125;
-    &#125;
-  &#125;,
-  resolve: &#123;
-    &#x2F;&#x2F; 别名
-    alias: &#123;
-      &#39;@&#39;: resolve(__dirname, &#39;src&#39;),
-      &#39;@components&#39;: resolve(__dirname, &#39;src&#x2F;components&#39;),
-    &#125;
-  &#125;,
-  server: &#123;
-    &#x2F;&#x2F; 端口
-    port: 3000,
-    &#x2F;&#x2F; 代理
-    proxy: &#123;
-    &#x2F;&#x2F;   &#39;&#x2F;api&#39;: &#123;
-    &#x2F;&#x2F;     target: &#39;http:&#x2F;&#x2F;xxxxxx.com&#39;,
-    &#x2F;&#x2F;     changeOrigin: true,
-    &#x2F;&#x2F;     rewrite: path &#x3D;&gt; path.replace(&#x2F;^\&#x2F;api&#x2F;, &#39;&#39;)
-    &#x2F;&#x2F;   &#125;,
-    &#125;
-  &#125;,
-&#125;)
+<span class="token comment">// https://vitejs.dev/config/</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  <span class="token comment">// 公共基础路径</span>
+  base<span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  css<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    preprocessorOptions<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token comment">// scss，全局变量引入</span>
+      scss<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// additionalData: `@import "src/assets/styles/init.scss";`</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 别名</span>
+    alias<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token string">'@'</span><span class="token operator">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token string">'@components'</span><span class="token operator">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src/components'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  server<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 端口</span>
+    port<span class="token operator">:</span> <span class="token number">3000</span><span class="token punctuation">,</span>
+    <span class="token comment">// 代理</span>
+    proxy<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//   '/api': &#123;</span>
+    <span class="token comment">//     target: 'http://xxxxxx.com',</span>
+    <span class="token comment">//     changeOrigin: true,</span>
+    <span class="token comment">//     rewrite: path => path.replace(/^\/api/, '')</span>
+    <span class="token comment">//   &#125;,</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>如果显示 path 或者 __dirname 找不到，可以运行 <code>yarn add @types/node -D</code> 添加对ts对node的支持。 </p>
@@ -480,13 +480,13 @@ export default defineConfig(&#123;
 yarn add vite-plugin-mock cross-env -D<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>配置vite</p>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">import &#123; defineConfig &#125; from &#39;vite&#39;
-import &#123; viteMockServe &#125; from &#39;vite-plugin-mock&#39;
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> defineConfig <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> viteMockServe <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vite-plugin-mock'</span>
 
-export default defineConfig(&#123;
-  plugins: [ viteMockServe(&#123; supportTs: true &#125;) ],
-  &#x2F;&#x2F; othor
-&#125;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token function">viteMockServe</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> supportTs<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token comment">// othor</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>修改 <code>package.json</code>, 设置环境变量。</p>
 <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
@@ -497,48 +497,48 @@ export default defineConfig(&#123;
 <span class="token punctuation">&#125;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>在项目目录下创建 <code>/mock/test.ts</code>。</p>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">import &#123; MockMethod &#125; from &#39;vite-plugin-mock&#39;;
-export default [
-  &#123;
-    url: &#39;&#x2F;api&#x2F;get&#39;,
-    method: &#39;get&#39;,
-    response: (&#123; query &#125;) &#x3D;&gt; &#123;
-      return &#123;
-        code: 0,
-        data: &#123;
-          name: &#39;vben&#39;,
-        &#125;,
-      &#125;;
-    &#125;,
-  &#125;,
-  &#123;
-    url: &#39;&#x2F;api&#x2F;post&#39;,
-    method: &#39;post&#39;,
-    timeout: 2000,
-    response: &#123;
-      code: 0,
-      data: &#123;
-        name: &#39;vben&#39;,
-      &#125;,
-    &#125;,
-  &#125;,
-  &#123;
-    url: &#39;&#x2F;api&#x2F;text&#39;,
-    method: &#39;post&#39;,
-    rawResponse: async (req, res) &#x3D;&gt; &#123;
-      let reqbody &#x3D; &#39;&#39;;
-      await new Promise((resolve) &#x3D;&gt; &#123;
-        req.on(&#39;data&#39;, (chunk) &#x3D;&gt; &#123;
-          reqbody +&#x3D; chunk;
-        &#125;);
-        req.on(&#39;end&#39;, () &#x3D;&gt; resolve(undefined));
-      &#125;);
-      res.setHeader(&#39;Content-Type&#39;, &#39;text&#x2F;plain&#39;);
-      res.statusCode &#x3D; 200;
-      res.end(&#96;hello, $&#123;reqbody&#125;&#96;);
-    &#125;,
-  &#125;,
-] as MockMethod[];<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> MockMethod <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vite-plugin-mock'</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">&#123;</span>
+    url<span class="token operator">:</span> <span class="token string">'/api/get'</span><span class="token punctuation">,</span>
+    method<span class="token operator">:</span> <span class="token string">'get'</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">response</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">&#123;</span> query <span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+        code<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+          name<span class="token operator">:</span> <span class="token string">'vben'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#123;</span>
+    url<span class="token operator">:</span> <span class="token string">'/api/post'</span><span class="token punctuation">,</span>
+    method<span class="token operator">:</span> <span class="token string">'post'</span><span class="token punctuation">,</span>
+    timeout<span class="token operator">:</span> <span class="token number">2000</span><span class="token punctuation">,</span>
+    response<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      code<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        name<span class="token operator">:</span> <span class="token string">'vben'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#123;</span>
+    url<span class="token operator">:</span> <span class="token string">'/api/text'</span><span class="token punctuation">,</span>
+    method<span class="token operator">:</span> <span class="token string">'post'</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">rawResponse</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">let</span> reqbody <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+      <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token builtin">Promise</span></span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        req<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>chunk<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+          reqbody <span class="token operator">+=</span> chunk<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        req<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      res<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">'Content-Type'</span><span class="token punctuation">,</span> <span class="token string">'text/plain'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      res<span class="token punctuation">.</span>statusCode <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span>
+      res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">hello, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>reqbody<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span> <span class="token keyword">as</span> MockMethod<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>启动项目，访问 <a target="_blank" rel="noopener" href="http://localhost:3000/api/get">http://localhost:3000/api/get</a> ，可以访问到mock的数据。</p>
 <h2><span id="gou-jian">构建</span></h2><p>项目构建，直接运行 <code>yarn build</code> 或者 <code>npm run build</code> 即可。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  vue3-admin git:<span class="token punctuation">(</span>master<span class="token punctuation">)</span> ✗ <span class="token function">yarn</span> build   
@@ -681,9 +681,9 @@ dist/assets/vendor.05decbbe.js   <span class="token number">43</span>.31kb / bro
     <div class="recommended_posts">
         <ul>
             
-                <li><a href="https://fangzhioo.github.io/Vue/vue3-admin/4-vuex4/">【Vue3-Admin】状态管理Vuex</a></li>
-            
                 <li><a href="https://fangzhioo.github.io/Vue/vue3-admin/5-element-plus/">【Vue3-Admin】整合Element-plus</a></li>
+            
+                <li><a href="https://fangzhioo.github.io/Vue/vue3-admin/4-vuex4/">【Vue3-Admin】状态管理Vuex</a></li>
             
                 <li><a href="https://fangzhioo.github.io/Vue/vue3-admin/9-fetch/">【Vue3-Admin】数据请求与封装</a></li>
             
