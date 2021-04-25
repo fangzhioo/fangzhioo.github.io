@@ -68,7 +68,17 @@
     <![endif]-->
 
     <!-- ga & ba script hoook -->
-    <script></script>
+    <script>
+      // ga
+      window.onload = function() {
+        setTimeout(function() {
+          let script = document.createElement("script");
+          script.setAttribute("async", "");
+          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+          document.body.appendChild(script);
+        }, 2e3);
+      }
+    </script>
 
     <!--不蒜子-->
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -174,33 +184,15 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
-                        </li>
-                        
-                    
-
-                        
-                    
-
-                        
-                        <li>
                             <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
+                        </li>
                         
                     
 
@@ -213,8 +205,26 @@
 
                         
                         <li>
-                            <a href="/love/">✨致我的小可爱💕～</a>
+                            <a href="/archive/">Archives</a>
                         </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
                         
                      -->
                     

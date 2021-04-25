@@ -9,8 +9,32 @@
 
 
     <url>
-        <loc>https://fangzhioo.github.io/Vue/vue3/composition-reactivity-apis/</loc>
-        <lastmod>2021-04-23T07:43:34.181Z</lastmod>
+        <loc>https://fangzhioo.github.io/Vue/vue3-admin/9-fetch/</loc>
+        <lastmod>2021-04-25T02:35:43.206Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3-admin/3-router4/</loc>
+        <lastmod>2021-04-25T02:34:28.092Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3-admin/8-theme/</loc>
+        <lastmod>2021-04-25T02:34:25.825Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3-admin/7-layouts/</loc>
+        <lastmod>2021-04-25T02:33:04.276Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -18,7 +42,79 @@
 
     <url>
         <loc>https://fangzhioo.github.io/Vue/vue3-admin/2-vite2/</loc>
-        <lastmod>2021-04-21T07:52:05.319Z</lastmod>
+        <lastmod>2021-04-25T02:25:53.068Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3-admin/6-i18n/</loc>
+        <lastmod>2021-04-23T09:00:03.224Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3-admin/1-vue3/</loc>
+        <lastmod>2021-04-23T08:58:24.291Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3-admin/5-element-plus/</loc>
+        <lastmod>2021-04-23T08:58:07.606Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3-admin/4-vuex4/</loc>
+        <lastmod>2021-04-23T08:57:59.020Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3/application-config/</loc>
+        <lastmod>2021-04-23T08:51:45.101Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3/application-api/</loc>
+        <lastmod>2021-04-23T08:51:40.164Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3/composition-provide-inject/</loc>
+        <lastmod>2021-04-23T08:51:31.072Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3/composition-lifecycle/</loc>
+        <lastmod>2021-04-23T08:51:25.245Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3/composition-reactivity-apis/</loc>
+        <lastmod>2021-04-23T08:51:16.326Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -27,46 +123,6 @@
     <url>
         <loc>https://fangzhioo.github.io/Vue/vue3/composition-setup/</loc>
         <lastmod>2021-04-21T02:03:19.890Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://fangzhioo.github.io/Vue/vue3/composition-lifecycle/</loc>
-        <lastmod>2021-04-20T13:01:17.416Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://fangzhioo.github.io/Vue/vue3-admin/1-vue3/</loc>
-        <lastmod>2021-04-20T12:58:17.691Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://fangzhioo.github.io/Vue/vue3/application-config/</loc>
-        <lastmod>2021-04-19T08:31:11.319Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://fangzhioo.github.io/Vue/vue3/application-api/</loc>
-        <lastmod>2021-04-19T08:31:03.665Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://fangzhioo.github.io/Vue/vue3/composition-provide-inject/</loc>
-        <lastmod>2021-04-19T08:28:11.539Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -137,7 +193,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/more/web-more/web-interview/</loc>
+        <loc>https://fangzhioo.github.io/web/web-more/js-excellent-code/</loc>
         <lastmod>2021-04-12T10:00:24.313Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -145,7 +201,7 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/web/web-more/js-excellent-code/</loc>
+        <loc>https://fangzhioo.github.io/more/web-more/web-interview/</loc>
         <lastmod>2021-04-12T10:00:24.313Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

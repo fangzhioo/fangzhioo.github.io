@@ -68,7 +68,17 @@
     <![endif]-->
 
     <!-- ga & ba script hoook -->
-    <script></script>
+    <script>
+      // ga
+      window.onload = function() {
+        setTimeout(function() {
+          let script = document.createElement("script");
+          script.setAttribute("async", "");
+          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+          document.body.appendChild(script);
+        }, 2e3);
+      }
+    </script>
 
     <!--不蒜子-->
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -130,7 +140,7 @@
 
                         <span class="meta">
                             Posted by 方志 on
-                            2021-03-01
+                            2021-03-03
                         </span>
                     </div>
                 
@@ -191,33 +201,15 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
-                        </li>
-                        
-                    
-
-                        
-                    
-
-                        
-                        <li>
                             <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
+                        </li>
                         
                     
 
@@ -230,8 +222,26 @@
 
                         
                         <li>
-                            <a href="/love/">✨致我的小可爱💕～</a>
+                            <a href="/archive/">Archives</a>
                         </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
                         
                      -->
                     
@@ -285,13 +295,95 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1><span id="qian-yan">前言</span></h1><h1><span id="zheng-wen">正文</span></h1><h1><span id="hou-ji">后记</span></h1>
+                <h1><span id="qian-yan">前言</span></h1><p>在 vue2.x 中，会有各种生命周期选项。</p>
+<h1><span id="zheng-wen">正文</span></h1><p>下表包含如何在 <code>setup</code> 内部调用生命周期钩子:</p>
+<table>
+<thead>
+<tr>
+<th>Option API(vue2.x)</th>
+<th>Composition API(vue3.x)</th>
+<th>调用时机</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>beforeCreate</td>
+<td>已删除</td>
+<td>初始化之前</td>
+</tr>
+<tr>
+<td>created</td>
+<td>已删除</td>
+<td>初始化之后</td>
+</tr>
+<tr>
+<td>beforeMount</td>
+<td>onBeforeMount</td>
+<td>挂载之前</td>
+</tr>
+<tr>
+<td>mounted</td>
+<td>onMounted</td>
+<td>挂载之后</td>
+</tr>
+<tr>
+<td>beforeUpdate</td>
+<td>onBeforeUpdate</td>
+<td>更新之前</td>
+</tr>
+<tr>
+<td>updated</td>
+<td>onUpdated</td>
+<td>更新之后</td>
+</tr>
+<tr>
+<td>beforeUnmount</td>
+<td>onBeforeUnmount</td>
+<td>卸载之前</td>
+</tr>
+<tr>
+<td>unmounted</td>
+<td>onUnmounted</td>
+<td>卸载之后</td>
+</tr>
+<tr>
+<td>errorCaptured</td>
+<td>onErrorCaptured</td>
+<td>当捕获一个来自子孙组件的错误时被调用</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://v3.vuejs.org/api/options-lifecycle-hooks.html#rendertracked">renderTracked</a></td>
+<td>onRenderTracked</td>
+<td>在跟踪虚拟DOM重新呈现时调用</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://v3.vuejs.org/api/options-lifecycle-hooks.html#rendertriggered">renderTriggered</a></td>
+<td>onRenderTriggered</td>
+<td>触发虚拟DOM重新呈现时调用</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>因为 setup 是围绕 beforeCreate 和 created 生命周期钩子运行的，所以不需要显式地定义它们。换句话说，在这些钩子中编写的任何代码都应该直接在 setup 函数中编写。</p>
+</blockquote>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> onBeforeMount<span class="token punctuation">,</span> onMounted<span class="token punctuation">,</span> onBeforeUnmount <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'setup'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// ...</span>
+    <span class="token function">onBeforeMount</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'onBeforeMount'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">onMounted</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'onMounted'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">onBeforeUnmount</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'onBeforeUnmount'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1><span id="hou-ji">后记</span></h1>
                 
                 
                     <br />
-                    <!-- google adsence -->
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409699730406381"
-                    crossorigin="anonymous"></script>
                     <!-- post-content-ad -->
                     <ins class="adsbygoogle"
                             style="display:block"
@@ -310,12 +402,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/Vue/vue3/application-config/" data-toggle="tooltip" data-placement="top" title="【Vue3】Vue3中的应用配置">&larr; Previous Post</a>
+                            <a href="/Vue/vue3/composition-provide-inject/" data-toggle="tooltip" data-placement="top" title="【Vue3】Composition API 之 provide、inject">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/Vue/vue3/composition-provide-inject/" data-toggle="tooltip" data-placement="top" title="【Vue3】Composition API 之 provide、inject">Next Post &rarr;</a>
+                            <a href="/Vue/vue3/composition-reactivity-apis/" data-toggle="tooltip" data-placement="top" title="【Vue3】Composition API 之 Reactivity APIs">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -418,11 +510,11 @@
     <div class="recommended_posts">
         <ul>
             
-                <li><a href="https://fangzhioo.github.io/Vue/vue3-admin/2-vite2/">【Vue3-Admin】使用vite2构建vue3项目</a></li>
+                <li><a href="https://fangzhioo.github.io/Vue/vue3-admin/2-vite2/">【Vue3-Admin】使用Vite2构建Vue3项目</a></li>
             
-                <li><a href="https://fangzhioo.github.io/Vue/vue3-admin/1-vue3/">【Vue3-Admin】初识Vue3</a></li>
+                <li><a href="https://fangzhioo.github.io/Vue/vue3-admin/4-vuex4/">【Vue3-Admin】状态管理Vuex</a></li>
             
-                <li><a href="https://fangzhioo.github.io/Vue/vue3/application-config/">【Vue3】Vue3中的应用配置</a></li>
+                <li><a href="https://fangzhioo.github.io/Vue/vue3-admin/5-element-plus/">【Vue3-Admin】整合Element-plus</a></li>
             
         </ul>
     </div>

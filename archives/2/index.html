@@ -68,7 +68,17 @@
     <![endif]-->
 
     <!-- ga & ba script hoook -->
-    <script></script>
+    <script>
+      // ga
+      window.onload = function() {
+        setTimeout(function() {
+          let script = document.createElement("script");
+          script.setAttribute("async", "");
+          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+          document.body.appendChild(script);
+        }, 2e3);
+      }
+    </script>
 
     <!--不蒜子-->
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -174,33 +184,15 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
-                        </li>
-                        
-                    
-
-                        
-                    
-
-                        
-                        <li>
                             <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
+                        </li>
                         
                     
 
@@ -213,8 +205,26 @@
 
                         
                         <li>
-                            <a href="/love/">✨致我的小可爱💕～</a>
+                            <a href="/archive/">Archives</a>
                         </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
                         
                      -->
                     
@@ -273,6 +283,253 @@
 
             <!-- Main Content -->
 
+
+<div class="post-preview">
+
+    <a href="/Vue/vue3/application-api/">
+        <h2 class="post-title">
+            
+            【Vue3】Vue3中的API
+        </h2>
+        <h3 class="post-subtitle">
+            Vue3中的API
+        </h3>
+        <div class="post-content-preview">
+            前言正文后记...
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2021-03-05
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Vue3" title="Vue3">Vue3</a>
+            
+              <a href="/tags/#API" title="API">API</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/Vue/vue3/composition-provide-inject/">
+        <h2 class="post-title">
+            
+            【Vue3】Composition API 之 provide、inject
+        </h2>
+        <h3 class="post-subtitle">
+            Composition API 之 provide、inject
+        </h3>
+        <div class="post-content-preview">
+            前言正文后记...
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2021-03-04
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Vue3" title="Vue3">Vue3</a>
+            
+              <a href="/tags/#CompositionAPI" title="CompositionAPI">CompositionAPI</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/Vue/vue3/composition-lifecycle/">
+        <h2 class="post-title">
+            
+            【Vue3】Composition API 之 生命周期钩子函数
+        </h2>
+        <h3 class="post-subtitle">
+            Composition API 之 生命周期钩子函数
+        </h3>
+        <div class="post-content-preview">
+            前言在 vue2.x 中，会有各种生命周期选项。
+正文下表包含如何在 setup 内部调用生命周期钩子:
+
+
+
+Option API(vue2.x)
+Composition API(vue3.x)
+调用时机
+
+
+
+beforeCreate
+已删除
+初始化之前
+
+
+created
+已删除
+初始化之后
+
+
+beforeMount
+onBeforeMount
+挂载之前
+
+
+mounted
+onMo......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2021-03-03
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Vue3" title="Vue3">Vue3</a>
+            
+              <a href="/tags/#CompositionAPI" title="CompositionAPI">CompositionAPI</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/Vue/vue3/composition-reactivity-apis/">
+        <h2 class="post-title">
+            
+            【Vue3】Composition API 之 Reactivity APIs
+        </h2>
+        <h3 class="post-subtitle">
+            响应式API，reactive、toRefs、ref、computed、readonly、watchEffect、watch
+        </h3>
+        <div class="post-content-preview">
+            前言Vue双向绑定原理是采用发布订阅者模式，在初始化时劫持数据的各个属性的setter/getter，在数据变动时发布消息给订阅者，触发响应的监听回调。在 vue2.x 中，实现数据劫持的核心方法是 Object.defineProperty，即，通过劫持数据的 getter/setter 的方式，订阅到数据的变化，从而实现双向绑定。但是引用类型的内部引用，无法通过这个方法劫持。这也是为什么......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2021-03-02
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Vue3" title="Vue3">Vue3</a>
+            
+              <a href="/tags/#CompositionAPI" title="CompositionAPI">CompositionAPI</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/Vue/vue3/composition-setup/">
+        <h2 class="post-title">
+            
+            【Vue3】Composition API 之 setup
+        </h2>
+        <h3 class="post-subtitle">
+            Composition API 之 setup
+        </h3>
+        <div class="post-content-preview">
+            前言
+setup， 一个组件选项，在创建组件之前执行，一旦 props 被解析，并作为组合式 API 的入口点入参：{Data} props{SetupContext} context
+
+正文setup的作用Composition API 是针对 Vue框架而言的，而不是对于用户层面的。 他是在 Vue 中，将一系列的 hook 组合起来，向外暴露的 api。比如在 Vue2.x中，你需要调......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2021-03-01
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Vue3" title="Vue3">Vue3</a>
+            
+              <a href="/tags/#CompositionAPI" title="CompositionAPI">CompositionAPI</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/docker/docker/docker-compose/">
+        <h2 class="post-title">
+            
+            【Docker】Docker-Compose安装和常用参数
+        </h2>
+        <h3 class="post-subtitle">
+            Docker-Compose安装和常用参数
+        </h3>
+        <div class="post-content-preview">
+            前言Docker-Compose
+正文Docker-Compose下载安装curl -L https://get.daocloud.io/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+
+修改该文件的权限为可执行
+chmod......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2020-09-08
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Docker" title="Docker">Docker</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/more/web-more/web-interview/">
+        <h2 class="post-title">
+            
+            【分享】关于最近在面试中，遇到的一些问题的汇总～
+        </h2>
+        <h3 class="post-subtitle">
+            主要是分享这段时间，面试遇到的一些比较典型的问题吧，比较懒，回答也没整理，基本百度就能知道结果。
+        </h3>
+        <div class="post-content-preview">
+            前端面试的一些汇总（2020-06-16）前端基础相关浏览器从输入URL到页面的展示发生了什么？（问的比较多）关于跨域问题，怎么解决？浏览器（nodejs）的垃圾回收机制？使用过nodejs吗？开发服务器（Express）？开发桌面端（Electron）？了解SSR（服务器渲染）吗？写过后端吗？对后端服务了解多少？Long-Polling, Websockets, Server-Sent E......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 方志 on
+            2020-06-16
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Share" title="Share">Share</a>
+            
+        </div>
+    
+
+</div>
+<hr>
 
 <div class="post-preview">
 
@@ -362,263 +619,6 @@ V2Ray（也简称V2），是Victoria Raymond开发的Project V下的一个工具
         <div class="tags">
             
               <a href="/tags/#VPN" title="VPN">VPN</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/technical/technical/vpn-shadowsocks/">
-        <h2 class="post-title">
-            
-            【VPN】Shadowsocks搭建自用 VPN
-        </h2>
-        <h3 class="post-subtitle">
-            运用搬瓦工VPS 和 Shadowsocks搭建自用 VPN
-        </h3>
-        <div class="post-content-preview">
-            前言作为一个码农，需要不断地学习。难免需要查阅很多的文档和资料，对于这些部分，很多需要翻阅外国的网站。但是因为中国长城防火墙（GFW）的限制，我们并不能访问，就有了翻墙的需求了。这里我们记录下，如何使用搬瓦工服务器搭建属于我们自己的VPN服务。仅供学习，老司机就不必看了！  
-
-请合理正确地使用VPN！！！  
-
-正文VPN的获取有很多，可以去买现有的VPN服务或者自己购买服务器搭建。这里，......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 方志 on
-            2019-05-01
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#VPN" title="VPN">VPN</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/web/web-more/js-excellent-code/">
-        <h2 class="post-title">
-            
-            【拓展】JavaScript黑科技写法
-        </h2>
-        <h3 class="post-subtitle">
-            记录一些看到的js黑科技的，有趣的写法！
-        </h3>
-        <div class="post-content-preview">
-            前言有时候，在网上查阅一些资料或者看一些demo时，发现的一些有趣的JavaScript的黑科技写法，就像记录下这些。  
-主体
-一行代码取一个随机色
-
-function getRandomColor()&#123;
-    return "#" + Math.floor((Math.random()*(1&lt;&lt;24))).toString(16);
-&#125;
-
-
-一行代码完成......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 方志 on
-            2019-04-26
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/diary/hello-myblog/">
-        <h2 class="post-title">
-            
-                <i class="fa fa-thumb-tack" style="color:#F4711F" ></i>
-                <!-- <i class="fa fa-thumb-tack" style="color:#F89E8C" ></i> -->
-                <!-- <i class="fa fa-thumb-tack" style="color:#1CB7ED" ></i> -->
-                <font color=#F4711F>置顶</font>
-                <!-- <font color=#F89E8C>置顶</font>  -->
-                <!-- <font color=#1CB7ED>置顶</font>  -->
-            
-            Hello 2019
-        </h2>
-        <h3 class="post-subtitle">
-            "Hello World, Hello Blog"
-        </h3>
-        <div class="post-content-preview">
-            
-“Yeah It’s on. ”
-
-前言Fz 的 Blog 就这么开通了！2019 年，Fz 总算有个地方可以好好写点东西了。
-作为一名程序员，总该有个地方来记录自己的工作、学习甚至生活的地方。在仔细考量下，觉得还是托管在github上更方便省事（其实还是技术不到家，毕竟在下只是个小小的前端开发），于是，这个Blog就诞生了！
-
-正文首先，要感谢下 BeanTech 大佬提供的Blog模板......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 方志 on
-            2019-04-25
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Diary" title="Diary">Diary</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/web/js-base/array/">
-        <h2 class="post-title">
-            
-            【JS基础整理】数组Array
-        </h2>
-        <h3 class="post-subtitle">
-            JavaScript基础知识整理——数组
-        </h3>
-        <div class="post-content-preview">
-            前言数组 Array 官方定义的一个类型，存若干数据（有序），数组相关的基础知识整理。详细的可以查看W3C的相关介绍。  
-
-Array 对象用于在单个的变量中存储多个值。  
-
-初始化初始化一个数组的方式有两种，字面量和构造函数。
-// 1. 字面量创建  
-var arr = []; // 创建了一个空数组
-var arr1 = [1,,"abc",true,3.14];
-console......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 方志 on
-            2019-03-26
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
-            
-              <a href="/tags/#Array" title="Array">Array</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/web/js-base/string/">
-        <h2 class="post-title">
-            
-            【JS基础整理】字符串String
-        </h2>
-        <h3 class="post-subtitle">
-            JavaScript基础知识整理——字符串
-        </h3>
-        <div class="post-content-preview">
-            前言字符串是JavaScript中，最基本的值类型之一。详细的介绍请参考W3C的String对象。
-
-String 对象用于处理文本（字符串）。
-
-初始化初始化字符串，可以分为两种，字面量和构造函数。  
-// 1. 字面量方式 双引号或单引号都代表的是字符串
-var str = "hello world !";
-var str1 = 'welcome to my blog !';
-type......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 方志 on
-            2019-03-21
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
-            
-              <a href="/tags/#String" title="String">String</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/web/js-base/event/">
-        <h2 class="post-title">
-            
-            【JS基础整理】事件Event
-        </h2>
-        <h3 class="post-subtitle">
-            JavaScript基础知识整理——事件的应用
-        </h3>
-        <div class="post-content-preview">
-            前言事件
-正文事件
-后记事件
-
-...
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 方志 on
-            2019-03-17
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
-            
-              <a href="/tags/#Event" title="Event">Event</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/web/js-base/bom-dom/">
-        <h2 class="post-title">
-            
-            【JS基础整理】BOM 和 DOM
-        </h2>
-        <h3 class="post-subtitle">
-            JavaScript基础知识整理——BOM 和 DOM
-        </h3>
-        <div class="post-content-preview">
-            前言BOM（Browser Object Model）指的是浏览器对象模型，在我们使用浏览器时，会和浏览器有一定的交互，比如移动、调整浏览器大小；返回上一级或者下一级页面等。这些事件和方法就属于BOM。详细的说明可以查看W3C的Browser对象。DOM（Document Object Model）指的是文档对象模型，在浏览器载入HTML文档时，就会成为Document对象，这个对象可以让我......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 方志 on
-            2019-03-16
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
-            
-              <a href="/tags/#BOM&amp;DOM" title="BOM&amp;DOM">BOM&amp;DOM</a>
             
         </div>
     
@@ -733,10 +733,6 @@ type......
             
         
             
-            <a href="/tags/#VPN" title="VPN" rel="2">VPN</a>
-            
-        
-            
             <a href="/tags/#JavaScript" title="JavaScript" rel="5">JavaScript</a>
             
         
@@ -749,17 +745,19 @@ type......
             
         
             
-            <a href="/tags/#Vue3" title="Vue3" rel="8">Vue3</a>
+            <a href="/tags/#VPN" title="VPN" rel="2">VPN</a>
             
         
             
-        
+            <a href="/tags/#Vue3" title="Vue3" rel="15">Vue3</a>
             
         
             
-            <a href="/tags/#CompositionAPI" title="CompositionAPI" rel="4">CompositionAPI</a>
+            <a href="/tags/#Vite2" title="Vite2" rel="9">Vite2</a>
             
         
+            
+            <a href="/tags/#Vue3-Admin" title="Vue3-Admin" rel="9">Vue3-Admin</a>
             
         
             
@@ -768,6 +766,14 @@ type......
         
             
             <a href="/tags/#Share" title="Share" rel="2">Share</a>
+            
+        
+            
+        
+            
+        
+            
+            <a href="/tags/#CompositionAPI" title="CompositionAPI" rel="4">CompositionAPI</a>
             
         
             
@@ -787,23 +793,23 @@ type......
     <ul>
       
         <li>
-          <a href="/Vue/vue3-admin/2-vite2/">【Vue3-Admin】使用vite2构建vue3项目</a>
+          <a href="/Vue/vue3-admin/2-vite2/">【Vue3-Admin】使用Vite2构建Vue3项目</a>
         </li>
       
         <li>
-          <a href="/Vue/vue3-admin/1-vue3/">【Vue3-Admin】初识Vue3</a>
+          <a href="/Vue/vue3-admin/3-router4/">【Vue3-Admin】路由配置Vue-Router</a>
         </li>
       
         <li>
-          <a href="/Vue/vue3/application-api/">【Vue3】Vue3中的API</a>
+          <a href="/Vue/vue3-admin/4-vuex4/">【Vue3-Admin】状态管理Vuex</a>
         </li>
       
         <li>
-          <a href="/Vue/vue3/application-config/">【Vue3】Vue3中的应用配置</a>
+          <a href="/Vue/vue3-admin/5-element-plus/">【Vue3-Admin】整合Element-plus</a>
         </li>
       
         <li>
-          <a href="/Vue/vue3/composition-lifecycle/">【Vue3】Composition API 之 生命周期钩子函数</a>
+          <a href="/Vue/vue3-admin/6-i18n/">【Vue3-Admin】国际化 Vue-i18n</a>
         </li>
       
     </ul>
@@ -826,7 +832,7 @@ type......
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li></ul>
     </div>
 
         <hr>
@@ -843,8 +849,6 @@ type......
         <!-- Google Adsense -->
 
 <section>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409699730406381"
-     crossorigin="anonymous"></script>
     <!-- home-sidebar-ad -->
     <ins class="adsbygoogle"
         style="display:block"

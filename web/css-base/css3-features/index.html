@@ -68,7 +68,17 @@
     <![endif]-->
 
     <!-- ga & ba script hoook -->
-    <script></script>
+    <script>
+      // ga
+      window.onload = function() {
+        setTimeout(function() {
+          let script = document.createElement("script");
+          script.setAttribute("async", "");
+          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+          document.body.appendChild(script);
+        }, 2e3);
+      }
+    </script>
 
     <!--不蒜子-->
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -189,33 +199,15 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
-                        </li>
-                        
-                    
-
-                        
-                    
-
-                        
-                        <li>
                             <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
-                    
-
-                        
-                    
-
-                        
-                    
-
-                        
-                    
-
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
+                        </li>
                         
                     
 
@@ -228,8 +220,26 @@
 
                         
                         <li>
-                            <a href="/love/">✨致我的小可爱💕～</a>
+                            <a href="/archive/">Archives</a>
                         </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
                         
                      -->
                     
@@ -702,9 +712,6 @@ js_btn<span class="token punctuation">.</span><span class="token function-variab
                 
                 
                     <br />
-                    <!-- google adsence -->
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409699730406381"
-                    crossorigin="anonymous"></script>
                     <!-- post-content-ad -->
                     <ins class="adsbygoogle"
                             style="display:block"
