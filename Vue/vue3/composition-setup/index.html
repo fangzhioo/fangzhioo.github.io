@@ -74,7 +74,7 @@
         setTimeout(function() {
           let script = document.createElement("script");
           script.setAttribute("async", "");
-          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409699730406381";
           document.body.appendChild(script);
         }, 2e3);
       }
@@ -220,6 +220,13 @@
                     
 
                         
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
+                        </li>
+                        
+                    
+
+                        
                     
 
                         
@@ -234,13 +241,6 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/love/">✨致我的小可爱💕～</a>
                         </li>
                         
                      -->
@@ -295,10 +295,10 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1><span id="qian-yan">前言</span></h1><blockquote>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
 <p>setup， 一个组件选项，在创建组件之前执行，一旦 props 被解析，并作为组合式 API 的入口点<br>入参：<br>{Data} props<br>{SetupContext} context</p>
 </blockquote>
-<h1><span id="zheng-wen">正文</span></h1><h2><span id="setup-de-zuo-yong">setup的作用</span></h2><p><code>Composition API</code> 是针对 Vue框架而言的，而不是对于用户层面的。 他是在 Vue 中，将一系列的 hook 组合起来，向外暴露的 api。比如在 Vue2.x中，你需要调用<code>mounted</code>生命周期，在vue3中，由 <code>Composition API</code> 给我们提供 <code>onMounted</code> hook来调用。</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="setup的作用"><a href="#setup的作用" class="headerlink" title="setup的作用"></a>setup的作用</h2><p><code>Composition API</code> 是针对 Vue框架而言的，而不是对于用户层面的。 他是在 Vue 中，将一系列的 hook 组合起来，向外暴露的 api。比如在 Vue2.x中，你需要调用<code>mounted</code>生命周期，在vue3中，由 <code>Composition API</code> 给我们提供 <code>onMounted</code> hook来调用。</p>
 <p>在Vue2.x中，使用的方式叫 <code>Options API</code>。在Vue3.x中依然可以使用，但在Vue3.x中，更应该使用新的API。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// vue2.x 中的 Option API 方式</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
@@ -349,7 +349,7 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>Composition API 中的 <code>setup</code> 方法就是用于组合这一系列的hook。<strong>并且所有vue提供的hook，都只能在这个setup函数中起作用</strong>。 </p>
-<h2><span id="fan-hui-zhi">返回值</span></h2><p>在vue3.x中，没有 <code>data</code> 函数，这里的 <code>setup</code> 方法返回有两种形式，分别为 <code>object</code> 和 <code>render function</code>。</p>
+<h2 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h2><p>在vue3.x中，没有 <code>data</code> 函数，这里的 <code>setup</code> 方法返回有两种形式，分别为 <code>object</code> 和 <code>render function</code>。</p>
 <ul>
 <li>Object（对象）<br>当返回值是 <code>object</code> 时，那这个返回值将用作 <code>template</code> 的上下文。</li>
 </ul>
@@ -382,7 +382,7 @@
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2><span id="diao-yong-shi-ji">调用时机</span></h2><p><code>setup</code> 函数是在初始化属性 <code>props</code> 之后被调用。按照vue2.x的生命周期的角度，它将在 <code>beforeCreate</code> 调用之前被调用。值得注意的是，在Vue3.x中已经删除了 <code>beforeCreate</code>和 <code>created</code>这两个生命钩子。</p>
+<h2 id="调用时机"><a href="#调用时机" class="headerlink" title="调用时机"></a>调用时机</h2><p><code>setup</code> 函数是在初始化属性 <code>props</code> 之后被调用。按照vue2.x的生命周期的角度，它将在 <code>beforeCreate</code> 调用之前被调用。值得注意的是，在Vue3.x中已经删除了 <code>beforeCreate</code>和 <code>created</code>这两个生命钩子。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> onBeforeMount<span class="token punctuation">,</span> onMounted<span class="token punctuation">,</span> onBeforeUnmount <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
@@ -468,8 +468,8 @@
 <td>触发虚拟DOM重新呈现时调用</td>
 </tr>
 </tbody></table>
-<h2><span id="can-shu">参数</span></h2><p>在 <code>setup</code> 函数中，默认有两个参数，<code>props</code>和 <code>context</code>。</p>
-<h3><span id="props">props</span></h3><blockquote>
+<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><p>在 <code>setup</code> 函数中，默认有两个参数，<code>props</code>和 <code>context</code>。</p>
+<h3 id="props"><a href="#props" class="headerlink" title="props"></a>props</h3><blockquote>
 <p>setup 函数中的第一个参数是 props。正如在一个标准组件中所期望的那样，setup 函数中的 props 是响应式的，当传入新的 prop 时，它将被更新。</p>
 </blockquote>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
@@ -492,7 +492,7 @@
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-<h3><span id="context">context</span></h3><blockquote>
+<h3 id="context"><a href="#context" class="headerlink" title="context"></a>context</h3><blockquote>
 <p>传递给 setup 函数的第二个参数是 context。context 是一个普通的 JavaScript 对象，它暴露组件的三个 property</p>
 </blockquote>
 <p>context 是一个普通的 JavaScript 对象，也就是说，它不是响应式的，这意味着你可以安全地对 context 使用 ES6 解构。</p>
@@ -527,7 +527,7 @@
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1><span id="hou-ji">后记</span></h1><p><code>setup</code> 方法作为 vue3.x 的hook入口，是学习vue3.x的入口，这是十分重要的。（敲黑板、划重点～～）</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p><code>setup</code> 方法作为 vue3.x 的hook入口，是学习vue3.x的入口，这是十分重要的。（敲黑板、划重点～～）</p>
 
                 
                 
@@ -636,7 +636,7 @@
         <strong class="toc-title">Contents</strong>
         <!-- toc -->
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">setup的作用</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">返回值</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">调用时机</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">参数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">2.4.1.</span> <span class="toc-nav-text">props</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">2.4.2.</span> <span class="toc-nav-text">context</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">后记</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#setup%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">setup的作用</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">返回值</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%B0%83%E7%94%A8%E6%97%B6%E6%9C%BA"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">调用时机</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8F%82%E6%95%B0"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">参数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#props"><span class="toc-nav-number">2.4.1.</span> <span class="toc-nav-text">props</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#context"><span class="toc-nav-number">2.4.2.</span> <span class="toc-nav-text">context</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">后记</span></a></li></ol>
         
         </div>
       </aside>
@@ -726,22 +726,7 @@
 </script>
 
 <!-- smooth scroll behavior polyfill  -->
-<script type="text/javascript" src="/js/smoothscroll.js"></script>
-<script>
-        $('#toc').on('click','a',function(a){
-            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
-            // console.log(window.navigator.userAgent,isChrome)
-            // if(isChrome) {
-                // console.log(a.currentTarget.outerHTML);
-                // console.log($(a.currentTarget).attr("href"));
-                //跳转到指定锚点
-                // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
-                console.log('toc',a)
-                var target = document.getElementById($(a.currentTarget).attr("href").replace("#",""));
-                target && target.scrollIntoView({behavior: 'smooth' });
-            // }
-        })  
-</script>
+<!-- <script type="text/javascript" src="/js/smoothscroll.js"></script> -->
 
 
 

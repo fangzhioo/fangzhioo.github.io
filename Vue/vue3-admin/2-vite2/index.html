@@ -74,7 +74,7 @@
         setTimeout(function() {
           let script = document.createElement("script");
           script.setAttribute("async", "");
-          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409699730406381";
           document.body.appendChild(script);
         }, 2e3);
       }
@@ -222,6 +222,13 @@
                     
 
                         
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
+                        </li>
+                        
+                    
+
+                        
                     
 
                         
@@ -236,13 +243,6 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/love/">✨致我的小可爱💕～</a>
                         </li>
                         
                      -->
@@ -297,12 +297,12 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1><span id="qian-yan">前言</span></h1><p>首先咱们先看一张图：</p>
-<img class="shadow" alt="加载失败！" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a26ab28cab8d45a981986b581ae71d04~tplv-k3u1fbpfcp-zoom-1.image">
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>首先咱们先看一张图：</p>
+<img class="shadow" alt="加载失败！" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a26ab28cab8d45a981986b581ae71d04~tplv-k3u1fbpfcp-zoom-1.image" />
 <p class="image-tips">尤大在知乎下的一个回答</p>
 
 <p>那么这个 <code>vite</code> 是个神马东东，尤大能这么豪爽的直言，可以干掉 <code>webpack</code>。<strong>遇事不决，官方教学</strong>，我们直接打开 <a target="_blank" rel="noopener" href="https://cn.vitejs.dev/">官方网站</a>。</p>
-<img class="shadow" alt="加载失败！" src="/img/vue3-admin/vite2-dev.png">
+<img class="shadow" alt="加载失败！" src="/img/vue3-admin/vite2-dev.png" />
 
 <blockquote>
 <p>Vite (法语意为 “快速的”，发音 /vit/) 是一种新型前端构建工具，能够显著提升前端开发体验。它主要由两部分组成：</p>
@@ -312,11 +312,11 @@
 </ul>
 </blockquote>
 <p>好家伙，已经出到 2.x 了，我记得1月份看的时候，还是 1.x 版本。学的速度跟不上尤大写的速度。网友直呼，“求求不要更新了，老子学不动了～～”。</p>
-<img class="shadow" alt="加载失败！" src="/img/vue3-admin/vue3-xuebudongle.jpeg">
+<img class="shadow" alt="加载失败！" src="/img/vue3-admin/vue3-xuebudongle.jpeg" />
 <p class="image-tips">2333~</p>
 
 <p>不过最近上手 vite2 后，最直接的上手体验就是 “快”。写起代码来，那叫一个丝滑。话不多说，咱们开干。</p>
-<h1><span id="zheng-wen">正文</span></h1><h2><span id="chuang-jian-xiang-mu">创建项目</span></h2><blockquote>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><blockquote>
 <p>兼容性注意： vite需要Node.js版本 &gt;= 12.0.0 。</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># npm</span>
@@ -327,7 +327,7 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>然后按照提示一步步操作即可。</p>
-<img class="shadow" alt="加载失败！" src="/img/vue3-admin/vue3-admin-vite2-init.png">
+<img class="shadow" alt="加载失败！" src="/img/vue3-admin/vue3-admin-vite2-init.png" />
 <p class="image-tips">vite2初始化项目</p>
 
 <p>这里我们构建分别选择 vue、TypeScript。</p>
@@ -359,11 +359,11 @@ Pre-bundling dependencies:
   ready <span class="token keyword">in</span> 486ms.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>不知道有多少小伙伴看到了这个耗时了吗？ 毫秒级响应，真的是快的不行。打开 <a target="_blank" rel="noopener" href="http://localhost:3000/">http://localhost:3000/</a> 就能看见页面了。</p>
-<img class="shadow" alt="加载失败！" src="/img/vue3-admin/vue3-admin-vite2-rundev.png">
+<img class="shadow" alt="加载失败！" src="/img/vue3-admin/vue3-admin-vite2-rundev.png" />
 <p class="image-tips">http://localhost:3000/</p>
 
 <p>同时也可以依据社区模板创建项目，更多的方式可以查看 <a target="_blank" rel="noopener" href="https://github.com/vitejs/awesome-vite#templates">社区维护模板</a>。</p>
-<h2><span id="mu-lu-jie-gou">目录结构</span></h2><p>再分析下目录结构，如下：</p>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>再分析下目录结构，如下：</p>
 <pre class="line-numbers language-none"><code class="language-none">.
 ├── dist&#x2F;
 ├── node_modules&#x2F;
@@ -421,7 +421,7 @@ Pre-bundling dependencies:
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>也可以看出，官方vite2选择的 vue版本已经默认是 vue3.x 了。</p>
-<h2><span id="vite-pei-zhi">vite配置</span></h2><p>我们再来看一眼 <code>vite.config.ts</code></p>
+<h2 id="vite配置"><a href="#vite配置" class="headerlink" title="vite配置"></a>vite配置</h2><p>我们再来看一眼 <code>vite.config.ts</code></p>
 <pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> defineConfig <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
 <span class="token keyword">import</span> vue <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-vue'</span>
 
@@ -473,7 +473,7 @@ Pre-bundling dependencies:
 <p>如果显示 path 或者 __dirname 找不到，可以运行 <code>yarn add @types/node -D</code> 添加对ts对node的支持。 </p>
 </blockquote>
 <p>在vite1.x 中， 别名前面必须带斜杠<code>/</code>的问题，在2.x中已经得以解决。暂时就写上这些常用的配置，更多的可以参考 <a target="_blank" rel="noopener" href="https://cn.vitejs.dev/config/">vite配置</a></p>
-<h2><span id="tian-jia-mock">添加mock</span></h2><p>vite的功能拓展，依赖于插件的形式，我们这里想要添加 <code>mock</code> 服务。依赖于插件 <a target="_blank" rel="noopener" href="https://github.com/anncwb/vite-plugin-mock/blob/main/README.zh_CN.md">vite-plugin-mock</a>。</p>
+<h2 id="添加mock"><a href="#添加mock" class="headerlink" title="添加mock"></a>添加mock</h2><p>vite的功能拓展，依赖于插件的形式，我们这里想要添加 <code>mock</code> 服务。依赖于插件 <a target="_blank" rel="noopener" href="https://github.com/anncwb/vite-plugin-mock/blob/main/README.zh_CN.md">vite-plugin-mock</a>。</p>
 <p>添加依赖，这里的 <code>cross-env</code> 是用于设置环境变量。</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">yarn add mockjs -S
 
@@ -540,7 +540,7 @@ yarn add vite-plugin-mock cross-env -D<span aria-hidden="true" class="line-numbe
   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
 <span class="token punctuation">]</span> <span class="token keyword">as</span> MockMethod<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>启动项目，访问 <a target="_blank" rel="noopener" href="http://localhost:3000/api/get">http://localhost:3000/api/get</a> ，可以访问到mock的数据。</p>
-<h2><span id="gou-jian">构建</span></h2><p>项目构建，直接运行 <code>yarn build</code> 或者 <code>npm run build</code> 即可。</p>
+<h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><p>项目构建，直接运行 <code>yarn build</code> 或者 <code>npm run build</code> 即可。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  vue3-admin git:<span class="token punctuation">(</span>master<span class="token punctuation">)</span> ✗ <span class="token function">yarn</span> build   
 <span class="token function">yarn</span> run v1.22.10
 warning package.json: No license field
@@ -554,7 +554,7 @@ dist/assets/vendor.05decbbe.js   <span class="token number">43</span>.31kb / bro
 ✨  Done <span class="token keyword">in</span> <span class="token number">13</span>.08s.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>vite的构建依赖于 <a target="_blank" rel="noopener" href="https://rollupjs.org/guide/en/">Rollup</a> ，在<code>vite.config.ts</code>中，<code>build.rollupOptions</code>选项就是用来配置Rollup的。目前的构建是单纯的spa单页面应用。随着项目的继续，我们后面也会遇到构建的相关配置问题，再往后我们也会涉及到ssr、ssg等方式的构建。这里暂时就不深入研究了。</p>
-<h1><span id="hou-ji">后记</span></h1><p>基本上vite的简单上手就是这些了，随着项目的进行，后面我们会对vite有更多的定制，也会引入更多的插件。在每节文末会给出相关代码，本文代码<a target="_blank" rel="noopener" href="https://github.com/fangzhioo/vue3-admin/tree/fef99a73b97a6256269fcd8c4da9ab23ad2723dd">在这里</a>。</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>基本上vite的简单上手就是这些了，随着项目的进行，后面我们会对vite有更多的定制，也会引入更多的插件。在每节文末会给出相关代码，本文代码<a target="_blank" rel="noopener" href="https://github.com/fangzhioo/vue3-admin/tree/fef99a73b97a6256269fcd8c4da9ab23ad2723dd">在这里</a>。</p>
 
                 
                 
@@ -576,9 +576,13 @@ dist/assets/vendor.05decbbe.js   <span class="token number">43</span>.31kb / bro
                 <!-- Pager -->
                 <ul class="pager">
                     
+                        <li class="previous">
+                            <a href="/Vue/vue3-admin/3-router4/" data-toggle="tooltip" data-placement="top" title="【Vue3-Admin】路由配置Vue-Router">&larr; Previous Post</a>
+                        </li>
+                    
                     
                         <li class="next">
-                            <a href="/Vue/vue3-admin/3-router4/" data-toggle="tooltip" data-placement="top" title="【Vue3-Admin】路由配置Vue-Router">Next Post &rarr;</a>
+                            <a href="/Vue/vue3-admin/1-vue3/" data-toggle="tooltip" data-placement="top" title="【Vue3-Admin】初识Vue3">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -659,7 +663,7 @@ dist/assets/vendor.05decbbe.js   <span class="token number">43</span>.31kb / bro
         <strong class="toc-title">Contents</strong>
         <!-- toc -->
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">创建项目</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">目录结构</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">vite配置</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">添加mock</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">构建</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">后记</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">创建项目</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">目录结构</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#vite%E9%85%8D%E7%BD%AE"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">vite配置</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%B7%BB%E5%8A%A0mock"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">添加mock</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9E%84%E5%BB%BA"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">构建</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">后记</span></a></li></ol>
         
         </div>
       </aside>
@@ -751,22 +755,7 @@ dist/assets/vendor.05decbbe.js   <span class="token number">43</span>.31kb / bro
 </script>
 
 <!-- smooth scroll behavior polyfill  -->
-<script type="text/javascript" src="/js/smoothscroll.js"></script>
-<script>
-        $('#toc').on('click','a',function(a){
-            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
-            // console.log(window.navigator.userAgent,isChrome)
-            // if(isChrome) {
-                // console.log(a.currentTarget.outerHTML);
-                // console.log($(a.currentTarget).attr("href"));
-                //跳转到指定锚点
-                // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
-                console.log('toc',a)
-                var target = document.getElementById($(a.currentTarget).attr("href").replace("#",""));
-                target && target.scrollIntoView({behavior: 'smooth' });
-            // }
-        })  
-</script>
+<!-- <script type="text/javascript" src="/js/smoothscroll.js"></script> -->
 
 
 

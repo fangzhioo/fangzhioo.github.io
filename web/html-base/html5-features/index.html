@@ -74,7 +74,7 @@
         setTimeout(function() {
           let script = document.createElement("script");
           script.setAttribute("async", "");
-          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409699730406381";
           document.body.appendChild(script);
         }, 2e3);
       }
@@ -218,6 +218,13 @@
                     
 
                         
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
+                        </li>
+                        
+                    
+
+                        
                     
 
                         
@@ -232,13 +239,6 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/love/">✨致我的小可爱💕～</a>
                         </li>
                         
                      -->
@@ -293,9 +293,9 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1><span id="qian-yan">前言</span></h1><p>最近因为博客的开通，想着把之前的学习笔记整理下。所以这里并不是教程什么的，单纯的是整理下最初的学习记录，也算是回顾下以前的知识。<br>作为前端，<code>HTML</code>和<code>CSS</code>是最基础的技能点。只有充分理解和掌握了这方面的知识，才能创造出更优质的界面。  </p>
-<h1><span id="html-jian-jie">HTML简介</span></h1><p>超文本标记语言（Hyper Text Markup Language），它通过标记符号来标记要显示的网页中的各个部分。网页文件本身是一种文本文件，通过在文本文件中添加标记符，为其添加语义，可以告诉浏览器如何显示其中的内容（如：文字处理，画面安排，图片显示等）。<br><strong>HTML一句话，就是给文本添加语义的，在HTML标签的世界中，除了语义之外，其它的一概没有！</strong>  </p>
-<h1><span id="html-gu-jia-jie-gou">HTML骨架结构</span></h1><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近因为博客的开通，想着把之前的学习笔记整理下。所以这里并不是教程什么的，单纯的是整理下最初的学习记录，也算是回顾下以前的知识。<br>作为前端，<code>HTML</code>和<code>CSS</code>是最基础的技能点。只有充分理解和掌握了这方面的知识，才能创造出更优质的界面。  </p>
+<h1 id="HTML简介"><a href="#HTML简介" class="headerlink" title="HTML简介"></a>HTML简介</h1><p>超文本标记语言（Hyper Text Markup Language），它通过标记符号来标记要显示的网页中的各个部分。网页文件本身是一种文本文件，通过在文本文件中添加标记符，为其添加语义，可以告诉浏览器如何显示其中的内容（如：文字处理，画面安排，图片显示等）。<br><strong>HTML一句话，就是给文本添加语义的，在HTML标签的世界中，除了语义之外，其它的一概没有！</strong>  </p>
+<h1 id="HTML骨架结构"><a href="#HTML骨架结构" class="headerlink" title="HTML骨架结构"></a>HTML骨架结构</h1><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
@@ -318,11 +318,11 @@
 <li><code>&lt;link rel=&quot;icon&quot; href=&quot;favicon.ico&quot; /&gt;</code> 指定了外部资源与当前文档的关系，多用于外链css文件。rel是告诉浏览器我这是一个什么类型的外链东西，href标明了链接这个东西的地址或者路径。这里的<code>rel=&quot;icon&quot; href=&quot;favicon.ico&quot;</code>是对网站的地址栏设置logo；  </li>
 <li><code>&lt;body&gt;&lt;/body&gt;</code> 表示的是HTML文档的主体内容，也是我们最在意的部分，这部分会显示在浏览器上。任何一个HTML文档，只允许存在一个 <code>&lt;body&gt;</code> 元素。  </li>
 </ul>
-<h1><span id="html-biao-qian">HTML标签</span></h1><p>HTML文档就是由一系列 HTML元素定义的。这些元素由HTML标签包裹并为其添加语义，比如<code>&lt;h1&gt;我是标题&lt;/h1&gt;</code>，文本内容 “我是标题” 因为被h1标签包裹，才让浏览器得知这是个标题，然后按照标题的样式渲染。<br>一般来说标签都是<strong>双标签</strong>（如<code>&lt;p&gt;&lt;/p&gt;</code>、<code>&lt;h1&gt;&lt;/h1&gt;</code>等），但也有<strong>单标签</strong>（如<code>&lt;img /&gt;</code>、<code>&lt;br /&gt;</code>等）。不管是哪一种，标签都需要闭合。<br>HTML标签众多，详细的可以去 <a target="_blank" rel="noopener" href="http://www.w3school.com.cn/html/html_elements.asp">W3school</a> 或者 <a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/chapter/13536">腾讯云-开发者手册</a> 查看详细。这里就不展开了。  </p>
+<h1 id="HTML标签"><a href="#HTML标签" class="headerlink" title="HTML标签"></a>HTML标签</h1><p>HTML文档就是由一系列 HTML元素定义的。这些元素由HTML标签包裹并为其添加语义，比如<code>&lt;h1&gt;我是标题&lt;/h1&gt;</code>，文本内容 “我是标题” 因为被h1标签包裹，才让浏览器得知这是个标题，然后按照标题的样式渲染。<br>一般来说标签都是<strong>双标签</strong>（如<code>&lt;p&gt;&lt;/p&gt;</code>、<code>&lt;h1&gt;&lt;/h1&gt;</code>等），但也有<strong>单标签</strong>（如<code>&lt;img /&gt;</code>、<code>&lt;br /&gt;</code>等）。不管是哪一种，标签都需要闭合。<br>HTML标签众多，详细的可以去 <a target="_blank" rel="noopener" href="http://www.w3school.com.cn/html/html_elements.asp">W3school</a> 或者 <a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/chapter/13536">腾讯云-开发者手册</a> 查看详细。这里就不展开了。  </p>
 <hr>
-<h1><span id="html5-xin-biao-qian">HTML5新标签</span></h1><p>虽然标签众多，但是早期的标签有许多并非单纯的表达语义的，比如 <code>&lt;b&gt;&lt;/b&gt;</code>、<code>&lt;em&gt;&lt;/em&gt;</code>等，只是改变了样式，这违背了之前添加语义的初衷，所以HTML5新标准中，许多标签被废弃。<br>除了这些<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/chapter/13538">被废弃的标签</a>，HTML5中也新增了许多更具有语义化的标签，这里我们着重讲一讲这些有趣的<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/html/html5_intro.asp">HTML5新标签</a>。  </p>
+<h1 id="HTML5新标签"><a href="#HTML5新标签" class="headerlink" title="HTML5新标签"></a>HTML5新标签</h1><p>虽然标签众多，但是早期的标签有许多并非单纯的表达语义的，比如 <code>&lt;b&gt;&lt;/b&gt;</code>、<code>&lt;em&gt;&lt;/em&gt;</code>等，只是改变了样式，这违背了之前添加语义的初衷，所以HTML5新标准中，许多标签被废弃。<br>除了这些<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/chapter/13538">被废弃的标签</a>，HTML5中也新增了许多更具有语义化的标签，这里我们着重讲一讲这些有趣的<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/html/html5_intro.asp">HTML5新标签</a>。  </p>
 <p>这里介绍下HTML5中的网页多媒体标签，HTML5 通过HTML标签 <code>audio</code> 和 <code>video</code> 来支持嵌入式的媒体，使开发者能够方便地将媒体嵌入到HTML文档中。</p>
-<h2><span id="audio">audio</span></h2><p><code>audio</code> 是HTML5提供的播放音频文件的标准。  </p>
+<h2 id="audio"><a href="#audio" class="headerlink" title="audio"></a>audio</h2><p><code>audio</code> 是HTML5提供的播放音频文件的标准。  </p>
 <div class="ele-box">
     <audio id="audioplayer" controls>
         <source src="http://music.163.com/song/media/outer/url?id=705376.mp3" type="audio/mpeg">
@@ -374,7 +374,7 @@
         <button type="button" id="stopvol" class="btn btn-default">静音</button>
     </div>
     <div style="display:flex;align-item:center;">
-        <input type="range" style="max-width:300px;margin-top:20px;" name="vol" id="volbt" value="50" max="100" min="0">
+        <input type="range" style="max-width:300px;margin-top:20px;" name="vol" id="volbt" value="50" max="100" min="0"/>
         <span id="vol" style="display:inline-block;padding-left:20px;">50</span>
     </div>
 </div>
@@ -520,7 +520,7 @@ bar<span class="token punctuation">.</span><span class="token function-variable 
 <div class="ele-box">
     <div style="font-size:20px;font-weight:600;padding:10px 0;"> 文件：<span id="musicName"></span></div>
     <div><button id="btn" type="button" class="btn btn-default">选择文件</button></div>
-    <input id="input_file" style="display: none;" type="file" value>
+    <input id="input_file" style="display: none;" type="file" value="" />
 </div>
 
 <p>或者资源外链来测试。  </p>
@@ -534,15 +534,15 @@ bar<span class="token punctuation">.</span><span class="token function-variable 
 </div>
 
 <p>这里顺便记录下，如何获取<strong>网易云音乐有效永久外链</strong>？<br>想获取一首歌的外链时，需要获取到歌曲的ID。你可以在播放页面点击 <strong>分享</strong> -&gt; <strong>复制链接</strong>，粘贴出来就能看到ID了。再将获取ID填入这个地址（<code>http://music.163.com/song/media/outer/url?id=你获取的ID.mp3</code>）中，就可以得到有效永久外链了。  </p>
-<h2><span id="video">video</span></h2><p><code>video</code> 标签定义视频，比如电影片段或其他视频流。</p>
+<h2 id="video"><a href="#video" class="headerlink" title="video"></a>video</h2><p><code>video</code> 标签定义视频，比如电影片段或其他视频流。</p>
 <div class="video-ele-box">
     <video id="videoplayer" poster="https://tuimeizi.cn/pure?w=600&h=350&s=0" controls width="100%" height="100%">
-        <source src="https://www.apacara.com/media/video/myVideo.mp4" type="video/mp4">
-        <source src="https://www.apacara.com/media/video/myVideo.ogv" type="video/ogg">
-        <source src="https://www.apacara.com/media/video/myVideo.webm" type="video/webm">
+        <source src="https://www.apacara.com/media/video/myVideo.mp4" type="video/mp4" />
+        <source src="https://www.apacara.com/media/video/myVideo.ogv" type="video/ogg" />
+        <source src="https://www.apacara.com/media/video/myVideo.webm" type="video/webm" />
         <object width="800" height="500" type="application/x-shockwave-flash" data="video.swf">
-            <param name="movie" value="myvideo.swf">
-            <param name="flashvars" value="autostart=true&amp;file=myvideo.swf">
+            <param name="movie" value="myvideo.swf" />
+            <param name="flashvars" value="autostart=true&amp;file=myvideo.swf" />
         </object>
         您的浏览器不支持 video 标签。
     </video>
@@ -600,7 +600,7 @@ bar<span class="token punctuation">.</span><span class="token function-variable 
         <button type="button" id="v-full" class="btn btn-default">全屏</button>
     </div>
     <div style="display:flex;align-item:center;margin-bottom:20px;">
-        <input type="range" style="max-width:300px;margin-top:20px;" id="v-volbt" value="50" max="100" min="0">
+        <input type="range" style="max-width:300px;margin-top:20px;" id="v-volbt" value="50" max="100" min="0"/>
         <span id="v-vol" style="display:inline-block;padding-left:20px;">50</span>
     </div>
     <!--进度条-->
@@ -719,13 +719,13 @@ elem<span class="token punctuation">.</span><span class="token function-variable
 <div class="ele-box">
     <div style="font-size:20px;font-weight:600;padding:10px 0;"> 文件：<span id="videoName"></span></div>
     <div><button id="v-btn" type="button" class="btn btn-default">选择文件</button></div>
-    <input id="v-input_file" style="display: none;" type="file" value>
+    <input id="v-input_file" style="display: none;" type="file" value="" />
 </div>
 
 <p>或者资源外链来测试。  </p>
 <div class="ele-box">
     <div class="input-group input-group-sm">
-      <input type="text" id="v-input_link" class="form-control" value placeholder="请输入资源外链">
+      <input type="text" id="v-input_link" class="form-control" value="" placeholder="请输入资源外链">
       <span class="input-group-btn">
         <button class="btn btn-default" id="v-btn2" type="button">Let's Go!</button>
       </span>
@@ -839,7 +839,7 @@ elem<span class="token punctuation">.</span><span class="token function-variable
         <strong class="toc-title">Contents</strong>
         <!-- toc -->
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">HTML简介</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">HTML骨架结构</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">HTML标签</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">HTML5新标签</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">audio</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">video</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#HTML%E7%AE%80%E4%BB%8B"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">HTML简介</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#HTML%E9%AA%A8%E6%9E%B6%E7%BB%93%E6%9E%84"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">HTML骨架结构</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#HTML%E6%A0%87%E7%AD%BE"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">HTML标签</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#HTML5%E6%96%B0%E6%A0%87%E7%AD%BE"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">HTML5新标签</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#audio"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">audio</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#video"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">video</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -929,22 +929,7 @@ elem<span class="token punctuation">.</span><span class="token function-variable
 </script>
 
 <!-- smooth scroll behavior polyfill  -->
-<script type="text/javascript" src="/js/smoothscroll.js"></script>
-<script>
-        $('#toc').on('click','a',function(a){
-            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
-            // console.log(window.navigator.userAgent,isChrome)
-            // if(isChrome) {
-                // console.log(a.currentTarget.outerHTML);
-                // console.log($(a.currentTarget).attr("href"));
-                //跳转到指定锚点
-                // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
-                console.log('toc',a)
-                var target = document.getElementById($(a.currentTarget).attr("href").replace("#",""));
-                target && target.scrollIntoView({behavior: 'smooth' });
-            // }
-        })  
-</script>
+<!-- <script type="text/javascript" src="/js/smoothscroll.js"></script> -->
 
 
 

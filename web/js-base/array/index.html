@@ -74,7 +74,7 @@
         setTimeout(function() {
           let script = document.createElement("script");
           script.setAttribute("async", "");
-          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409699730406381";
           document.body.appendChild(script);
         }, 2e3);
       }
@@ -220,6 +220,13 @@
                     
 
                         
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
+                        </li>
+                        
+                    
+
+                        
                     
 
                         
@@ -234,13 +241,6 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/love/">✨致我的小可爱💕～</a>
                         </li>
                         
                      -->
@@ -295,11 +295,11 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1><span id="qian-yan">前言</span></h1><p>数组 <code>Array</code> 官方定义的一个类型，存若干数据（有序），数组相关的基础知识整理。详细的可以查看<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/jsref_obj_array.asp">W3C的相关介绍</a>。  </p>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>数组 <code>Array</code> 官方定义的一个类型，存若干数据（有序），数组相关的基础知识整理。详细的可以查看<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/jsref_obj_array.asp">W3C的相关介绍</a>。  </p>
 <blockquote>
 <p>Array 对象用于在单个的变量中存储多个值。  </p>
 </blockquote>
-<h2><span id="chu-shi-hua">初始化</span></h2><p>初始化一个数组的方式有两种，字面量和构造函数。</p>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>初始化一个数组的方式有两种，字面量和构造函数。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 1. 字面量创建  </span>
 <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 创建了一个空数组</span>
 <span class="token keyword">var</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">,</span><span class="token string">"abc"</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token number">3.14</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -321,7 +321,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token comment">// Array.html:30 Uncaught RangeError: Invalid array length</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr3<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2><span id="length">length</span></h2><p><code>length</code> 是数组的可读可写的属性。  </p>
+<h2 id="length"><a href="#length" class="headerlink" title="length"></a>length</h2><p><code>length</code> 是数组的可读可写的属性。  </p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr4 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token comment">// js中数组不存在数组越界</span>
 <span class="token comment">// 可以通过小标添加新的元素</span>
@@ -334,7 +334,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 arr4<span class="token punctuation">.</span>length <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr4<span class="token punctuation">,</span>arr4<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1,2,3] 3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2><span id="fang-wen-he-bian-li-shu-zu-yuan-su">访问和遍历数组元素</span></h2><p>访问数组中的元素，通过索引（下标）获取元素。</p>
+<h2 id="访问和遍历数组元素"><a href="#访问和遍历数组元素" class="headerlink" title="访问和遍历数组元素"></a>访问和遍历数组元素</h2><p>访问数组中的元素，通过索引（下标）获取元素。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr5 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token comment">// 通过索引获取元素</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr5<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>arr5<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1 undefined</span>
@@ -362,7 +362,7 @@ arr5<span class="token punctuation">.</span><span class="token function">forEach
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2><span id="shu-zu-de-chang-yong-fang-fa">数组的常用方法</span></h2><p>数组<code>Array</code>对象本身提供了许多方法，这里列举下常用的一些方法。比如 <code>push</code>和<code>pop</code>、<code>shift</code>和<code>unshift</code>、<code>slice</code>、<code>sort</code>等。</p>
+<h2 id="数组的常用方法"><a href="#数组的常用方法" class="headerlink" title="数组的常用方法"></a>数组的常用方法</h2><p>数组<code>Array</code>对象本身提供了许多方法，这里列举下常用的一些方法。比如 <code>push</code>和<code>pop</code>、<code>shift</code>和<code>unshift</code>、<code>slice</code>、<code>sort</code>等。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr7 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token comment">// push() 向数组的末尾添加一个或更多元素，并返回新的长度。</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr7<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 5</span>
@@ -417,7 +417,7 @@ arr9<span class="token punctuation">.</span><span class="token function">sort</s
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token comment">// 原始的排序需要双层for循环</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr9<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 3, 5, 6, 8]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2><span id="shu-zu-he-zi-fu-chuan-zhuan-hua">数组和字符串转化</span></h2><p>实际运用中，会经常涉及数组与字符串之间的互相转换问题。</p>
+<h2 id="数组和字符串转化"><a href="#数组和字符串转化" class="headerlink" title="数组和字符串转化"></a>数组和字符串转化</h2><p>实际运用中，会经常涉及数组与字符串之间的互相转换问题。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'hello world welcome to my blog'</span><span class="token punctuation">;</span>
 <span class="token comment">// 字符串-->数组</span>
 <span class="token comment">// 参数1 分隔符 参数2 个数限制</span>
@@ -434,7 +434,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">var</span> value <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span> <span class="token comment">// 下面将十进制的数字3，转化为二进制的字符串11</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "11"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2><span id="shu-zu-de-die-dai-fang-shi">数组的迭代方式</span></h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<h2 id="数组的迭代方式"><a href="#数组的迭代方式" class="headerlink" title="数组的迭代方式"></a>数组的迭代方式</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token comment">// every() 参数函数全部返回真值，every()返回真值</span>
 <span class="token keyword">function</span> <span class="token function">cb</span> <span class="token punctuation">(</span><span class="token parameter">obj<span class="token punctuation">,</span> index<span class="token punctuation">,</span> arr</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">return</span> obj <span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">;</span>
@@ -462,7 +462,7 @@ arr<span class="token punctuation">.</span><span class="token function">forEach<
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [2, 3, 4, 5, 6, 7, 4, 3]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2><span id="shu-zu-xiang-guan-tuo-zhan">数组相关拓展</span></h2><ol>
+<h2 id="数组相关拓展"><a href="#数组相关拓展" class="headerlink" title="数组相关拓展"></a>数组相关拓展</h2><ol>
 <li>快速排序</li>
 </ol>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">quickSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -479,7 +479,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-<h1><span id="hou-ji">后记</span></h1><p>数组的运用在JavaScript中的运用十分普遍广泛，这部分的基础尤为重要。在实际的工作中，可能运用到第三方的类库，比如<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jquery/traversing_map.asp">JQuery</a>、<a target="_blank" rel="noopener" href="https://www.html.cn/doc/lodash/">Lodash</a>等，但是掌握最基础的，才能明白其中的原理。</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>数组的运用在JavaScript中的运用十分普遍广泛，这部分的基础尤为重要。在实际的工作中，可能运用到第三方的类库，比如<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jquery/traversing_map.asp">JQuery</a>、<a target="_blank" rel="noopener" href="https://www.html.cn/doc/lodash/">Lodash</a>等，但是掌握最基础的，才能明白其中的原理。</p>
 <hr>
 
                 
@@ -589,7 +589,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
         <strong class="toc-title">Contents</strong>
         <!-- toc -->
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">初始化</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">length</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">访问和遍历数组元素</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">数组的常用方法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">数组和字符串转化</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">数组的迭代方式</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">数组相关拓展</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">后记</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">初始化</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#length"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">length</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%AE%BF%E9%97%AE%E5%92%8C%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">访问和遍历数组元素</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">数组的常用方法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%95%B0%E7%BB%84%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%8C%96"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">数组和字符串转化</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E8%BF%AD%E4%BB%A3%E6%96%B9%E5%BC%8F"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">数组的迭代方式</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%95%B0%E7%BB%84%E7%9B%B8%E5%85%B3%E6%8B%93%E5%B1%95"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">数组相关拓展</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">后记</span></a></li></ol>
         
         </div>
       </aside>
@@ -681,22 +681,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </script>
 
 <!-- smooth scroll behavior polyfill  -->
-<script type="text/javascript" src="/js/smoothscroll.js"></script>
-<script>
-        $('#toc').on('click','a',function(a){
-            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
-            // console.log(window.navigator.userAgent,isChrome)
-            // if(isChrome) {
-                // console.log(a.currentTarget.outerHTML);
-                // console.log($(a.currentTarget).attr("href"));
-                //跳转到指定锚点
-                // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
-                console.log('toc',a)
-                var target = document.getElementById($(a.currentTarget).attr("href").replace("#",""));
-                target && target.scrollIntoView({behavior: 'smooth' });
-            // }
-        })  
-</script>
+<!-- <script type="text/javascript" src="/js/smoothscroll.js"></script> -->
 
 
 

@@ -74,7 +74,7 @@
         setTimeout(function() {
           let script = document.createElement("script");
           script.setAttribute("async", "");
-          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409699730406381";
           document.body.appendChild(script);
         }, 2e3);
       }
@@ -222,6 +222,13 @@
                     
 
                         
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
+                        </li>
+                        
+                    
+
+                        
                     
 
                         
@@ -236,13 +243,6 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/love/">✨致我的小可爱💕～</a>
                         </li>
                         
                      -->
@@ -297,7 +297,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1><span id="qian-yan">前言</span></h1><p>Vue.js 作者尤雨溪2020-7-18宣布 Vue 3 已进入 [RC 阶段][1]，这意味着 Vue 3 内核的 API 和实现已到达稳定状态。 到现在已经过去快一年时间了，是时候开启一波 Vue3 的学习之路了～ 前面已经陆陆续续整理了一部分关于<a href="https://fangzhioo.github.io/tags/#Vue3">Vue3的内容</a></p>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Vue.js 作者尤雨溪2020-7-18宣布 Vue 3 已进入 [RC 阶段][1]，这意味着 Vue 3 内核的 API 和实现已到达稳定状态。 到现在已经过去快一年时间了，是时候开启一波 Vue3 的学习之路了～ 前面已经陆陆续续整理了一部分关于<a href="https://fangzhioo.github.io/tags/#Vue3">Vue3的内容</a></p>
 <p>因为是从 Vue2.x 而来，那我们首先研究的就是，对比v2，有哪些注意点？ [官方][2]也有很细致的解答。Vue3中需要关注的一些新功能包括：  </p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/guide/composition-api-introduction.html">组合式 API</a></li>
@@ -309,8 +309,8 @@
 <li><a target="_blank" rel="noopener" href="https://github.com/vuejs/rfcs/blob/sfc-improvements/active-rfcs/0000-sfc-style-variables.md">单文件组件状态驱动的 CSS 变量 (<code>&lt;style vars&gt;</code>)</a> 实验性</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/vuejs/rfcs/blob/master/active-rfcs/0023-scoped-styles-changes.md">单文件组件 <code>&lt;style scoped&gt; </code> 现在可以包含全局规则或只针对插槽内容的规则</a></li>
 </ul>
-<h1><span id="zheng-wen">正文</span></h1><p>对比v2版本，最核心的特性，就应该是 组合式API 了，甚至在2.x版本中，也有单独的npm包（<a target="_blank" rel="noopener" href="https://github.com/vuejs/composition-api/blob/master/README.zh-CN.md">@vue/composition-api</a>），来支持这种写法。</p>
-<h2><span id="dui-bi-option-api">对比Option API</span></h2><p>在vue2.x中，实现一个 todo list 的代码如下： </p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>对比v2版本，最核心的特性，就应该是 组合式API 了，甚至在2.x版本中，也有单独的npm包（<a target="_blank" rel="noopener" href="https://github.com/vuejs/composition-api/blob/master/README.zh-CN.md">@vue/composition-api</a>），来支持这种写法。</p>
+<h2 id="对比Option-API"><a href="#对比Option-API" class="headerlink" title="对比Option API"></a>对比Option API</h2><p>在vue2.x中，实现一个 todo list 的代码如下： </p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>val<span class="token punctuation">"</span></span> <span class="token attr-name">@keyup.enter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>addTodo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -345,11 +345,11 @@
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>当需求不断增多，就出现watch、computed、inject、provide等配置，这样整体文件会变得逐渐臃肿、越来越混乱，且代码可复用性也不高。 下面是大佬做的<a target="_blank" rel="noopener" href="https://juejin.cn/post/6890545920883032071">动画</a>。</p>
-<img class="shadow" alt="加载失败！" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1bd101840df446c78d52e9c14711aae7~tplv-k3u1fbpfcp-watermark.image">
+<img class="shadow" alt="加载失败！" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1bd101840df446c78d52e9c14711aae7~tplv-k3u1fbpfcp-watermark.image" />
 <p class="image-tips">option api</p>
 
 <p>此时，万恶的产品经理提出需求， 在list上方，添加一个倒计时，并在结束时，提示结束。 那么我们要在 template 中添加模板；继续在 data 从添加 countTime 变量来记录一下倒计时；再需要在 methods 中添加处理倒计时的函数；甚至还需要在 watch 中添加判断倒计时结束的逻辑等等。在编写代码时，滚动条反复上下移动，就体会到什么叫 “反复横跳😣” 。如果还有其他逻辑，那么整个单文件逻辑揉杂在一起，难以维护。</p>
-<img class="shadow" alt="加载失败！" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/568b0ced69f241d282cf2c512e4e5f33~tplv-k3u1fbpfcp-watermark.image">
+<img class="shadow" alt="加载失败！" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/568b0ced69f241d282cf2c512e4e5f33~tplv-k3u1fbpfcp-watermark.image" />
 <p class="image-tips">option api 缺陷</p>
 
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
@@ -481,15 +481,15 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>这样确实拆分了代码，但是有一个贼严重的问题，就是不打开 <code>countTime.js</code>，<code>App.vue</code>里的 <code>this</code> 上，<code>countTime</code>，<code>handleCountTime</code> 这些属性，是完全不知道从哪来的，你不知道是 <code>mixin</code>，还是全局 <code>install</code>，还是 <code>Vue.prototype.countTime</code> 设置的，数据来源完全模糊，调试爽死你，这也是option的一个大问题，<code>this</code> 是个<strong>黑盒</strong> ，template里写的 <code>handleCountTime</code>和 <code>countTime</code>，完全不知道从哪来的。</p>
-<img class="shadow" alt="加载失败！" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7f3bca255dc8459f9dd56edf8d5388d5~tplv-k3u1fbpfcp-zoom-1.image">
+<img class="shadow" alt="加载失败！" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7f3bca255dc8459f9dd56edf8d5388d5~tplv-k3u1fbpfcp-zoom-1.image" />
 
 
 <p>而且由于逻辑都在 <code>countTime.js</code> 中，所以也会出现一些严重的问题，比如，如果还有其他的 mixin 引入，且其中也有 countTime 这个变量，那会造成数据混乱，并且调试起来很困难。如果使用的地方众多，那就是一场灾难了。</p>
 <p>此时，我们的<strong>组合式API（Composition API）</strong>踩着七彩祥云来了。顾名思义，通过组合的方式，可以把零散在各个data，methods、computed等中的代码，重新组合。功能聚集于一处。 </p>
-<img class="shadow" alt="加载失败！" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d05799744a6341fd908ec03e5916d7b6~tplv-k3u1fbpfcp-watermark.image">
+<img class="shadow" alt="加载失败！" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d05799744a6341fd908ec03e5916d7b6~tplv-k3u1fbpfcp-watermark.image" />
 <p class="image-tips">Composition API</p>
 
-<img class="shadow" alt="加载失败！" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4146605abc9c4b638863e9a3f2f1b001~tplv-k3u1fbpfcp-watermark.image">
+<img class="shadow" alt="加载失败！" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4146605abc9c4b638863e9a3f2f1b001~tplv-k3u1fbpfcp-watermark.image" />
 <p class="image-tips">基于函数的组合api</p>
 
 <p>升级为vue3.x， 我们重新编写 <code>todo list</code> 这个demo。如下：</p>
@@ -605,7 +605,7 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>是不是感觉特别丝滑呢，有了这种组合式的方式， 通过解构重新赋值为新的变量名的方式，也可以解决mixin重名的问题，而且所有逻辑整合在一起。阅读维护简直赞👍 ！！！</p>
-<h2><span id="composition-api-shi-ru-he-zuo-dao-yu-options-api-he-xie-gong-chu-de">composition API是如何做到于 options API和谐共处的？</span></h2><p>在 vue3.x中，也可以和vue2.x中一样使用 options API的部分选项， 比如 <code>mounted</code>、<code>methods</code>等。那么会有人担心了，他们之间不会互相影响吗？我们可以查看<a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-next/blob/870f2a7ba35245fd8c008d2ff666ea130a7e4704/packages/runtime-core/src/component.ts#L576">vue3.x中的一段源码</a>。</p>
+<h2 id="composition-API是如何做到于-options-API和谐共处的？"><a href="#composition-API是如何做到于-options-API和谐共处的？" class="headerlink" title="composition API是如何做到于 options API和谐共处的？"></a>composition API是如何做到于 options API和谐共处的？</h2><p>在 vue3.x中，也可以和vue2.x中一样使用 options API的部分选项， 比如 <code>mounted</code>、<code>methods</code>等。那么会有人担心了，他们之间不会互相影响吗？我们可以查看<a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-next/blob/870f2a7ba35245fd8c008d2ff666ea130a7e4704/packages/runtime-core/src/component.ts#L576">vue3.x中的一段源码</a>。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 2. call setup()</span>
 <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> setup <span class="token punctuation">&#125;</span> <span class="token operator">=</span> Component
 <span class="token keyword">if</span> <span class="token punctuation">(</span>setup<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -615,7 +615,7 @@
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>可以看出，作者有判断是否写了<code>setup</code>，调用后的结果统一处理了。</p>
-<h1><span id="hou-ji">后记</span></h1><p>把大家撩的着实痒痒，很多人就开始动手写东西了，随之而来的便是一些应用上的疑问：</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>把大家撩的着实痒痒，很多人就开始动手写东西了，随之而来的便是一些应用上的疑问：</p>
 <ul>
 <li>没有this了，我要怎么获取组件实例？</li>
 <li>没有this了，怎么派发自定义事件？</li>
@@ -649,7 +649,7 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/Vue/vue3-admin/9-fetch/" data-toggle="tooltip" data-placement="top" title="【Vue3-Admin】数据请求与封装">&larr; Previous Post</a>
+                            <a href="/Vue/vue3-admin/2-vite2/" data-toggle="tooltip" data-placement="top" title="【Vue3-Admin】使用Vite2构建Vue3项目">&larr; Previous Post</a>
                         </li>
                     
                     
@@ -735,7 +735,7 @@
         <strong class="toc-title">Contents</strong>
         <!-- toc -->
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">对比Option API</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">composition API是如何做到于 options API和谐共处的？</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">后记</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AF%B9%E6%AF%94Option-API"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">对比Option API</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#composition-API%E6%98%AF%E5%A6%82%E4%BD%95%E5%81%9A%E5%88%B0%E4%BA%8E-options-API%E5%92%8C%E8%B0%90%E5%85%B1%E5%A4%84%E7%9A%84%EF%BC%9F"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">composition API是如何做到于 options API和谐共处的？</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">后记</span></a></li></ol>
         
         </div>
       </aside>
@@ -827,22 +827,7 @@
 </script>
 
 <!-- smooth scroll behavior polyfill  -->
-<script type="text/javascript" src="/js/smoothscroll.js"></script>
-<script>
-        $('#toc').on('click','a',function(a){
-            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
-            // console.log(window.navigator.userAgent,isChrome)
-            // if(isChrome) {
-                // console.log(a.currentTarget.outerHTML);
-                // console.log($(a.currentTarget).attr("href"));
-                //跳转到指定锚点
-                // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
-                console.log('toc',a)
-                var target = document.getElementById($(a.currentTarget).attr("href").replace("#",""));
-                target && target.scrollIntoView({behavior: 'smooth' });
-            // }
-        })  
-</script>
+<!-- <script type="text/javascript" src="/js/smoothscroll.js"></script> -->
 
 
 

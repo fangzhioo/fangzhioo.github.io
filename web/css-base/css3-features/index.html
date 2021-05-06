@@ -74,7 +74,7 @@
         setTimeout(function() {
           let script = document.createElement("script");
           script.setAttribute("async", "");
-          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409699730406381";
           document.body.appendChild(script);
         }, 2e3);
       }
@@ -218,6 +218,13 @@
                     
 
                         
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
+                        </li>
+                        
+                    
+
+                        
                     
 
                         
@@ -232,13 +239,6 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/love/">✨致我的小可爱💕～</a>
                         </li>
                         
                      -->
@@ -293,7 +293,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1><span id="qian-yan">前言</span></h1><p>CSS（Cascading Style Sheet 层叠样式表）主要是负责网站内容添加样式，但是随着现代浏览器的更新，CSS能做到的效果也越来越华丽。其中出现的CSS3是CSS最新的标准。</p>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>CSS（Cascading Style Sheet 层叠样式表）主要是负责网站内容添加样式，但是随着现代浏览器的更新，CSS能做到的效果也越来越华丽。其中出现的CSS3是CSS最新的标准。</p>
 <p>在W3C中也有详细的对 <a target="_blank" rel="noopener" href="http://www.w3school.com.cn/css3/css3_intro.asp">CSS3</a> 的介绍，CSS3一般分为以下几个重要的模块：  </p>
 <ul>
 <li>选择器</li>
@@ -304,7 +304,7 @@
 </ul>
 <p>这里主要回顾下CSS3新特性中的<strong>transform（转换）</strong>、<strong>transition（过渡）</strong>和<strong>animation（动画）</strong>。</p>
 <hr>
-<h1><span id="transform">transform</span></h1><p>transform（转换）能够实现我们对DOM元素的缩放（scale）、平移（translate）、拉伸（skew）和旋转（rotate），一般transform分为<strong>2D转换</strong>和<strong>3D转换</strong>。  </p>
+<h1 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h1><p>transform（转换）能够实现我们对DOM元素的缩放（scale）、平移（translate）、拉伸（skew）和旋转（rotate），一般transform分为<strong>2D转换</strong>和<strong>3D转换</strong>。  </p>
 <blockquote>
 <p>两个主要属性用于定义CSS转换：<code>transform</code> 和 <code>transform-origin</code><br><code>transform-origin</code> —— 指定原点的位置。默认情况下，它位于元素的中心，可以移动。它被几个转换使用，如旋转，缩放或倾斜，需要一个特定的点作为参数。<br><code>transform</code> —— 指定应用于元素的变换。这是由一个空格分隔的变换列表，按照合成操作的要求，一个接一个地应用变换。复合变换按从右到左的顺序进行应用。  </p>
 </blockquote>
@@ -388,7 +388,7 @@
 <blockquote>
 <p>Internet Explorer 10 和 Firefox 支持 3D 转换。Chrome 和 Safari 需要前缀 -webkit-。Opera 仍然不支持 3D 转换（它只支持2D转换）。  </p>
 </blockquote>
-<img class="shadow" src="/img/article/css3-features/post-css3-features-xyz.jpg">
+<img class="shadow" src="/img/article/css3-features/post-css3-features-xyz.jpg" />
 
 <p>对应的3D转换的方法，则是在2D方法的基础上，加上3D或者加上对应轴的描述。如<code>translate3d(x,y,z)</code>、<code>rotate3d(x,y,z,angle)</code>、<code>translateZ(z)</code>，<code>rotateX(angle)</code>等；</p>
 <ul>
@@ -442,7 +442,7 @@
 <li><code>matrix3d(a1, b1, c1, d1, a2, b2, c2, d2, a3, b3, c3, d3, a4, b4, c4, d4)</code> 3D变换的矩阵，定义一个用于3D变换的4×4齐次矩阵。<br>本人表示一脸懵逼，有兴趣的朋友可以去拓展下，告辞！！！  </li>
 </ul>
 <hr>
-<h1><span id="transition">transition</span></h1><p>我们可以在不使用 Flash 动画或 JavaScript 的情况下，当元素从一种样式变换为另一种样式时为元素添加效果。  </p>
+<h1 id="transition"><a href="#transition" class="headerlink" title="transition"></a>transition</h1><p>我们可以在不使用 Flash 动画或 JavaScript 的情况下，当元素从一种样式变换为另一种样式时为元素添加效果。  </p>
 <p><code>transition</code> 是 <code>transition-property</code>，<code>transition-duration</code>，<code>transition-timing-function</code>和<code>transition-delay</code> 的组合（速记）属性。  </p>
 <ul>
 <li><code>transition-property</code> 规定设置过滤效果的CSS属性名称  </li>
@@ -488,7 +488,7 @@
 
 <p><span id="transition-css-btn">点击看妹子</span></p>
 <div class="ele-box">
-    <div id="transition-css-ele"><img src="https://tuimeizi.cn/pure?w=150&h=150&s=0" alt="加载失败"></div>
+    <div id="transition-css-ele"><img src="https://tuimeizi.cn/pure?w=150&h=150&s=0" alt="加载失败"/></div>
 </div>
 
 <p><strong>JavaScript实现</strong>  </p>
@@ -520,7 +520,7 @@ js_btn<span class="token punctuation">.</span><span class="token function-variab
 
 <p><span id="transition-js-btn">点击看妹子</span></p>
 <div class="ele-box">
-    <div id="transition-js-ele"><img src="https://tuimeizi.cn/pure?w=150&h=150&s=0" alt="加载失败"></div>
+    <div id="transition-js-ele"><img src="https://tuimeizi.cn/pure?w=150&h=150&s=0" alt="加载失败"/></div>
 </div>
 
 <p><strong>JQuery实现</strong>  </p>
@@ -530,7 +530,7 @@ js_btn<span class="token punctuation">.</span><span class="token function-variab
 
 <p><span id="transition-jq-btn">点击看妹子</span></p>
 <div class="ele-box">
-    <div id="transition-jq-ele"><img src="https://tuimeizi.cn/pure?w=150&h=150&s=0" alt="加载失败"></div>
+    <div id="transition-jq-ele"><img src="https://tuimeizi.cn/pure?w=150&h=150&s=0" alt="加载失败"/></div>
 </div>
 
 <p>到这里，大家应该也能感受到CSS3过渡属性带来的好处了，而且对于浏览器性能而言，CSS3性能也是更优！  </p>
@@ -577,14 +577,14 @@ js_btn<span class="token punctuation">.</span><span class="token function-variab
 <div class="ele-box">
     <div class="ele-content">
         <div class="content-card">
-            <img class="card-front" src="https://tuimeizi.cn/pure?w=200&h=380&s=0" alt="front">
-            <img class="card-back" src="https://tuimeizi.cn/games?w=200&h=380&s=0" alt="back">
+            <img class="card-front" src="https://tuimeizi.cn/pure?w=200&h=380&s=0" alt="front" />
+            <img class="card-back" src="https://tuimeizi.cn/games?w=200&h=380&s=0" alt="back" />
         </div>
     </div>
 </div>
 
 <hr>
-<h1><span id="animation">animation</span></h1><p>动画是使元素从一种样式逐渐变化为另一种样式的效果。通过<code>animation</code>，我们能够创建动画效果，在许多网页中取代 gif 动图、Flash 动画以及 JavaScript动态设置。  </p>
+<h1 id="animation"><a href="#animation" class="headerlink" title="animation"></a>animation</h1><p>动画是使元素从一种样式逐渐变化为另一种样式的效果。通过<code>animation</code>，我们能够创建动画效果，在许多网页中取代 gif 动图、Flash 动画以及 JavaScript动态设置。  </p>
 <p><code>animation</code> 是 <code>animation-name</code>，<code>animation-duration</code>，<code>animation-timing-function</code>，<code>animation-delay</code>，<code>animation-iteration-count</code>，<code>animation-direction</code>，<code>animation-fill-mode</code> 的组合（速记）属性。<br><code>animation-play-state</code> 则不包括其中。  </p>
 <ul>
 <li><code>animation-name</code> 规定 <code>@keyframes</code> 动画的名称  </li>
@@ -663,7 +663,7 @@ js_btn<span class="token punctuation">.</span><span class="token function-variab
 <li><code>steps(n,start/end)</code> 将每一帧之间分为n份显示，并跳过开头第一帧/结尾第一帧</li>
 </ul>
 <p>我们有这样一张图片，可以看出一个女孩奔跑的动作。  </p>
-<img class="shadow" alt="加载失败！" src="/img/article/css3-features/charector.png">  
+<img class="shadow" alt="加载失败！" src="/img/article/css3-features/charector.png" />  
 
 <p>现在我们用这张照片实现一个逐帧动画的效果。  </p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">&#123;</span>
@@ -703,7 +703,7 @@ js_btn<span class="token punctuation">.</span><span class="token function-variab
     <div class="animation-girl"></div>
 </div>
 
-<h1><span id="hou-ji">后记</span></h1><p>到这里，CSS3新特性的三个有趣的属性就介绍完了。<br>个人觉得还是很炫的，毕竟前端在考虑功能的同时，用户感受和用户体验也是很重要的部分。借助这部分新特性，可以完成的效果还是挺不错的。</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>到这里，CSS3新特性的三个有趣的属性就介绍完了。<br>个人觉得还是很炫的，毕竟前端在考虑功能的同时，用户感受和用户体验也是很重要的部分。借助这部分新特性，可以完成的效果还是挺不错的。</p>
 <hr>
 <style>@import "/css/css3-features.css";</style>
 <script async defer src="/js/css3-features.js"></script>
@@ -816,7 +816,7 @@ js_btn<span class="token punctuation">.</span><span class="token function-variab
         <strong class="toc-title">Contents</strong>
         <!-- toc -->
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">transform</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">transition</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">animation</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">后记</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#transform"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">transform</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#transition"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">transition</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#animation"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">animation</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">后记</span></a></li></ol>
         
         </div>
       </aside>
@@ -906,22 +906,7 @@ js_btn<span class="token punctuation">.</span><span class="token function-variab
 </script>
 
 <!-- smooth scroll behavior polyfill  -->
-<script type="text/javascript" src="/js/smoothscroll.js"></script>
-<script>
-        $('#toc').on('click','a',function(a){
-            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
-            // console.log(window.navigator.userAgent,isChrome)
-            // if(isChrome) {
-                // console.log(a.currentTarget.outerHTML);
-                // console.log($(a.currentTarget).attr("href"));
-                //跳转到指定锚点
-                // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
-                console.log('toc',a)
-                var target = document.getElementById($(a.currentTarget).attr("href").replace("#",""));
-                target && target.scrollIntoView({behavior: 'smooth' });
-            // }
-        })  
-</script>
+<!-- <script type="text/javascript" src="/js/smoothscroll.js"></script> -->
 
 
 

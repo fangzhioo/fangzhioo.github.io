@@ -74,7 +74,7 @@
         setTimeout(function() {
           let script = document.createElement("script");
           script.setAttribute("async", "");
-          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409699730406381";
           document.body.appendChild(script);
         }, 2e3);
       }
@@ -220,6 +220,13 @@
                     
 
                         
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
+                        </li>
+                        
+                    
+
+                        
                     
 
                         
@@ -234,13 +241,6 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/love/">✨致我的小可爱💕～</a>
                         </li>
                         
                      -->
@@ -295,9 +295,9 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1><span id="qian-yan">前言</span></h1><p><code>BOM（Browser Object Model）</code>指的是<strong>浏览器对象模型</strong>，在我们使用浏览器时，会和浏览器有一定的交互，比如移动、调整浏览器大小；返回上一级或者下一级页面等。这些事件和方法就属于<code>BOM</code>。详细的说明可以查看W3C的<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/dom_obj_window.asp">Browser对象</a>。<br><code>DOM（Document Object Model）</code>指的是<strong>文档对象模型</strong>，在浏览器载入HTML文档时，就会成为Document对象，这个对象可以让我们访问到HTML页面中的所有元素。详细的说明可以查看W3C的<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/dom_obj_document.asp">HTML DOM Document 对象</a>。  </p>
-<h1><span id="bom">BOM</span></h1><p>BOM（Browser Object Model）浏览器对象模型，BOM就是JavaScript获取记忆管理各个浏览器的内容。通过什么方式来管理浏览器？ 主要就是通过window对象。我们可以在浏览器（谷歌）按<code>F12</code>，打开控制台，直接输入<code>window</code>或者<code>this</code>。就可以看到打印出的<code>window</code>对象。  </p>
-<img class="shadow" alt="加载失败！" src="/img/article/js-base/bom-dom-1.png">
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><code>BOM（Browser Object Model）</code>指的是<strong>浏览器对象模型</strong>，在我们使用浏览器时，会和浏览器有一定的交互，比如移动、调整浏览器大小；返回上一级或者下一级页面等。这些事件和方法就属于<code>BOM</code>。详细的说明可以查看W3C的<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/dom_obj_window.asp">Browser对象</a>。<br><code>DOM（Document Object Model）</code>指的是<strong>文档对象模型</strong>，在浏览器载入HTML文档时，就会成为Document对象，这个对象可以让我们访问到HTML页面中的所有元素。详细的说明可以查看W3C的<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/dom_obj_document.asp">HTML DOM Document 对象</a>。  </p>
+<h1 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h1><p>BOM（Browser Object Model）浏览器对象模型，BOM就是JavaScript获取记忆管理各个浏览器的内容。通过什么方式来管理浏览器？ 主要就是通过window对象。我们可以在浏览器（谷歌）按<code>F12</code>，打开控制台，直接输入<code>window</code>或者<code>this</code>。就可以看到打印出的<code>window</code>对象。  </p>
+<img class="shadow" alt="加载失败！" src="/img/article/js-base/bom-dom-1.png" />
 
 <p>当我们定义一个全局变量或者函数时，这个变量或函数就是挂载到window上，成为window的属性或函数。  </p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 变量</span>
@@ -314,38 +314,38 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token function">a_welcome</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// Welcome to Fz'Blog </span>
 window<span class="token punctuation">.</span><span class="token function">a_welcome</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Welcome to Fz'Blog</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<img class="shadow" alt="加载失败！" src="/img/article/js-base/bom-dom-2.png"> 
+<img class="shadow" alt="加载失败！" src="/img/article/js-base/bom-dom-2.png" /> 
 
-<h2><span id="window-chang-yong-shu-xing">window常用属性</span></h2><p>在我们与浏览器交互时，需要用到很对浏览器提供的接口属性。这部分常用的属性就在window对象上，比如<code>ducument</code>、<code>history</code>、<code>location</code>、<code>screen</code>和<code>navigator</code>等等。  </p>
+<h2 id="window常用属性"><a href="#window常用属性" class="headerlink" title="window常用属性"></a>window常用属性</h2><p>在我们与浏览器交互时，需要用到很对浏览器提供的接口属性。这部分常用的属性就在window对象上，比如<code>ducument</code>、<code>history</code>、<code>location</code>、<code>screen</code>和<code>navigator</code>等等。  </p>
 <ul>
 <li><strong>ducument</strong><br>浏览器载入HTML文档都会成为<code>Document对象</code>。而<code>window.document</code>属性就是访问<code>Document对象</code>的入口。可以通过这个入口，访问页面上个每个DOM元素。详细的可以查看下面的DOM。  </li>
 </ul>
-<img class="shadow" alt="加载失败！" src="/img/article/js-base/bom-dom-3.png"> 
+<img class="shadow" alt="加载失败！" src="/img/article/js-base/bom-dom-3.png" /> 
 
 <ul>
 <li><strong>history</strong><br><code>History对象</code>包含用户（在浏览器窗口中）访问过的 URL。<code>window.history</code>属性提供访问的入口。  </li>
 </ul>
-<img class="shadow" alt="加载失败！" src="/img/article/js-base/bom-dom-4.png"> 
+<img class="shadow" alt="加载失败！" src="/img/article/js-base/bom-dom-4.png" /> 
 
 <p>可以通过这个属性，实现按照历史记录返回上一页（<code>window.history.back</code>），跳转下一个（<code>window.history.forward</code>）或者跳转到具体页面（<code>window.history.go</code>）。  </p>
 <ul>
 <li><strong>location</strong><br><code>Location对象</code>包含有关当前 URL 的信息。可通过 <code>window.location</code> 属性来访问。</li>
 </ul>
-<img class="shadow" alt="加载失败！" src="/img/article/js-base/bom-dom-5.png">  
+<img class="shadow" alt="加载失败！" src="/img/article/js-base/bom-dom-5.png" />  
 
 <p>可以通过这个属性，带本地缓存刷新页面（<code>window.location.reload()</code>），也可以禁用本地缓存刷新页面（<code>window.location.reload(true)</code>）。</p>
 <ul>
 <li><strong>screen</strong><br><code>Screen对象</code>包含有关客户端显示屏幕的信息。可通过 <code>window.screen</code> 属性来访问。</li>
 </ul>
-<img class="shadow" alt="加载失败！" src="/img/article/js-base/bom-dom-6.png"> 
+<img class="shadow" alt="加载失败！" src="/img/article/js-base/bom-dom-6.png" /> 
 
 <ul>
 <li><strong>navigator</strong><br><code>Navigator对象</code>包含有关浏览器的信息。可通过 <code>window.navigator</code> 属性来访问。</li>
 </ul>
-<img class="shadow" alt="加载失败！" src="/img/article/js-base/bom-dom-7.png">  
+<img class="shadow" alt="加载失败！" src="/img/article/js-base/bom-dom-7.png" />  
 
 <p>可以通过这个属性，判断当前设备。再做H5页面时，可能需求判断手机是安卓还是IOS，就可以通过这个属性来判断。</p>
-<h2><span id="window-chang-yong-fang-fa">window常用方法</span></h2><p>浏览器提供了一些方法，使得我们更简单地实现对浏览器的交互。常用的包括<code>alert</code>、<code>confirm</code>、<code>close</code>、<code>open</code>、<code>resizeTo</code>和<code>scrollTo</code>等等。详细的这部分方法，可以查看<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/dom_obj_window.asp">W3C的Window对象</a>。这些方法都可以完成一些浏览器操作，我们选择<code>open</code>方法简单实现下与浏览器的交互。<br><code>window.open</code> 用于打开一个新的浏览器窗口或查找一个已命名的窗口。</p>
+<h2 id="window常用方法"><a href="#window常用方法" class="headerlink" title="window常用方法"></a>window常用方法</h2><p>浏览器提供了一些方法，使得我们更简单地实现对浏览器的交互。常用的包括<code>alert</code>、<code>confirm</code>、<code>close</code>、<code>open</code>、<code>resizeTo</code>和<code>scrollTo</code>等等。详细的这部分方法，可以查看<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/dom_obj_window.asp">W3C的Window对象</a>。这些方法都可以完成一些浏览器操作，我们选择<code>open</code>方法简单实现下与浏览器的交互。<br><code>window.open</code> 用于打开一个新的浏览器窗口或查找一个已命名的窗口。</p>
 <p><span id="window-open-btn" style="text-decoration: underline;cursor: pointer;">点击看文章</span></p>
 
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 第一个参数：指定打开的是哪个页面</span>
@@ -353,15 +353,15 @@ window<span class="token punctuation">.</span><span class="token function">a_wel
 <span class="token comment">// 第三个参数：指定窗口的位置以及大小，窗口的特性width，height，top，left，toolbar location是否显示地址栏 (IE有效)</span>
 window<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'https://fangzhioo.github.io/'</span><span class="token punctuation">,</span><span class="token string">'blank'</span><span class="token punctuation">,</span><span class="token string">'width=400px,height=600px,top=0,left=0,toolbar=yes,location=no;'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2><span id="window-chang-yong-shi-jian">window常用事件</span></h2><p>浏览器为我们提供了很多事件，我们通过这些事件，可以完成很多的浏览器交互。比如<code>onscroll</code>、<code>onload</code>、<code>onresize</code>和<code>onreset</code>等等。浏览器提供的事件众多，这里我们选择<code>onscroll</code>事件来简单实现下对浏览器事件的处理。<br><code>window.onscroll</code>事件在元素滚动条在滚动时触发。我们可以滚动下页面，查看效果。  </p>
-<div style="border:1px solid #cfcfcf;padding:20px;text-align:center;">距离顶部：<span style="color:red;font-weight:600;" id="window-onscroll-view">0</span> px</div>
+<h2 id="window常用事件"><a href="#window常用事件" class="headerlink" title="window常用事件"></a>window常用事件</h2><p>浏览器为我们提供了很多事件，我们通过这些事件，可以完成很多的浏览器交互。比如<code>onscroll</code>、<code>onload</code>、<code>onresize</code>和<code>onreset</code>等等。浏览器提供的事件众多，这里我们选择<code>onscroll</code>事件来简单实现下对浏览器事件的处理。<br><code>window.onscroll</code>事件在元素滚动条在滚动时触发。我们可以滚动下页面，查看效果。  </p>
+<div style="border:1px solid #cfcfcf;padding:20px;text-align:center;" >距离顶部：<span style="color:red;font-weight:600;" id="window-onscroll-view">0</span> px</div>
 
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">window<span class="token punctuation">.</span><span class="token function-variable function">onscroll</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">距离顶部：</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>window<span class="token punctuation">.</span>pageYOffset<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">px</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h2><span id="ding-shi-qi">定时器</span></h2><p>定时器其实也算是window的常用方法，但由于比较特殊，这里单独列举下。定时器分为 <strong>连续定时器</strong> 和 <strong>延时定时器</strong>。<br><strong>连续定时器</strong> 方法是 <code>setInterval()</code> 按照指定的周期（以毫秒为单位）来调用函数或表达式。这种方式会不停地调用函数，直到浏览器窗口被关闭或者使用 <code>clearInterval()</code> 方法停止它。<br><strong>延时定时器</strong> 方法是 <code>setTimeout()</code> 按照指定的毫秒数之后调用函数或表达式，只会执行一次。在执行之前，关闭浏览器窗口或者使用<code>clearTimeout()</code> 方法停止它。<br>定时器可以用来实现一些动画效果。我们运用定时器方法，来实现一个倒计时。  </p>
-<div style="border:1px solid #cfcfcf;padding:20px;text-align:center;color:red;" id="clock">请开始倒计时！</div>
+<h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><p>定时器其实也算是window的常用方法，但由于比较特殊，这里单独列举下。定时器分为 <strong>连续定时器</strong> 和 <strong>延时定时器</strong>。<br><strong>连续定时器</strong> 方法是 <code>setInterval()</code> 按照指定的周期（以毫秒为单位）来调用函数或表达式。这种方式会不停地调用函数，直到浏览器窗口被关闭或者使用 <code>clearInterval()</code> 方法停止它。<br><strong>延时定时器</strong> 方法是 <code>setTimeout()</code> 按照指定的毫秒数之后调用函数或表达式，只会执行一次。在执行之前，关闭浏览器窗口或者使用<code>clearTimeout()</code> 方法停止它。<br>定时器可以用来实现一些动画效果。我们运用定时器方法，来实现一个倒计时。  </p>
+<div style="border:1px solid #cfcfcf;padding:20px;text-align:center;color:red;" id="clock" >请开始倒计时！</div>
 <div style="padding:20px 0;">
     <div class="btn-group btn-group-sm" role="group">
         <button type="button" id="play" class="btn btn-default">开始</button>
@@ -429,8 +429,8 @@ reset<span class="token punctuation">.</span><span class="token function-variabl
     play<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1><span id="dom">DOM</span></h1><p>DOM（Document Object Model），即文档对象模型，<code>HTML DOM Document 对象</code>。每个HTML文档载入浏览器时，都会被浏览器解析成<code>Document对象</code>。通过这个对象，我们可以获取到页面上所有的元素对象。同时，<code>Document对象</code>也是<code>Window对象</code>的一部分。之前提到了，可以通过<code>window.document</code>属性访问。相对 BOM 来说，对 DOM 的使用显得更加频繁。  </p>
-<h2><span id="dom-de-jie-dian-fen-lei">DOM 的节点分类</span></h2><ol>
+<h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><p>DOM（Document Object Model），即文档对象模型，<code>HTML DOM Document 对象</code>。每个HTML文档载入浏览器时，都会被浏览器解析成<code>Document对象</code>。通过这个对象，我们可以获取到页面上所有的元素对象。同时，<code>Document对象</code>也是<code>Window对象</code>的一部分。之前提到了，可以通过<code>window.document</code>属性访问。相对 BOM 来说，对 DOM 的使用显得更加频繁。  </p>
+<h2 id="DOM-的节点分类"><a href="#DOM-的节点分类" class="headerlink" title="DOM 的节点分类"></a>DOM 的节点分类</h2><ol>
 <li>整个文档是一个文档节点；</li>
 <li>每个html元素是元素节点；</li>
 <li>html元素内的文本时文本节点；</li>
@@ -467,7 +467,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">hasChildNodes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2><span id="shu-xing-he-fang-fa">属性和方法</span></h2><p>利用<code>document</code>提供的属性和方法，我们获取具体的一个元素，并操作这个元素。  </p>
+<h2 id="属性和方法"><a href="#属性和方法" class="headerlink" title="属性和方法"></a>属性和方法</h2><p>利用<code>document</code>提供的属性和方法，我们获取具体的一个元素，并操作这个元素。  </p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 通过ID查找</span>
 <span class="token keyword">var</span> h1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'myh1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// 通过类名查找 在IE8以下无法使用</span>
@@ -502,7 +502,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 h1<span class="token punctuation">.</span>innerText <span class="token operator">=</span> <span class="token string">'哈哈哈哈哈。。。'</span><span class="token punctuation">;</span>
 h1<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'style'</span><span class="token punctuation">,</span><span class="token string">'border: solid thick gold;'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2><span id="yuan-su-jie-dian-de-cao-zuo">元素节点的操作</span></h2><p>也有一些方法<code>createElement</code>、<code>removeChild</code>、<code>insertBefore</code> 和 <code>repalceChild</code>，用于增删改替换这些元素。</p>
+<h2 id="元素节点的操作"><a href="#元素节点的操作" class="headerlink" title="元素节点的操作"></a>元素节点的操作</h2><p>也有一些方法<code>createElement</code>、<code>removeChild</code>、<code>insertBefore</code> 和 <code>repalceChild</code>，用于增删改替换这些元素。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// getElementsByTagName 通过标签名获取元素</span>
 <span class="token keyword">var</span> bodyNode <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'body'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
@@ -531,7 +531,7 @@ h6Node<span class="token punctuation">.</span>innerText<span class="token operat
 <span class="token keyword">var</span> h3Node <span class="token operator">=</span>document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'h3'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 bodyNode<span class="token punctuation">.</span><span class="token function">replaceChild</span><span class="token punctuation">(</span>h6Node<span class="token punctuation">,</span>h3Node<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2><span id="wen-ben-jie-dian-de-cao-zuo">文本节点的操作</span></h2><p>除了节点元素，还有一些处理纯文本的增删改方法 <code>appendData</code>、<code>deleteData</code> 等。  </p>
+<h2 id="文本节点的操作"><a href="#文本节点的操作" class="headerlink" title="文本节点的操作"></a>文本节点的操作</h2><p>除了节点元素，还有一些处理纯文本的增删改方法 <code>appendData</code>、<code>deleteData</code> 等。  </p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 新建文本节点</span>
 <span class="token keyword">var</span> textNode<span class="token operator">=</span>document<span class="token punctuation">.</span><span class="token function">createTextNode</span><span class="token punctuation">(</span><span class="token string">'hello world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// 根据偏移量去分割节点,并获得splitText()返回的文本节点</span>
@@ -550,7 +550,7 @@ textNode<span class="token punctuation">.</span><span class="token function">rep
 <span class="token comment">// 插入文本</span>
 textNode<span class="token punctuation">.</span><span class="token function">insertData</span><span class="token punctuation">(</span><span class="token number">5</span> <span class="token punctuation">,</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2><span id="jie-dian-de-shi-jian">节点的事件</span></h2><p>不止可以对元素节点的属性获取修改什么的，还有对节点的事件监听。  </p>
+<h2 id="节点的事件"><a href="#节点的事件" class="headerlink" title="节点的事件"></a>节点的事件</h2><p>不止可以对元素节点的属性获取修改什么的，还有对节点的事件监听。  </p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> mybtn <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'mybtn'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//对 mybtn 添加点击事件</span>
 div<span class="token punctuation">.</span><span class="token function-variable function">onclick</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -558,7 +558,7 @@ div<span class="token punctuation">.</span><span class="token function-variable 
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>这里的事件简单介绍下，后续会对事件有详细的整理。</p>
-<h1><span id="hou-ji">后记</span></h1><p>简单整理下，之前学习关于这方面的基础知识。温故而知新！！！</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>简单整理下，之前学习关于这方面的基础知识。温故而知新！！！</p>
 <hr>
 <script async defer src="/js/js-base-bom-dom.js"></script>
 
@@ -670,7 +670,7 @@ div<span class="token punctuation">.</span><span class="token function-variable 
         <strong class="toc-title">Contents</strong>
         <!-- toc -->
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">BOM</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">window常用属性</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">window常用方法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">window常用事件</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">定时器</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">DOM</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">DOM 的节点分类</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">属性和方法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">元素节点的操作</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">文本节点的操作</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">节点的事件</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">后记</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#BOM"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">BOM</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#window%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">window常用属性</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#window%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">window常用方法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#window%E5%B8%B8%E7%94%A8%E4%BA%8B%E4%BB%B6"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">window常用事件</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">定时器</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#DOM"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">DOM</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#DOM-%E7%9A%84%E8%8A%82%E7%82%B9%E5%88%86%E7%B1%BB"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">DOM 的节点分类</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">属性和方法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%83%E7%B4%A0%E8%8A%82%E7%82%B9%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">元素节点的操作</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%96%87%E6%9C%AC%E8%8A%82%E7%82%B9%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">文本节点的操作</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%8A%82%E7%82%B9%E7%9A%84%E4%BA%8B%E4%BB%B6"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">节点的事件</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">后记</span></a></li></ol>
         
         </div>
       </aside>
@@ -762,22 +762,7 @@ div<span class="token punctuation">.</span><span class="token function-variable 
 </script>
 
 <!-- smooth scroll behavior polyfill  -->
-<script type="text/javascript" src="/js/smoothscroll.js"></script>
-<script>
-        $('#toc').on('click','a',function(a){
-            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
-            // console.log(window.navigator.userAgent,isChrome)
-            // if(isChrome) {
-                // console.log(a.currentTarget.outerHTML);
-                // console.log($(a.currentTarget).attr("href"));
-                //跳转到指定锚点
-                // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
-                console.log('toc',a)
-                var target = document.getElementById($(a.currentTarget).attr("href").replace("#",""));
-                target && target.scrollIntoView({behavior: 'smooth' });
-            // }
-        })  
-</script>
+<!-- <script type="text/javascript" src="/js/smoothscroll.js"></script> -->
 
 
 

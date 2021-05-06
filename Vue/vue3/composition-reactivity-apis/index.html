@@ -74,7 +74,7 @@
         setTimeout(function() {
           let script = document.createElement("script");
           script.setAttribute("async", "");
-          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409699730406381";
           document.body.appendChild(script);
         }, 2e3);
       }
@@ -220,6 +220,13 @@
                     
 
                         
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
+                        </li>
+                        
+                    
+
+                        
                     
 
                         
@@ -234,13 +241,6 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/love/">✨致我的小可爱💕～</a>
                         </li>
                         
                      -->
@@ -295,7 +295,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1><span id="qian-yan">前言</span></h1><p>Vue双向绑定原理是采用<strong>发布订阅者模式</strong>，在初始化时劫持数据的各个属性的setter/getter，在数据变动时发布消息给订阅者，触发响应的监听回调。在 vue2.x 中，实现数据劫持的核心方法是 <code>Object.defineProperty</code>，即，通过劫持数据的 <code>getter/setter</code> 的方式，订阅到数据的变化，从而实现双向绑定。但是引用类型的内部引用，无法通过这个方法劫持。这也是为什么数组或者深层次的对象的内部数据发生变化，却没有引起视图变化的原因。所以在vue2.x中有<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#Vue-set">一系列的方法（$set、$delete等等）</a> 或者使用 <code>watch</code> 来解决这个问题。</p>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Vue双向绑定原理是采用<strong>发布订阅者模式</strong>，在初始化时劫持数据的各个属性的setter/getter，在数据变动时发布消息给订阅者，触发响应的监听回调。在 vue2.x 中，实现数据劫持的核心方法是 <code>Object.defineProperty</code>，即，通过劫持数据的 <code>getter/setter</code> 的方式，订阅到数据的变化，从而实现双向绑定。但是引用类型的内部引用，无法通过这个方法劫持。这也是为什么数组或者深层次的对象的内部数据发生变化，却没有引起视图变化的原因。所以在vue2.x中有<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#Vue-set">一系列的方法（$set、$delete等等）</a> 或者使用 <code>watch</code> 来解决这个问题。</p>
 <blockquote>
 <p> 在IE8以上才有<code>Object.defineProperty</code>方法，所以 vue2.x不兼容IE8及以下版本。</p>
 </blockquote>
@@ -372,9 +372,9 @@ proxy<span class="token punctuation">.</span>arr<span class="token punctuation">
     length<span class="token operator">:</span> <span class="token number">2</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1><span id="zheng-wen">正文</span></h1><p>在vue2.x中，提供了 <code>Vue.observable()</code> 来构建一个响应式对象，而在vue3.x中，提供了方法 <code>reactive</code>，来构建响应式的数据。</p>
-<h2><span id="xiang-ying-shi-ji-chu-api">响应式基础API</span></h2><p>响应式基础API是基于 <code>Proxy</code>，所以返回的响应式副本对象都为<code>Proxy</code>类型。 我们来学习一下这一系列的构建方法和辅助函数。</p>
-<h3><span id="reactive">reactive</span></h3><p><code>reactive</code> 返回参数对象的一个响应式副本。而且这个响应式是“深度”的，即，它将影响所有的嵌套属性。</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>在vue2.x中，提供了 <code>Vue.observable()</code> 来构建一个响应式对象，而在vue3.x中，提供了方法 <code>reactive</code>，来构建响应式的数据。</p>
+<h2 id="响应式基础API"><a href="#响应式基础API" class="headerlink" title="响应式基础API"></a>响应式基础API</h2><p>响应式基础API是基于 <code>Proxy</code>，所以返回的响应式副本对象都为<code>Proxy</code>类型。 我们来学习一下这一系列的构建方法和辅助函数。</p>
+<h3 id="reactive"><a href="#reactive" class="headerlink" title="reactive"></a>reactive</h3><p><code>reactive</code> 返回参数对象的一个响应式副本。而且这个响应式是“深度”的，即，它将影响所有的嵌套属性。</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123; state.name &#125;&#125; &#123;&#123; state.age&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
@@ -404,7 +404,7 @@ proxy<span class="token punctuation">.</span>arr<span class="token punctuation">
 <span class="token punctuation">&#125;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3><span id="readonly">readonly</span></h3><blockquote>
+<h3 id="readonly"><a href="#readonly" class="headerlink" title="readonly"></a>readonly</h3><blockquote>
 <p>获取一个对象 (响应式或纯对象) 或 <code>ref</code> 并返回原始代理的只读代理。只读代理是深层的：访问的任何嵌套 <code>property</code> 也是只读的。</p>
 </blockquote>
 <p>顾名思义，创建的对象是只读的。一般用于无法修改的枚举或者数据。</p>
@@ -417,7 +417,7 @@ proxy<span class="token punctuation">.</span>arr<span class="token punctuation">
 <span class="token keyword">const</span> onlyreadObj <span class="token operator">=</span> <span class="token function">readonly</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">'tom'</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">22</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3><span id="isproxy">isProxy</span></h3><p>用于检查对象是否由 <code>reactive</code> 或者 <code>readonly</code> 来创建的。</p>
+<h3 id="isProxy"><a href="#isProxy" class="headerlink" title="isProxy"></a>isProxy</h3><p>用于检查对象是否由 <code>reactive</code> 或者 <code>readonly</code> 来创建的。</p>
 <pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">import &#123; ref, reactive, readonly, isProxy &#125; from &#39;vue&#39;
 
 const state &#x3D; reactive(&#123; name: &#39;kirito&#39; &#125;)
@@ -432,7 +432,7 @@ isProxy(obj) &#x2F;&#x2F; false
 isProxy(read) &#x2F;&#x2F; true
 isProxy(readByObj) &#x2F;&#x2F; true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3><span id="qi-ta-fu-zhu-han-shu">其他辅助函数</span></h3><p>其他不常用的函数还有很多，这里列举以下：</p>
+<h3 id="其他辅助函数"><a href="#其他辅助函数" class="headerlink" title="其他辅助函数"></a>其他辅助函数</h3><p>其他不常用的函数还有很多，这里列举以下：</p>
 <ul>
 <li><code>isReactive</code> 检查对象是否由 <code>reactive</code> 创建。</li>
 <li><code>isReadonly</code> 检查对象是否由 <code>readonly</code> 创建</li>
@@ -441,11 +441,11 @@ isProxy(readByObj) &#x2F;&#x2F; true<span aria-hidden="true" class="line-numbers
 <li><code>shallowReactive</code> 创建一个不嵌套的响应式副本（只有自身的 <code>property</code>具有响应性 ）</li>
 <li><code>shallowReadonly</code> 创建一个不嵌套的只读响应式副本（只有自身的 <code>property</code>为可读，深层嵌套的属性可以修改）</li>
 </ul>
-<h2><span id="refs">Refs</span></h2><p>Refs 是基于响应式基础API的高阶方法。通过 <code>ref</code> 创建的响应式对象与 <code>reactive</code>创建的有所不同，它返回的是一个 <code>RefImpl</code> 对象，且响应式的数据被挂载到了它的 <code>value</code>属性上。</p>
-<img class="shadow" alt="加载失败！" src="/img/vue3/reactive-vs-refs.png">
+<h2 id="Refs"><a href="#Refs" class="headerlink" title="Refs"></a>Refs</h2><p>Refs 是基于响应式基础API的高阶方法。通过 <code>ref</code> 创建的响应式对象与 <code>reactive</code>创建的有所不同，它返回的是一个 <code>RefImpl</code> 对象，且响应式的数据被挂载到了它的 <code>value</code>属性上。</p>
+<img class="shadow" alt="加载失败！" src="/img/vue3/reactive-vs-refs.png" />
 <p class="image-tips">reactive 和 ref 返回对象有所不同</p>
 
-<h3><span id="ref">ref</span></h3><p><code>ref</code> 方法可以创建响应式对象，不同于 <code>reactive</code>，它也可以接受一个基本类型参数。</p>
+<h3 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h3><p><code>ref</code> 方法可以创建响应式对象，不同于 <code>reactive</code>，它也可以接受一个基本类型参数。</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>&#123;&#123; count &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
@@ -532,7 +532,7 @@ isProxy(readByObj) &#x2F;&#x2F; true<span aria-hidden="true" class="line-numbers
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3><span id="isref">isRef</span></h3><p>检查对象是否为 <code>RefImpl</code>对象，即是否被<code>ref</code>创建。</p>
+<h3 id="isRef"><a href="#isRef" class="headerlink" title="isRef"></a>isRef</h3><p>检查对象是否为 <code>RefImpl</code>对象，即是否被<code>ref</code>创建。</p>
 <pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> ref<span class="token punctuation">,</span> reactive<span class="token punctuation">,</span> isRef <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vue'</span>
 
 <span class="token keyword">const</span> count <span class="token operator">=</span> <span class="token generic-function"><span class="token function">ref</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
@@ -543,11 +543,11 @@ isProxy(readByObj) &#x2F;&#x2F; true<span aria-hidden="true" class="line-numbers
 <span class="token function">isRef</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span> <span class="token comment">// false</span>
 <span class="token function">isRef</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>  <span class="token comment">// false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3><span id="unref">unref</span></h3><p>用来返回被 <code>ref</code> 包装的值。如果入参不是 <code>RefImpl</code> 对象，则直接返回入参。</p>
+<h3 id="unref"><a href="#unref" class="headerlink" title="unref"></a>unref</h3><p>用来返回被 <code>ref</code> 包装的值。如果入参不是 <code>RefImpl</code> 对象，则直接返回入参。</p>
 <blockquote>
 <p>语法糖其实就是 <code>val = isRef(val) ? val.value : val</code></p>
 </blockquote>
-<h3><span id="toref">toRef</span></h3><p>用来为一个响应式对象(<code>reactive</code>)的属性创建一个 <code>ref</code>，可以保持对这个响应式对象属性的响应式连接。</p>
+<h3 id="toRef"><a href="#toRef" class="headerlink" title="toRef"></a>toRef</h3><p>用来为一个响应式对象(<code>reactive</code>)的属性创建一个 <code>ref</code>，可以保持对这个响应式对象属性的响应式连接。</p>
 <pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span class="token keyword">const</span> state <span class="token operator">=</span> <span class="token function">reactive</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
   foo<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
   bar<span class="token operator">:</span> <span class="token number">2</span>
@@ -568,7 +568,7 @@ state<span class="token punctuation">.</span>foo<span class="token operator">++<
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3><span id="torefs">toRefs</span></h3><p>将响应式对象转换为普通对象，其中结果对象的每个 <code>property</code> 都是指向原始对象相应 <code>property</code> 的 <code>ref</code>。比起 <code>toRef</code>，<code>toRefs</code>配合<code>reactive</code>会更加常用一点。</p>
+<h3 id="toRefs"><a href="#toRefs" class="headerlink" title="toRefs"></a>toRefs</h3><p>将响应式对象转换为普通对象，其中结果对象的每个 <code>property</code> 都是指向原始对象相应 <code>property</code> 的 <code>ref</code>。比起 <code>toRef</code>，<code>toRefs</code>配合<code>reactive</code>会更加常用一点。</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>handleChangeName<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>name: &#123;&#123; state.name &#125;&#125; age: &#123;&#123; state.age &#125;&#125; <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>handleChangeAge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>name: &#123;&#123; name &#125;&#125; age: &#123;&#123; age &#125;&#125; <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
@@ -604,7 +604,7 @@ state<span class="token punctuation">.</span>foo<span class="token operator">++<
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>当点击第一个 button 时，可以看到两个按钮的 name 都发生了变化，点击第二个按钮时，两者的age 也发生了变化。 说明了 <code>toRefs</code> 获取原响应式对象的 <code>property</code> 的 <code>ref</code>，与原来的对象保持了响应性。且为了方便在 <code>template</code>中取值，使用 <code>reactive</code>定义的对象， 在<code>setup</code> 返回时，会使用 <code>toRefs</code>进行解构的同时，还保持了响应性。</p>
-<h3><span id="qi-ta-fu-zhu-han-shu">其他辅助函数</span></h3><ul>
+<h3 id="其他辅助函数-1"><a href="#其他辅助函数-1" class="headerlink" title="其他辅助函数"></a>其他辅助函数</h3><ul>
 <li><code>customRef</code> 创建一个自定义的 ref，并对其依赖项跟踪和更新触发进行显式控制。<blockquote>
 <p>它需要一个工厂函数，该函数接收 track 和 trigger 函数作为参数，并应返回一个带有 get 和 set 的对象。</p>
 </blockquote>
@@ -612,14 +612,14 @@ state<span class="token punctuation">.</span>foo<span class="token operator">++<
 <li><code>shallowRef</code> 创建一个 ref，它跟踪自己的 .value 更改，但不会使其值成为响应式的。</li>
 <li><code>triggerRef</code> 手动执行与 shallowRef](#shallowref) 关联的任何效果</li>
 </ul>
-<h2><span id="computed-yu-watch">Computed与watch</span></h2><p>配合响应式APIs，提供下面的一些hook。</p>
-<h3><span id="computed">computed</span></h3><p><code>computed</code> 用于返回一个基于响应式对象的值计算出的新值 <code>RefImpl</code> 对象，这意味着你要取值时，需要在 <code>.value</code>中获取。它支持两种形式的入参：  </p>
+<h2 id="Computed与watch"><a href="#Computed与watch" class="headerlink" title="Computed与watch"></a>Computed与watch</h2><p>配合响应式APIs，提供下面的一些hook。</p>
+<h3 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h3><p><code>computed</code> 用于返回一个基于响应式对象的值计算出的新值 <code>RefImpl</code> 对象，这意味着你要取值时，需要在 <code>.value</code>中获取。它支持两种形式的入参：  </p>
 <ul>
 <li><code>getter函数</code> 返回一个不可变的ref对象</li>
 <li><code>get和set函数对象</code> 返回一个可以写入值的ref对象（是的！computed 是可以修改的！修改逻辑由定义的 set 函数决定）</li>
 </ul>
 <blockquote>
-<p>// getter函数<br>function computed<t>(getter: () =&gt; T): Readonly&lt;Ref&lt;Readonly<t>&gt;&gt;<br>// get和set函数对象<br>function computed<t>(options: { get: () =&gt; T; set: (value: T) =&gt; void }): Ref<t></t></t></t></t></p>
+<p>// getter函数<br>function computed<T>(getter: () =&gt; T): Readonly&lt;Ref&lt;Readonly<T>&gt;&gt;<br>// get和set函数对象<br>function computed<T>(options: { get: () =&gt; T; set: (value: T) =&gt; void }): Ref<T></p>
 </blockquote>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span> count: &#123;&#123; count &#125;&#125; double: &#123;&#123;double&#125;&#125; plus: &#123;&#123; plus &#125;&#125; <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
@@ -654,7 +654,7 @@ state<span class="token punctuation">.</span>foo<span class="token operator">++<
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3><span id="watcheffect">watchEffect</span></h3><p><code>watchEffect</code> 用来追踪依赖的响应式数据的变化，初始化时，会立即运行一次（前缘追踪），并在依赖数据变化时，重新运行。</p>
+<h3 id="watchEffect"><a href="#watchEffect" class="headerlink" title="watchEffect"></a>watchEffect</h3><p><code>watchEffect</code> 用来追踪依赖的响应式数据的变化，初始化时，会立即运行一次（前缘追踪），并在依赖数据变化时，重新运行。</p>
 <blockquote>
 <p>为了根据响应式状态自动应用和重新应用副作用，我们可以使用 watchEffect 方法。它立即执行传入的一个函数，同时响应式追踪其依赖，并在其依赖变更时重新运行该函数。</p>
 </blockquote>
@@ -669,7 +669,7 @@ state<span class="token punctuation">.</span>foo<span class="token operator">++<
 
 <p>控制台会先打印 0 ，过了 100ms 再打印 1 。 因为 <code>watchEffect</code> 入参函数会在初始化的时候，先执行一次。随后追踪到 count 的变化，再此输出 count的值。</p>
 <p>更多细节，请看<a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/guide/reactivity-computed-watchers.html#watcheffect">官方的watchEffect</a></p>
-<h3><span id="watch">watch</span></h3><blockquote>
+<h3 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h3><blockquote>
 <p>watch API 与选项式 API this.$watch (以及相应的 watch 选项) 完全等效。watch 需要侦听特定的 data 源，并在单独的回调函数中副作用。默认情况下，它也是惰性的——即，回调是仅在侦听源发生更改时调用。</p>
 </blockquote>
 <p><code>watch</code> 也是用来追踪响应式数据的变化。不过需要指定需要追踪的响应式数据，且只有这些数据发生变化时，回调函数才会被执行。所以它接受两个参数：</p>
@@ -693,7 +693,7 @@ state<span class="token punctuation">.</span>foo<span class="token operator">++<
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>更多细节，请看<a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/guide/reactivity-computed-watchers.html#watch">官方的watch</a></p>
-<h1><span id="hou-ji">后记</span></h1><!-- vue3.0 响应式原理(超详细) https://juejin.cn/post/6858899262596448270#heading-13 -->
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><!-- vue3.0 响应式原理(超详细) https://juejin.cn/post/6858899262596448270#heading-13 -->
 <p>关于响应式APIs是vue3.x中，最常用最核心的内容之一了。理解和掌握这块的API至关重要。</p>
 
                 
@@ -803,7 +803,7 @@ state<span class="token punctuation">.</span>foo<span class="token operator">++<
         <strong class="toc-title">Contents</strong>
         <!-- toc -->
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">响应式基础API</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">reactive</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">readonly</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">2.1.3.</span> <span class="toc-nav-text">isProxy</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">2.1.4.</span> <span class="toc-nav-text">其他辅助函数</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">Refs</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">ref</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">isRef</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">2.2.3.</span> <span class="toc-nav-text">unref</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">2.2.4.</span> <span class="toc-nav-text">toRef</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">2.2.5.</span> <span class="toc-nav-text">toRefs</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">2.2.6.</span> <span class="toc-nav-text">其他辅助函数</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">Computed与watch</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">2.3.1.</span> <span class="toc-nav-text">computed</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">2.3.2.</span> <span class="toc-nav-text">watchEffect</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">2.3.3.</span> <span class="toc-nav-text">watch</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">后记</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E5%9F%BA%E7%A1%80API"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">响应式基础API</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#reactive"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">reactive</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#readonly"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">readonly</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#isProxy"><span class="toc-nav-number">2.1.3.</span> <span class="toc-nav-text">isProxy</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B6%E4%BB%96%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0"><span class="toc-nav-number">2.1.4.</span> <span class="toc-nav-text">其他辅助函数</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Refs"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">Refs</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#ref"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">ref</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#isRef"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">isRef</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#unref"><span class="toc-nav-number">2.2.3.</span> <span class="toc-nav-text">unref</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#toRef"><span class="toc-nav-number">2.2.4.</span> <span class="toc-nav-text">toRef</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#toRefs"><span class="toc-nav-number">2.2.5.</span> <span class="toc-nav-text">toRefs</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B6%E4%BB%96%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0-1"><span class="toc-nav-number">2.2.6.</span> <span class="toc-nav-text">其他辅助函数</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Computed%E4%B8%8Ewatch"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">Computed与watch</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#computed"><span class="toc-nav-number">2.3.1.</span> <span class="toc-nav-text">computed</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#watchEffect"><span class="toc-nav-number">2.3.2.</span> <span class="toc-nav-text">watchEffect</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#watch"><span class="toc-nav-number">2.3.3.</span> <span class="toc-nav-text">watch</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">后记</span></a></li></ol>
         
         </div>
       </aside>
@@ -893,22 +893,7 @@ state<span class="token punctuation">.</span>foo<span class="token operator">++<
 </script>
 
 <!-- smooth scroll behavior polyfill  -->
-<script type="text/javascript" src="/js/smoothscroll.js"></script>
-<script>
-        $('#toc').on('click','a',function(a){
-            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
-            // console.log(window.navigator.userAgent,isChrome)
-            // if(isChrome) {
-                // console.log(a.currentTarget.outerHTML);
-                // console.log($(a.currentTarget).attr("href"));
-                //跳转到指定锚点
-                // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
-                console.log('toc',a)
-                var target = document.getElementById($(a.currentTarget).attr("href").replace("#",""));
-                target && target.scrollIntoView({behavior: 'smooth' });
-            // }
-        })  
-</script>
+<!-- <script type="text/javascript" src="/js/smoothscroll.js"></script> -->
 
 
 

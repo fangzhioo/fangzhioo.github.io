@@ -74,7 +74,7 @@
         setTimeout(function() {
           let script = document.createElement("script");
           script.setAttribute("async", "");
-          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409699730406381";
           document.body.appendChild(script);
         }, 2e3);
       }
@@ -220,6 +220,13 @@
                     
 
                         
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
+                        </li>
+                        
+                    
+
+                        
                     
 
                         
@@ -234,13 +241,6 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/love/">✨致我的小可爱💕～</a>
                         </li>
                         
                      -->
@@ -295,8 +295,8 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1><span id="qian-yan">前言</span></h1><p>在前端开发时，我们经常会需要绑定一些持续触发的事件，如<code>mousemove</code>、<code>resize</code>、<code>scroll</code>等。瞬间的操作都会导致这些事件会被高频触发。 如果事件的回调函数较为复杂，就会导致响应跟不上触发，出现页面卡顿，假死现象。还有，比如输入框实时检查时，通常使用的 <code>oninput</code> 的事件，这样用户输入过程中，都会触发请求服务器的操作。这些都不是我们想要的结果。<br>在这种需求下，<strong>防抖（Debounce）</strong> 和 <strong>节流（Throttle）</strong> 就是比较合适的解决方案。</p>
-<h1><span id="zheng-wen">正文</span></h1><h2><span id="fang-dou-debounce">防抖（Debounce）</span></h2><blockquote>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在前端开发时，我们经常会需要绑定一些持续触发的事件，如<code>mousemove</code>、<code>resize</code>、<code>scroll</code>等。瞬间的操作都会导致这些事件会被高频触发。 如果事件的回调函数较为复杂，就会导致响应跟不上触发，出现页面卡顿，假死现象。还有，比如输入框实时检查时，通常使用的 <code>oninput</code> 的事件，这样用户输入过程中，都会触发请求服务器的操作。这些都不是我们想要的结果。<br>在这种需求下，<strong>防抖（Debounce）</strong> 和 <strong>节流（Throttle）</strong> 就是比较合适的解决方案。</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="防抖（Debounce）"><a href="#防抖（Debounce）" class="headerlink" title="防抖（Debounce）"></a>防抖（Debounce）</h2><blockquote>
 <p>Debounce<br>n. 防反跳</p>
 </blockquote>
 <p>在 Javascript 中，那些 DOM 频繁触发的事件，我们想在某个时间点上去执行我们的回调，而不是每次事件每次触发，我们就执行该回调。简单一点的说，我们希望多次触发的相同事件的触发合并为一次触发（其实还是触发了好多次，只是我们只关注那一次）。  </p>
@@ -360,7 +360,7 @@
 
 <p>他提供的<code>debounce</code>还接受第三个参数<code>immediate</code>，分析可以看出，这个参数是用来配置回调函数是在一个周期的最开始执行（<code>immediate</code>为<code>true</code>）还是最后执行（<code>immediate</code>为<code>false</code>），即，上面提到的<strong>延迟debounce</strong>和<strong>前缘debounce</strong>。如果<code>immediate</code>为<code>true</code>，意味着是一个同步的回调，可以传递返回值。详细的可以查看 <a target="_blank" rel="noopener" href="https://underscorejs.org/#debounce">underscorejs的debounce</a>  </p>
 <p>再有<code>lodash</code>的<code>debounce</code>，接受更多的配置，有兴趣的可以去查看 <a target="_blank" rel="noopener" href="https://github.com/lodash/lodash/blob/3.10.1/lodash.src.js#L7811">lodash的debounce源代码</a>。</p>
-<h2><span id="jie-liu-throttle">节流（Throttle）</span></h2><blockquote>
+<h2 id="节流（Throttle）"><a href="#节流（Throttle）" class="headerlink" title="节流（Throttle）"></a>节流（Throttle）</h2><blockquote>
 <p>Throttle<br>n. 节流阀</p>
 </blockquote>
 <p>连续高频触发事件时，动作会被定期执行，响应平滑。节流的策略是，固定周期内，只执行一次动作，若有新事件触发，不执行。周期结束后，又有事件触发，开始新的周期。  </p>
@@ -455,7 +455,7 @@
 
 <p><strong>Regular</strong> 代表正常事件触发。<br><strong>Debounce</strong> 代表防抖方案事件触发。<br><strong>Throttle</strong> 代表节流方案事件触发。  </p>
 <p>从图中可以清晰的看出，防抖方案（Debounce）有效的阻止了短期内相同事件重复触发。使得连续触发事件可以在合适的时间点得到处理。而 节流方案（Throttle）有效的使得短期内相同高频的事件重复触发变得低频。 </p>
-<h2><span id="chang-yong-chang-jing">常用场景</span></h2><ul>
+<h2 id="常用场景"><a href="#常用场景" class="headerlink" title="常用场景"></a>常用场景</h2><ul>
 <li><p>防抖方案（Debounce）</p>
 <ul>
 <li>搜索框搜索输入。只需用户最后一次输入完，再发送请求</li>
@@ -471,7 +471,7 @@
 </ul>
 </li>
 </ul>
-<h1><span id="hou-ji">后记</span></h1><blockquote>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><blockquote>
 <p>就以 throttle 为例，某日，老师给你布置了一个作业，让你深入理解一下 throttle，第二天上课来聊聊。张三心里非常高兴，这个概念在经典书籍《JavaScript高级程序设计》中见过，打开一看，就两页，而且解释地非常清晰，看完就高兴地干别的事情去了。而李四，觉得高程三讲的有点少，而去谷歌了下其他关于 throttle 的知识点，兴奋地看到 throttle 函数的好几种写法，发现高程三只是用了最简单的方式，还有更优雅运用场景更多的写法，或许此时他已经发现和 throttle 同时出现的还有个 debounce，这是什么鬼？反正老师没说，以后再看吧，于是心满意足地玩游戏去了。而王五，和李四一样发现了 debounce，这是什么？一起了解了吧，继而发现 debounce 的用法居然和高程三中的 throttle 一样！继续挖下去，发现高程三中的 throttle 函数其实应该叫 debounce，看到最后，王五已经把 throttle 和 debounce 彻底理解了。</p>
 </blockquote>
 <hr>
@@ -584,7 +584,7 @@
         <strong class="toc-title">Contents</strong>
         <!-- toc -->
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">防抖（Debounce）</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">节流（Throttle）</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">常用场景</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">后记</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%98%B2%E6%8A%96%EF%BC%88Debounce%EF%BC%89"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">防抖（Debounce）</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%8A%82%E6%B5%81%EF%BC%88Throttle%EF%BC%89"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">节流（Throttle）</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%B8%B8%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">常用场景</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">后记</span></a></li></ol>
         
         </div>
       </aside>
@@ -676,22 +676,7 @@
 </script>
 
 <!-- smooth scroll behavior polyfill  -->
-<script type="text/javascript" src="/js/smoothscroll.js"></script>
-<script>
-        $('#toc').on('click','a',function(a){
-            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
-            // console.log(window.navigator.userAgent,isChrome)
-            // if(isChrome) {
-                // console.log(a.currentTarget.outerHTML);
-                // console.log($(a.currentTarget).attr("href"));
-                //跳转到指定锚点
-                // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
-                console.log('toc',a)
-                var target = document.getElementById($(a.currentTarget).attr("href").replace("#",""));
-                target && target.scrollIntoView({behavior: 'smooth' });
-            // }
-        })  
-</script>
+<!-- <script type="text/javascript" src="/js/smoothscroll.js"></script> -->
 
 
 
