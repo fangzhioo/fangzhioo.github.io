@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="方志的个人博客,fangzhioo,blog">
+    <meta name="keyword"  content="方志,fangzhioo,Fz&#39;s Blog,Kirito,桐人,博客,互联网,Web,JavaScript,Html,Css,Vue.js,React.js,前端,设计,vue3, 响应式API, 组合式API, vite2, 基于原生ES模块, 快速开发, Vuex, Vuex4, 状态管理">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          【Vue3-Admin】状态管理Vuex - 方志 | fangzhioo
+        
+    </title>
+
+    <link rel="canonical" href="https://fangzhioo.github.io/Vue/vue3-admin/5-vuex4/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+<link rel="stylesheet" href="/css/beantech.min.css">
+
+
+    
+<link rel="stylesheet" href="/css/donate.css">
+
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/prism.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/toc.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script>
+      // ga
+      window.onload = function() {
+        setTimeout(function() {
+          let script = document.createElement("script");
+          script.setAttribute("async", "");
+          script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409699730406381";
+          document.body.appendChild(script);
+        }, 2e3);
+      }
+    </script>
+
+    <!--不蒜子-->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- jQuery -->
+    <!-- 
+<script src="/js/jquery.min.js"></script>
+ -->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <!-- 
+<script src="/js/bootstrap.min.js"></script>
+ -->
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <!-- google ad -->
+    <script data-ad-client="ca-pub-3409699730406381" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('//www.talklee.com/api/bing?rand=true')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Vue3" title="Vue3">Vue3</a>
+                            
+                              <a class="tag" href="/tags/#Vite2" title="Vite2">Vite2</a>
+                            
+                              <a class="tag" href="/tags/#Vue3-Admin" title="Vue3-Admin">Vue3-Admin</a>
+                            
+                        </div>
+                        <h1>【Vue3-Admin】状态管理Vuex</h1>
+                        <h2 class="subheading">状态管理Vuex</h2>
+
+                        <!--文章访问量统计-->
+                        
+                            <span id="busuanzi_container_page_pv">本文已被阅读过<span id="busuanzi_value_page_pv"></span>次</span>
+                        
+                        <!--文章访问量统计-->
+
+                        <span class="meta">
+                            Posted by 方志 on
+                            2021-04-04
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Fz Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                        <li>
+                            <a href="/archive/" >Archives</a>
+                        </li>
+                    
+                        <li>
+                            <a href="/tags/" >Tags</a>
+                        </li>
+                    
+                        <li>
+                            <a href="/about/" >About</a>
+                        </li>
+                    
+
+                    <!-- 
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
+                        </li>
+                        
+                     -->
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>状态管理也是大型项目必要的一个部分，这里我们接入Vuex来帮助我们实现。关于Vuex，在vue3.x下，也需要使用Vuex@4+版本才可以生效。具体请看看<a target="_blank" rel="noopener" href="https://next.vuex.vuejs.org/">vuex官方文档</a></p>
+<img class="shadow" alt="加载失败！" src="https://next.vuex.vuejs.org/vuex.png" />
+<p class="image-tips">vuex</p>
+
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="安装Vuex-4"><a href="#安装Vuex-4" class="headerlink" title="安装Vuex@4"></a>安装Vuex@4</h2><p>首先安装依赖包，并指定大版本为 4+</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># yarn</span>
+<span class="token function">yarn</span> <span class="token function">add</span> vuex@next
+
+<span class="token comment"># npm</span>
+<span class="token function">npm</span> <span class="token function">install</span> vuex@next
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  vue3-admin git:<span class="token punctuation">(</span>master<span class="token punctuation">)</span> ✗ <span class="token function">yarn</span> <span class="token function">add</span> vuex@next -S
+
+success Saved <span class="token number">1</span> new dependency.
+info Direct dependencies
+└─ vuex@4.0.0
+info All dependencies
+└─ vuex@4.0.0
+✨  Done <span class="token keyword">in</span> <span class="token number">1</span>.80s.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="注册Vuex"><a href="#注册Vuex" class="headerlink" title="注册Vuex"></a>注册Vuex</h2><p>我们暂时先创建两个模块，user用于管理当前登录用户的信息，permission用于管理用户权限，后续按照需求可慢慢添加。我们添加<code>@/store/index.ts</code>、<code>@/store/modules/user.ts</code> 和 <code>@/store/modules/permission.ts</code>。</p>
+<p>首先我们看 <code>index.ts</code> 中</p>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> App <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Action<span class="token punctuation">,</span> createStore<span class="token punctuation">,</span> Module<span class="token punctuation">,</span> Mutation<span class="token punctuation">,</span> Store<span class="token punctuation">,</span> useStore <span class="token keyword">as</span> useVuexStore <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"vuex"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> permissionModule<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> PermissionState <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./modules/permission'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> userModule<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> UserState <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./modules/user'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">IMutationTree<span class="token operator">&lt;</span><span class="token constant">K</span> <span class="token keyword">extends</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">number</span><span class="token punctuation">,</span> <span class="token constant">S</span><span class="token operator">></span></span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token punctuation">[</span>key <span class="token keyword">in</span> <span class="token constant">K</span><span class="token punctuation">]</span><span class="token operator">:</span> Mutation<span class="token operator">&lt;</span><span class="token constant">S</span><span class="token operator">></span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">IActionTree<span class="token operator">&lt;</span><span class="token constant">K</span> <span class="token keyword">extends</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">number</span><span class="token punctuation">,</span> <span class="token constant">S</span><span class="token operator">></span></span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token punctuation">[</span>key <span class="token keyword">in</span> <span class="token constant">K</span><span class="token punctuation">]</span><span class="token operator">:</span> Action<span class="token operator">&lt;</span><span class="token constant">S</span><span class="token punctuation">,</span> IRootState<span class="token operator">></span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">IModule<span class="token operator">&lt;</span><span class="token constant">S</span><span class="token operator">></span></span> <span class="token operator">=</span> Module<span class="token operator">&lt;</span><span class="token constant">S</span><span class="token punctuation">,</span> IRootState<span class="token operator">></span>
+
+<span class="token keyword">export</span> <span class="token keyword">enum</span> IModules <span class="token punctuation">&#123;</span>
+  Permission <span class="token operator">=</span> <span class="token string">'permission'</span><span class="token punctuation">,</span>
+  User <span class="token operator">=</span> <span class="token string">'user'</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">IRootState</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token punctuation">[</span>IModules<span class="token punctuation">.</span>Permission<span class="token punctuation">]</span><span class="token operator">:</span> PermissionState<span class="token punctuation">,</span>
+  <span class="token punctuation">[</span>IModules<span class="token punctuation">.</span>User<span class="token punctuation">]</span><span class="token operator">:</span> UserState
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">getNamespace</span> <span class="token operator">=</span> <span class="token punctuation">(</span>moduleName<span class="token operator">:</span> IModules<span class="token punctuation">,</span> target<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>moduleName<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>target<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">IRootStore</span> <span class="token operator">=</span> Store<span class="token operator">&lt;</span>IRootState<span class="token operator">></span><span class="token punctuation">;</span>
+
+<span class="token comment">// app store</span>
+<span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token generic-function"><span class="token function">createStore</span><span class="token generic class-name"><span class="token operator">&lt;</span>IRootState<span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  modules<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">[</span>IModules<span class="token punctuation">.</span>Permission<span class="token punctuation">]</span><span class="token operator">:</span> permissionModule<span class="token punctuation">,</span>
+    <span class="token punctuation">[</span>IModules<span class="token punctuation">.</span>User<span class="token punctuation">]</span><span class="token operator">:</span> userModule
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">useStore</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token generic-function"><span class="token function">useVuexStore</span><span class="token generic class-name"><span class="token operator">&lt;</span>IRootState<span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// config store</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">setupStore</span><span class="token punctuation">(</span>app<span class="token operator">:</span> App<span class="token operator">&lt;</span>Element<span class="token operator">></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>store<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> store<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>再举例 <code>@/store/modules/permission.ts</code>中的内容：</p>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> IActionTree<span class="token punctuation">,</span> IModule<span class="token punctuation">,</span> IMutationTree <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'..'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">enum</span> <span class="token constant">PERMISSION_MUTATIONS</span> <span class="token punctuation">&#123;</span>
+  setPermCodeList <span class="token operator">=</span> <span class="token string">'setPermCodeList'</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">enum</span> <span class="token constant">PERMISSION_ACTIONS</span> <span class="token punctuation">&#123;</span>
+  changePermCodeList <span class="token operator">=</span> <span class="token string">'changePermCodeList'</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">PermissionState</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">/**
+   * 权限code列表
+   */</span>
+  permCodeList<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">const</span> state <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> PermissionState <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  permCodeList<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> mutations<span class="token operator">:</span> IMutationTree<span class="token operator">&lt;</span><span class="token constant">PERMISSION_MUTATIONS</span> <span class="token punctuation">,</span>PermissionState<span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token punctuation">[</span><span class="token constant">PERMISSION_MUTATIONS</span><span class="token punctuation">.</span>setPermCodeList<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> permCodeList<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    state<span class="token punctuation">.</span>permCodeList <span class="token operator">=</span> permCodeList<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">const</span> actions<span class="token operator">:</span> IActionTree<span class="token operator">&lt;</span><span class="token constant">PERMISSION_ACTIONS</span> <span class="token punctuation">,</span>PermissionState<span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token punctuation">[</span><span class="token constant">PERMISSION_ACTIONS</span><span class="token punctuation">.</span>changePermCodeList<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">const</span> permissionModule<span class="token operator">:</span> IModule<span class="token operator">&lt;</span>PermissionState<span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  namespaced<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  state<span class="token punctuation">,</span>
+  mutations<span class="token punctuation">,</span>
+  actions<span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> permissionModule<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>别忘了在 <code>main.ts</code>中，注册store</p>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> createApp <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./App.vue'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> setupStore <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@/store'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> setupRouter <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@/router'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> setupRouterGuard <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@/router/guard'</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">createApp</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 注册store</span>
+<span class="token function">setupStore</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span>
+
+<span class="token comment">// 注册router</span>
+<span class="token function">setupRouter</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 注册router guard</span>
+<span class="token function">setupRouterGuard</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>到这里，vuex就已经注册到app中了，用法和之前的版本基本一直，只不过这里结合了 typescript使结构更加清晰。</p>
+<h2 id="改造登录校验"><a href="#改造登录校验" class="headerlink" title="改造登录校验"></a>改造登录校验</h2><p>之前路由篇中，我们简单的写了一段用于检测登录的导航守卫。我们是将用户的 token信息保存到了本地缓存中，接下来我们结合<code>mock</code>，模拟请求，并将信息存储到 store 中。</p>
+<p>首先我们在mock中添加两个接口，登录接口 和 获取当前用户的信息，我们创建 <code>mock/user.ts</code>:</p>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> MockMethod <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vite-plugin-mock'</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">&#123;</span>
+    url<span class="token operator">:</span> <span class="token string">'/api/user/login'</span><span class="token punctuation">,</span>
+    method<span class="token operator">:</span> <span class="token string">'post'</span><span class="token punctuation">,</span>
+    timeout<span class="token operator">:</span> <span class="token number">2000</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">response</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">&#123;</span> body <span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>body<span class="token punctuation">.</span>username <span class="token operator">===</span> <span class="token string">'tongren'</span> <span class="token operator">&amp;&amp;</span> body<span class="token punctuation">.</span>password <span class="token operator">===</span> <span class="token string">'123456'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+          code<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+          data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            token<span class="token operator">:</span> <span class="token string">'abcdefg'</span><span class="token punctuation">,</span>
+            userInfo<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+              userId<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+              username<span class="token operator">:</span> body<span class="token operator">?.</span>username<span class="token punctuation">,</span>
+              realName<span class="token operator">:</span> <span class="token string">'fangzhi'</span><span class="token punctuation">,</span>
+              desc<span class="token operator">:</span> <span class="token string">'666'</span><span class="token punctuation">,</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+            roleList<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'super'</span><span class="token punctuation">,</span> <span class="token string">'tester'</span><span class="token punctuation">]</span>
+          <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+        code<span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+        body<span class="token punctuation">,</span>
+        message<span class="token operator">:</span> <span class="token string">'用户名密码错误'</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#123;</span>
+    url<span class="token operator">:</span> <span class="token string">'/api/user/current'</span><span class="token punctuation">,</span>
+    method<span class="token operator">:</span> <span class="token string">'get'</span><span class="token punctuation">,</span>
+    timeout<span class="token operator">:</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">response</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">&#123;</span> headers <span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>headers<span class="token punctuation">.</span>token<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+          code<span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span>
+          data<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+          message<span class="token operator">:</span> <span class="token string">'获取当前用户信息失败'</span><span class="token punctuation">,</span>
+          headers
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+        code<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+          token<span class="token operator">:</span> <span class="token string">'abcdefg'</span><span class="token punctuation">,</span>
+          userInfo<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            userId<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            username<span class="token operator">:</span> <span class="token string">'tongren'</span><span class="token punctuation">,</span>
+            realName<span class="token operator">:</span> <span class="token string">'fangzhi'</span><span class="token punctuation">,</span>
+            desc<span class="token operator">:</span> <span class="token string">'666'</span><span class="token punctuation">,</span>
+          <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+          roleList<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'super'</span><span class="token punctuation">,</span> <span class="token string">'tester'</span><span class="token punctuation">]</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span> <span class="token keyword">as</span> MockMethod<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>接口准备完毕，我们编写相关的user模块逻辑</p>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> RoleEnum <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@/constants/role'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> UserInfo <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@/constants/user'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> IActionTree<span class="token punctuation">,</span> IModule<span class="token punctuation">,</span> IMutationTree <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'..'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> router<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> PageRouterName <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@/router'</span>
+
+<span class="token keyword">const</span> <span class="token constant">APP_TOKEN_KEY</span> <span class="token operator">=</span> <span class="token string">'APP_TOKEN_KEY'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">getAppToken</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token constant">APP_TOKEN_KEY</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">setAppToken</span> <span class="token operator">=</span> <span class="token punctuation">(</span>token<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=></span> localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token constant">APP_TOKEN_KEY</span><span class="token punctuation">,</span> token<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">enum</span> <span class="token constant">USER_MUTATIONS</span> <span class="token punctuation">&#123;</span>
+  setToken <span class="token operator">=</span> <span class="token string">'setToken'</span><span class="token punctuation">,</span>
+  setUserInfo <span class="token operator">=</span> <span class="token string">'setUserInfo'</span><span class="token punctuation">,</span>
+  setRoleList <span class="token operator">=</span> <span class="token string">'setRoleList'</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">enum</span> <span class="token constant">USER_ACTIONS</span> <span class="token punctuation">&#123;</span>
+  fetchCurrentUserInfo <span class="token operator">=</span> <span class="token string">'fetchCurrentUserInfo'</span><span class="token punctuation">,</span>
+  fetchUserLogin <span class="token operator">=</span> <span class="token string">'fetchUserLogin'</span><span class="token punctuation">,</span>
+  changeUserLogout <span class="token operator">=</span> <span class="token string">'changeUserLogout'</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">UserState</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">/**
+   * 用户信息
+   */</span>
+  userInfo<span class="token operator">:</span> Nullable<span class="token operator">&lt;</span>UserInfo<span class="token operator">></span><span class="token punctuation">;</span>
+  <span class="token comment">/**
+   * 用户token
+   */</span>
+  token<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  <span class="token comment">/**
+   * 用户角色列表
+   */</span>
+  roleList<span class="token operator">:</span> RoleEnum<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">const</span> state <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> UserState <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  token<span class="token operator">:</span> <span class="token function">getAppToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  userInfo<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  roleList<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> mutations<span class="token operator">:</span> IMutationTree<span class="token operator">&lt;</span><span class="token constant">USER_MUTATIONS</span><span class="token punctuation">,</span> UserState<span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token punctuation">[</span><span class="token constant">USER_MUTATIONS</span><span class="token punctuation">.</span>setToken<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> token<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    state<span class="token punctuation">.</span>token <span class="token operator">=</span> token<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token constant">USER_MUTATIONS</span><span class="token punctuation">.</span>setRoleList<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> roles<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    state<span class="token punctuation">.</span>roleList <span class="token operator">=</span> roles<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token constant">USER_MUTATIONS</span><span class="token punctuation">.</span>setUserInfo<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> userInfo<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    state<span class="token punctuation">.</span>userInfo <span class="token operator">=</span> userInfo<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">const</span> actions<span class="token operator">:</span> IActionTree<span class="token operator">&lt;</span><span class="token constant">USER_ACTIONS</span><span class="token punctuation">,</span> UserState<span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token punctuation">[</span><span class="token constant">USER_ACTIONS</span><span class="token punctuation">.</span>fetchCurrentUserInfo<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">&#123;</span>commit<span class="token punctuation">,</span> state<span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 模拟请求</span>
+    <span class="token keyword">return</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'/api/user/current'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+      method<span class="token operator">:</span> <span class="token string">'get'</span><span class="token punctuation">,</span>
+      headers<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token string">'content-type'</span><span class="token operator">:</span> <span class="token string">'application/json'</span><span class="token punctuation">,</span>
+        token<span class="token operator">:</span> state<span class="token punctuation">.</span>token <span class="token operator">||</span> <span class="token string">''</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'no json'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>code <span class="token operator">===</span> <span class="token number">200</span> <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">setAppToken</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>token<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">commit</span><span class="token punctuation">(</span><span class="token constant">USER_MUTATIONS</span><span class="token punctuation">.</span>setToken<span class="token punctuation">,</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>token<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">commit</span><span class="token punctuation">(</span><span class="token constant">USER_MUTATIONS</span><span class="token punctuation">.</span>setRoleList<span class="token punctuation">,</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>roleList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">commit</span><span class="token punctuation">(</span><span class="token constant">USER_MUTATIONS</span><span class="token punctuation">.</span>setUserInfo<span class="token punctuation">,</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>userInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token function">commit</span><span class="token punctuation">(</span><span class="token constant">USER_ACTIONS</span><span class="token punctuation">.</span>changeUserLogout<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      router<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+        name<span class="token operator">:</span> PageRouterName<span class="token punctuation">.</span>Login
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token constant">USER_ACTIONS</span><span class="token punctuation">.</span>fetchUserLogin<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">&#123;</span> commit <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> payload<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 模拟请求</span>
+    <span class="token keyword">return</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'/api/user/login'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+      method<span class="token operator">:</span> <span class="token string">'post'</span><span class="token punctuation">,</span>
+      body<span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>payload<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'no json'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>code <span class="token operator">===</span> <span class="token number">200</span> <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">setAppToken</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>token<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">commit</span><span class="token punctuation">(</span><span class="token constant">USER_MUTATIONS</span><span class="token punctuation">.</span>setToken<span class="token punctuation">,</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>token<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">commit</span><span class="token punctuation">(</span><span class="token constant">USER_MUTATIONS</span><span class="token punctuation">.</span>setRoleList<span class="token punctuation">,</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>roleList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">commit</span><span class="token punctuation">(</span><span class="token constant">USER_MUTATIONS</span><span class="token punctuation">.</span>setUserInfo<span class="token punctuation">,</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>userInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token constant">USER_ACTIONS</span><span class="token punctuation">.</span>changeUserLogout<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">&#123;</span> commit <span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token function">commit</span><span class="token punctuation">(</span><span class="token constant">USER_MUTATIONS</span><span class="token punctuation">.</span>setToken<span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span>
+    <span class="token function">commit</span><span class="token punctuation">(</span><span class="token constant">USER_MUTATIONS</span><span class="token punctuation">.</span>setRoleList<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token function">commit</span><span class="token punctuation">(</span><span class="token constant">USER_MUTATIONS</span><span class="token punctuation">.</span>setUserInfo<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">const</span> userModule<span class="token operator">:</span> IModule<span class="token operator">&lt;</span>UserState<span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  namespaced<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  state<span class="token punctuation">,</span>
+  mutations<span class="token punctuation">,</span>
+  actions<span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> userModule<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>暂时没有整合数据请求相关的库（<code>axios</code>），所以暂时使用原生的<code>fetch</code>。</p>
+<p>可以看到，我们之前的 token 也存贮到本地缓存中， 但项目我们存在 store中，通过store来获取和设置 token。那么我们需要修改之前导航守卫中的判断逻辑。</p>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span class="token comment">// router/guard/permissionGuard.ts</span>
+<span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">'@/store'</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">getAppToken</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>user<span class="token punctuation">.</span>token<span class="token punctuation">;</span>
+
+<span class="token comment">// router/guard/stateGuard.ts</span>
+<span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">'@/store'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> getNamespace<span class="token punctuation">,</span> IModules <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@/store'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">resetState</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// localStorage.removeItem('APP_TOKEN');</span>
+  store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">getNamespace</span><span class="token punctuation">(</span>IModules<span class="token punctuation">.</span>User<span class="token punctuation">,</span> <span class="token constant">USER_ACTIONS</span><span class="token punctuation">.</span>changeUserLogout<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>login页面也补充请求的逻辑：</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>用户名<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>密码<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>handleLogin<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>login<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> defineComponent<span class="token punctuation">,</span> reactive<span class="token punctuation">,</span> toRaw<span class="token punctuation">,</span> toRefs <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> useEnhancer <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@/enhancer'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> getNamespace<span class="token punctuation">,</span> IModules <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@/store'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> <span class="token constant">USER_ACTIONS</span> <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@/store/modules/user'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineComponent</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  <span class="token function">setup</span> <span class="token punctuation">(</span><span class="token parameter">props<span class="token punctuation">,</span> context</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> router<span class="token punctuation">,</span> store <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">useEnhancer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">const</span> state <span class="token operator">=</span> <span class="token function">reactive</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+      username<span class="token operator">:</span> <span class="token string">'tongren'</span><span class="token punctuation">,</span>
+      password<span class="token operator">:</span> <span class="token string">'123456'</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">const</span> <span class="token function-variable function">handleLogin</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token comment">// localStorage.setItem('APP_TOKEN', 'app-token');</span>
+      <span class="token keyword">const</span> payload <span class="token operator">=</span> <span class="token function">toRaw</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
+      store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">getNamespace</span><span class="token punctuation">(</span>IModules<span class="token punctuation">.</span>User<span class="token punctuation">,</span> <span class="token constant">USER_ACTIONS</span><span class="token punctuation">.</span>fetchUserLogin<span class="token punctuation">)</span><span class="token punctuation">,</span> payload<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+          path<span class="token operator">:</span> <span class="token string">'/dashboard'</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">&#123;</span> message <span class="token punctuation">&#125;</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token function">alert</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+      <span class="token operator">...</span><span class="token function">toRefs</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+      handleLogin
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>最后，为了展示效果，我们在 <code>@/pages/dashboard/analysis.vue</code>中显示出当前用户的信息。</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span> username: &#123;&#123;username || '-'&#125;&#125; <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span> realName: &#123;&#123;realName || '-'&#125;&#125; <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span> roles: &#123;&#123;roles || '-'&#125;&#125; <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ts<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> computed<span class="token punctuation">,</span> defineComponent <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> useEnhancer <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@/enhancer'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> getNamespace<span class="token punctuation">,</span> IModules <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@/store'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> <span class="token constant">USER_ACTIONS</span> <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@/store/modules/user'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineComponent</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  <span class="token function">setup</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> store <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">useEnhancer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> username <span class="token operator">=</span> <span class="token function">computed</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>user<span class="token punctuation">.</span>userInfo<span class="token operator">?.</span>username<span class="token punctuation">)</span>
+    <span class="token keyword">const</span> realName <span class="token operator">=</span> <span class="token function">computed</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>user<span class="token punctuation">.</span>userInfo<span class="token operator">?.</span>realName<span class="token punctuation">)</span>
+    <span class="token keyword">const</span> roles <span class="token operator">=</span> <span class="token function">computed</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>user<span class="token punctuation">.</span>roleList<span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>username<span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">getNamespace</span><span class="token punctuation">(</span>IModules<span class="token punctuation">.</span>User<span class="token punctuation">,</span> <span class="token constant">USER_ACTIONS</span><span class="token punctuation">.</span>fetchCurrentUserInfo<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+      username<span class="token punctuation">,</span>
+      realName<span class="token punctuation">,</span>
+      roles
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>注意这里的 <code>useEnhancer</code> 是为了方便使用各种hooks定义的增强器，具体逻辑为：</p>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span class="token comment">/**
+ * hooks 聚合器
+ */</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> useRoute<span class="token punctuation">,</span> useRouter <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vue-router'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> useStore <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@/store'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">useEnhancer</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// 注意这里的useStore并不是从 vuex中导入！！！</span>
+  <span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token function">useStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> route <span class="token operator">=</span> <span class="token function">useRoute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token function">useRouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+    store<span class="token punctuation">,</span>
+    route<span class="token punctuation">,</span>
+    router<span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>到这里，我们就vuex整合到了项目中了，并且替换了原来存储到本地缓存的方法。后续随着业务逻辑的深入，我们会逐渐的添加vuex到项目中。</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1>
+                
+                
+                    <br />
+                    <!-- post-content-ad -->
+                    <ins class="adsbygoogle"
+                            style="display:block"
+                            data-ad-client="ca-pub-3409699730406381"
+                            data-ad-slot="9289016056"
+                            data-ad-format="auto"
+                            data-full-width-responsive="true"></ins>
+                    <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                
+
+                <br>
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/Vue/vue3-admin/6-element-plus/" data-toggle="tooltip" data-placement="top" title="【Vue3-Admin】整合Element-plus">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/Vue/vue3-admin/4-router4/" data-toggle="tooltip" data-placement="top" title="【Vue3-Admin】路由配置Vue-Router">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!--打赏-->
+                
+                    <div class="reward">
+                        <div class="reward-button">赏 <span class="reward-code"> 
+                            <span class="alipay-code"> <img class="alipay-img" src="/img/reward/alipay.jpg"><b>支付宝打赏</b></span> 
+                            <span class="wechat-code"> <img class="wechat-img" src="/img/reward/wechat_pay.jpg"><b>微信打赏</b> </span>
+                            </span></div>
+                        <p class="reward-notice">赞赏一下</p>
+                    </div>
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+                <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+
+                <div class="aplayer"
+                    data-id="2297428102"
+                    data-server="netease"
+                    data-type="playlist"
+                    data-fixed="true" >
+                </div>
+                
+
+                
+        
+                    
+                        <!-- 来必力City版安装代码 --> 
+                        <div id="lv-container" data-id="city" data-uid="MTAyMC80Mzg3OC8yMDQxMw==">
+                            <script type="text/javascript">
+                                (function (d, s) {
+                                    var j, e = d.getElementsByTagName(s)[0];
+        
+                                    if (typeof LivereTower === 'function') { return; }
+        
+                                    j = d.createElement(s);
+                                    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                                    j.async = true;
+        
+                                    e.parentNode.insertBefore(j, e);
+                                })(document, 'script');
+                            </script>
+                            <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                        </div>
+                        <!-- City版安装代码已完成 -->
+                    
+            </div>
+            
+            <!-- Table of Contents -->
+            
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        <!-- toc -->
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AE%89%E8%A3%85Vuex-4"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">安装Vuex@4</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%B3%A8%E5%86%8CVuex"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">注册Vuex</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%94%B9%E9%80%A0%E7%99%BB%E5%BD%95%E6%A0%A1%E9%AA%8C"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">改造登录校验</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">后记</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Recommended Posts  -->
+                
+                    <hr>
+                    <h5>推荐文章</h5>
+                    
+
+    <div class="recommended_posts">
+        <ul>
+            
+                <li><a href="https://fangzhioo.github.io/Vue/vue3-admin/10-fetch/">【Vue3-Admin】数据请求与封装</a></li>
+            
+                <li><a href="https://fangzhioo.github.io/Vue/vue3-admin/9-i18n/">【Vue3-Admin】国际化 Vue-i18n</a></li>
+            
+                <li><a href="https://fangzhioo.github.io/Vue/vue3-admin/8-layouts/">【Vue3-Admin】整体布局Layouts</a></li>
+            
+        </ul>
+    </div>
+ 
+                
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <div class="tags">
+                        
+                            <a class="tag" href="/tags/#Vue3" title="Vue3">Vue3</a>
+                        
+                            <a class="tag" href="/tags/#Vite2" title="Vite2">Vite2</a>
+                        
+                            <a class="tag" href="/tags/#Vue3-Admin" title="Vue3-Admin">Vue3-Admin</a>
+                        
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- 复制添加版权申明-->
+<script>
+    /**/
+    function setClipboardText(event){
+        event.preventDefault();//阻止元素发生默认的行为（例如，当点击提交按钮时阻止对表单的提交）。
+        var node = document.createElement('div');
+        //对documentfragment不熟，不知道怎么获取里面的内容，用了一个比较笨的方式
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        //getRangeAt(0)返回对基于零的数字索引与传递参数匹配的选择对象中的范围的引用。对于连续选择，参数应为零。
+        var htmlData = '<div>'
+            + node.innerHTML
+            + '<br /><br />著作权归作者所有。<br />'
+            + '商业转载请联系作者获得授权，非商业转载请注明出处。<br />'
+            + '作者：fangzhioo <br />链接：'
+            + location.href
+            + '<br />来源：fangzhioo.github.io<br /><br />'
+            + '</div>';
+        var textData = window.getSelection().getRangeAt(0)
+            + '\n\n著作权归作者所有。\n'
+            + '商业转载请联系作者获得授权，非商业转载请注明出处。\n'
+            + '作者：fangzhioo\n'
+            + '链接：'
+            + location.href
+            + '来源：fangzhioo.github.io\n\n';
+        if(event.clipboardData){
+            event.clipboardData.setData("text/html", htmlData);
+            //setData(剪贴板格式, 数据) 给剪贴板赋予指定格式的数据。返回 true 表示操作成功。
+            event.clipboardData.setData("text/plain",textData);
+        }
+        else if(window.clipboardData){ //window.clipboardData的作用是在页面上将需要的东西复制到剪贴板上，提供了对于预定义的剪贴板格式的访问，以便在编辑操作中使用。
+            return window.clipboardData.setData("text", textData);
+        }
+    };
+ 
+    document.addEventListener('copy',function(e){
+        setClipboardText(e);
+    });
+</script>
+
+<!-- smooth scroll behavior polyfill  -->
+<!-- <script type="text/javascript" src="/js/smoothscroll.js"></script> -->
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/fang-zhi-4-73">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/fangzhioooo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/fangzhioo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 方志 2021 
+                    <br>
+                    Theme by <a target="_blank" rel="noopener" href="https://huangxuan.me/">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="https://fangzhioo.github.io">Fz</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=fangzhioo&repo=fangzhioo.github.io&type=star&count=true" >
+                    </iframe>
+                    <br />
+                    <!--总访问量统计-->
+                    
+                        <span id="busuanzi_container_site_pv" style="margin-left: 3px;">
+                            总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    
+                    <!--总访问量统计-->
+
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/my-blog.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://fangzhioo.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-138588101-1';
+    var _gaDomain = 'fangzhioo.github.io';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'dce5d892b228cc0a253520da429e7f11';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://fangzhioo.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+<!-- live2d -->
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"position":"right","width":200,"height":400,"jsonPath":"/live2dw/assets/sagiri.model.json"},"mobile":{"show":true},"react":{"opacity":0.6},"log":false});</script>
+
+</body>
+
+</html>

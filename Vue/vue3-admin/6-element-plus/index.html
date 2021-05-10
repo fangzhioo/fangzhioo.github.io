@@ -18,7 +18,7 @@
         
     </title>
 
-    <link rel="canonical" href="https://fangzhioo.github.io/Vue/vue3-admin/5-element-plus/">
+    <link rel="canonical" href="https://fangzhioo.github.io/Vue/vue3-admin/6-element-plus/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -203,28 +203,21 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/archive/">Archives</a>
                         </li>
                         
                     
 
                         
-                    
-
-                        
-                    
-
-                        
                         <li>
-                            <a href="/love/">✨致我的小可爱💕～</a>
+                            <a href="/about/">About</a>
                         </li>
+                        
+                    
+
+                        
+                    
+
                         
                     
 
@@ -243,6 +236,13 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/love/">✨致我的小可爱💕～</a>
                         </li>
                         
                      -->
@@ -297,7 +297,36 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>随着vue3.x的稳定，element官方也出品了对应的支持<code>element3</code>和<code>element-plus</code>作为对新版本的支持。这里我们介绍下 <code>element-plus</code>的接入。</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="注册element-plus"><a href="#注册element-plus" class="headerlink" title="注册element-plus"></a>注册element-plus</h2><p>我们在<code>main.ts</code>中添加以下代码</p>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>当然，如果需求按需加载，官方同样有支持 vite 的<a target="_blank" rel="noopener" href="https://element-plus.gitee.io/#/zh-CN/component/quickstart">相关文档</a></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>对于 <code>element-plus</code>，基本上所有的api和组件都和element2保持了一致，如果使用过之前版本的，基本上无缝使用衔接。</p>
+<p>我们可以在 <code>@/pages/dashboard/analysis.vue</code>的 template中添加以下代码</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span> username: &#123;&#123; username || '-' &#125;&#125; <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span> realName: &#123;&#123; realName || '-' &#125;&#125; <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span> roles: &#123;&#123; roles || '-' &#125;&#125; <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span><span class="token punctuation">></span></span>我是按钮<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-input</span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>输入框<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-input</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-rate</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-rate</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>启动项目就可以看到</p>
+<img class="shadow" alt="加载失败！" src="/img/vue3-admin/vue3-admin-element-plus.jpg" />
+<p class="image-tips">element-plus</p>
+
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>关于element-plus相关的内容，应该还有很多可以配置的，比如主题、国际化等，但是由于基本和之前的没有啥出入，这里就不深入探究了。后面更像接入的是 <code>ant-design-vue</code> 来做为ui组件库。主要是为了学习新的内容，同时也是为了后面支持明暗主题。（element-plus没有找到合适的相关支持）</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/fangzhioo/vue3-admin/commit/16ebf8fcded21b47a7fe135d32673ea9f67802af">代码查看这里</a></li>
+<li><a target="_blank" rel="noopener" href="https://vue3-admin-aybq1449l-fangzhioo.vercel.app/">预览点击这里</a></li>
+</ul>
+
                 
                 
                     <br />
@@ -319,12 +348,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/Vue/vue3-admin/5-ant-design-vue/" data-toggle="tooltip" data-placement="top" title="【Vue3-Admin】整合ant-design-vue">&larr; Previous Post</a>
+                            <a href="/Vue/vue3-admin/6-ant-design-vue/" data-toggle="tooltip" data-placement="top" title="【Vue3-Admin】整合ant-design-vue">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/Vue/vue3-admin/4-vuex4/" data-toggle="tooltip" data-placement="top" title="【Vue3-Admin】状态管理Vuex">Next Post &rarr;</a>
+                            <a href="/Vue/vue3-admin/5-vuex4/" data-toggle="tooltip" data-placement="top" title="【Vue3-Admin】状态管理Vuex">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -405,7 +434,7 @@
         <strong class="toc-title">Contents</strong>
         <!-- toc -->
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">正文</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">后记</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">安装</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%B3%A8%E5%86%8Celement-plus"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">注册element-plus</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">使用</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">后记</span></a></li></ol>
         
         </div>
       </aside>
@@ -427,11 +456,11 @@
     <div class="recommended_posts">
         <ul>
             
-                <li><a href="https://fangzhioo.github.io/Vue/vue3-admin/2-vite2/">【Vue3-Admin】使用Vite2构建Vue3项目</a></li>
+                <li><a href="https://fangzhioo.github.io/Vue/vue3-admin/10-fetch/">【Vue3-Admin】数据请求与封装</a></li>
             
-                <li><a href="https://fangzhioo.github.io/Vue/vue3-admin/4-vuex4/">【Vue3-Admin】状态管理Vuex</a></li>
+                <li><a href="https://fangzhioo.github.io/Vue/vue3-admin/9-i18n/">【Vue3-Admin】国际化 Vue-i18n</a></li>
             
-                <li><a href="https://fangzhioo.github.io/Vue/vue3-admin/9-fetch/">【Vue3-Admin】数据请求与封装</a></li>
+                <li><a href="https://fangzhioo.github.io/Vue/vue3-admin/8-layouts/">【Vue3-Admin】整体布局Layouts</a></li>
             
         </ul>
     </div>

@@ -3,29 +3,29 @@
 
 
     <url>
-        <loc>https://fangzhioo.github.io/tags/CompositionAPI/</loc>
-        <lastmod>2021-05-06T09:41:58.374Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://fangzhioo.github.io/tags/Vue3/</loc>
-        <lastmod>2021-05-06T09:41:58.374Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://fangzhioo.github.io/tags/Vue3-Admin/</loc>
-        <lastmod>2021-05-06T09:04:51.578Z</lastmod>
+        <lastmod>2021-05-10T02:46:05.281Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://fangzhioo.github.io/tags/Vite2/</loc>
-        <lastmod>2021-05-06T09:04:51.578Z</lastmod>
+        <lastmod>2021-05-10T02:46:05.281Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/tags/Vue3/</loc>
+        <lastmod>2021-05-10T02:46:05.281Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/tags/CompositionAPI/</loc>
+        <lastmod>2021-05-06T09:41:58.374Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -115,14 +115,14 @@
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/tags/BOM-DOM/</loc>
+        <loc>https://fangzhioo.github.io/tags/Event/</loc>
         <lastmod>2021-04-12T10:00:24.311Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://fangzhioo.github.io/tags/Event/</loc>
+        <loc>https://fangzhioo.github.io/tags/BOM-DOM/</loc>
         <lastmod>2021-04-12T10:00:24.311Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
