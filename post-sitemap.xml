@@ -9,6 +9,38 @@
 
 
     <url>
+        <loc>https://fangzhioo.github.io/Java/spring-cloud/mall-distributed-base/</loc>
+        <lastmod>2021-06-08T03:50:20.709Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Java/spring-cloud/mall-high-availability-cluster/</loc>
+        <lastmod>2021-06-08T03:41:03.485Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Java/spring-cloud/mall-distributed-advanced/</loc>
+        <lastmod>2021-06-08T03:40:59.890Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fangzhioo.github.io/Vue/vue3-admin/7-theme/</loc>
+        <lastmod>2021-05-12T09:52:52.309Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://fangzhioo.github.io/Vue/vue3-admin/6-ant-design-vue/</loc>
         <lastmod>2021-05-10T02:46:05.281Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -27,14 +59,6 @@
     <url>
         <loc>https://fangzhioo.github.io/Vue/vue3-admin/9-i18n/</loc>
         <lastmod>2021-05-08T07:24:20.575Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://fangzhioo.github.io/Vue/vue3-admin/7-theme/</loc>
-        <lastmod>2021-05-08T07:24:17.197Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
