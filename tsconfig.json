@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "types": [
+      "vite/client"
+    ],
+    "moduleResolution": "node"
+  },
+  "include": [
+    ".vitepress/theme/**/*",
+    "./types/**/*"
+  ],
+  "exclude": ["dist", "node_modules"]
+}
