@@ -385,5 +385,5 @@ export default {
 
 ---
 
-[1][https://github.com/vuejs/rfcs/issues/189]
-[2][https://vue3js.cn/docs/zh/guide/migration/introduction.html]
+[1]: [https://github.com/vuejs/rfcs/issues/189]
+[2]: [https://vue3js.cn/docs/zh/guide/migration/introduction.html]

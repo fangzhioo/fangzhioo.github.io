@@ -10,6 +10,104 @@ categories:
   - Web
 ---
 
+<style client>
+.ele-box{
+    padding: 20px 10px;
+    margin-bottom: 20px;
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+}
+.video-ele-box{
+    min-height: 200px;
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+}
+table {
+    width: 100%;
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+}
+table thead {
+    background-color: #efefef;
+}
+
+.btn-group {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btn {
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 4px;
+    border-color: #1B9AF7;
+    line-height: 36px;
+    padding: 0 20px;
+    margin: 0;
+    display: inline-block;
+    appearance: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition-property: all;
+    transition-duration: .3s;
+    animation: glowing-primary 2s ease infinite 1s alternate;
+}
+.btn + .btn {
+  margin-left: 10px;
+}
+
+@keyframes glowing-primary {
+  from {
+    -webkit-box-shadow: 0 0 0 rgba(27, 154, 247, 0.3);
+            box-shadow: 0 0 0 rgba(27, 154, 247, 0.3); }
+  50% {
+    -webkit-box-shadow: 0 0 20px rgba(27, 154, 247, 0.8);
+            box-shadow: 0 0 20px rgba(27, 154, 247, 0.8); }
+  to {
+    -webkit-box-shadow: 0 0 0 rgba(27, 154, 247, 0.3);
+            box-shadow: 0 0 0 rgba(27, 154, 247, 0.3); } 
+}
+
+.bar{
+    position: relative;
+    width: 240px;
+    height: 20px;
+    background: white;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.bar_content{
+    width: 0px;
+    height: 18px;
+    background-color: gray;
+    background-image: repeating-linear-gradient(-45deg,red,gold 30px,yellow 30px,green 60px);
+    background-size: 600px 100%;
+    animation: mymove 12s linear infinite;
+    border-radius: 5px;
+}
+.bar_time{
+    width:85px;
+    height: 20px;
+    line-height: 20px;
+    text-align: right;
+    position: absolute;
+    right: -85px;
+    top: 0;
+}
+@keyframes mymove{
+    from{background-position: 0% 0%;}
+    to{background-position: 600px 0%;}
+}
+</style>
+
+
 # 【HTML】HTML5新特性
 
 最近因为博客的开通，想着把之前的学习笔记整理下。所以这里并不是教程什么的，单纯的是整理下最初的学习记录，也算是回顾下以前的知识。  
@@ -98,7 +196,7 @@ HTML 标签众多，详细的可以去 [W3school][2] 或者 [腾讯云-开发者
 到这里，`audio`的用法和属性基本就介绍完了，但是在使用的时候，因为实际需求和美观度，我们不会直接使用标签提供的控件，也不会直接展示标签。这就需要我们自定义了。下面我们就来介绍下`audio`标签的事件，然后去自定义一个音乐播放器吧！
 
 <div class="ele-box">
-    <div class="btn-group btn-group-sm" role="group">
+    <div class="btn-group" role="group">
         <button type="button" id="play" class="btn btn-default">播放</button>
         <button type="button" id="pause" class="btn btn-default">暂停</button>
         <button type="button" id="stop" class="btn btn-default">停止播放</button>
@@ -281,7 +379,7 @@ change();
 //进度条方向控制
 var bar = document.getElementById('a-bar');
 bar.onclick = function (e) {
-  oEvent = e || window.event;
+  const oEvent = e || window.event;
   barContent.style.width = oEvent.offsetX + 'px';
   barContent.style.transition = 'width 0.1s ease';
   audioplayer.currentTime = (oEvent.offsetX / 240) * audioplayer.duration;
@@ -487,7 +585,7 @@ vChange();
 //进度条方向控制
 var vBar = document.getElementById('v-bar');
 vBar.onclick = function (e) {
-  oEvent = e || window.event;
+  const oEvent = e || window.event;
   vBarContent.style.width = oEvent.offsetX + 'px';
   vBarContent.style.transition = 'width 0.1s ease';
   videoplayer.currentTime = (oEvent.offsetX / 240) * videoplayer.duration;
@@ -525,76 +623,12 @@ elem.onclick = function () {
 
 有时候会出现视频无法自动播放。查找资料后发现，添加 `muted` 属性，就可以通过地址栏进入网页时自动播放了。
 
----
 
-[1]: http://www.w3school.com.cn/html/html5_intro.asp
-[2]: http://www.w3school.com.cn/html/html_elements.asp
-[3]: https://cloud.tencent.com/developer/chapter/13536
-[4]: https://cloud.tencent.com/developer/chapter/13538
 
-<style client>
-    .ele-box{
-    padding: 20px 10px;
-    margin-bottom: 20px;
-    border: 1px solid #cfcfcf;
-    border-radius: 4px;
-}
-.video-ele-box{
-    min-height: 200px;
-    padding: 0;
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-    width: 100%;
-}
-table {
-    width: 100%;
-    border: 1px solid #cfcfcf;
-    border-radius: 2px;
-}
-table thead {
-    background-color: #efefef;
-}
-
-.bar{
-    position: relative;
-    width: 240px;
-    height: 20px;
-    background: white;
-    cursor: pointer;
-    border-radius: 5px;
-    border: 1px solid gray;
-}
-.bar_content{
-    width: 0px;
-    height: 18px;
-    background-color: gray;
-    background-image: repeating-linear-gradient(-45deg,red,gold 30px,yellow 30px,green 60px);
-    background-size: 600px 100%;
-    animation: mymove 12s linear infinite;
-    border-radius: 5px;
-}
-.bar_time{
-    width:85px;
-    height: 20px;
-    line-height: 20px;
-    text-align: right;
-    position: absolute;
-    right: -85px;
-    top: 0;
-}
-@keyframes mymove{
-    from{background-position: 0% 0%;}
-    to{background-position: 600px 0%;}
-}
-</style>
-
-<ClientOnly>
-
-<script setup async defer client>
+<script setup>
 import { onMounted, nextTick } from 'vue';
 
-const init = () => {
+function init() {
     //用来解决本地文件也可以拖拽进度条的问题
     var audioplayer = document.getElementById("audioplayer");
     var playbt = document.getElementById("play");
@@ -675,7 +709,7 @@ const init = () => {
     //进度条方向控制
     var bar = document.getElementById("a-bar");
     bar.onclick = function (e) {
-        oEvent = e || window.event;
+        const oEvent = e || window.event;
         barContent.style.width = oEvent.offsetX + "px";
         barContent.style.transition = "width 0.1s ease";
         audioplayer.currentTime = oEvent.offsetX / 240 * audioplayer.duration;
@@ -790,7 +824,7 @@ const init = () => {
     //进度条方向控制
     var vBar = document.getElementById("v-bar");
     vBar.onclick = function (e) {
-        oEvent = e || window.event;
+        const oEvent = e || window.event;
         vBarContent.style.width = oEvent.offsetX + "px";
         vBarContent.style.transition = "width 0.1s ease";
         videoplayer.currentTime = oEvent.offsetX / 240 * videoplayer.duration;
@@ -843,4 +877,8 @@ onMounted(() => {
 })
 </script>
 
-</ClientOnly>
+
+[1]: http://www.w3school.com.cn/html/html5_intro.asp
+[2]: http://www.w3school.com.cn/html/html_elements.asp
+[3]: https://cloud.tencent.com/developer/chapter/13536
+[4]: https://cloud.tencent.com/developer/chapter/13538

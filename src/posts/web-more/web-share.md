@@ -1209,7 +1209,7 @@ java 代码如下：
 
 `index.vm`如下：
 
-```velocity
+```html
 	## 判断前端版本
   #if(!$!projectfrontversion)
     <h1>前端版本获取失败</h1>
