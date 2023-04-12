@@ -4,7 +4,6 @@ subtitle:   在 React.js 里面监听事件听起来很玄，但其实使用起�
 keyword:    React.js,React.js 小书,教程,事件监听
 date: 2019-05-12 14:08:52
 catalog: true
-header-img:
 tags:
     - React
     - 转载

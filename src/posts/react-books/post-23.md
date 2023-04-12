@@ -4,7 +4,6 @@ subtitle:   介绍两个之前没有提到的属性：dangerouslySetHTML 和 sty
 keyword:    React.js,React.js 小书,dangerouslySetHTML,style 属性,教程
 date: 2019-05-26 14:08:52
 catalog: true
-header-img:
 tags:
     - React
     - 转载

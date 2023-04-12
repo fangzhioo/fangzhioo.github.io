@@ -4,7 +4,6 @@ subtitle:   一个关于如何使用 React.js 实现前端组件化的教程。�
 keyword:    React.js,React.js 小书,教程,组件
 date: 2019-05-05 15:08:52
 catalog: true
-header-img:
 tags:
     - React
     - 转载

@@ -4,7 +4,6 @@ subtitle:   主要是分享这段时间，开发所运用的技术栈，个人�
 keyword:    React.js, TypeScript, Antd, Umi.js, Pont
 date: 2020-05-17 14:08:52
 catalog: true
-header-img:
 tags:
     - Share
 categories: 

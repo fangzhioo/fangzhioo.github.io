@@ -4,7 +4,6 @@ subtitle:   带大家一起来学习如何分析、编写评论功能，包括�
 keyword:    React.js,React.js 小书,组件,实战,评论功能
 date: 2019-05-28 14:08:52
 catalog: true
-header-img:
 tags:
     - React
     - 转载

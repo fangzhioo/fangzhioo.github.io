@@ -4,7 +4,6 @@ subtitle:   本文介绍组件的更新，本质上是 setState 导致 React.js 
 keyword:    React.js,React.js 小书,组件,生命周期，组件更新
 date: 2019-05-23 14:08:52
 catalog: true
-header-img:
 tags:
     - React
     - 转载

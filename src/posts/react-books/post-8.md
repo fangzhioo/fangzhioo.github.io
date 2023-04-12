@@ -4,7 +4,6 @@ subtitle:   React.js 中一切皆组件，用 React.js 其实就是在写组件�
 keyword:    React.js,React.js 小书,教程,组件
 date: 2019-05-11 14:08:52
 catalog: true
-header-img:
 tags:
     - React
     - 转载

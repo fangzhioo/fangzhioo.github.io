@@ -4,7 +4,6 @@ subtitle:   state 和 props 有着千丝万缕的关系，它们都可以决定�
 keyword:    React.js,React.js 小书,教程,state,props
 date: 2019-05-15 14:08:52
 catalog: true
-header-img:
 tags:
     - React
     - 转载

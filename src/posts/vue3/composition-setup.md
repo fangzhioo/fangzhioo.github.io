@@ -4,7 +4,6 @@ subtitle:   Composition API 之 setup
 keyword:    vue3, 响应式API, 组合式API, setup
 date: 2021-03-01 14:08:52
 catalog: true
-header-img:
 tags:
     - Vue3
     - CompositionAPI

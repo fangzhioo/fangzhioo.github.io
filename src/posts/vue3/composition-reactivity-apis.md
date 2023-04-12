@@ -4,7 +4,6 @@ subtitle:   响应式API，reactive、toRefs、ref、computed、readonly、watch
 keyword:    vue3, 响应式API, 组合式API, reactive, toRefs, ref, computed, readonly, watchEffect, watch
 date: 2021-03-01 14:08:52
 catalog: true
-header-img:
 tags:
     - Vue3
     - CompositionAPI

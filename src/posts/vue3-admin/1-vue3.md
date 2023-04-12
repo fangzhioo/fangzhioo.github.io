@@ -4,7 +4,6 @@ subtitle:   初识Vue3
 keyword:    vue3, 响应式API, 组合式API
 date: 2021-04-01 14:08:52
 catalog: true
-header-img:
 tags:
     - Vue3
 categories: 
@@ -383,7 +382,7 @@ export default {
 - watchEffect和watch有啥不同？
 - 生命周期钩子能不能写多个？顺序是怎样的？
 
----
 
-[1]: [https://github.com/vuejs/rfcs/issues/189]
-[2]: [https://vue3js.cn/docs/zh/guide/migration/introduction.html]
+
+[1]: https://github.com/vuejs/rfcs/issues/189  
+[2]: https://vue3js.cn/docs/zh/guide/migration/introduction.html

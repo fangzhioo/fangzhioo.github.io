@@ -4,7 +4,6 @@ subtitle:   React.js 单独使用基本上是不可能的事情，需要配合�
 keyword:    React.js,React.js 小书,安装,教程,React.js 下载
 date: 2019-05-08 18:08:52
 catalog: true
-header-img:
 tags:
     - React
     - 转载

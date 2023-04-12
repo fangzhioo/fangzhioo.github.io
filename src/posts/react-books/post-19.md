@@ -4,7 +4,6 @@ subtitle:   React.js 将组件渲染，构造 DOM 元素后塞入页面的过程
 keyword:    React.js,React.js 小书,挂载,组件,生命周期
 date: 2019-05-22 14:08:52
 catalog: true
-header-img:
 tags:
     - React
     - 转载

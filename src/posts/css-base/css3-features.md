@@ -3,10 +3,6 @@ title: 【CSS】CSS3新特性
 description: animation动画、transform转换、transition过渡
 keyword: animation, transform, transition
 lastUpdated: 2018-12-20 10:51:24
-head:
-  - script:
-      src: "//code.jquery.com/jquery-3.6.0.min.js"
-      defer: true
 ---
 
 <style client>

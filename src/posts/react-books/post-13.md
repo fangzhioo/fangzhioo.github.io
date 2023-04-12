@@ -4,7 +4,6 @@ subtitle:   列表数据在前端开发中非常常见，一个前端工程师�
 keyword:    React.js,React.js 小书,教程,列表数据,JSX
 date: 2019-05-16 14:08:52
 catalog: true
-header-img:
 tags:
     - React
     - 转载

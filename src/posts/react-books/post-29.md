@@ -4,7 +4,6 @@ subtitle:   了解 context 对于学习 React-router 和 Redux 的使用很有�
 keyword:    React.js,React.js 小书,context,教程
 date: 2019-06-01 14:08:52
 catalog: true
-header-img:
 tags:
     - React
     - 转载

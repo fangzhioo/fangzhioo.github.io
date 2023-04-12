@@ -4,7 +4,6 @@ subtitle:   主要是分享这段时间，面试遇到的一些比较典型的�
 keyword:    React.js, 浏览器, Vue.js, js, 前端, 面试, 性能优化
 date: 2020-06-16 16:41:22
 catalog: true
-header-img:
 tags:
     - Share
 categories: 

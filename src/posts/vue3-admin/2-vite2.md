@@ -4,7 +4,6 @@ subtitle:   使用vite2构建vue3项目
 keyword:    vue3, 响应式API, 组合式API, vite2, 基于原生ES模块, 快速开发
 date: 2021-04-02 14:08:52
 catalog: true
-header-img:
 tags:
     - Vue3
     - Vite2

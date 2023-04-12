@@ -4,7 +4,6 @@ subtitle:   嵌套的 JSX 结构在组件内部可以通过 props.children 获�
 keyword:    React.js,React.js 小书,容器,props,教程
 date: 2019-05-25 14:08:52
 catalog: true
-header-img:
 tags:
     - React
     - 转载

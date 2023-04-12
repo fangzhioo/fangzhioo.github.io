@@ -4,7 +4,6 @@ subtitle:   不同的场景下对组件的需求可能会有所不同，props �
 keyword:    React.js,React.js 小书,教程,props,组件
 date: 2019-05-14 14:08:52
 catalog: true
-header-img:
 tags:
     - React
     - 转载

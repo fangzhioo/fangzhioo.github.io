@@ -4,7 +4,6 @@ subtitle:   通过 PropTypes 给组件参数做类型限制，帮助我们迅速
 keyword:    React.js,React.js 小书,PropTypes,组件,参数验证
 date: 2019-05-27 14:08:52
 catalog: true
-header-img:
 tags:
     - React
     - 转载

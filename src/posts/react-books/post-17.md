@@ -4,7 +4,6 @@ subtitle:   React.js 并没有提供好的解决方案来管理组件之间的�
 keyword:    React.js,React.js 小书,状态管理,组件,教程
 date: 2019-05-20 14:08:52
 catalog: true
-header-img:
 tags:
     - React
     - 转载

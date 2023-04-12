@@ -4,7 +4,6 @@ subtitle:   通过一个简单的例子讲解 React.js 描述页面 UI 的方式
 keyword:    React.js,React.js 简介,React.js 小书,React.js 教程
 date: 2019-05-09 14:08:52
 catalog: true
-header-img:
 tags:
     - React
     - 转载
