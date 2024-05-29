@@ -1,13 +1,18 @@
-node_modules
 .DS_Store
+node_modules
 dist
-dist-ssr
-*.local
+.temp
+cache
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
 .idea
-pnpm-lock.yaml
-smartmontools.md
-zsh_history.md
-/ReadMe.md
-origin_theme.css
-.vitepress/cache
-.vitepress/dist
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

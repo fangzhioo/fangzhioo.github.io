@@ -1,34 +1,53 @@
-name: Deploy
+name: GitHub Actions Build and Deploy
+
+# 触发条件: push 到 master 分支后
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
   push:
     branches:
       - master
-      - main
+    # 只在下列路径变更时触发
+    paths:
+      - 'docs/**'
+      - 'package.json'
+
+# 设置上海时区
+env:
+  TZ: Asia/Shanghai
+
+# 任务
 jobs:
-  deploy:
+  build-and-deploy:
+    # 服务器环境：最新版 ubuntu
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v3
+      # 拉取代码
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v3
+          persist-credentials: false
+
+      # 安装 pnpm
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
         with:
-          node-version: 16
-          cache: npm
-      - run: npm ci
+          version: 8
+
+      # 设置 node 版本
+      - name: Set node version to 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+
+      # 打包静态文件
       - name: Build
-        run: npm run build
-      - uses: actions/configure-pages@v2
-      - uses: actions/upload-pages-artifact@v1
-        with:
-          path: .vitepress/dist
+        run: pnpm install && pnpm run build:github
+
+      - name: Copy files
+        run: cp README.md ./dist/
+
+      # 部署
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v1

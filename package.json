@@ -1,20 +1,39 @@
 {
-  "name": "tongren-blog",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "vitepress dev",
-    "build": "vitepress build",
-    "preview": "vitepress preview"
-  },
-  "keywords": [],
-  "author": "tongren",
+  "name": "tongren-notes",
   "type": "module",
+  "private": true,
+  "version": "1.0.0",
+  "packageManager": "pnpm@8.0.0",
+  "description": "Tongren notes",
+  "homepage": "https://fangzhioo.github.io",
+  "author": "tongren <1020637302@qq.com>",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development vitepress dev docs --port=8732",
+    "build": "vitepress build docs",
+    "build:github": "cross-env APP_BASE_PATH=/mm-notes/ npm run build",
+    "lint": "prettier --write .",
+    "prepare": "husky install"
+  },
   "devDependencies": {
-    "@types/node": "^18.15.11",
-    "typescript": "^5.0.3",
-    "vitepress": "^1.0.0-alpha.64",
-    "vue": "^3.2.47"
+    "@docsearch/css": "^3.6.0",
+    "@docsearch/js": "^3.6.0",
+    "@mdit-vue/shared": "^0.12.1",
+    "@types/node": "^18.19.33",
+    "@vueuse/core": "^10.9.0",
+    "body-scroll-lock": "4.0.0-beta.0",
+    "cross-env": "^7.0.3",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.3.0",
+    "medium-zoom": "^1.1.0",
+    "prettier": "^2.8.8",
+    "sass": "^1.77.2",
+    "sitemap": "^7.1.1",
+    "vitepress": "1.0.0-alpha.60",
+    "vue": "^3.4.27"
+  },
+  "lint-staged": {
+    "*.{js,ts,css,md,json}": [
+      "prettier --write"
+    ]
   }
 }
