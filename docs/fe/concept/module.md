@@ -68,7 +68,7 @@ util.log()
 - `export` 命令用于规定模块的对外接口
 - `import` 命令用于输入其他模块提供的功能
 
-[ES6 常用知识 —— ESModule](/fe/es6/#esmodule)
+[ES6 常用知识 —— ESModule](/fe/javascript/es6#esmodule)
 
 ::: tip ESModule 与 CommonJS 的差异
 
