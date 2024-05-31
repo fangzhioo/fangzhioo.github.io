@@ -47,6 +47,7 @@ function unlockBodyScroll() {
   left: 0;
   padding: 0 32px;
   width: 100%;
+  height: calc(100vh - calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 1px));
   background-color: var(--vp-nav-screen-bg-color);
   overflow-y: auto;
   transition: background-color 0.5s;

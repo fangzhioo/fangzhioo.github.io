@@ -79,7 +79,6 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       text: 'CSS 相关',
       collapsed: false,
       items: [
-        { text: 'CSS 语法', link: '/workflow/css/spec' },
         { text: 'CSS 奇淫技巧', link: '/workflow/css/tricks' },
         { text: 'Sass 常用技巧', link: '/workflow/sass/' }
       ]

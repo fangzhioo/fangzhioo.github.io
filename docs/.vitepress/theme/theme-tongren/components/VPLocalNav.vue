@@ -42,8 +42,15 @@ const { hasSidebar } = useSidebar()
   border-bottom: 1px solid var(--vp-c-gutter);
   padding-top: var(--vp-layout-top-height, 0px);
   width: 100%;
-  background-color: var(--vp-local-nav-bg-color);
   transition: border-color 0.5s, background-color 0.5s;
+  /* background-color: var(--vp-local-nav-bg-color); */
+  
+  background-image: radial-gradient(transparent 1px, var(--vp-c-bg) 1px);
+  backdrop-filter: saturate(50%) blur(4px);
+  background-size: 4px 4px;
+  background-color: transparent !important;
+  border-bottom: 1px solid var(--vp-c-divider);
+
 }
 
 @media (min-width: 960px) {
